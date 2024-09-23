@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding-top: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+    background-color: #f8f9fa; 
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.container2 {
+    /*height: calc(100vh - 75px);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container3 {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    background-color: #ffffff; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 50%;
+    max-width: 500px;
+    height: auto;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+    color: #42326E; 
+    font-weight: bold; 
+}
+
+h2 {
+    color: #343a40;
+    font-weight: bold;
+}
+
+
+.input-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #495057; 
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da; 
+    box-shadow: none;
+    font-size: 14px;
+}
+
+
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #0069d9; 
+    color: #ffffff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3; 
+}
+
+
+.signup_link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #0069d9; 
+    text-decoration: none;
+}
+
+.signup_link:hover {
+    text-decoration: underline; 
+}
+
+
+span {
+    font-size: 12px;
+    color: red; 
+    display: block;
+    margin-top: 5px;
+}
+
+
+@media (max-width: 768px) {
+    .container3 {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}

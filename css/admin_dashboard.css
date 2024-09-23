@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.admin_dashboard_container1 {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+}
+
+.admin_dashboard_container2 {
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.dashboard-box {
+  flex: 1 1 22%; 
+  max-width: 22%; 
+  min-height: 150px;
+  padding: 15px;
+  border-radius: 10px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s; 
+}
+
+.dashboard-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-box h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.dashboard-box p {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.box1 {
+  background-color: #4e3f8a;
+}
+
+.box2 {
+  background-color: #3f5ba7; 
+}
+
+.box3 {
+  background-color: #5c728e; 
+}
+
+.box4 {
+  background-color: #7a90b3; 
+}
+
+.box5 {
+  background-color: #9475ab; 
+}
+
+.box6 {
+  background-color: #8a76b5; 
+}
+
+.box7 {
+  background-color: #ae84c6; 
+}
+
+.box8 {
+  background-color: #c5a1da; 
+}
+
+.view-more-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  padding: 10px 20px;
+  /* background-color: white; */
+  color: #4e3f8a;
+  /* border: 2px solid #ffffff; */
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.view-more-button:hover {
+  background-color: #06b8cf;
+  color: white;
+}
