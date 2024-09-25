@@ -1,3 +1,6 @@
+<?php
+require_once "./middleware/admin_middleware.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 

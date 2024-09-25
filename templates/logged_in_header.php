@@ -20,7 +20,7 @@ require_once 'includes/login/login_view.php';
                 <path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
             </svg>
 
-            <a href="../"><img src="../Assets/DDLOGO.png" class="logo" alt="DormLink Logo"></a>
+            <a href="../user_homepage.php"><img src="../Assets/DDLOGO.png" class="logo" alt="DormLink Logo"></a>
         </div>
     </div>
 
