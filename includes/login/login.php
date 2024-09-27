@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // adminemail@sample.com (passwordAdmin$00) - 1
 
-        //louisemiugel1999@gmail.com (Password@00)
+        //louisemiguel1999@gmail.com (Password@00)
 
         session_start();
 

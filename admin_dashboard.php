@@ -78,6 +78,9 @@ require_once "./middleware/admin_middleware.php";
             </a>
         </div>
     </div>
+    <script>
+        window.history.forward();
+    </script>
 </body>
 
 </html>
