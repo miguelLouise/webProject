@@ -38,7 +38,7 @@ require_once 'includes/login/login_view.php';
                 <li><img src="../Assets/info.png" class="nav_icon"><a href="#about">About</a></li>
                 <li><img src="../Assets/search.png" class="nav_icon"><a href="#services">Search Available Rooms</a></li>
                 <li><img src="../Assets/wallet.png" class="nav_icon"><a href="#payment">Payment Record</a></li>
-                <li><img src="../Assets/request.png" class="nav_icon"><a href="#maintenance">Maintenance Request</a></li>
+                <li><img src="../Assets/maintenancereq.png" class="nav_icon"><a href="#maintenance">Maintenance Request</a></li>
                 <li><img src="../Assets/circle.png" class="nav_icon"><a href="#contact">Contact</a></li>
                 <li><img src="../Assets/account.png" class="nav_icon"><a href="#contact">Account management</a></li>
                 <!-- logout button -->

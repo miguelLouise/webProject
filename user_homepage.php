@@ -79,7 +79,7 @@ include "./middleware/user_middleware.php";
                 <button class="view-all-images" onclick="openFullscreen('studio-room-1')">View All Images</button>
                 <div class="room-info">
                     <h2>Studio Room 1</h2>
-                    <p>STUDIO TYPE ROOM FOR RENT</p>
+                    <p>STUDIO TYPE ROOM</p>
                     <p>9,500.00 monthly 1 month advance and 2 months deposit.</p>
                     <p>( 1 ) one year contract.</p>
                     <p>Maximum of 3 persons only.</p>
@@ -111,7 +111,7 @@ include "./middleware/user_middleware.php";
                 <button class="view-all-images" onclick="openFullscreen('studio-room-2')">View All Images</button>
                 <div class="room-info">
                     <h2>Studio Room 2</h2>
-                    <p>STUDIO TYPE ROOM FOR RENT</p>
+                    <p>STUDIO TYPE ROOM</p>
                     <p>10,500.00 monthly 1 month advance and 2 months deposit.</p>
                     <p>( 1 ) one year contract.</p>
                     <p>Maximum of 4 persons only.</p>
@@ -143,7 +143,7 @@ include "./middleware/user_middleware.php";
                 <button class="view-all-images" onclick="openFullscreen('studio-room-3')">View All Images</button>
                 <div class="room-info">
                     <h2>Studio Room 3</h2>
-                    <p>STUDIO TYPE ROOM FOR RENT</p>
+                    <p>STUDIO TYPE ROOM</p>
                     <p>10,500.00 monthly 1 month advance and 2 months deposit.</p>
                     <p>( 6 ) month's to ( 1 ) year minimum contract.</p>
                     <p>Maximum of 4 persons only.</p>
@@ -170,7 +170,7 @@ include "./middleware/user_middleware.php";
                 <button class="view-all-images" onclick="openFullscreen('studio-room-4')">View All Images</button>
                 <div class="room-info">
                     <h2>Studio Room 4</h2>
-                    <p>STUDIO TYPE ROOM FOR RENT</p>
+                    <p>STUDIO TYPE ROOM</p>
                     <p>15,000.00 monthly 1 month advance and 2 months deposit.</p>
                     <p>( 1 ) one year contract.</p>
                     <p>Maximum of 6 persons only.</p>
