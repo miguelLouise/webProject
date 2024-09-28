@@ -38,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // adminemail@sample.com (passwordAdmin$00) - 1
 
         //louisemiguel1999@gmail.com (Password@00)
+        //admin@gmail.com (adminPassword@01)
 
         session_start();
 
@@ -62,8 +63,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             header("Location: ../../admin_dashboard.php?login=success");
         }
-
-
 
         $pdo = null;
         $statement = null;
