@@ -1,5 +1,6 @@
 <?php
-require_once "./middleware/admin_middleware.php";
+require_once "./includes/login/login_view.php";
+include "./middleware/admin_middleware.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,9 +79,6 @@ require_once "./middleware/admin_middleware.php";
             </a>
         </div>
     </div>
-    <script>
-        window.history.forward();
-    </script>
 </body>
 
 </html>

@@ -194,7 +194,7 @@ include "./middleware/user_middleware.php";
         <div id="fullscreen-images"></div>
     </div>
 
-    <script>
+    <script language="javascript" type="text/javascript">
         window.history.forward();
 
         function openFullscreen(roomId) {

@@ -9,6 +9,8 @@ require_once 'includes/login/login_view.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <title>Document</title> -->
     <link rel="stylesheet" href="css/logged_in_header_admin.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 </head>
 
 <body>
@@ -31,7 +33,6 @@ require_once 'includes/login/login_view.php';
                 </li>
                 <?php display_user_info() ?>
             </div>
-
 
             <ul>
                 <li><img src="../Assets/home.png" class="nav_icon"><a href="#home">Home</a></li>
