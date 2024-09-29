@@ -32,6 +32,18 @@ session_start();
             <img src="Assets/loob.png" alt="loob">
         </div>
 
+        <div class="custom-card">
+            <div class="custom-card-text">
+                <h2 class="card-title">About Us</h2>
+                <p class="card-description">
+                    1277 Apartments (Lavanders Place) is ideally located in the center of University Belt, offering a convenient and affordable living option. Designed for students and professionals, the residence focuses on creating a comfortable environment with modern amenities and well-maintained facilities. Lavender's Place is committed to addressing tenant concerns quickly, ensuring a smooth and stress-free stay for all residents.
+                </p>
+            </div>
+            <div class="custom-card-image">
+                <img src="Assets/lpview.jpg" alt="Lavender's Place View">
+            </div>
+        </div>
+
         <!-- Room Slider -->
         <div class="room-slider">
             <div class="room-slider-header">
@@ -113,6 +125,11 @@ session_start();
         <!-- Chatbot -->
         <?php include('./templates/chatbot.php'); ?>
     </div>
+
+    <!-- Floating Instagram Button -->
+    <a href="https://www.instagram.com/lavanderplace_1277apartments?igsh=dzJwbnUxdDJwOGsx" target="_blank" class="floating-ig-btn">
+        <img src="Assets/igpc.png" alt="Instagram Icon">
+    </a>
 
     <!-- Floating Facebook Button -->
     <a href="https://web.facebook.com/1277apartments/?_rdc=1&_rdr" target="_blank" class="floating-fb-btn">

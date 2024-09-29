@@ -193,29 +193,11 @@ include "./middleware/user_middleware.php";
         <div class="close" onclick="closeFullscreen()">×</div>
         <div id="fullscreen-images"></div>
     </div>
+  
+    <script src="JavaScript/user_homepage.js"></script>
 
-    <script language="javascript" type="text/javascript">
-        window.history.forward();
 
-        function openFullscreen(roomId) {
-            const fullscreenContainer = document.getElementById('fullscreen-view');
-            const fullscreenImages = document.getElementById('fullscreen-images');
-            fullscreenImages.innerHTML = '';
 
-            const images = document.querySelectorAll(`#${roomId} .room-images .image-card img`);
-            images.forEach(img => {
-                const clone = img.cloneNode();
-                fullscreenImages.appendChild(clone);
-            });
-
-            fullscreenContainer.style.display = 'flex';
-        }
-
-        function closeFullscreen() {
-            document.getElementById('fullscreen-view').style.display = 'none';
-        }
-    </script>
-    </div>
 </body>
 
 </html>
