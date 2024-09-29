@@ -194,26 +194,8 @@ require_once "./includes/login/login_view.php";
         <div id="fullscreen-images"></div>
     </div>
 
-    <script>
-        function openFullscreen(roomId) {
-            const fullscreenContainer = document.getElementById('fullscreen-view');
-            const fullscreenImages = document.getElementById('fullscreen-images');
-            fullscreenImages.innerHTML = '';
+    <script src="JavaScript/user_homepage.js"></script>
 
-            const images = document.querySelectorAll(`#${roomId} .room-images .image-card img`);
-            images.forEach(img => {
-                const clone = img.cloneNode();
-                fullscreenImages.appendChild(clone);
-            });
-
-            fullscreenContainer.style.display = 'flex';
-        }
-
-        function closeFullscreen() {
-            document.getElementById('fullscreen-view').style.display = 'none';
-        }
-    </script>
-    </div>
 </body>
 
 </html>

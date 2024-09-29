@@ -115,7 +115,7 @@ h2 {
   line-height: 2;
 }
 
-/* New styles for image cards and room layout */
+
 .rooms-section {
   display: flex;
   flex-direction: column;
@@ -139,14 +139,14 @@ h2 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 10px;
-  max-height: 300px; /* Adjust as needed */
+  max-height: 300px; 
   overflow-y: auto;
 }
 
 .image-card {
   position: relative;
   width: 100%;
-  padding-top: 100%; /* Makes the card a square */
+  padding-top: 100%; 
   overflow: hidden;
   border-radius: 8px;
   transition: transform 0.3s ease;
@@ -164,7 +164,7 @@ h2 {
 }
 
 .image-card:hover img {
-  transform: scale(1.1); /* Slightly zooms in the image on hover */
+  transform: scale(1.1);
 }
 
 .view-all-images {
