@@ -68,6 +68,8 @@ require_once "./includes/login/login_view.php";
     </div>
     <!-- javascript -->
     <script>
+        window.history.forward();
+        
         const eye = document.getElementById("hide");
         const password = document.getElementById("password");
 

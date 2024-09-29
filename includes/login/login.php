@@ -37,6 +37,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // adminemail@sample.com (passwordAdmin$00) - 1
 
+        //louisemiguel1999@gmail.com (Password@00)
+        //admin@gmail.com (adminPassword@01)
+
         session_start();
 
         if ($username_error || $password_error) {
@@ -47,8 +50,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         $_SESSION["user_logged_in"] = true;
-        $_SESSION["user_id"] = $user_info["Id"];
-        $_SESSION["user_role"] = $user_info["role"];
+        $_SESSION["user_id"] = htmlspecialchars($user_info["Id"]);
+        $_SESSION["user_role"] = htmlspecialchars($user_info["role"]);
         $_SESSION["user_name"] = htmlspecialchars($user_info["name"]);
         $_SESSION["user_num"] = htmlspecialchars($user_info["contact_number"]);
         $_SESSION["user_email"] = htmlspecialchars($user_info["email"]);
@@ -57,11 +60,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($_SESSION["user_role"] == 0) {
             header("Location: ../../user_homepage.php?login=success");
-        } else {
-            header("Location: ../../admin_dashboard.php?login=success");
         }
-
-
+        else {
+            header("Location: ../../admin_dashboard.php?login=success");
+            //header("Location: ../../samplePage.php?login=success");
+        }
 
         $pdo = null;
         $statement = null;

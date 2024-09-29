@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password_error = "";
         $password_confirmation_error = "";
 
-        // $role = 0;
+        $role = 0;
         $name = $_POST['name'];
         $contact_number = $_POST["contact_number"];
         $email = $_POST["email"];

@@ -1,6 +1,6 @@
 <?php
 require_once "./includes/login/login_view.php";
-// include "./middleware/user_middleware.php";
+include "./middleware/user_middleware.php";
 ?>
 
 <!DOCTYPE html>
@@ -193,8 +193,10 @@ require_once "./includes/login/login_view.php";
         <div class="close" onclick="closeFullscreen()">×</div>
         <div id="fullscreen-images"></div>
     </div>
-
+  
     <script src="JavaScript/user_homepage.js"></script>
+
+
 
 </body>
 
