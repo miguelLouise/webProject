@@ -63,7 +63,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         else {
             header("Location: ../../admin_dashboard.php?login=success");
-            //header("Location: ../../samplePage.php?login=success");
         }
 
         $pdo = null;

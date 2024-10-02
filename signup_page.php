@@ -12,7 +12,7 @@ require_once 'includes/signup_process_view.php';
     <meta http-equiv="X-UA-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dormlink - Signup</title>
-    <link rel="stylesheet" href="css//signup.css">
+    <link rel="stylesheet" href="css///signup.css">
     <style>
         .floating-fb-btn {
             position: fixed;
@@ -88,10 +88,12 @@ require_once 'includes/signup_process_view.php';
             <!-- page content -->
         </div>
     </div>
-            <!-- Floating Facebook Button -->
-    <a href="https://web.facebook.com/1277apartments/?_rdc=1&_rdr" target="_blank" class="floating-fb-btn">
+
+    <!-- Floating Facebook Button -->
+    <!-- <a href="https://web.facebook.com/1277apartments/?_rdc=1&_rdr" target="_blank" class="floating-fb-btn">
         <img src="Assets/fbpc.png" alt="Facebook Icon">
-    </a>
+    </a> -->
+
 </body>
 
 </html>
