@@ -49,34 +49,44 @@ require_once "./includes/login/login_view.php";
                 <div class="info-right">
                     <h2>Amenities</h2>
                     <p class="amenities-text">
-                        <span class="amenity-icon">📚</span> Study Area<br>
-                        <span class="amenity-icon">💼</span> Reception<br>
-                        <span class="amenity-icon">🅿️</span> Parking<br>
-                        <span class="amenity-icon">📶</span> Wifi<br>
-                        <span class="amenity-icon">🧺</span> Laundromat<br>
-                        <span class="amenity-icon">
-                        <span class="amenity-icon">🛗</span> Elevator
+                        <span class="amenity-icon">📚</span> <span class="clickable-amenity" onclick="showPopup('Assets/studyareapc.jpg')">Study Area</span><br>
+                        <span class="amenity-icon">💼</span> <span class="clickable-amenity" onclick="showPopup('Assets/receptionpc.jpg')">Reception</span><br>
+                        <span class="amenity-icon">🅿️</span> <span class="clickable-amenity" onclick="showPopup('Assets/parkingpc.jpg')">Parking</span><br>
+                        <span class="amenity-icon">📶</span> <span class="clickable-amenity" onclick="showPopup('Assets/wifipc.jpg')">Wifi</span><br>
+                        <span class="amenity-icon">🧺</span> <span class="clickable-amenity" onclick="showPopup('Assets/laundromatpc.jpg')">Laundromat</span><br>
+                        <span class="amenity-icon">🛗</span> <span class="clickable-amenity" onclick="showPopup('Assets/elevatorpc.jpg')">Elevator</span><br>
                     </p>
 
-                    <button class="inquire-button">Inquire Now</button>
+                    <button class="reserve-button">Reserve Now</button>
                 </div>
             </div>
         </div>
 
+        <!-- Popup Image Container -->
+        <div id="popup" class="popup-container">
+            <span id="closeBtn" class="popup-close" onclick="closePopup()">X</span>
+            <img id="popupImage" src="" alt="Amenity Image" class="popup-image">
+        </div>
+
         <div class="rooms-section">
-            <!-- Studio Room 1 -->
+            <!-- Room 1 -->
             <div class="room">
                 <div class="room-images">
-                    <div class="image-card"><img src="Assets/room1pic1.png" alt="Studio Room 1 Image 1"></div>
-                    <div class="image-card"><img src="Assets/room1pic2.png" alt="Studio Room 1 Image 2"></div>
-                    <div class="image-card"><img src="Assets/room1pic3.png" alt="Studio Room 1 Image 3"></div>
-                    <div class="image-card"><img src="Assets/room1pic4.png" alt="Studio Room 1 Image 4"></div>
-                    <div class="image-card"><img src="Assets/room1pic5.png" alt="Studio Room 1 Image 5"></div>
-                    <div class="image-card"><img src="Assets/room1pic6.png" alt="Studio Room 1 Image 6"></div>
-                    <div class="image-card"><img src="Assets/room1pic7.png" alt="Studio Room 1 Image 7"></div>
-                    <div class="image-card"><img src="Assets/room1pic8.png" alt="Studio Room 1 Image 8"></div>
+                    <div class="large-image">
+                        <img id="room1-large" src="Assets/room1pic1.png" alt="Room 1 Large Image">
+                    </div>
+                    <div class="thumbnail-images">
+                        <img src="Assets/room1pic1.png" onclick="changeImage('room1-large', 'Assets/room1pic1.png')" alt="Room 1 Image 1">
+                        <img src="Assets/room1pic2.png" onclick="changeImage('room1-large', 'Assets/room1pic2.png')" alt="Room 1 Image 2">
+                        <img src="Assets/room1pic3.png" onclick="changeImage('room1-large', 'Assets/room1pic3.png')" alt="Room 1 Image 3">
+                        <img src="Assets/room1pic4.png" onclick="changeImage('room1-large', 'Assets/room1pic4.png')" alt="Room 1 Image 4">
+                        <img src="Assets/room1pic5.png" onclick="changeImage('room1-large', 'Assets/room1pic5.png')" alt="Room 1 Image 5">
+                        <img src="Assets/room1pic6.png" onclick="changeImage('room1-large', 'Assets/room1pic6.png')" alt="Room 1 Image 6">
+                        <img src="Assets/room1pic7.png" onclick="changeImage('room1-large', 'Assets/room1pic7.png')" alt="Room 1 Image 7">
+                        <img src="Assets/room1pic8.png" onclick="changeImage('room1-large', 'Assets/room1pic8.png')" alt="Room 1 Image 8">
+                    </div>
                 </div>
-                <button class="view-all-images" onclick="openFullscreen('studio-room-1')">View All Images</button>
+
                 <div class="room-info">
                     <h2>Studio Room 1</h2>
                     <p>STUDIO TYPE ROOM</p>
@@ -91,24 +101,29 @@ require_once "./includes/login/login_view.php";
                     <p>24-hour elevator service</p>
                     <p>CCTV surveillance camera on each floor</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
-                    <button class="inquire-button">Inquire Now</button>
+                    <button class="reserve-button">Reserve Now</button>
                 </div>
             </div>
 
-            <!-- Studio Room 2 -->
+            <!-- Room 2 -->
             <div class="room">
                 <div class="room-images">
-                    <div class="image-card"><img src="Assets/room2pic1.png" alt="Studio Room 2 Image 1"></div>
-                    <div class="image-card"><img src="Assets/room2pic2.png" alt="Studio Room 2 Image 2"></div>
-                    <div class="image-card"><img src="Assets/room2pic3.png" alt="Studio Room 2 Image 3"></div>
-                    <div class="image-card"><img src="Assets/room2pic4.png" alt="Studio Room 2 Image 4"></div>
-                    <div class="image-card"><img src="Assets/room2pic5.png" alt="Studio Room 2 Image 5"></div>
-                    <div class="image-card"><img src="Assets/room2pic6.png" alt="Studio Room 2 Image 6"></div>
-                    <div class="image-card"><img src="Assets/room2pic7.png" alt="Studio Room 2 Image 7"></div>
-                    <div class="image-card"><img src="Assets/room2pic8.png" alt="Studio Room 2 Image 8"></div>
-                    <div class="image-card"><img src="Assets/room2pic9.png" alt="Studio Room 2 Image 9"></div>
+                    <div class="large-image">
+                        <img id="room2-large" src="Assets/room2pic1.png" alt="Room 2 Large Image">
+                    </div>
+                    <div class="thumbnail-images">
+                        <img src="Assets/room2pic1.png" onclick="changeImage('room2-large', 'Assets/room2pic1.png')" alt="Room 2 Image 1">
+                        <img src="Assets/room2pic2.png" onclick="changeImage('room2-large', 'Assets/room2pic2.png')" alt="Room 2 Image 2">
+                        <img src="Assets/room2pic3.png" onclick="changeImage('room2-large', 'Assets/room2pic3.png')" alt="Room 2 Image 3">
+                        <img src="Assets/room2pic4.png" onclick="changeImage('room2-large', 'Assets/room2pic4.png')" alt="Room 2 Image 4">
+                        <img src="Assets/room2pic5.png" onclick="changeImage('room2-large', 'Assets/room2pic5.png')" alt="Room 2 Image 5">
+                        <img src="Assets/room2pic6.png" onclick="changeImage('room2-large', 'Assets/room2pic6.png')" alt="Room 2 Image 6">
+                        <img src="Assets/room2pic7.png" onclick="changeImage('room2-large', 'Assets/room2pic7.png')" alt="Room 2 Image 7">
+                        <img src="Assets/room2pic8.png" onclick="changeImage('room2-large', 'Assets/room2pic8.png')" alt="Room 2 Image 8">
+                        <img src="Assets/room2pic9.png" onclick="changeImage('room2-large', 'Assets/room2pic9.png')" alt="Room 2 Image 9">
+                    </div>
                 </div>
-                <button class="view-all-images" onclick="openFullscreen('studio-room-2')">View All Images</button>
+
                 <div class="room-info">
                     <h2>Studio Room 2</h2>
                     <p>STUDIO TYPE ROOM</p>
@@ -123,24 +138,30 @@ require_once "./includes/login/login_view.php";
                     <p>24-hour elevator service</p>
                     <p>CCTV surveillance camera on each floor</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
-                    <button class="inquire-button">Inquire Now</button>
+                    <button class="reserve-button">Reserve Now</button>
                 </div>
             </div>
 
-            <!-- Studio Room 3 -->
+            <!-- Room 3 -->
             <div class="room">
                 <div class="room-images">
-                    <div class="image-card"><img src="Assets/room3pic1.png" alt="Studio Room 3 Image 1"></div>
-                    <div class="image-card"><img src="Assets/room3pic2.png" alt="Studio Room 3 Image 2"></div>
-                    <div class="image-card"><img src="Assets/room3pic3.png" alt="Studio Room 3 Image 3"></div>
-                    <div class="image-card"><img src="Assets/room3pic4.png" alt="Studio Room 3 Image 4"></div>
-                    <div class="image-card"><img src="Assets/room3pic5.png" alt="Studio Room 3 Image 5"></div>
-                    <div class="image-card"><img src="Assets/room3pic6.png" alt="Studio Room 3 Image 6"></div>
-                    <div class="image-card"><img src="Assets/room3pic7.png" alt="Studio Room 3 Image 7"></div>
-                    <div class="image-card"><img src="Assets/room3pic8.png" alt="Studio Room 3 Image 8"></div>
-                    <div class="image-card"><img src="Assets/room3pic9.png" alt="Studio Room 3 Image 9"></div>
+                    <div class="large-image">
+                        <img id="room3-large" src="Assets/room3pic1.png" alt="Room 3 Large Image">
+                    </div>
+                    <div class="thumbnail-images">
+                        <img src="Assets/room3pic1.png" onclick="changeImage('room3-large', 'Assets/room3pic1.png')" alt="Room 3 Image 1">
+                        <img src="Assets/room3pic2.png" onclick="changeImage('room3-large', 'Assets/room3pic2.png')" alt="Room 3 Image 2">
+                        <img src="Assets/room3pic3.png" onclick="changeImage('room3-large', 'Assets/room3pic3.png')" alt="Room 3 Image 3">
+                        <img src="Assets/room3pic4.png" onclick="changeImage('room3-large', 'Assets/room3pic4.png')" alt="Room 3 Image 4">
+                        <img src="Assets/room3pic5.png" onclick="changeImage('room3-large', 'Assets/room3pic5.png')" alt="Room 3 Image 5">
+                        <img src="Assets/room3pic6.png" onclick="changeImage('room3-large', 'Assets/room3pic6.png')" alt="Room 3 Image 6">
+                        <img src="Assets/room3pic7.png" onclick="changeImage('room3-large', 'Assets/room3pic7.png')" alt="Room 3 Image 7">
+                        <img src="Assets/room3pic8.png" onclick="changeImage('room3-large', 'Assets/room3pic8.png')" alt="Room 3 Image 8">
+                        <img src="Assets/room3pic9.png" onclick="changeImage('room3-large', 'Assets/room3pic9.png')" alt="Room 3 Image 9">
+                        
+                    </div>
                 </div>
-                <button class="view-all-images" onclick="openFullscreen('studio-room-3')">View All Images</button>
+ 
                 <div class="room-info">
                     <h2>Studio Room 3</h2>
                     <p>STUDIO TYPE ROOM</p>
@@ -155,19 +176,24 @@ require_once "./includes/login/login_view.php";
                     <p>24-hour elevator service</p>
                     <p>CCTV surveillance camera on each floor</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
-                    <button class="inquire-button">Inquire Now</button>
+                    <button class="reserve-button">Reserve Now</button>
                 </div>
             </div>
 
-            <!-- Studio Room 4 -->
+            <!-- Room 4 -->
             <div class="room">
                 <div class="room-images">
-                    <div class="image-card"><img src="Assets/room4pic1.png" alt="Studio Room 4 Image 1"></div>
-                    <div class="image-card"><img src="Assets/room4pic2.png" alt="Studio Room 4 Image 2"></div>
-                    <div class="image-card"><img src="Assets/room4pic3.png" alt="Studio Room 4 Image 3"></div>
-                    <div class="image-card"><img src="Assets/room4pic4.png" alt="Studio Room 4 Image 4"></div>
+                    <div class="large-image">
+                        <img id="room4-large" src="Assets/room4pic1.png" alt="Room 4 Large Image">
+                    </div>
+                    <div class="thumbnail-images">
+                        <img src="Assets/room4pic1.png" onclick="changeImage('room4-large', 'Assets/room4pic1.png')" alt="Room 4 Image 1">
+                        <img src="Assets/room4pic2.png" onclick="changeImage('room4-large', 'Assets/room4pic2.png')" alt="Room 4 Image 2">
+                        <img src="Assets/room4pic3.png" onclick="changeImage('room4-large', 'Assets/room4pic3.png')" alt="Room 4 Image 3">
+                        <img src="Assets/room4pic4.png" onclick="changeImage('room4-large', 'Assets/room4pic4.png')" alt="Room 4 Image 4">
+                    </div>
                 </div>
-                <button class="view-all-images" onclick="openFullscreen('studio-room-4')">View All Images</button>
+
                 <div class="room-info">
                     <h2>Studio Room 4</h2>
                     <p>STUDIO TYPE ROOM</p>
@@ -182,16 +208,10 @@ require_once "./includes/login/login_view.php";
                     <p>24-hour elevator service</p>
                     <p>CCTV surveillance camera on each floor</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
-                    <button class="inquire-button">Inquire Now</button>
+                    <button class="reserve-button">Reserve Now</button>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Fullscreen view -->
-    <div class="fullscreen" id="fullscreen-view">
-        <div class="close" onclick="closeFullscreen()">×</div>
-        <div id="fullscreen-images"></div>
     </div>
 
     <script src="JavaScript/user_homepage.js"></script>

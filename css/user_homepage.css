@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-/* General styling */
+
 * {
   margin: 0;
   padding-top: 0;
@@ -10,14 +10,14 @@
   font-style: normal;
 }
 
-/* Container for the user homepage */
+
 .user_homepage_container1 {
   position: absolute;
   height: 100vh;
   width: 100%;
 }
 
-/* Image container styling */
+/* Image container */
 .container2 {
   margin: 100px 0 0 200px;
   width: 70%;
@@ -43,7 +43,7 @@
   width: 35%;  
 }
 
-/* Info section styling */
+/* Info section */
 .info-container {
   display: flex;
   justify-content: space-between;
@@ -85,7 +85,7 @@
   transition: background-color 0.3s ease;
 }
 
-.info-right .inquire-button:hover {
+.info-right .reserve-button:hover {
   background-color: #0056b3;
 }
 
@@ -113,6 +113,7 @@ h2 {
 .amenities-text {
   margin-top: 20px;
   line-height: 2;
+  cursor: pointer;
 }
 
 
@@ -126,126 +127,119 @@ h2 {
 
 .room {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  margin-bottom: 40px;
   padding: 20px;
+  border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .room-images {
+  display: flex;
+  flex-direction: column;
   flex: 1;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 10px;
-  max-height: 300px; 
-  overflow-y: auto;
 }
 
-.image-card {
-  position: relative;
+.large-image {
   width: 100%;
   padding-top: 100%; 
-  overflow: hidden;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+  position: relative;
 }
 
-.image-card img {
+.large-image img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; 
   border-radius: 8px;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.image-card:hover img {
-  transform: scale(1.1);
-}
-
-.view-all-images {
-  display: inline;
+.thumbnail-images {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
   margin-top: 10px;
-  font-size: 14px;
-  color: #007bff;
-  background: none;
-  border: none;
+}
+
+.thumbnail-images img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
   cursor: pointer;
-  text-decoration: underline;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  transition: border 0.3s;
 }
 
-.view-all-images:hover {
-  color: #0056b3;
+.thumbnail-images img:hover {
+  border-color: #007bff;
 }
 
-/* Fullscreen view styling */
-.fullscreen {
+.room-info {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.room-info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.room-info p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.reserve-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4da6ff; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.reserve-button:hover {
+  background-color: #3399ff; 
+  transform: translateY(-3px); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.popup-container {
   display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
   justify-content: center;
+  cursor: pointer;
   align-items: center;
-  z-index: 1000;
-  overflow: auto;
+  z-index: 999;
 }
 
-.fullscreen img {
-  max-width: 90%;
-  max-height: 90%;
-  margin: 10px;
-  border-radius: 10px;
+.popup-image {
+  position: absolute;
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: cover; 
 }
 
-.fullscreen .close {
+.popup-close {
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 30px;
   font-size: 30px;
   color: white;
   cursor: pointer;
-}
-
-/* Updated info section styling for room details */
-.room-info {
-  flex: 1;
-}
-
-.room-info h2 {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.room-info p {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 10px;
-}
-
-.inquire-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.inquire-button:hover {
-  background-color: #218838;
 }
