@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+<?php include('./templates/logged_in_header_admin.php'); ?>
     <h1>This is a sample page</h1>
 </body>
 </html>
