@@ -126,7 +126,7 @@ session_start();
         <?php include('./templates/chatbot.php'); ?>
     </div>
 
-    <!-- Floating Instagram Button -->
+
     <a href="https://www.instagram.com/lavanderplace_1277apartments?igsh=dzJwbnUxdDJwOGsx" target="_blank" class="floating-ig-btn">
         <img src="Assets/igpc.png" alt="Instagram Icon">
     </a>
