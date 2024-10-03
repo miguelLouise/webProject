@@ -63,7 +63,7 @@ include "./middleware/admin_middleware.php";
             <p>0</p>
         </a>         
     </div>
-=======
+
     <main class="main-container">
         <div class="main-title">
           <h2>DASHBOARD</h2>
