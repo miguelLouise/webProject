@@ -21,43 +21,43 @@ include "./middleware/admin_middleware.php";
 
     <!-- page content -->
     <div class="admin_dashboard_container2">
-        <a href="samplePage.php" class="dashboard-box box1">
+        <a href="billing_management_page.php" class="dashboard-box box1">
             <h3>Total Tenants</h3>
             <p>0</p>    
         </a>
 
-        <a href="samplePage.php" class="dashboard-box box2">
+        <a href="billing_management_page.php" class="dashboard-box box2">
         <h3>Total Rooms</h3>
             <p>0</p> 
         </a>
 
-        <a href="samplePage.php"class="dashboard-box box3">
+        <a href="billing_management_page.php"class="dashboard-box box3">
         <h3>Total Beds</h3>
             <p>0</p>
         </a>
 
-        <a href="samplePage.php"class="dashboard-box box4">
+        <a href="billing_management_page.php"class="dashboard-box box4">
             <h3>Unpaid Invoices</h3>
             <p>0</p>
         </a>
 
-        <a href="samplePage.php" class="dashboard-box box5">
+        <a href="billing_management_page.php" class="dashboard-box box5">
             <h3>Total Balance Amount</h3>
             <p>0</p>
         </a>
         
-        <a href="samplePage.php" class="dashboard-box box6">
+        <a href="billing_management_page.php" class="dashboard-box box6">
             <h3>Total Paid Amount</h3>
             <p>0</p>
         </a>
 
         <!-- Dynamic month names -->
-        <a href="samplePage.php" class="dashboard-box box7">
+        <a href="billing_management_page.php" class="dashboard-box box7">
             <h3><?php echo date('F'); ?> Income</h3>
             <p>0</p>
         </a>
 
-        <a href="samplePage.php" class="dashboard-box box8">
+        <a href="billing_management_page.php" class="dashboard-box box8">
             <h3><?php echo date('F'); ?> Expense</h3>
             <p>0</p>
         </a>         
