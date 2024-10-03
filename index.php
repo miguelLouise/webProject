@@ -10,7 +10,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dormlink</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css//index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
@@ -126,7 +126,7 @@ session_start();
         <?php include('./templates/chatbot.php'); ?>
     </div>
 
-    <!-- Floating Instagram Button -->
+
     <a href="https://www.instagram.com/lavanderplace_1277apartments?igsh=dzJwbnUxdDJwOGsx" target="_blank" class="floating-ig-btn">
         <img src="Assets/igpc.png" alt="Instagram Icon">
     </a>
