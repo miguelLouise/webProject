@@ -37,7 +37,7 @@ require_once 'includes/login/login_view.php';
             <div class="side_nav_con2">
                 <ul>
                 <li><a href="../user_homepage.php"><button class="nav_btn"><img src="../Assets/home.png" class="nav_icon">Home</button></a></li>
-                <li><a href="#maintenencemanagement"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Maintenance Request</button></a></li>
+                <li><a href="../maintenance_request_page.php"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Maintenance Request</button></a></li>
                 <li><a href="#userwallet"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">User Wallet</button></a></li>
                 <li><a href="#inbox"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Inbox</button></a></li>
                 <li><a href="#roomAvailability"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Room Availability</button></a></li>
