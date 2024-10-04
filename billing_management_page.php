@@ -15,5 +15,11 @@ include "./middleware/admin_middleware.php";
     <!-- header -->
     <?php include('./templates/logged_in_header_admin.php'); ?>
     <!-- header -->
+
+    <!-- page content -->
+    <div class="billing_management_container1">
+        page content
+    </div>
 </body>
+
 </html>

@@ -11,8 +11,9 @@
 }
 
 .maintenance_req_container1{
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    padding-top: 70px;
+  position: absolute;
+  height: 200vh;
+  width: 100%;
+  padding-top: 70px;
+  background-color: crimson;
 }

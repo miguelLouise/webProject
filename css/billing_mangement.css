@@ -6,3 +6,10 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+
+.billing_management_container1{
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  padding-top: 70px;
+}
