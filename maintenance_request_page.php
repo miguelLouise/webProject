@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maintenance Request</title>
-    <link rel="stylesheet" href="css/maintenance_request.css">
+    <link rel="stylesheet" href="css//maintenance_request.css">
 </head>
 <body>
     <!-- header -->
@@ -13,7 +13,7 @@
 
     <!-- page content -->
     <div class="maintenance_req_container1">
-        page content
+        maintenance request
     </div>
 </body>
 </html>
