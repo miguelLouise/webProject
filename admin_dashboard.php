@@ -21,7 +21,7 @@ include "./middleware/admin_middleware.php";
     </div>
 
     <!-- page content -->
-<<<<<<< HEAD
+    <!-- HEAD -->
     <div class="admin_dashboard_container2">
         <a href="billing_management_page.php" class="dashboard-box box1">
             <h3>Total Tenants</h3>

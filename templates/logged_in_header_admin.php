@@ -37,11 +37,11 @@ require_once 'includes/login/login_view.php';
             <div class="side_nav_con2">
                 <ul>
                 <li><a href="../admin_dashboard.php"><button class="nav_btn"><img src="../Assets/home.png" class="nav_icon">Home</button></a></li>
-                <li><a href="../billing_management_page.php"><button class="nav_btn"><img src="../Assets/wallet.png" class="nav_icon">Payment Record</button></a></li>
+                <li><a href="../billing_management_page.php"><button class="nav_btn"><img src="../Assets/wallet.png" class="nav_icon">Billing</button></a></li>
                 <li><a href="#maintenencemanagement"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Maintenance Management</button></a></li>
-                <li><a href="#tenantrecord"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Tenant Record</button></a></li>
-                <li><a href="#roomavailability"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Room Availability and Occupancy</button></a></li>
-                <li><a href="#messages"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Messages</button></a></li>
+                <li><a href="../inbox_page_admin.php"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Inbox</button></a></li>
+                <li><a href="../room_management_page_admin.php"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Room Management</button></a></li>
+                <li><a href="#dataanalytics"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Data Analytics</button></a></li>
                 <li><a href="#accountmanagement"><button class="nav_btn"><img src="../Assets/account.png" class="nav_icon">Account management</button></a></li>
 
                 <li>
