@@ -10,10 +10,9 @@
   font-style: normal;
 }
 
-.maintenance_req_container1{
+.user_acc_management_container1{
   position: absolute;
   height: 200vh;
   width: 100%;
   padding-top: 70px;
-  background-color: crimson;
 }

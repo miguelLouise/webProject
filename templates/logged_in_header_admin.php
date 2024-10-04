@@ -8,7 +8,7 @@ require_once 'includes/login/login_view.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <title>Document</title> -->
-    <link rel="stylesheet" href="css/logged_in_header_admin.css">
+    <link rel="stylesheet" href="css//logged_in_header_admin.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 </head>
@@ -39,6 +39,9 @@ require_once 'includes/login/login_view.php';
                 <li><a href="../admin_dashboard.php"><button class="nav_btn"><img src="../Assets/home.png" class="nav_icon">Home</button></a></li>
                 <li><a href="../billing_management_page.php"><button class="nav_btn"><img src="../Assets/wallet.png" class="nav_icon">Payment Record</button></a></li>
                 <li><a href="#maintenencemanagement"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Maintenance Management</button></a></li>
+                <li><a href="#tenantrecord"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Tenant Record</button></a></li>
+                <li><a href="#roomavailability"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Room Availability and Occupancy</button></a></li>
+                <li><a href="#messages"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Messages</button></a></li>
                 <li><a href="#accountmanagement"><button class="nav_btn"><img src="../Assets/account.png" class="nav_icon">Account management</button></a></li>
 
                 <li>

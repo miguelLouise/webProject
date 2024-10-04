@@ -8,10 +8,13 @@
 </head>
 
 <body>
-    <div class="userAccMngt_div1">
-        <!-- header -->
-        <?php include('./templates/logged_in_header.php'); ?>
-        <!-- header -->
+    <!-- header -->
+    <?php include('./templates/logged_in_header.php'); ?>
+    <!-- header -->
+    
+    <!-- page content -->
+    <div class="user_acc_management_container1">
+        
     </div>
 
 </body>
