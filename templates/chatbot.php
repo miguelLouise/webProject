@@ -14,7 +14,6 @@
         <div class="chatbot_div">
             <div class="chatbot_header">
                 chatbot header
-
             </div>
         </div>
     </div>
