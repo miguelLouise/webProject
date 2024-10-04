@@ -94,14 +94,12 @@ a {
         top: 0px;
         right: 0;
         width: 100%;
-        /* overflow-x: auto; */
         transition: 0.5s ease-in-out;
-        /* transition-property: top; */
         z-index: 3;
     }
 
     #signup_btn, #login_btn{
-        /* display: none; */
+
     }
 
     #menu_btn{
