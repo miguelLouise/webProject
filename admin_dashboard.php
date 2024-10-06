@@ -130,7 +130,7 @@ include "./middleware/admin_middleware.php";
         <!-- ApexCharts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
         <!-- Custom JS -->
-        <script src="JavaScript/admin_dashboard.js"></script>
+        <script src="javascript/admin_dashboard.js"></script>
 >>>>>>> e3c9b483a97e5f8f8c6691a0e753b37879a9d109
 </body>
 

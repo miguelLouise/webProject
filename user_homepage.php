@@ -214,7 +214,7 @@ include "./middleware/user_middleware.php";
         </div>
     </div>
 
-    <script src="JavaScript/user_homepage.js"></script>
+    <script src="javascript/user_homepage.js"></script>
 
 </body>
 

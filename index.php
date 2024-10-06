@@ -136,7 +136,7 @@ session_start();
         <img src="Assets/fbpc.png" alt="Facebook Icon">
     </a>
 
-    <script src="JavaScript/index.js">
+    <script src="javascript/index.js">
         
     </script>
 </body>
