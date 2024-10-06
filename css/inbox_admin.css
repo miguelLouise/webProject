@@ -7,9 +7,179 @@
   font-family: "Roboto", sans-serif;
 }
 
-.inbox_admin_container1{
-  position: absolute;
-  height: 100vh;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.maintenance_req_container1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 10; 
+  background-color: white;
+}
+
+/* Header */
+header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  margin-top: 80px;
+}
+
+.announcement-bar {
+  background-color: #4caf50;
+  color: white;
+  padding: 5px;
+  text-align: center;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.header-content .logo img {
+  height: 30px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input[type="search"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex: 1;
+}
+
+.search-bar img {
+  margin-left: 10px;
+  height: 20px;
+}
+
+.notifications img {
+  height: 20px;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex: 1;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.new-message-btn {
+  display: flex;
+  align-items: center;
+  background-color: #7d58c9;
+  color: white;
+  padding: 10px;
   width: 100%;
-  padding-top: 70px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.new-message-btn .material-icons {
+  margin-right: 10px;
+}
+
+.menu ul {
+  list-style-type: none;
+}
+
+.menu ul li {
+  padding: 10px;
+  cursor: pointer;
+  color: #555;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  display: flex;
+  padding: 20px;
+}
+
+.message-section {
+  display: none;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.message-section.active {
+  display: block;
+}
+
+.message-list .message-item {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.message-item:hover {
+  background-color: #f1f1f1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin: 10px 0 5px;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.send-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.send-btn:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+  }
+
+  .sidebar {
+      width: 100%;
+  }
+
+  .content {
+      padding: 10px;
+  }
 }
