@@ -7,9 +7,98 @@
   font-family: "Roboto", sans-serif;
 }
 
-.payment_page_admin_container1{
-  position: absolute;
-  height: 100vh;
+.payment_admin_container1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 10; 
+  background-color: white;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f4f4f4;
+  margin-top: 60px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  margin-top: 100px;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+input[type="text"], input[type="email"], input[type="number"], input[type="date"] {
   width: 100%;
-  padding-top: 70px;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"], button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover, button:hover {
+  background-color: #45a049;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.edit-btn {
+  background-color: #FFC107; 
+  color: white; 
+  border: none;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.delete-btn {
+  background-color: #f44336; 
+  color: white; 
+  border: none;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
 }
