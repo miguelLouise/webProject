@@ -32,9 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
 
-        // ynnehjestacio150@gmail.com (Hahahaha$00) USER - 0
-        // miguellouiseestacio@gmail.com (VinceLeomo$008) ADMIN - 1
-
         // adminemail@sample.com (passwordAdmin$00) - 1
 
         //louisemiguel1999@gmail.com (Password@00)

@@ -46,7 +46,7 @@ input[type="text"], input[type="email"], input[type="number"], input[type="date"
   border: 1px solid #ccc;
 }
 
-input[type="submit"], button {
+input[type="submit"], #add_record_btn {
   background-color: #4CAF50;
   color: white;
   padding: 12px 20px;

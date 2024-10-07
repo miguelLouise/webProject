@@ -57,7 +57,7 @@ include "./middleware/user_middleware.php";
                         <span class="amenity-icon">🛗</span> <span class="clickable-amenity" onclick="showPopup('Assets/elevatorpc.jpg')">Elevator</span><br>
                     </p>
 
-                    <button class="reserve-button">Reserve Now</button>
+                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a>
                 </div>
             </div>
         </div>

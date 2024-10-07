@@ -16,7 +16,7 @@ include "./middleware/admin_middleware.php";
 
     <div class="inbox_page_container1">
         <!-- header -->
-        <?php include('./templates/logged_in_header.php'); ?>
+        <?php include('./templates/logged_in_header_admin.php'); ?>
         <!-- header -->
     </div>
 

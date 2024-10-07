@@ -1,8 +1,8 @@
 <?php
 require_once './includes/dbh.inc.php';
 require_once './includes/room_management/room_management_view.php';
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
