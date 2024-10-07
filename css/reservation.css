@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.reservation_container1{
+  position: absolute;
+  width: 100%;
+  padding-top: 70px;
+}
+
+.reservation_container2{
+    height: 250px;
+    margin: 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+ul li{
+    list-style: none;
+    /* font-size: 14px; */
+}
+
+.reservation_container3{
+    padding: 20px;
+    position: relative;
+    height: 100%;
+}
+
+.reservation_container4{
+    position: relative;
+    width: 90%;
+    padding: 10px;
+    height: 100%;
+    
+}
+
+.reservation_container5{
+    width: 10%;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    height: calc(100% - 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#reserve_btn, #inquire_btn{
+    width: 130px;
+    height: 40px;
+    margin-bottom: 20px;
+}

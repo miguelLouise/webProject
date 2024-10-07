@@ -15,7 +15,7 @@ require_once "./includes/login/login_view.php";
 <body>
     <div class="payment_admin_container1">
         <!-- header -->
-        <?php include('./templates/logged_in_header.php'); ?>
+        <?php include('./templates/logged_in_header_admin.php'); ?>
         <!-- header -->
     </div>
 
@@ -43,7 +43,7 @@ require_once "./includes/login/login_view.php";
             <option value="Unpaid">Unpaid</option>
         </select>
         <br>
-        <input type="submit" value="Add Record">
+        <input type="submit" value="Add Record" id="add_record_btn">
         </form>
 
         <table id="paymentTable">
