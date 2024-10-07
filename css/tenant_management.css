@@ -7,9 +7,152 @@
   font-family: "Roboto", sans-serif;
 }
 
-.tenant_management_container1{
-  position: absolute;
-  height: 100vh;
+.tenant_management_container1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 10; 
+  background-color: white;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 80px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  flex: 1;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.form-group input, select {
+  flex: 2;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.form-group input[type="file"] {
+  flex: unset;
+}
+
+.form-group .radio-group {
+  flex: 2;
+  display: flex;
+  align-items: center;
+}
+
+.form-group .radio-group label {
+  margin-right: 10px;
+}
+
+.form-group .radio-group input {
+  margin-right: 5px;
+}
+
+.photo-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.photo-actions button {
+  background-color: #0080ff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.photo-actions button:hover {
+  background-color: #0056b3;
+}
+
+.submit-btn {
   width: 100%;
-  padding-top: 70px;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-group button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-group .edit-btn {
+  background-color: #ffc107;
+  color: white;
+}
+
+.btn-group .edit-btn:hover {
+  background-color: #e0a800;
+}
+
+.btn-group .delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-group .delete-btn:hover {
+  background-color: #c82333;
 }
