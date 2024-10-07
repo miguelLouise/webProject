@@ -47,15 +47,27 @@ input[type="text"], input[type="email"], input[type="number"], input[type="date"
 }
 
 input[type="submit"], #add_record_btn {
-  background-color: #4CAF50;
+  background-color: #007BFF; 
   color: white;
   padding: 12px 20px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-input[type="submit"]:hover, button:hover {
-  background-color: #45a049;
+input[type="submit"]:hover, #add_record_btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+input[type="submit"]:active, #add_record_btn:active {
+  background-color: #004085; 
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
 }
 
 table {
