@@ -18,34 +18,37 @@ require_once './includes/room_management/room_management_view.php';
 
     <!-- page content -->
     <div class="reservation_container1">
+        <form action="./includes/room_management/room_management_reserve.php" method="post" novalidate>
         <?php 
         $room_data = showRoomTypes($dbconn);
         foreach ($room_data as $rooms) {
-            echo '<ul>
-                    <li>  
-                        <div class="reservation_container2">
-                            <div class="reservation_container3">
-                                
+           echo '<div class="reservation_container2">
+                            <div class="reservation_container3">   
                                 <div class="reservation_container4">
-                                <ul>
+                                <ul>     
                                 <li>'.$rooms['room_type'].'</li>
                                 <li>'.$rooms['max_capacity'].'</li>
                                 <li>'.$rooms['price'].'</li>
                                 <li>'.$rooms['room_description'].'</li>
                                 </ul>  
-                                </div>   
-                                <div class="reservation_container5">
+                                <input type="hidden" name="selected_room" value="'.$rooms['room_type'].'">
+                                </div>      
+                                <div class="reservation_container5">                                                             
                                  <button id="reserve_btn">Reserve</button>
                                  <button id="inquire_btn">Inquire</button>          
                                  </div>
-                            </div>
-                            
-                        </div>
-                        
-                    </li>
-                  </ul>';
-        }
-        ?>
+                            </div>                   
+                        </div>';
+        
+                    };
+        ?> 
+        </form>
+        <!-- <input type="hidden" name="selected_room" value="'.$rooms['price'].'">      -->
+        <!-- <input type="submit" value="Reserve" id="reserve_btn">  -->
+        <!-- <button id="reserve_btn" type="submit">Reserve</button>   -->
+        <!-- <div class="reservation_container6">
+            <div class="reservation_container7"></div>
+        </div> -->
         
         
         
