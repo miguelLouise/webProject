@@ -17,70 +17,25 @@
     height: 225px;
     margin: 20px 20px;
     border-radius: 10px;
+    padding: 20px;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    background-color: brown;
+}
+
+.reservation_container3{
+    background-color: aqua;
+}
+
+.reservation_container4{
+    background-color: rgb(18, 149, 69);
 }
 
 ul li{
     list-style: none;
-    /* font-size: 14px; */
 }
 
-.reservation_container3{
-    padding: 20px;
-    position: relative;
-    height: 100%;
-}
-
-.reservation_container4{
-    position: relative;
-    width: 90%;
-    padding: 10px;
-    height: 100%;
-}
-
-.reservation_container5{
-    width: 10%;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    height: calc(100% - 40px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#reserve_btn, #inquire_btn{
-    width: 130px;
-    height: 40px;
-    margin-bottom: 20px;
-    border: none;
-    background-color: #E0D4FC;
-}
-
-#reserve_btn:hover, #inquire_btn:hover{
-    background-color: #42326E;
-    color: white;
-}
-
-.reservation_container6{
-    /* z-index: 10; */
-    background: rgba(0,0,0,0.6);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    position: fixed;
-    top: 0;
-    padding-top: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.reservation_container7{
-    background-color: #E0D4FC;
-    height: 400px;
-    width: 700px;
-    padding: 20px;
-    position: relative;
+@media(max-width: 600px) {
+    .reservation_container2 {
+        height: 300px;
+    }
 }
