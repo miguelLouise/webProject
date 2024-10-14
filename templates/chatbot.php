@@ -7,7 +7,7 @@
     <title>Document</title>
 <!-- <<<<<<< HEAD -->
     <link rel="stylesheet" href="../css/chatbot.css">
-=======
+<!-- ======= -->
     <link rel="stylesheet" href="css/chatbot.css">
 <!-- >>>>>>> b0cc85137c6d46428583eb24896a9ebcf38175d8 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
