@@ -212,6 +212,9 @@ include "./middleware/user_middleware.php";
                 </div>
             </div>
         </div>
+        <!-- Chatbot -->
+        <?php include('./templates/chatbot.php'); ?>
+        <!-- Chatbot -->
     </div>
 
     <script src="javascript/user_homepage.js"></script>

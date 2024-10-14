@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="..//css//chatbot.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
@@ -26,7 +26,7 @@
             <input type="text" id="user-input" placeholder="Type a message..." onkeypress="if(event.key === 'Enter') sendMessage()">
             <button onclick="sendMessage()">Send</button>
         </div>
-        <div class="close_icon" onclick="toggleChat()">✖️</div> <
+        <div class="close_icon" onclick="toggleChat()">✖️</div>
     </div>
 
     <script src="javascript/chatbot.js"></script>

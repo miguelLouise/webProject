@@ -9,7 +9,7 @@ require_once './includes/room_management/room_management_view.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservation</title>
-    <link rel="stylesheet" href="css///reservation.css">
+    <link rel="stylesheet" href="css/reservation.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 </head>
 <body>
@@ -24,7 +24,8 @@ require_once './includes/room_management/room_management_view.php';
         <?php
         echo '<form action="./includes/room_management/room_management_reserve.php" method="POST" novalidate>';
         $roomTypes = showRoomTypes($dbconn);
-  
+
+        echo '<div class="reservation_container3"></div>';
         // room type
         echo '<label for="room_typ">ROOM TYPE</label>';
         echo '<select name="room_typ" id="room_typ">';
@@ -45,10 +46,9 @@ require_once './includes/room_management/room_management_view.php';
         echo '<option value="" selected disabled hidden>Room Number</option>';
         echo '</select>';
 
-
-        echo '<div class="reservation_container4">                                                                                         
-                      <button id="reserve_btn" type="submit">Reserve</button>        
-                    </div>';
+        echo '<div class="reservation_container4">';                                                                              
+        echo '<button id="reserve_btn" type="submit">Reserve</button>';       
+        echo '</div>';
         echo '</form>';
         ?>
        </div>
@@ -57,6 +57,19 @@ require_once './includes/room_management/room_management_view.php';
 
     
     <script type="text/javascript">
+        // $(document).ready(function(){   
+        //     $(document).on("change", "#room_typ", function() {
+        //         var getRoomType = $(this).val();
+        //         $.ajax({
+        //             type: 'POST',
+        //             url: 'getFloorNumberAjax.php',
+        //             data: {roomTyp:getRoomType},
+        //             success: function(data){
+        //                 console.log(getRoomType);                  
+        //             }  
+        //         }); 
+        //     });
+
         $(document).ready(function(){   
             $(document).on("change", "#room_typ", function() {
                 var getRoomType = $(this).val();
@@ -65,7 +78,8 @@ require_once './includes/room_management/room_management_view.php';
                     url: 'getFloorNumberAjax.php',
                     data: {roomTyp:getRoomType},
                     success: function(data){
-                        $('#flr_num').html(data);                    
+                        $('#flr_num').html(data);      
+                        console.log(getRoomType);                   
                     }  
                 }); 
             });

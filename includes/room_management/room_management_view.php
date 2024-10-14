@@ -26,3 +26,9 @@ function showRooms(object $pdo, $room_type, $floor_num){
     $result =  getRooms($pdo, $room_type, $floor_num);
     return $result;
 }
+
+function showRoomDesc(object $pdo, $room_type){
+    require_once './includes/room_management/room_management_model.php';
+    $result =  getRoomDesc($pdo, $room_type);
+    return $result;
+}
