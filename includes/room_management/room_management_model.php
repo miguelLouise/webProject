@@ -19,9 +19,10 @@ function getRoomTypes(object $pdo){
     return $result;
 }
 
-function getTblData(object $pdo){
-    $query = "SELECT * FROM rooms";
+function getFloors(object $pdo, $room_type){
+    $query = "SELECT DISTINCT floor_number FROM rooms WHERE room_type = :room_type;";
     $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":room_type", $room_type, PDO::PARAM_INT);
     $stmt->execute();
 
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -29,7 +30,7 @@ function getTblData(object $pdo){
 }
 
 function query1(object $pdo, $room_type){
-    $query = "SELECT * FROM rooms WHERE room_type = :room_type;";
+    $query = "SELECT * FROM rooms WHERE room_type = :room_type AND floor_number = 5;";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":room_type", $room_type);
     $stmt->execute();
@@ -38,7 +39,7 @@ function query1(object $pdo, $room_type){
     return $result;
 }
 
-function query2(object $pdo, $room_type, $floor_num){
+function getRooms(object $pdo, $room_type, $floor_num){
     $query = "SELECT * FROM rooms WHERE room_type = :room_type AND floor_number = :floor_number;";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":room_type", $room_type, PDO::PARAM_INT);

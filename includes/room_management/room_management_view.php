@@ -15,20 +15,14 @@ function showRoomTypes(object $pdo)
     return $result;
 }
 
-function show_tbl_data(object $pdo){
+function showFloors(object $pdo, $room_type){
     require_once './includes/room_management/room_management_model.php';
-    $result = getTblData($pdo);
+    $result =  getFloors($pdo, $room_type);
     return $result;
 }
 
-function query01(object $pdo, $room_type){
+function showRooms(object $pdo, $room_type, $floor_num){
     require_once './includes/room_management/room_management_model.php';
-    $result = query1($pdo, $room_type);
-    return $result;
-}
-
-function query02(object $pdo, $room_type, $floor_num){
-    require_once './includes/room_management/room_management_model.php';
-    $result = query2($pdo, $room_type, $floor_num);
+    $result =  getRooms($pdo, $room_type, $floor_num);
     return $result;
 }

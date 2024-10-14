@@ -1,46 +1,22 @@
-<?php
-require_once './includes/dbh.inc.php';
-require_once './includes/room_management/room_management_view.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/aaa.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 </head>
 <body>
-  <form method="post" >
-
-<label for="floor">floor number:</label>
-<select name="floor" id="floor" oninput="this.form.submit();">
-<option value="0" selected disabled hidden>floor number</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-</select>
-  </form>
-  <!-- selected disabled hidden -->
-<?php 
-// $roomTypes = showRoomTypes($dbconn);
-// $roomTyp = $_POST["roomType"];
-$flr = $_POST["floor"];
-echo $flr;
-// $aaa = query02($dbconn, $roomTyp, $flr);
-// print_r($aaa);
-// echo '<br>';
-
-// echo '<label for="roomType">room type:</label>';
-// echo '<select name="roomType" id="roomType" >';
-// echo '<option value="1">1</option>';
-// echo '</select>';
- ?>
-
-
-</select>
+<div id="selectContainer">
+    <?php
+    $data[] = ["apple", "banana", "orange"];
+    foreach ($data as $item) {
+        echo '<select id="select_' . $item . '" onchange="updateValue(this)">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+        </select>';
+    }
+    ?>
+</div>
 </body>
 </html>
-

@@ -9,7 +9,8 @@ require_once './includes/room_management/room_management_view.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservation</title>
-    <link rel="stylesheet" href="css//reservation.css">
+    <link rel="stylesheet" href="css///reservation.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 </head>
 <body>
     <!-- header -->
@@ -18,55 +19,72 @@ require_once './includes/room_management/room_management_view.php';
 
     <!-- page content -->
     <div class="reservation_container1">
-
-    <?php 
-        $room_data = showRoomTypes($dbconn);
-        foreach ($room_data as $rooms) {
-            // $room_type[] = $rooms['room_type'];
-            echo '<form action="./includes/room_management/room_management_reserve.php" method="post" novalidate>
-                  <div class="reservation_container2">
-                      <div class="reservation_container3">
-                      <ul>
-                      <li>'.$rooms['room_type'].'</li>
-                      <input type="hidden" name="selected_room[]" value="'.$rooms['room_type'].'">
-                      <li>'.$rooms['max_capacity'].'</li>
-                      <input type="hidden" name="selected_room[]" value="'.$rooms['max_capacity'].'">
-                      <li>'.$rooms['price'].'</li>
-                      <input type="hidden" name="selected_room[]" value="'.$rooms['price'].'">
-                      </ul>';
-                      
-                      echo '<label for="floorName">Floor Number:</label>';
-                      echo '<select name="floorName" oninput="this.data.submit();">';
-                      echo '<option value="22" selected disabled hidden>floor number</option>';
-                      echo '<option value="1">1</option>'; 
-                      echo '<option value="2">2</option>'; 
-                      echo '<option value="3">3</option>'; 
-                      echo '<option value="4">4</option>'; 
-                      echo  '</select>';
-
-
-                    //   $output = query02($dbconn, $rooms['room_type'], $floor_num);
-
-                    //   print_r($output);
-                    //   $rooms = query01($dbconn, $rooms['room_type']);     
-                    //   echo '<label for="selected_room[]">Room Number:</label>';     
-                    //   echo '<select name="selected_room[]">';
-                    //   foreach ($rooms as $room_input) {
-                    //   echo '<option value="'.$room_input['room_number'].'">'.$room_input['room_number'].'</option>';  
-                    //   }  
-                    //   echo  '</select>';
-                      echo '</div>'; 
-
-                      echo '<div class="reservation_container4">                                                                                         
-                        <button id="reserve_btn" type="submit">Reserve</button>        
-                      </div>
-                      </div>
-                  </form>';
-        };     
-        ?>
-
+       <div class="reservation_container2">
         
+        <?php
+        echo '<form action="./includes/room_management/room_management_reserve.php" method="POST" novalidate>';
+        $roomTypes = showRoomTypes($dbconn);
+  
+        // room type
+        echo '<label for="room_typ">ROOM TYPE</label>';
+        echo '<select name="room_typ" id="room_typ">';
+        echo '<option value="" selected disabled hidden>Room number</option>';
+        foreach ($roomTypes as $room_types) {
+           echo '<option value="'.$room_types['room_type'].'">'.$room_types['room_type'].'</option>';   
+        }
+        echo '</select>';
+
+        // floor number
+        echo '<label for="flr_num">FLOOR NUMBER</label>';
+        echo '<select name="flr_num" id="flr_num">';
+        echo '<option value="" selected disabled hidden>Floor Number</option>';
+        echo '</select>';
+
+        echo '<label for="room_num">ROOM NUMBER</label>';
+        echo '<select name="room_num" id="room_num">';
+        echo '<option value="" selected disabled hidden>Room Number</option>';
+        echo '</select>';
+
+
+        echo '<div class="reservation_container4">                                                                                         
+                      <button id="reserve_btn" type="submit">Reserve</button>        
+                    </div>';
+        echo '</form>';
+        ?>
+       </div>
+       
     </div>
+
+    
+    <script type="text/javascript">
+        $(document).ready(function(){   
+            $(document).on("change", "#room_typ", function() {
+                var getRoomType = $(this).val();
+                $.ajax({
+                    type: 'POST',
+                    url: 'getFloorNumberAjax.php',
+                    data: {roomTyp:getRoomType},
+                    success: function(data){
+                        $('#flr_num').html(data);                    
+                    }  
+                }); 
+            });
+
+            $(document).on("change", "#flr_num", function() {
+                var getFloor = $(this).val().split(',');
+                console.log(getFloor[1]);
+                $.ajax({
+                    type: 'POST',
+                    url: 'getRoomNumberAjax.php',
+                    data: {room_typ:getFloor[0], flr_num:getFloor[1]},
+                    success: function(data){
+                        $('#room_num').html(data);
+                    }
+                });
+            });
+        });
+    </script>
+
+  
 </body>
 </html>
-
