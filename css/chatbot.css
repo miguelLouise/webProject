@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
 * {
     margin: 0;
@@ -46,8 +47,8 @@ body {
     display: none;
     flex-direction: column;
     justify-content: flex-end;
-    width: 100%;
-    margin-top: 120px;
+    width: 90%;
+    margin: 0 auto;
     max-width: 400px;
     height: 500px;
     border: 1px solid #ddd;
@@ -55,9 +56,24 @@ body {
     background-color: #f1f1f1;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: fixed;
-    right: 25px;
-    z-index: 1000; 
-    bottom: 80px; 
+    right: 5%; 
+    bottom: 80px;
+    z-index: 1000;
+}
+
+.chat-header {
+    background-color: #0084ff;
+    padding: 15px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.chat-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    margin: 0;
+    font-size: 18px;
 }
 
 /* Messages container */
@@ -91,6 +107,7 @@ body {
 .user-message {
     justify-content: flex-end;
 }
+
 
 .user-message p {
     background-color: #0084ff;
