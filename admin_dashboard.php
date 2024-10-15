@@ -25,17 +25,17 @@ include "./middleware/admin_middleware.php";
     <div class="admin_dashboard_container2">
         <a href="billing_management_page.php" class="dashboard-box box1">
             <h3>Total Tenants</h3>
-            <p>0</p>    
+            <p>0</p>
         </a>
 
         <a href="billing_management_page.php" class="dashboard-box box2">
-        <h3>Total Rooms</h3>
-            <p>0</p> 
+            <h3>Total Rooms</h3>
+            <p>69</p>
         </a>
 
         <a href="billing_management_page.php"class="dashboard-box box3">
-        <h3>Total Beds</h3>
-            <p>0</p>
+            <h3>Total Beds</h3>
+            <p>242</p>
         </a>
 
         <a href="billing_management_page.php"class="dashboard-box box4">
@@ -72,44 +72,68 @@ include "./middleware/admin_middleware.php";
 
         <div class="admin_dashboard_container2">
             <a href="billing_management_page.php" class="dashboard-box box1">
+                <img src="Assets/box1icon.png" alt="Total Tenants Icon" class="box-icon">
+                <div class="box-content">
                 <h3>Total Tenants</h3>
-                <p>0</p>    
+                <p>0</p>
+                </div>  
             </a>
 
             <a href="billing_management_page.php" class="dashboard-box box2">
-            <h3>Total Rooms</h3>
-                <p>0</p> 
+                <img src="Assets/box2icon.png" alt="Total Rooms Icon" class="box-icon">
+                <div class="box-content">
+                <h3>Total Rooms</h3>
+                <p>69</p> 
+                </div>  
             </a>
 
             <a href="billing_management_page.php"class="dashboard-box box3">
-            <h3>Total Beds</h3>
-                <p>0</p>
+                <img src="Assets/box3icon.png" alt="Total Beds Icon" class="box-icon">
+                <div class="box-content">
+                <h3>Total Beds</h3>
+                <p>242</p>
+                </div> 
             </a>
 
             <a href="billing_management_page.php"class="dashboard-box box4">
+                <img src="Assets/box4icon.png" alt="Unpaid Icon" class="box-icon">
+                <div class="box-content">  
                 <h3>Unpaid Invoices</h3>
                 <p>0</p>
+                </div>
             </a>
 
             <a href="billing_management_page.php" class="dashboard-box box5">
+                <img src="Assets/box5icon.png" alt="Total Balances Icon" class="box-icon">
+                <div class="box-content">
                 <h3>Total Balance Amount</h3>
                 <p>0</p>
+                </div>
             </a>
             
             <a href="billing_management_page.php" class="dashboard-box box6">
+                <img src="Assets/box6icon.png" alt="Total Paid Icon" class="box-icon">
+                <div class="box-content">
                 <h3>Total Paid Amount</h3>
                 <p>0</p>
+                </div>
             </a>
 
             <!-- Dynamic month names -->
             <a href="samplePage.php" class="dashboard-box box7">
+                <img src="Assets/box7icon.png" alt="Income Icon" class="box-icon">
+                <div class="box-content">
                 <h3><?php echo date('F'); ?> Income</h3>
                 <p>0</p>
+                </div>
             </a>
 
             <a href="samplePage.php" class="dashboard-box box8">
+                <img src="Assets/box8icon.png" alt="Expenses Icon" class="box-icon">
+                <div class="box-content">
                 <h3><?php echo date('F'); ?> Expense</h3>
                 <p>0</p>
+                </div>
             </a>
 
             <div class="charts">
