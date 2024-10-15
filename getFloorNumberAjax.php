@@ -11,6 +11,3 @@ foreach ($output as $value) {
     echo '<option value="" selected disabled hidden>Floor Number</option>';
     echo '<option value="'.$rmType.','.$value['floor_number'].'">'.$value['floor_number'].'</option>';    
 }
-
-$roomDesc = showRoomDesc($dbconn, $rmType);
-

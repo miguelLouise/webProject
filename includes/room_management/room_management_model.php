@@ -51,7 +51,7 @@ function getRooms(object $pdo, $room_type, $floor_num){
 }
 
 function getRoomDesc(object $pdo, $room_type){
-    $query = "SELECT * FROM rooms WHERE room_type = :room_type;";
+    $query = "SELECT * FROM room_types WHERE room_type = :room_type;";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":room_type", $room_type, PDO::PARAM_INT);
     $stmt->execute();

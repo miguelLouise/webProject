@@ -9,7 +9,7 @@ require_once './includes/room_management/room_management_view.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservation</title>
-    <link rel="stylesheet" href="css/reservation.css">
+    <link rel="stylesheet" href="css//reservation.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 </head>
 <body>
@@ -20,12 +20,12 @@ require_once './includes/room_management/room_management_view.php';
     <!-- page content -->
     <div class="reservation_container1">
        <div class="reservation_container2">
-        
         <?php
         echo '<form action="./includes/room_management/room_management_reserve.php" method="POST" novalidate>';
         $roomTypes = showRoomTypes($dbconn);
 
-        echo '<div class="reservation_container3"></div>';
+        echo '<div class="reservation_container3" id="reservation_container3">';
+        echo '</div>';
         // room type
         echo '<label for="room_typ">ROOM TYPE</label>';
         echo '<select name="room_typ" id="room_typ">';
@@ -57,19 +57,6 @@ require_once './includes/room_management/room_management_view.php';
 
     
     <script type="text/javascript">
-        // $(document).ready(function(){   
-        //     $(document).on("change", "#room_typ", function() {
-        //         var getRoomType = $(this).val();
-        //         $.ajax({
-        //             type: 'POST',
-        //             url: 'getFloorNumberAjax.php',
-        //             data: {roomTyp:getRoomType},
-        //             success: function(data){
-        //                 console.log(getRoomType);                  
-        //             }  
-        //         }); 
-        //     });
-
         $(document).ready(function(){   
             $(document).on("change", "#room_typ", function() {
                 var getRoomType = $(this).val();
@@ -78,8 +65,19 @@ require_once './includes/room_management/room_management_view.php';
                     url: 'getFloorNumberAjax.php',
                     data: {roomTyp:getRoomType},
                     success: function(data){
-                        $('#flr_num').html(data);      
-                        console.log(getRoomType);                   
+                        $('#flr_num').html(data);              
+                    }  
+                }); 
+            });
+   
+            $(document).on("change", "#room_typ", function() {
+                var getRoomType = $(this).val();
+                $.ajax({
+                    type: 'POST',
+                    url: 'getRoomInfoAjax.php',
+                    data: {roomTyp:getRoomType},
+                    success: function(data){ 
+                        $('#reservation_container3').html(data);                       
                     }  
                 }); 
             });
