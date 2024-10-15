@@ -243,3 +243,127 @@ h2 {
   color: white;
   cursor: pointer;
 }
+
+@media (max-width: 1200px) {
+  .container2 {
+    margin: 80px auto;
+    width: 90%;
+    height: 400px;
+  }
+  
+  .container2 img:hover {
+    width: 30%;
+  }
+
+  .info-container {
+    flex-direction: column;
+    gap: 10px;
+    max-width: 90%;
+  }
+
+  .room {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container2 {
+    margin: 60px auto;
+    height: 350px;
+  }
+
+  .info-left, .info-right {
+    padding: 10px;
+  }
+
+  .room-info h2 {
+    font-size: 22px;
+  }
+
+  .room-info p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container2 {
+    margin: 40px auto;
+    width: 100%;
+    height: 300px;
+  }
+
+  .container2 img {
+    width: 20%;
+    height: 100%;
+  }
+
+  .info-container {
+    padding: 15px;
+  }
+
+  .reserve-button {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+  
+  .room-info h2 {
+    font-size: 20px;
+  }
+
+  .room-info p {
+    font-size: 14px;
+  }
+
+  .thumbnail-images img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container2 {
+    height: 250px;
+    margin: 20px auto;
+  }
+
+  .info-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .room {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .large-image {
+    padding-top: 75%;
+  }
+
+  .room-info {
+    padding-left: 0;
+  }
+
+  .reserve-button {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container2 img {
+    width: 100%;
+    height: auto;
+  }
+
+  .info-container, .rooms-section {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .reserve-button {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
