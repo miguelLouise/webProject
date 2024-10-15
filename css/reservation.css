@@ -14,12 +14,12 @@
 }
 
 .reservation_container2{
-    height: 225px;
-    margin: 20px 20px;
+    height: 500px;
+    margin: 30px 20px;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-    background-color: brown;
+    /* background-color: brown; */
 }
 
 .reservation_container3{
@@ -27,7 +27,7 @@
 }
 
 .reservation_container4{
-    background-color: rgb(18, 149, 69);
+    /* background-color: rgb(18, 149, 69); */
 }
 
 ul li{
