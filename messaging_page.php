@@ -16,7 +16,7 @@ require_once "./includes/login/login_view.php";
 <body>
     <div class="messaging_container1">
         <!-- header -->
-        <?php include('./templates/logged_in_header_admin.php'); ?>
+        <?php include('./templates/logged_in_header.php'); ?>
         <!-- header -->
     </div>
 

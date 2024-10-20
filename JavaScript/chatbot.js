@@ -68,7 +68,7 @@ function getDynamicResponse(userInput) {
         return responses["welcome"][0];
     } else if (/(are you okay|how are You)/.test(userInput)) {
         return responses["hay"][0];
-    } else if (/(what do you offer|offer|what do you have)/.test(userInput)) {
+    } else if (/(what do you offer|offer)/.test(userInput)) {
         return responses["offer"][0];
     } else if (/(first studio|stuio room 1|room type 1|first room type)/.test(userInput)) {
         return responses["studio1"][0];
@@ -92,9 +92,9 @@ function getDynamicResponse(userInput) {
         return responses["laundromat"][0];
     } else if (/(wifi|internet)/.test(userInput)) {
         return responses["wifi"][0];
-    } else if (/(room availability|available rooms)/.test(userInput)) {
+    } else if (/(rooms|room availability|available rooms)/.test(userInput)) {
         return responses["room availability"][0];
-    } else if (/(room rates|how much are the rooms)/.test(userInput)) {
+    } else if (/(room rates|how much are the rooms|rooms)/.test(userInput)) {
         return responses["room rates"][0];
     } else if (/(make a reservation|reservation)/.test(userInput)) {
         return responses["reservation"][0];
