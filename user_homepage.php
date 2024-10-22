@@ -49,7 +49,7 @@ include "./middleware/user_middleware.php";
                 <div class="info-right">
                     <h2>Amenities</h2>
                     <p class="amenities-text">
-                        <span class="amenity-icon">📚</span> <span class="clickable-amenity" onclick="showPopup('Assets/studyarea.jpg')">Study Area</span><br>
+                        <span class="amenity-icon">📚</span> <span class="clickable-amenity" onclick="showPopup('Assets/studyarea.jpg')"style="width: 100%; height: 100%;">Study Area</span><br>
                         <span class="amenity-icon">🛋️</span> <span class="clickable-amenity" onclick="showPopup('Assets/lobby.jpg')">Lobby</span><br>
                         <span class="amenity-icon">🅿️</span> <span class="clickable-amenity" onclick="showPopup('Assets/parkingpc.jpg')">Parking</span><br>
                         <span class="amenity-icon">📶</span> <span class="clickable-amenity" onclick="showPopup('Assets/wifipc.jpg')">Wifi</span><br>
@@ -214,10 +214,7 @@ include "./middleware/user_middleware.php";
         </div>
         <!-- Chatbot -->
         <?php include('./templates/chatbot.php'); ?>
-<<<<<<< HEAD
         <!-- Chatbot -->
-=======
->>>>>>> b0cc85137c6d46428583eb24896a9ebcf38175d8
     </div>
 
     <script src="javascript/user_homepage.js"></script>
