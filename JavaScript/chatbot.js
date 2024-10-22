@@ -92,9 +92,9 @@ function getDynamicResponse(userInput) {
         return responses["laundromat"][0];
     } else if (/(wifi|internet)/.test(userInput)) {
         return responses["wifi"][0];
-    } else if (/(room availability|available rooms)/.test(userInput)) {
+    } else if (/(rooms|room availability|available rooms)/.test(userInput)) {
         return responses["room availability"][0];
-    } else if (/(room rates|how much are the rooms)/.test(userInput)) {
+    } else if (/(room rates|how much are the rooms|rooms)/.test(userInput)) {
         return responses["room rates"][0];
     } else if (/(make a reservation|reservation)/.test(userInput)) {
         return responses["reservation"][0];

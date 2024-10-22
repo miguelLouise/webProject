@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         $_SESSION["user_logged_in"] = true;
-        $_SESSION["user_id"] = htmlspecialchars($user_info["Id"]);
+        $_SESSION["user_id"] = htmlspecialchars($user_info["user_id"]);
         $_SESSION["user_role"] = htmlspecialchars($user_info["role"]);
         $_SESSION["user_name"] = htmlspecialchars($user_info["name"]);
         $_SESSION["user_num"] = htmlspecialchars($user_info["contact_number"]);

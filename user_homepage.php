@@ -101,7 +101,7 @@ include "./middleware/user_middleware.php";
                     <p>24-hour elevator service</p>
                     <p>CCTV surveillance camera on each floor</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
-                    <button class="reserve-button">Reserve Now</button>
+                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a>       
                 </div>
             </div>
 
@@ -176,7 +176,7 @@ include "./middleware/user_middleware.php";
                     <p>24-hour elevator service</p>
                     <p>CCTV surveillance camera on each floor</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
-                    <button class="reserve-button">Reserve Now</button>
+                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> 
                 </div>
             </div>
 
@@ -208,7 +208,7 @@ include "./middleware/user_middleware.php";
                     <p>24-hour elevator service</p>
                     <p>CCTV surveillance camera on each floor</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
-                    <button class="reserve-button">Reserve Now</button>
+                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> 
                 </div>
             </div>
         </div>

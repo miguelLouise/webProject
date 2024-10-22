@@ -9,7 +9,7 @@
 <body>
     <div class="payment_page_container1">
         <!-- header -->
-        <?php include('./templates/logged_in_header_admin.php'); ?>
+        <?php include('./templates/logged_in_header.php'); ?>
         <!-- header -->
     </div>
 

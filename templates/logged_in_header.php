@@ -30,8 +30,7 @@ require_once 'includes/login/login_view.php';
                 <div class="side_nav_con1">
                     <img src="../Assets/profile.png" class="nav_icon">
                     <h1 class="head1">User Profile</h1> 
-                </div>       
-                    <div class="info"><?php display_user_info() ?></div>                                    
+                </div>                                    
             </div>
 
             <div class="side_nav_con2">
@@ -39,9 +38,9 @@ require_once 'includes/login/login_view.php';
                 <li><a href="../user_homepage.php"><button class="nav_btn"><img src="../Assets/home.png" class="nav_icon">Home</button></a></li>
                 <li><a href="../maintenance_request_page.php"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Maintenance Request</button></a></li>
                 <!--<li><a href="#userpayment"><button class="nav_btn"><img src="../Assets/wallet.png" class="nav_icon">Payment</button></a></li>-->
-                <li><a href="../messaging_page.php"><button class="nav_btn"><img src="../Assets/mail.png" class="nav_icon">Message/Inquire</button></a></li>
+                <li><a href="#inbox"><button class="nav_btn"><img src="../Assets/mail.png" class="nav_icon">Message/Inquire</button></a></li>
                 <li><a href="../reservation.php"><button class="nav_btn"><img src="../Assets/reservation.png" class="nav_icon">Reservation</button></a></li>
-                <!-- <li><a href="#roomAvailability"><button class="nav_btn"><img src="../Assets/door.png" class="nav_icon">Room Availability</button></a></li> -->
+                <!--<li><a href="#roomAvailability"><button class="nav_btn"><img src="../Assets/door.png" class="nav_icon">Room Availability</button></a></li>-->
                 <li><a href="#accountmanagement"><button class="nav_btn"><img src="../Assets/account.png" class="nav_icon">Account management</button></a></li>
 
                 <li>
