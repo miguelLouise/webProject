@@ -68,7 +68,7 @@ function getDynamicResponse(userInput) {
         return responses["welcome"][0];
     } else if (/(are you okay|how are You)/.test(userInput)) {
         return responses["hay"][0];
-    } else if (/(what do you offer|offer)/.test(userInput)) {
+    } else if (/(what do you offer|rooms|what do you have)/.test(userInput)) {
         return responses["offer"][0];
     } else if (/(first studio|stuio room 1|room type 1|first room type)/.test(userInput)) {
         return responses["studio1"][0];
