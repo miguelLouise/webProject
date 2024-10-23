@@ -27,3 +27,5 @@ setInterval(showNextImage, 3000);
     images[roomcurrentIndex].style.display = 'none';
     images[newIndex].style.display = 'block';
 }*/
+
+
