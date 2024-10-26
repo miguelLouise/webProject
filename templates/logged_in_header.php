@@ -7,8 +7,8 @@ require_once 'includes/login/login_view.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>Document</title> -->
-    <link rel="stylesheet" href="css//logged_in_header.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/logged_in_header.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 </head>
@@ -16,42 +16,48 @@ require_once 'includes/login/login_view.php';
 <body>
     <div class="logged_in_header_container1">
         <div class="logged_in_header_container2">
-            <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#E0D4FC" id="menu_btn">
-                <path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
-            </svg>
             <a href="../user_homepage.php"><img src="../Assets/DDLOGO.png" class="logo" alt="DormLink Logo"></a>
+        </div>
+        
+        <!-- Header buttons -->
+        <div class="header_buttons">
+            <a href="../user_homepage.php" class="header_button" data-title="Home">Home</a>
+            <a href="../maintenance_request_page.php" class="header_button" data-title="Maintenance Request">Maintenance Request</a>
+            <a href="../messaging_page.php" class="header_button" data-title="Message/Inquire">Message/Inquire</a>
+            <a href="../reservation.php" class="header_button" data-title="Reservation">Reservation</a>
+        </div>
+        
+        <div class="side_nav_icon">
+            <img src="../Assets/profl.png" id="menu_btn" class="profile_icon">
         </div>
     </div>
 
-    <!-- side navigation bar -->
+    <!-- Side navigation -->
     <div class="side_nav_div">
         <div class="side_nav" id="menu_nav">
-        <div class="user_info">     
+            <div class="user_info">
                 <div class="side_nav_con1">
                     <img src="../Assets/profile.png" class="nav_icon">
-                    <h1 class="head1">User Profile</h1> 
-                </div>                                    
+                    <h1 class="head1">User Profile</h1>
+                </div>
             </div>
 
             <div class="side_nav_con2">
                 <ul>
-                <li><a href="../user_homepage.php"><button class="nav_btn"><img src="../Assets/home.png" class="nav_icon">Home</button></a></li>
-                <li><a href="../maintenance_request_page.php"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Maintenance Request</button></a></li>
-                <li><a href="../payment_page.php"><button class="nav_btn"><img src="../Assets/wallet.png" class="nav_icon">Payment</button></a></li>
-                <li><a href="#inbox"><button class="nav_btn"><img src="../Assets/mail.png" class="nav_icon">Message/Inquire</button></a></li>
-                <li><a href="../reservation.php"><button class="nav_btn"><img src="../Assets/reservation.png" class="nav_icon">Reservation</button></a></li>
-                <!-- <li><a href="#roomAvailability"><button class="nav_btn"><img src="../Assets/door.png" class="nav_icon">Room Availability</button></a></li> -->
-                <li><a href="../user_account_management.php"><button class="nav_btn"><img src="../Assets/account.png" class="nav_icon">Account management</button></a></li>
-
-                <li>
-                    <form action="../includes/logout/logout.php" method="post" id="login" novalidate>
-                        <button type="submit" class="nav_btn">
-                            <img src="../Assets/logout.png" class="nav_icon">Logout
-                        </button>
-                    </form>       
-                </li>
+                    <li><a href="../user_homepage.php"><button class="nav_btn"><img src="../Assets/home.png" class="nav_icon">Home</button></a></li>
+                    <li><a href="../maintenance_request_page.php"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Maintenance Request</button></a></li>
+                    <li><a href="#inbox"><button class="nav_btn"><img src="../Assets/mail.png" class="nav_icon">Message/Inquire</button></a></li>
+                    <li><a href="../reservation.php"><button class="nav_btn"><img src="../Assets/reservation.png" class="nav_icon">Reservation</button></a></li>
+                    <li><a href="#accountmanagement"><button class="nav_btn"><img src="../Assets/account.png" class="nav_icon">Account Management</button></a></li>
+                    <li>
+                        <form action="../includes/logout/logout.php" method="post" id="login" novalidate>
+                            <button type="submit" class="nav_btn">
+                                <img src="../Assets/logout.png" class="nav_icon">Logout
+                            </button>
+                        </form>
+                    </li>
                 </ul>
-            </div>          
+            </div>
         </div>
     </div>
 
@@ -62,15 +68,15 @@ require_once 'includes/login/login_view.php';
             const menuNav = document.getElementById("menu_nav");
 
             menuBtn.addEventListener("click", function() {
-                const leftPos = window.getComputedStyle(menuNav).getPropertyValue("left");
+                const rightPos = window.getComputedStyle(menuNav).getPropertyValue("right");
 
-                if (leftPos > "0") {
-                    menuNav.style.left = "-300px";
+                if (rightPos === "-300px") { 
+                    menuNav.style.right = "0";
                 } else {
-                    menuNav.style.left = "0";
+                    menuNav.style.right = "-300px";
                 }
-            })
-        })
+            });
+        });
     </script>
 </body>
 

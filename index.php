@@ -32,11 +32,14 @@ session_start();
             <img src="Assets/loob.png" alt="loob">
         </div>
 
+        <div class="custom-card-header">
+                <h2>About Us</h2>
+        </div>
         <div class="custom-card">
             <div class="custom-card-text">
-                <h2 class="card-title">About Us</h2>
+                <h2 class="card-title">1277 Apartments (Lavanders Place)</h2>
                 <p class="card-description">
-                    1277 Apartments (Lavanders Place) is ideally located in the center of University Belt, offering a convenient and affordable living option. Designed for students and professionals, the residence focuses on creating a comfortable environment with modern amenities and well-maintained facilities. Lavender's Place is committed to addressing tenant concerns quickly, ensuring a smooth and stress-free stay for all residents.
+                    is ideally located in the center of University Belt, offering a convenient and affordable living option. Designed for students and professionals, the residence focuses on creating a comfortable environment with modern amenities and well-maintained facilities. Lavender's Place is committed to addressing tenant concerns quickly, ensuring a smooth and stress-free stay for all residents.
                 </p>
             </div>
             <div class="custom-card-image">
@@ -44,67 +47,98 @@ session_start();
             </div>
         </div>
 
-        <!-- Room Slider -->
-        <div class="room-slider">
-            <div class="room-slider-header">
-                <h2>Available Rooms</h2>
+        <div class="custom-card2">
+        <div class="custom-card-image2">
+                <img src="Assets/pestcontrol.png" alt="Pest Control">
             </div>
-            <div class="room-slider-container">
-                <!-- Room 1 -->
-                <div class="room-slider-item">
-                    <div class="room-slider-images">
-                        <div class="image-card"><img src="Assets/room1pic1.png" alt="Studio Room 1 Image 1"></div>
-                        <div class="image-card"><img src="Assets/room1pic2.png" alt="Studio Room 1 Image 2"></div>
-                        <div class="image-card"><img src="Assets/room1pic3.png" alt="Studio Room 1 Image 3"></div>
-                        <div class="image-card"><img src="Assets/room1pic4.png" alt="Studio Room 1 Image 4"></div>
-                    </div>
-                    <div class="room-slider-description">
-                        <h3>Studio Room 1</h3>
-                        <p>Description for Studio Room 1...</p>
-                    </div>
-                </div>
+            <div class="custom-card-text2">
+                <h2 class="card-title2">Pest Control Routine</h2>
+                <p class="card-description2">
+                At Lavenders Place, we prioritize the health and well-being of our residents. To ensure a clean and pest-free living environment, we've implemented a regular pest control program. This proactive approach helps prevent pests from entering your units, safeguarding your health and creating a more comfortable living space. We're committed to maintaining the highest standards of cleanliness and sanitation for your benefit.
+                </p>
+            </div>
+        </div>
 
-                <!-- Room 2 -->
-                <div class="room-slider-item">
-                    <div class="room-slider-images">
-                        <div class="image-card"><img src="Assets/room2pic1.png" alt="Studio Room 2 Image 1"></div>
-                        <div class="image-card"><img src="Assets/room2pic2.png" alt="Studio Room 2 Image 2"></div>
-                        <div class="image-card"><img src="Assets/room2pic3.png" alt="Studio Room 2 Image 3"></div>
-                        <div class="image-card"><img src="Assets/room2pic4.png" alt="Studio Room 2 Image 4"></div>
+        <div class="room-slider-header">
+                <h2>Available Rooms</h2>
+        </div>
+            <!-- Room Sliders -->
+        <div class="sliders-container">
+            <!-- Room Slider 1 -->
+            <div class="slider-box">
+                <div class="slider">
+                    <div class="slides" id="slider1">
+                        <div class="slide" style="background-image: url('Assets/room1pic1.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room1pic2.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room1pic4.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room1pic5.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room1pic6.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room1pic7.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room1pic8.png');"></div>
                     </div>
-                    <div class="room-slider-description">
-                        <h3>Studio Room 2</h3>
-                        <p>Description for Studio Room 2...</p>
-                    </div>
+                    <button class="prev" onclick="moveSlide(-1, 0)">&#10094;</button>
+                    <button class="next" onclick="moveSlide(1, 0)">&#10095;</button>
                 </div>
+                <h3>Studio Type Room 1</h3>
+                <p>P 9,500 Monthly Rent good for 3 Pax</p>
+            </div>
 
-                <!-- Room 3 -->
-                <div class="room-slider-item">
-                    <div class="room-slider-images">
-                        <div class="image-card"><img src="Assets/room3pic1.png" alt="Studio Room 3 Image 1"></div>
-                        <div class="image-card"><img src="Assets/room3pic2.png" alt="Studio Room 3 Image 2"></div>
-                        <div class="image-card"><img src="Assets/room3pic3.png" alt="Studio Room 3 Image 3"></div>
-                        <div class="image-card"><img src="Assets/room3pic4.png" alt="Studio Room 3 Image 4"></div>
+            <!-- Slider 2 -->
+            <div class="slider-box">
+                <div class="slider">
+                    <div class="slides" id="slider2">
+                        <div class="slide" style="background-image: url('Assets/room2pic1.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room2pic2.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room2pic3.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room2pic4.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room2pic5.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room2pic6.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room2pic7.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room2pic8.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room2pic9.png');"></div>
                     </div>
-                    <div class="room-slider-description">
-                        <h3>Studio Room 3</h3>
-                        <p>Description for Studio Room 3...</p>
-                    </div>
+                    <button class="prev" onclick="moveSlide(-1, 1)">&#10094;</button>
+                    <button class="next" onclick="moveSlide(1, 1)">&#10095;</button>
                 </div>
+                <h3>Studio Type Room 2</h3>
+                <p>P 10,500 Monthly Rent good for 4 Pax </p>
+            </div>
 
-                <!-- Room 4 -->
-                <div class="room-slider-item">
-                    <div class="room-slider-images">
-                        <div class="image-card"><img src="Assets/room4pic1.png" alt="Studio Room 4 Image 1"></div>
-                        <div class="image-card"><img src="Assets/room4pic2.png" alt="Studio Room 4 Image 2"></div>
-                        <div class="image-card"><img src="Assets/room4pic3.png" alt="Studio Room 4 Image 3"></div>
-                        <div class="image-card"><img src="Assets/room4pic4.png" alt="Studio Room 4 Image 4"></div>
+            <!-- Slider 3 -->
+            <div class="slider-box">
+                <div class="slider">
+                    <div class="slides" id="slider3">
+                        <div class="slide" style="background-image: url('Assets/room3pic1.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room3pic2.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room3pic3.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room3pic4.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room3pic5.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room3pic6.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room3pic7.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room3pic8.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room3pic9.png');"></div>
                     </div>
-                    <div class="room-slider-description">
-                        <h3>Studio Room 4</h3>
-                        <p>Description for Studio Room 4...</p>
-                    </div>
+                    <button class="prev" onclick="moveSlide(-1, 2)">&#10094;</button>
+                    <button class="next" onclick="moveSlide(1, 2)">&#10095;</button>
                 </div>
+                <h3>Studio Type Room 3</h3>
+                <p>P 10,500 Monthly Rent good for 4 Pax</p>
+            </div>
+
+            <!-- Slider 4 -->
+            <div class="slider-box">
+                <div class="slider">
+                    <div class="slides" id="slider4">
+                        <div class="slide" style="background-image: url('Assets/room4pic1.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room4pic2.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room4pic3.png');"></div>
+                        <div class="slide" style="background-image: url('Assets/room4pic4.png');"></div>
+                    </div>
+                    <button class="prev" onclick="moveSlide(-1, 3)">&#10094;</button>
+                    <button class="next" onclick="moveSlide(1, 3)">&#10095;</button>
+                </div>
+                <h3>Studio Type Room 3</h3>
+                <p>P 15,000 Monthly Rent good for 6 Pax</p>
             </div>
         </div>
 
@@ -114,11 +148,29 @@ session_start();
         </div>
 
         <div class="container4">
-            <div class="info">
-                <h4>Lavender Place</h4>
-                <p><img src="Assets/locationpin.gif" alt="Location Icon" class="icon"> 1277 Lavanderos St, Sampaloc, Manila, Metro Manila</p>
-                <h4>Contact Us</h4>
-                <p><img src="Assets/phoneicon.gif" alt="Phone Icon" class="icon"> 09977316010</p>
+            <div class="footer-content">
+                <h1>Lavender Place</h1>
+                <div class="address">
+                    <img src="../Assets/locationpin.gif" alt="Location" class="icon">
+                    <span>1277 Lavanderos St, Sampaloc, Manila, Metro Manila</span>
+                </div>
+                <div class="contact">
+                    <img src="../Assets/phoneicon.gif" alt="Phone" class="icon">
+                    <span>09977316010</span>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">FAQ</a>
+                <a href="#">Support</a>
+            </div>
+            <!--<div class="social-media">
+                <a href="#"><img src="../Assets/facebook.png" alt="Facebook" class="icon"></a>
+                <a href="#"><img src="../Assets/instagram.png" alt="Instagram" class="icon"></a>
+            </div> -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 DormLink. All rights reserved.</p>
             </div>
         </div>
 
@@ -137,8 +189,37 @@ session_start();
         <img src="Assets/fbpc.png" alt="Facebook Icon">
     </a>
 
+    <script>
+        let slideIndex = [0, 0, 0, 0]; // Stores the current index for each slider
+        let slideIds = ['slider1', 'slider2', 'slider3', 'slider4']; // Corresponding slider IDs
+
+        function moveSlide(n, sliderNum) {
+            let slider = document.getElementById(slideIds[sliderNum]);
+            let slides = slider.getElementsByClassName("slide");
+            slideIndex[sliderNum] += n;
+
+            if (slideIndex[sliderNum] >= slides.length) {
+                slideIndex[sliderNum] = 0; // Wrap back to the first slide
+            }
+
+            if (slideIndex[sliderNum] < 0) {
+                slideIndex[sliderNum] = slides.length - 1; // Wrap to the last slide
+            }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; // Hide all slides
+            }
+
+            slides[slideIndex[sliderNum]].style.display = "block"; // Show the current slide
+        }
+
+        // Initialize the sliders by showing the first slide of each
+        for (let i = 0; i < slideIds.length; i++) {
+            moveSlide(0, i); // Show the first slide of each slider
+        }
+    </script>
+
     <script src="javascript/index.js">
-        
     </script>
 </body>
 

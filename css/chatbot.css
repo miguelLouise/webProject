@@ -33,8 +33,11 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
 }
 
+
 .chatbot_icon:hover {
     background-color: #B29CE4;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 #chtbt_icon {
@@ -186,6 +189,8 @@ body {
 }
 
 .close_icon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     background-color: rgba(255, 255, 255, 0.1); 
 }
 
@@ -209,6 +214,11 @@ body {
     width: 60px;
     height: 60px;
     object-fit: contain;
+}
+
+.floating-fb-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 500px) {

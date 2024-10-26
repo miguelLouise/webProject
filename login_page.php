@@ -9,7 +9,7 @@ require_once "./includes/login/login_view.php";
     <meta http-equiv="X-UA-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dormlink - Login</title>
-    <link rel="stylesheet" href="css//login.css">
+    <link rel="stylesheet" href="css/login.css">
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
@@ -83,6 +83,10 @@ require_once "./includes/login/login_view.php";
             }
         }
     </script>
+
+    <!--<a href="https://www.instagram.com/lavanderplace_1277apartments?igsh=dzJwbnUxdDJwOGsx" target="_blank" class="floating-ig-btn">
+        <img src="Assets/igpc.png" alt="Instagram Icon">
+    </a>-->
         <!-- Floating Facebook Button -->
     <a href="https://web.facebook.com/1277apartments/?_rdc=1&_rdr" target="_blank" class="floating-fb-btn">
         <img src="Assets/fbpc.png" alt="Facebook Icon">
