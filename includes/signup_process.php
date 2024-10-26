@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             signup_user($dbconn, $name, $contact_number, $email, $birthday, $password);
             $_SESSION["signup_success"] = "Account created successfully";
-            header('Location: ../signup_page.php');
+            header('Location: ../login_page.php');
             die();
         }
     } catch (PDOException $e) {

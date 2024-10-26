@@ -49,7 +49,7 @@ require_once "./includes/login/login_view.php";
 
                     <div class="input-group">
                         <label for="name">Email <span style="color: red;"><?php display_login_error("username_error") ?></span></label>
-                        <input type="text" id="name" name="username" placeholder="Email">
+                        <input type="text" id="name" name="username" placeholder="Email" value="<?php displayInfo("username") ?>">
                     </div>
 
 

@@ -56,12 +56,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     header('Location: ../../reservation.php');
                     die();
                 }
-            }
-           
-
-            
+            }           
         }
     } catch (PDOException $e) {
-        die("Query failed" . $e->getMessage());
+        if ($e->getCode() == '23000') {
+            echo "Duplicate entry detected. Please try again with unique values.";
+        }
+        else{
+            die("Query failed" . $e->getMessage());
+        }     
     }
 }

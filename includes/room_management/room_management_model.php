@@ -1,7 +1,6 @@
 <?php
 
-function getRoomMngmtTable(object $pdo)
-{
+function getRoomMngmtTable(object $pdo){
     $query = "SELECT * FROM rooms";
     $stmt = $pdo->prepare($query);
     $stmt->execute();

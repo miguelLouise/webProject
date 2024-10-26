@@ -35,12 +35,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // adminemail@sample.com (passwordAdmin$00) - 1
 
         //louisemiguel1999@gmail.com (Password@00)
+        //capua@email.com (Capua@000)
+
         //admin@gmail.com (adminPassword@01)
 
         session_start();
 
         if ($username_error || $password_error) {
             $_SESSION["username_error"] = $username_error;
+            $_SESSION["username"] = $username;
             $_SESSION["password_error"] = $password_error;
             header('Location: ../../login_page.php');
             die();
