@@ -19,15 +19,14 @@ require_once './includes/room_management/room_management_view.php';
 
     <!-- page content -->
     <div class="reservation_container1">
-       <div class="reservation_container2">
-       
+       <div class="reservation_container2">  
         <form action="./includes/room_management/room_management_reserve.php" method="post" id="reservation" novalidate>
         <div class="reservation_container3" id="reservation_container3"></div>
         <div class="reservation_container4">
         <?php reservation_success_message("reservation_success")?>
 
-              <!-- room type -->
-              <div class="input-group">
+            <!-- room type -->
+            <div class="input-group">
                 <label for="room_typ">ROOM TYPE <span style="color: red;"><?php display_reservation_error("room_type_error") ?></span></label>
                 <select name="room_typ" id="room_typ">
                     <option value="" selected hidden>Room number</option>
@@ -44,15 +43,15 @@ require_once './includes/room_management/room_management_view.php';
             <div class="input-group">
             <label for="flr_num">FLOOR NUMBER <span style="color: red;"><?php display_reservation_error("floor_number_error") ?></span></label>
             <select name="flr_num" id="flr_num">
-                    <option value="" selected hidden>Floor Number</option>     
-                </select>
+                <option value="" selected hidden>Floor Number</option>     
+            </select>
             </div>
 
             <!-- room number -->
             <div class="input-group">
             <label for="room_num">ROOM NUMBER <span style="color: red;"><?php display_reservation_error("room_number_error") ?></span></label>
             <select name="room_num" id="room_num">
-                    <option value="" selected hidden>Room Number</option>     
+                <option value="" selected hidden>Room Number</option>     
             </select>
             </div>    
         </div>

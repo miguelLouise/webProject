@@ -40,6 +40,11 @@ require_once 'includes/login/login_view.php';
                 <ul>
                 <li><a href="../admin_dashboard.php"><button class="nav_btn"><img src="../Assets/home.png" class="nav_icon">Home</button></a></li>
                 <li><a href="../billing_management_page.php"><button class="nav_btn"><img src="../Assets/wallet.png" class="nav_icon">Billing</button></a></li>
+                <li><a href="../reservation_management_page_admin.php"><button class="nav_btn"><img src="../Assets/reservation.png" class="nav_icon">Reservations</button></a></li>
+                <li><a href="#maintenencemanagement"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Maintenance Management</button></a></li>
+                <li><a href="../inbox_page_admin.php"><button class="nav_btn"><img src="../Assets/inbox.png" class="nav_icon">Inbox</button></a></li>
+                <li><a href="../room_management_page_admin.php"><button class="nav_btn"><img src="../Assets/door.png" class="nav_icon">Room Management</button></a></li>
+                <li><a href="#dataanalytics"><button class="nav_btn"><img src="../Assets/chart.png" class="nav_icon">Data Analytics</button></a></li>
                 <li><a href="#reservation"><button class="nav_btn"><img src="../Assets/reservation.png" class="nav_icon">Reservations</button></a></li>
                 <li><a href="../maintenance_request_management.php"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Maintenance Management</button></a></li>
                 <!-- <li><a href="../inbox_page_admin.php"><button class="nav_btn"><img src="../Assets/inbox.png" class="nav_icon">Inbox</button></a></li>-->

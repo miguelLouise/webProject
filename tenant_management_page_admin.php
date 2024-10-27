@@ -24,7 +24,7 @@ require_once "./includes/login/login_view.php";
             <div class="form-row">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="Name" required>
+                    <input type="text" id="name" placeholder="Name" value="testing"required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>

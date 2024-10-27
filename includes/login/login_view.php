@@ -1,13 +1,23 @@
 <?php
 session_start();
 
-// echo $_SESSION["name_error"];
 function display_login_error(string $var_name)
 {
     if (isset($_SESSION[$var_name])) {
         $error_warning = $_SESSION[$var_name];
 
         echo $error_warning;
+
+        unset($_SESSION[$var_name]);
+    }
+}
+
+function displayInfo(string $var_name)
+{
+    if (isset($_SESSION[$var_name])) {
+        $email = $_SESSION[$var_name];
+
+        echo $email;
 
         unset($_SESSION[$var_name]);
     }
