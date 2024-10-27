@@ -23,15 +23,15 @@ body {
 }
 
 .container3 {
-    margin-top: 90px;
-    margin-bottom: 50px;
-    background-color: #ffffff;
-    padding: 20px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     width: 50%;
-    max-width: 500px;
+    max-width: 400px;
     height: auto;
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
@@ -47,6 +47,14 @@ h2 {
     font-weight: bold;
 }
 
+h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    text-align: center;
+    color: #42326E; 
+    font-weight: bold; 
+}
 
 .input-group {
     margin-bottom: 15px;
@@ -63,7 +71,7 @@ h2 {
 .input-group input {
     width: 100%;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 20px;
     border: 1px solid #ced4da; 
     box-shadow: none;
     font-size: 14px;
@@ -77,7 +85,7 @@ button {
     background-color: #0069d9; 
     color: #ffffff; 
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
     margin-top: 10px;
 }
@@ -86,8 +94,7 @@ button:hover {
     background-color: #0056b3; 
 }
 
-
-.signup_link {
+.login_link {
     display: block;
     text-align: center;
     margin-top: 10px;
