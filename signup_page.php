@@ -37,7 +37,7 @@ require_once 'includes/signup_process_view.php';
     </style>
 </head>
 
-<body>
+<body style="background-image: url('Assets/lavanderBLDG.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
     <div class="container">
         <!-- header -->
         <?php include('./templates/header.php'); ?>
@@ -82,7 +82,8 @@ require_once 'includes/signup_process_view.php';
 
                     <button type="submit">Sign up</button>
                 </form>
-                Already have an account? <a href="login_page.php" class="login_link">login</a>
+                <h3>Already have an account?</h3>
+                <a href="login_page.php" class="login_link">login</a>
 
             </div>
             <!-- page content -->

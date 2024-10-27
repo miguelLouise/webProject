@@ -10,6 +10,7 @@ require_once "./includes/login/login_view.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dormlink - Login</title>
     <link rel="stylesheet" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
@@ -36,7 +37,7 @@ require_once "./includes/login/login_view.php";
     </style>
 </head>
 
-<body>
+<body style="background-image: url('Assets/lavanderBLDG.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
     <div class="container">
         <!-- header -->
         <?php include('./templates/header.php'); ?>
