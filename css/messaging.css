@@ -19,7 +19,8 @@
 
 body{
   font-family: 'Outfit';
-  background: linear-gradient(to right,   #dbf3fa, #f5fcff);
+  background-color: #f4f4f4;
+  /* background: linear-gradient(to right,   #dbf3fa, #f5fcff);*/
 }
 
 .contact-container{
@@ -95,6 +96,11 @@ body{
   border-radius: 50px;
   background-color: #007bff;
   cursor: pointer;
+}
+
+.contact-left button:hover{
+  transform: scale(1.05);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);  
 }
 
 .contact-right img{

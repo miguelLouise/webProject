@@ -42,7 +42,10 @@ include "./middleware/user_middleware.php";
                     <p class="details-text">
                         7 storey Dorm/Apartment building<br>
                         69 Rooms with own bathroom and sink<br>
-                        Solo or Shared room unit type
+                        Solo or Shared room unit type<br>
+                        24-hour security service<br>
+                        24-hour elevator service<br>
+                        CCTV surveillance camera on each floor
                     </p>
                 </div>
 
@@ -98,9 +101,6 @@ include "./middleware/user_middleware.php";
                     <p>Exclusive water and electric bill</p>
                     <p>With one double deck, one bed, cabinet, table, chair, ceiling fan & aircon</p>
                     <p>Free wifi internet in each room</p>
-                    <p>24-hour security service</p>
-                    <p>24-hour elevator service</p>
-                    <p>CCTV surveillance camera on each floor</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
                     <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a>       
                 </div>
@@ -135,9 +135,6 @@ include "./middleware/user_middleware.php";
                     <p>Exclusive water and electric bill</p>
                     <p>With two ( 2 ) double deck, one cabinet, table, chair, ceiling fan & aircon</p>
                     <p>Free wifi internet in each room</p>
-                    <p>24-hour security service</p>
-                    <p>24-hour elevator service</p>
-                    <p>CCTV surveillance camera on each floor</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
                     <button class="reserve-button">Reserve Now</button>
                 </div>
@@ -173,9 +170,6 @@ include "./middleware/user_middleware.php";
                     <p>Exclusive water and electric bill</p>
                     <p>With two ( 2 ) double deck, one cabinet, table, chair, ceiling fan & aircon</p>
                     <p>Free wifi internet in each room</p>
-                    <p>24-hour security service</p>
-                    <p>24-hour elevator service</p>
-                    <p>CCTV surveillance camera on each floor</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
                     <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> 
                 </div>
@@ -205,9 +199,6 @@ include "./middleware/user_middleware.php";
                     <p>Exclusive water and electric bill</p>
                     <p>With three ( 3 ) double deck, one cabinet, table, chair, ceiling fan & aircon</p>
                     <p>Free wifi internet in each room</p>
-                    <p>24-hour security service</p>
-                    <p>24-hour elevator service</p>
-                    <p>CCTV surveillance camera on each floor</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
                     <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> 
                 </div>
