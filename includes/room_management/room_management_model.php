@@ -71,11 +71,9 @@ function getRoomAvailability(object $pdo, $room_type, $floor_num, $room_num){
     return $result;
 }
 
-function getRoomAvailabilityStatus(object $pdo, $room_type, $floor_num, $room_num){
-    $query = "SELECT status FROM rooms WHERE room_type = :room_type AND floor_number = :floor_number AND room_number = :room_number;";
+function isRoomAvailable(object $pdo, $room_num){
+    $query = "SELECT status FROM rooms WHERE room_number = :room_number;";
     $stmt = $pdo->prepare($query);
-    $stmt->bindParam(":room_type", $room_type, PDO::PARAM_INT);
-    $stmt->bindParam(":floor_number", $floor_num, PDO::PARAM_INT);
     $stmt->bindParam(":room_number", $room_num, PDO::PARAM_INT);
     $stmt->execute();
 
@@ -95,13 +93,22 @@ function reserveRoom(object $pdo, $user_id, $room_type, $floor_num, $room_num, $
     $stmt->execute();
 }
 
-function getReservationTable(object $pdo)
-{
+function getReservationTable(object $pdo){
     $query = "SELECT * FROM dormlink_reservations";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+function does_user_have_reservation(object $pdo, $user_id){
+    $query = "SELECT * FROM dormlink_reservations WHERE user_id = :user_id;";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
 
