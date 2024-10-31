@@ -50,12 +50,6 @@ function showRoomAvailability(object $pdo, $room_type, $floor_num, $room_num){
     return $result;
 }
 
-function showRoomAvailabilityStatus(object $pdo, $room_type, $floor_num, $room_num){
-    require_once 'room_management_model.php';
-    $result =  getRoomAvailabilityStatus($pdo, $room_type, $floor_num, $room_num);
-    return $result;
-}
-
 function reservation_success_message(string $var_name)
 {
     if (isset($_SESSION[$var_name])) {

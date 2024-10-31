@@ -1,6 +1,9 @@
 <?php
 require_once "./includes/login/login_view.php";
-//include "./middleware/admin_middleware.php";//
+include "./middleware/admin_middleware.php";//
+require_once "./includes/tenant_management/tenant_management_view.php";
+require_once './includes/dbh.inc.php';
+require_once './includes/room_management/room_management_view.php';
 ?>
 
 <!DOCTYPE html>
@@ -20,42 +23,29 @@ require_once "./includes/login/login_view.php";
 
     <div class="container">
         <h1>New Tenant Registration</h1>
-        <form id="tenant-form">
-            <div class="form-row">
+        <form action="./includes/tenant_management/tenant_management_admin.php" method="post">
+        <div class="form-row">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="Name" value="testing"required>
+                    <input type="text" id="name" name="name" placeholder="Name" value="<?php display_message("name")?>">
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="email" id="email" name="email" placeholder="Email" value="<?php display_message("email")?>">
                 </div>
             </div>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="photo">Photo</label>
-                    <span class="note">This device is not supported for taking photos.</span>
-                    <div class="photo-actions">
-                        <button type="button" id="takePhoto">Take Photo</button>
-                        <span> -OR- </span>
-                        <input type="file" id="photo">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <!-- Empty  -->
-                </div>
-            </div>
+            
 
             <div class="form-row">
                 <div class="form-group">
                     <label for="dob">DOB</label>
-                    <input type="date" id="dob" required>
+                    <input type="date" id="dob" value="<?php display_message("birthday")?>">
                 </div>
                 <div class="form-group">
                     <label for="gender">Gender</label>
                     <div class="radio-group">
-                        <label><input type="radio" name="gender" value="Male" required> Male</label>
+                        <label><input type="radio" name="gender" value="Male"> Male</label>
                         <label><input type="radio" name="gender" value="Female"> Female</label>
                         <label><input type="radio" name="gender" value="Other"> Other</label>
                     </div>
@@ -65,15 +55,29 @@ require_once "./includes/login/login_view.php";
             <div class="form-row">
                 <div class="form-group">
                     <label for="address">Address</label>
-                    <input type="text" id="address" placeholder="Address" required>
+                    <input type="text" id="address" placeholder="Address">
                 </div>
+
                 <div class="form-group">
-                    <label for="unit">Unit No.</label>
-                    <select id="unit">
-                        <option value="" disabled selected>--Select Unit--</option>
-                        <option value="101">101</option>
-                        <option value="102">102</option>
-                        <option value="103">103</option>
+                    <label for="room_typ">Room Type<span style="color: red;"><?php display_reservation_error("room_type_error") ?></span></label>
+                    <select name="room_typ" id="room_typ">
+                        <option value="" selected hidden>Room number</option>
+                        <?php 
+                        $roomTypes = showRoomTypes($dbconn);
+                        foreach ($roomTypes as $room_types) {
+                            echo '<option value="'.$room_types['room_type'].'">'.$room_types['room_type'].'</option>';
+                        }
+                        ?>
+                    </select>
+
+                    <label for="flr_num">Floor Number<span style="color: red;"><?php display_reservation_error("floor_number_error") ?></span></label>
+                    <select name="flr_num" id="flr_num">
+                        <option value="" selected hidden>Floor Number</option>     
+                    </select>
+
+                    <label for="room_num">Room Number<span style="color: red;"><?php display_reservation_error("room_number_error") ?></span></label>
+                    <select name="room_num" id="room_num">
+                        <option value="" selected hidden>Room Number</option>     
                     </select>
                 </div>
             </div>
@@ -81,11 +85,11 @@ require_once "./includes/login/login_view.php";
             <div class="form-row">
                 <div class="form-group">
                     <label for="contact">Contact</label>
-                    <input type="tel" id="contact" placeholder="Contact" required>
+                    <input type="tel" id="contact" placeholder="Contact" value="<?php display_message("contact_number")?>">
                 </div>
             </div>
 
-            <button type="submit" class="submit-btn">Submit</button>
+            <button type="submit" class="submit-btn">add tenant</button>    
         </form>
 
         <table>
@@ -94,20 +98,21 @@ require_once "./includes/login/login_view.php";
                     <th>Name</th>
                     <th>Email</th>
                     <th>DOB</th>
-                    <th>Gender</th>
-                    <th>Address</th>
                     <th>Unit No.</th>
                     <th>Contact</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody id="tenant-list">
-                <!-- Data will be dynamically added here -->
+                <tr>
+                </tr>
             </tbody>
         </table>
     </div>
 
-    <script src="javascript/tenant_management_page_admin.js"></script>
+    <script src="javascript/tenant_management_page_admin.js">
+       
+    </script>
 
     
 </body>

@@ -32,8 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
 
-        // adminemail@sample.com (passwordAdmin$00) - 1
-
         //louisemiguel1999@gmail.com (Password@00)
         //capua@email.com (Capua@000)
 

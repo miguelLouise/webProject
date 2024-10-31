@@ -23,6 +23,7 @@ require_once './includes/room_management/room_management_view.php';
         <form action="./includes/room_management/room_management_reserve.php" method="post" id="reservation" novalidate>
         <div class="reservation_container3" id="reservation_container3"></div>
         <div class="reservation_container4">
+        <?php reservation_success_message("reservation_error")?>
         <?php reservation_success_message("reservation_success")?>
 
             <!-- room type -->
@@ -59,6 +60,7 @@ require_once './includes/room_management/room_management_view.php';
         <button id="reserve_btn" type="submit">Reserve</button>
 
         <span style="color: red;"><?php display_reservation_error("room_availability_error") ?></span>
+        <span style="color: red;"><?php display_reservation_error("user_already_reserved_error") ?></span>
 
         <div class="reservation_container5" id="reservation_container5"></div>
             
