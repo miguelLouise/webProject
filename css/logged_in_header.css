@@ -101,18 +101,31 @@
     z-index: 1;
 }
 
+.side_nav_con1{
+    flex-direction: column;
+}
+
 .user_info {
-    margin-top: 80px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    margin-top: 90px;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
+    position: relative;
+}
+
+.head1{
+    position: relative;
+    font-size: 25px;
 }
 
 .nav_icon {
     width: 40px;
     height: 40px;
-    margin-right: 20px;
+    margin-right: 70px;
     border-radius: 50%; 
   }
 
