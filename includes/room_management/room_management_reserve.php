@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $does_user_have_reservation = does_user_have_reservation($dbconn, $_SESSION["user_id"]);
 
                 if ($does_user_have_reservation) {
-                    $_SESSION["user_already_reserved_error"] = "user has already reserved";
+                    $_SESSION["user_already_reserved_error"] = "You already have a reservation";
 
                     header('Location: ../../reservation.php');
                     die();

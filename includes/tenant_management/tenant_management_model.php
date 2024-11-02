@@ -32,10 +32,10 @@ function get_room(object $pdo, $room_num){
     return $result;
 }
 
-function deleteReservation(object $pdo, $reservation_id){
-    $query = "DELETE FROM dormlink_reservations WHERE reservation_id = :reservation_id";
+function deleteReservation(object $pdo, $user_id){
+    $query = "DELETE FROM dormlink_reservations WHERE user_id = :user_id";
     $stmt = $pdo->prepare($query);
-    $stmt->bindParam(":reservation_id", $reservation_id);
+    $stmt->bindParam(":user_id", $user_id);
     $stmt->execute();
 }
 
@@ -64,5 +64,14 @@ function check_if_user_is_tenant(object $pdo, $user_id){
     $stmt->execute();
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+function tenant_info(object $pdo){
+    $query = "SELECT users.user_id, users.name, users.contact_number, users.email, users.birthday, rooms.room_id, rooms.floor_number, rooms.room_number FROM dormlink_tenants JOIN users ON dormlink_tenants.user_id = users.user_id JOIN rooms ON dormlink_tenants.room_id = rooms.room_id";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }

@@ -72,7 +72,7 @@ function getRoomAvailability(object $pdo, $room_type, $floor_num, $room_num){
 }
 
 function isRoomAvailable(object $pdo, $room_num){
-    $query = "SELECT status FROM rooms WHERE room_number = :room_number;";
+    $query = "SELECT * FROM rooms WHERE room_number = :room_number;";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":room_number", $room_num, PDO::PARAM_INT);
     $stmt->execute();
