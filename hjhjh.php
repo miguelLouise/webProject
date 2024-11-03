@@ -1,6 +1,8 @@
 <?php
+require_once "./includes/login/login_view.php";
+require_once "./includes/tenant_management/tenant_management_model.php";
+require_once "./includes/tenant_management/tenant_management_view.php";
 require_once './includes/dbh.inc.php';
-require_once './includes/room_management/room_management_controller.php';
 require_once './includes/room_management/room_management_view.php';
 ?>
 
@@ -13,10 +15,10 @@ require_once './includes/room_management/room_management_view.php';
     <link rel="stylesheet" href="css//hjhjh.css">
 </head>
 <body>
-    <div class="d1">
-       <?php $output = show_reservation_table($dbconn);
-       print_r($output);
-       ?>
-    </div>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Email">
+
+    <button type="submit">Sign up</button>
 </body>
 </html>

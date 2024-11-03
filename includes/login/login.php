@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username_error = "";
         $password_error = "";
 
-        $username = $_POST['username'];
+        $username = trim($_POST['username']);
         $password = $_POST['user_password'];
 
         $user_info = get_user_info($dbconn, $username);

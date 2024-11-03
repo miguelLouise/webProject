@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
 
         // accept reservation and add user as tenant
         if ($_GET['action'] == 'add')  {
-          $_SESSION["reservation_user_id"] = $user_id;
+          $_SESSION["reservation_user_id"] = $get_user["user_id"];
           $_SESSION["name"] = $get_user["name"];
           $_SESSION["email"] = $get_user["email"];
           $_SESSION["birthday"] = $get_user["birthday"];

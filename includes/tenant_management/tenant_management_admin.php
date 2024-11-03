@@ -17,20 +17,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $room_num_error = "";
         $contact_num_error = "";
         
+        
         $name = $_POST["name"];
         $email = $_POST["email"];
         $birthday = $_POST["birthday"];
         $room_typ = $_POST["room_typ"];
         $flr_num = $_POST["flr_num"];
         $room_number = $_POST["room_num"];
-        $contact_num = $_POST["contact_num"];
+        $contact_number = $_POST["contact_num"];
 
         if(empty($name)){
             $name_error = "Empty Field*";
         }
-        if(empty($email)){
+        if(is_empty($email)){
             $email_error = "Empty Field*";
+        }elseif (is_email_valid($email)) {
+            $email_error = "Invalid Email";
         }
+
         if(empty($birthday)){
             $birthday_error = "Empty Field*";
         }
@@ -46,7 +50,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if(empty($room_number)){
             $room_num_error = "Empty Field*";
         }
-        if(empty($contact_num)){
+        if(empty($contact_number)){
             $contact_num_error = "Empty Field*";
         }
 
@@ -65,43 +69,63 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             die();
         }
         else {
-            $isRoomAvailable = isRoomAvailable($dbconn, $room_number);
+            if (isset($_SESSION['reservation_user_id']) && !empty($_SESSION['reservation_user_id'])) {
+                $reservation_user_id = $_SESSION['reservation_user_id'];
+                unset_session_variable("reservation_user_id");
 
-            if ($isRoomAvailable["tenants"] < $isRoomAvailable["max_capacity"]) {
-                $reservation_user_id = $_SESSION["reservation_user_id"];
-                unset_display_message("reservation_user_id");
-                $check_if_user_is_tenant = check_if_user_is_tenant($dbconn, $reservation_user_id);           
+                $get_user = get_user($dbconn, $reservation_user_id);
+                $isRoomAvailable = isRoomAvailable($dbconn, $room_number);
 
-                if ($check_if_user_is_tenant) {
-                    $_SESSION["user_is_tenant"] = "user is already a tenant";
+                if ($isRoomAvailable["tenants"] < $isRoomAvailable["max_capacity"]) {
+                    $check_if_user_is_tenant = check_if_user_is_tenant($dbconn, $reservation_user_id);
+
+                    if (!$check_if_user_is_tenant) {
+                        $room_tenants = $isRoomAvailable['tenants'];
+                        $room_tenants++;
+
+                        add_user_tenant($dbconn, $reservation_user_id, $name, $contact_number, $email, $birthday, $isRoomAvailable["room_id"]);
+                        update_room_tenant($dbconn, $room_tenants, $room_number);  
+                        deleteReservation($dbconn, $reservation_user_id);
+                        
+                        $_SESSION["tenant_added"] = "new tenant added";
+
+                        header('Location: ../../tenant_management_page_admin.php'); 
+                        die();
+                    } else {
+                        $_SESSION["user_is_tenant"] = "user is already a tenant";
+
+                        header('Location: ../../tenant_management_page_admin.php'); 
+                        die();
+                    }
+                } else {
+                    $_SESSION["room_is_full"] = "room is full";
 
                     header('Location: ../../tenant_management_page_admin.php'); 
                     die();
-                } else {
-                    $get_user = get_user($dbconn, $reservation_user_id);
-                    $get_room = get_room($dbconn, $room_number);
+                }    
+            } else {
+                $isRoomAvailable = isRoomAvailable($dbconn, $room_number);
 
+                if ($isRoomAvailable["tenants"] < $isRoomAvailable["max_capacity"]) {
                     $room_tenants = $isRoomAvailable['tenants'];
                     $room_tenants++;
 
-                    add_new_tenant($dbconn, $get_user["user_id"], $get_room["room_id"]);
+                    add_walkin_tenant($dbconn, $name, $contact_number, $email, $birthday, $isRoomAvailable["room_id"]);
                     update_room_tenant($dbconn, $room_tenants, $room_number);  
-                    deleteReservation($dbconn, $reservation_user_id);
-                    
+                    // deleteReservation($dbconn, $reservation_user_id);
+                        
                     $_SESSION["tenant_added"] = "new tenant added";
 
                     header('Location: ../../tenant_management_page_admin.php'); 
                     die();
-                }
-            } else {
-                $_SESSION["room_is_full"] = "room is full";
+                } else {
+                    $_SESSION["room_is_full"] = "room is full";
 
-            header('Location: ../../tenant_management_page_admin.php'); 
-            die();
+                    header('Location: ../../tenant_management_page_admin.php'); 
+                    die();
+                } 
             }
-        }
-
-        
+        } 
     } catch (PDOException $e) {
         die("Query failed" . $e->getMessage());
     }

@@ -26,20 +26,20 @@ require_once './includes/room_management/room_management_view.php';
 
     <div class="container">
         <h1>New Tenant Registration</h1>
-        <form action="./includes/tenant_management/tenant_management_admin.php" method="post">
+        <form action="./includes/tenant_management/tenant_management_admin.php" method="post" novalidate>
         <div class="reservation_management_container2">
-            <p style="color:green"><?php display_message("room_is_full"); unset_display_message("room_is_full"); ?></p>
-            <p style="color:green"><?php display_message("user_is_tenant"); unset_display_message("user_is_tenant"); ?></p>
-            <p style="color:green"><?php display_message("tenant_added"); unset_display_message("tenant_added"); ?></p>
+            <p style="color:green"><?php display_message("room_is_full"); unset_session_variable("room_is_full"); ?></p>
+            <p style="color:green"><?php display_message("user_is_tenant"); unset_session_variable("user_is_tenant"); ?></p>
+            <p style="color:green"><?php display_message("tenant_added"); unset_session_variable("tenant_added"); ?></p>
         </div>
         <div class="form-row">
             <div class="form-group">
-                <label for="name">Name<span style="color: red;"><?php display_message("name_error"); unset_display_message("name_error");?></span></label>
-                <input type="text" id="name" name="name" placeholder="Name" value="<?php display_message("name"); unset_display_message("name");?>">
+                <label for="name">Name<span style="color: red;"><?php display_message("name_error"); unset_session_variable("name_error");?></span></label>
+                <input type="text" id="name" name="name" placeholder="Name" value="<?php display_message("name"); unset_session_variable("name");?>">
             </div>
             <div class="form-group">
-                <label for="email">Email<span style="color: red;"><?php display_message("email_error"); unset_display_message("email_error");?></span></label>
-                <input type="email" id="email" name="email" placeholder="Email" value="<?php display_message("email"); unset_display_message("email");?>">
+                <label for="email">Email<span style="color: red;"><?php display_message("email_error"); unset_session_variable("email_error");?></span></label>
+                <input type="email" id="email" name="email" placeholder="Email" value="<?php display_message("email"); unset_session_variable("email");?>">
             </div>
         </div>
 
@@ -47,16 +47,16 @@ require_once './includes/room_management/room_management_view.php';
 
         <div class="form-row">
             <div class="form-group">
-                <label for="dob">DOB<span style="color: red;"><?php display_message("birthday_error"); unset_display_message("birthday_error");?></span></label>
-                <input type="date" id="dob" name="birthday" value="<?php display_message("birthday"); unset_display_message("birthday");?>">
+                <label for="dob">DOB<span style="color: red;"><?php display_message("birthday_error"); unset_session_variable("birthday_error");?></span></label>
+                <input type="date" id="dob" name="birthday" value="<?php display_message("birthday"); unset_session_variable("birthday");?>">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group">
-                <label for="room_typ">Room Type <span style="color: red;"><?php display_message("room_typ_error"); unset_display_message("room_typ_error");?></span></label>
+                <label for="room_typ">Room Type <span style="color: red;"><?php display_message("room_typ_error"); unset_session_variable("room_typ_error");?></span></label>
                 <select name="room_typ" id="room_typ"> 
-                    <option value="<?php display_message("room_type") ?>" selected hidden> <?php display_message("room_type"); unset_display_message("room_type");?> </option>
+                    <option value="<?php display_message("room_type") ?>" selected hidden> <?php display_message("room_type"); unset_session_variable("room_type");?> </option>
                     <?php    
                     $roomTypes = showRoomTypes($dbconn);
                     foreach ($roomTypes as $room_types) {
@@ -65,22 +65,22 @@ require_once './includes/room_management/room_management_view.php';
                     ?>   
                 </select>
 
-                <label for="flr_num">Floor Number <span style="color: red;"><?php display_message("flr_num_error"); unset_display_message("flr_num_error");?></span></label>
+                <label for="flr_num">Floor Number <span style="color: red;"><?php display_message("flr_num_error"); unset_session_variable("flr_num_error");?></span></label>
                 <select name="flr_num" id="flr_num" >
-                    <option value="<?php display_message("floor_number") ?>" selected hidden> <?php display_message("floor_number"); unset_display_message("floor_number");?> </option>     
+                    <option value="<?php display_message("floor_number") ?>" selected hidden> <?php display_message("floor_number"); unset_session_variable("floor_number");?> </option>     
                 </select>
 
-                <label for="room_num">Room Number <span style="color: red;"><?php display_message("room_num_error"); unset_display_message("room_num_error");?></span></label>
+                <label for="room_num">Room Number <span style="color: red;"><?php display_message("room_num_error"); unset_session_variable("room_num_error");?></span></label>
                 <select name="room_num" id="room_num">
-                    <option value="<?php display_message("room_number") ?>" selected hidden> <?php display_message("room_number"); unset_display_message("room_number");?> </option>     
+                    <option value="<?php display_message("room_number") ?>" selected hidden> <?php display_message("room_number"); unset_session_variable("room_number");?> </option>     
                 </select>
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group">
-                <label for="contact">Contact <span style="color: red;"><?php display_message("contact_num_error"); unset_display_message("contact_num_error");?></span></label>
-                <input type="tel" id="contact" name="contact_num" placeholder="Contact" value="<?php display_message("contact_number"); unset_display_message("contact_number");?>">
+                <label for="contact">Contact <span style="color: red;"><?php display_message("contact_num_error"); unset_session_variable("contact_num_error");?></span></label>
+                <input type="tel" id="contact" name="contact_num" placeholder="Contact" value="<?php display_message("contact_number"); unset_session_variable("contact_number");?>">
             </div>
         </div>
             <button type="submit" class="submit-btn">add tenant</button>    
@@ -98,17 +98,7 @@ require_once './includes/room_management/room_management_view.php';
                 </tr>
             </thead>
             <tbody id="tenant-list">
-                <?php $tenant_info = tenant_info($dbconn);
-                foreach($tenant_info as $tenantInfo){
-                    echo '<tr>';
-                    echo '<td>'.$tenantInfo["name"].'</td>';
-                    echo '<td>'.$tenantInfo["email"].'</td>';
-                    echo '<td>'.$tenantInfo["birthday"].'</td>';
-                    echo '<td>'.$tenantInfo["room_number"].'</td>';
-                    echo '<td>'.$tenantInfo["contact_number"].'</td>';
-                    echo '</tr>';
-                }
-                ?>
+                
             </tbody>
         </table>
     </div>

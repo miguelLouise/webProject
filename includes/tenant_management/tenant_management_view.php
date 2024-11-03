@@ -9,6 +9,6 @@ function display_message(string $var_name)
     }
 }
 
-function unset_display_message(string $var_name){
+function unset_session_variable(string $var_name){
     unset($_SESSION[$var_name]);
 }
