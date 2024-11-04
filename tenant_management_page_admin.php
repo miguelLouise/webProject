@@ -98,7 +98,17 @@ require_once './includes/room_management/room_management_view.php';
                 </tr>
             </thead>
             <tbody id="tenant-list">
-                
+                <?php $tenant_info = tenant_info($dbconn);
+                foreach($tenant_info as $tenantInfo){
+                    echo '<tr>';
+                    echo '<td>'.$tenantInfo["name"].'</td>';
+                    echo '<td>'.$tenantInfo["email"].'</td>';
+                    echo '<td>'.$tenantInfo["birthday"].'</td>';
+                    echo '<td>'.$tenantInfo["room_number"].'</td>';
+                    echo '<td>'.$tenantInfo["contact_number"].'</td>';
+                    echo '</tr>';
+                }
+                ?>
             </tbody>
         </table>
     </div>

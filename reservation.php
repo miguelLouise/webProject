@@ -1,4 +1,6 @@
 <?php
+require_once "./includes/login/login_view.php";
+include "./middleware/user_middleware.php";
 require_once './includes/dbh.inc.php';
 require_once './includes/room_management/room_management_view.php';
 ?>

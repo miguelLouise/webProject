@@ -1,7 +1,8 @@
 <?php
 require_once "./includes/login/login_view.php";
-// include "./middleware/user_middleware.php";
+include "./middleware/user_middleware.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

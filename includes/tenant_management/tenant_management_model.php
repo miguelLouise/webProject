@@ -73,7 +73,7 @@ function update_room_tenant(object $pdo, $tenant_num, $room_num){
 }
 
 function check_if_user_is_tenant(object $pdo, $user_id){
-    $query = "SELECT * FROM dormlink_tenants WHERE user_id = :user_id;";
+    $query = "SELECT dormlink_tenants.*, rooms.*  FROM dormlink_tenants JOIN rooms ON dormlink_tenants.room_id = rooms.room_id WHERE dormlink_tenants.user_id = :user_id;";   
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
     $stmt->execute();
@@ -83,7 +83,7 @@ function check_if_user_is_tenant(object $pdo, $user_id){
 }
 
 function tenant_info(object $pdo){
-    $query = "SELECT users.user_id, users.name, users.contact_number, users.email, users.birthday, rooms.room_id, rooms.floor_number, rooms.room_number FROM dormlink_tenants JOIN users ON dormlink_tenants.user_id = users.user_id JOIN rooms ON dormlink_tenants.room_id = rooms.room_id";
+    $query = "SELECT dormlink_tenants.*, rooms.*  FROM dormlink_tenants JOIN rooms ON dormlink_tenants.room_id = rooms.room_id";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 

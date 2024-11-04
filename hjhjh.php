@@ -4,6 +4,7 @@ require_once "./includes/tenant_management/tenant_management_model.php";
 require_once "./includes/tenant_management/tenant_management_view.php";
 require_once './includes/dbh.inc.php';
 require_once './includes/room_management/room_management_view.php';
+include "./middleware/user_middleware.php";
 ?>
 
 <!DOCTYPE html>
