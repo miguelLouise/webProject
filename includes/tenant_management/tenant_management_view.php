@@ -13,3 +13,15 @@ function unset_session_variable(string $var_name){
     unset($_SESSION[$var_name]);
 }
 
+function current_date(){
+    $current_date = date("Y-m-d");
+
+    $_SESSION["current_date"] = $current_date;
+}
+
+function show_total_tenants(object $pdo){
+    require_once "tenant_management_model.php";
+    $result = get_total_tenants($pdo);
+    echo $result["total_tenants"];
+}
+

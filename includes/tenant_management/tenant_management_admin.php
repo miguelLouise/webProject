@@ -16,6 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $flr_num_error = "";
         $room_num_error = "";
         $contact_num_error = "";
+        $contract_date_error = "";
         
         
         $name = $_POST["name"];
@@ -25,6 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $flr_num = $_POST["flr_num"];
         $room_number = $_POST["room_num"];
         $contact_number = $_POST["contact_num"];
+        $contract_date = $_POST["start_of_contract"];
 
         if(empty($name)){
             $name_error = "Empty Field*";
@@ -53,10 +55,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if(empty($contact_number)){
             $contact_num_error = "Empty Field*";
         }
+        if(empty($contract_date)){
+            $contract_date_error = "Empty Field*";
+        }
 
         session_start();
 
-        if($name_error || $email_error || $birthday_error || $room_typ_error || $flr_num_error || $room_num_error || $contact_num_error){
+        if($name_error || $email_error || $birthday_error || $room_typ_error || $flr_num_error || $room_num_error || $contact_num_error || $contract_date_error){
             $_SESSION["name_error"] = $name_error;
             $_SESSION["email_error"] = $email_error;
             $_SESSION["birthday_error"] = $birthday_error;
@@ -64,6 +69,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $_SESSION["flr_num_error"] = $flr_num_error;
             $_SESSION["room_num_error"] = $room_num_error;
             $_SESSION["contact_num_error"] = $contact_num_error;
+            $_SESSION["contract_date_error"] = $contract_date_error;
 
             header('Location: ../../tenant_management_page_admin.php');
             die();
@@ -83,7 +89,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         $room_tenants = $isRoomAvailable['tenants'];
                         $room_tenants++;
 
-                        add_user_tenant($dbconn, $reservation_user_id, $name, $contact_number, $email, $birthday, $isRoomAvailable["room_id"]);
+                        add_user_tenant($dbconn, $reservation_user_id, $name, $contact_number, $email, $birthday, $isRoomAvailable["room_id"], $contract_date);
                         update_room_tenant($dbconn, $room_tenants, $room_number);  
                         deleteReservation($dbconn, $reservation_user_id);
                         
@@ -110,7 +116,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $room_tenants = $isRoomAvailable['tenants'];
                     $room_tenants++;
 
-                    add_walkin_tenant($dbconn, $name, $contact_number, $email, $birthday, $isRoomAvailable["room_id"]);
+                    add_walkin_tenant($dbconn, $name, $contact_number, $email, $birthday, $isRoomAvailable["room_id"], $contract_date);
                     update_room_tenant($dbconn, $room_tenants, $room_number);  
                     // deleteReservation($dbconn, $reservation_user_id);
                         

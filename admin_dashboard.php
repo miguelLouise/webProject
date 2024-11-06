@@ -1,6 +1,9 @@
 <?php
-require_once "./includes/login/login_view.php";
-include "./middleware/admin_middleware.php";
+require_once './includes/login/login_view.php';
+include './middleware/admin_middleware.php';
+require_once './includes/dbh.inc.php';
+require_once './includes/tenant_management/tenant_management_view.php';
+require_once './includes/room_management/room_management_view.php';
 ?>
 
 <!DOCTYPE html>
@@ -32,15 +35,16 @@ include "./middleware/admin_middleware.php";
                 <img src="Assets/box1icon.png" alt="Total Tenants Icon" class="box-icon">
                 <div class="box-content">
                 <h3>Total Tenants</h3>
-                <p>0</p>
+                <!-- php -->
+                <p><?php show_total_tenants($dbconn); ?></p>
                 </div>  
             </a>
 
-            <a href="#" class="dashboard-box box2">
+            <a href="room_management_page_admin.php" class="dashboard-box box2">
                 <img src="Assets/box2icon.png" alt="Total Rooms Icon" class="box-icon">
                 <div class="box-content">
                 <h3>Total Rooms</h3>
-                <p>69</p> 
+                <p><?php show_total_rooms($dbconn); ?></p> 
                 </div>  
             </a>
 

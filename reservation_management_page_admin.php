@@ -18,6 +18,7 @@ require_once './includes/tenant_management/tenant_management_view.php';
     <!-- header -->
 
     <div class="reservation_management_container1">
+    <p style="color:green"><?php display_message("delete_reservation"); unset_session_variable("delete_reservation");?></p>
       <table>
         <thead>
           <tr>

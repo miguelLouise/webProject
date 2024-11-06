@@ -57,11 +57,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($_SESSION["user_role"] == 0) {
                 header("Location: ../../user_homepage.php?login=success");
-                // echo  $_SESSION["user_role"];
             }
             else {
                 header("Location: ../../admin_dashboard.php?login=success");
-                // echo  $_SESSION["user_role"];
             }
 
             $pdo = null;

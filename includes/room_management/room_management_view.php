@@ -1,10 +1,9 @@
 <?php
-$result;
 
-function showTable(object $pdo)
+function show_dormlink_rooms(object $pdo)
 {
     require_once './includes/room_management/room_management_model.php';
-    $result = getRoomMngmtTable($pdo);
+    $result = getDormlinkRooms($pdo);
     return $result;
 }
 
@@ -68,4 +67,10 @@ function show_reservation_table(object $pdo)
     require_once './includes/room_management/room_management_model.php';
     $result = getReservationTable($pdo);
     return $result;
+}
+
+function show_total_rooms(object $pdo){
+    require_once 'room_management_model.php';
+    $result = get_total_Rooms($pdo);
+    echo $result["total_rooms"];
 }

@@ -1,8 +1,8 @@
 <?php
-require_once "./includes/login/login_view.php";
-include "./middleware/admin_middleware.php";//
-require_once "./includes/tenant_management/tenant_management_model.php";
-require_once "./includes/tenant_management/tenant_management_view.php";
+require_once './includes/login/login_view.php';
+include './middleware/admin_middleware.php';
+require_once './includes/tenant_management/tenant_management_model.php';
+require_once './includes/tenant_management/tenant_management_view.php';
 require_once './includes/dbh.inc.php';
 require_once './includes/room_management/room_management_view.php';
 ?>
@@ -83,9 +83,20 @@ require_once './includes/room_management/room_management_view.php';
                 <input type="tel" id="contact" name="contact_num" placeholder="Contact" value="<?php display_message("contact_number"); unset_session_variable("contact_number");?>">
             </div>
         </div>
+
+       
+        <div class="form-row">
+            <div class="form-group">
+                <label for="start_of_contract">Contract Start<span style="color: red;"><?php display_message("contract_date_error"); unset_session_variable("contract_date_error");?></span></label>
+                <input type="date" id="start_of_contract" name="start_of_contract" value="<?php current_date(); display_message("current_date");?>">
+            </div>
+        </div>
+        
             <button type="submit" class="submit-btn">add tenant</button>    
         </form>
 
+        <!-- <form action="includes/tenant_management/tenant_edit.php" method="get" novalidate> -->
+        <p style="color:green"><?php display_message("tenant_record_deleted"); unset_session_variable("tenant_record_deleted"); ?></p>
         <table>
             <thead>
                 <tr>
@@ -94,23 +105,34 @@ require_once './includes/room_management/room_management_view.php';
                     <th>DOB</th>
                     <th>Unit No.</th>
                     <th>Contact</th>
+                    <th>Start of contract</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody id="tenant-list">
                 <?php $tenant_info = tenant_info($dbconn);
                 foreach($tenant_info as $tenantInfo){
+                    echo '<form action="includes/tenant_management/tenant_edit.php" method="get">';
                     echo '<tr>';
+                    echo '<input type="hidden" name="tenant_id" value="'.$tenantInfo["tenant_id"].'">';
                     echo '<td>'.$tenantInfo["name"].'</td>';
                     echo '<td>'.$tenantInfo["email"].'</td>';
                     echo '<td>'.$tenantInfo["birthday"].'</td>';
                     echo '<td>'.$tenantInfo["room_number"].'</td>';
                     echo '<td>'.$tenantInfo["contact_number"].'</td>';
-                    echo '</tr>';
+                    echo '<td>'.$tenantInfo["start_of_contract"].'</td>';
+                
+                    echo '<td>
+                          <input type="submit" name="action" value="add">
+                          <input type="submit" name="action" value="delete">
+                          </td>'; 
+                     echo '</tr>';
+                     echo '</form>';
                 }
                 ?>
             </tbody>
         </table>
+        <!-- </form> -->
     </div>
 
     <script type="text/javascript">

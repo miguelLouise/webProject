@@ -1,6 +1,7 @@
 <?php
-require_once "./includes/login/login_view.php";
+require_once './includes/login/login_view.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
