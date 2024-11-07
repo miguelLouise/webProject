@@ -1,6 +1,6 @@
 <?php
-require_once './includes/login/login_view.php';
-include './middleware/admin_middleware.php';
+// require_once './includes/login/login_view.php';
+// include './middleware/admin_middleware.php';
 ?>
 
 <!DOCTYPE html>

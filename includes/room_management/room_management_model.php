@@ -120,3 +120,12 @@ function get_total_Rooms(object $pdo){
     return $result;
 }
 
+function get_total_Beds(object $pdo){
+    $query = "SELECT SUM(max_capacity) AS total_beds FROM rooms;";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}
+

@@ -63,7 +63,7 @@ require_once './includes/login/login_view.php';
 
                     <button type="submit">Log in</button>
 
-                    <a href="" class="signup_link">Sign up</a>
+                    <a href="signup_page.php" class="signup_link">Sign up</a>
                 </form>
             </div>
         </div>

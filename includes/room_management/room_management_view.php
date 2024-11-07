@@ -74,3 +74,9 @@ function show_total_rooms(object $pdo){
     $result = get_total_Rooms($pdo);
     echo $result["total_rooms"];
 }
+
+function show_total_beds(object $pdo){
+    require_once 'room_management_model.php';
+    $result = get_total_Beds($pdo);
+    echo $result["total_beds"];
+}

@@ -13,6 +13,7 @@ require_once 'includes/signup_process_view.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dormlink - Signup</title>
     <link rel="stylesheet" href="css///signup.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
         .floating-fb-btn {
             position: fixed;
@@ -72,7 +73,7 @@ require_once 'includes/signup_process_view.php';
                     <div class="input-group">
                         <label for="password">Password <span style="color: red;"><?php display_signup_error("password_error") ?></span></label>
                         <input type="password" id="password" name="password" placeholder="Password">
-
+                        <i class="bi bi-eye-slash-fill" id="hide"></i>
                     </div>
 
                     <div class="input-group">
@@ -89,6 +90,26 @@ require_once 'includes/signup_process_view.php';
             <!-- page content -->
         </div>
     </div>
+
+    <script>
+        window.history.forward();
+        
+        const eye = document.getElementById("hide");
+        const password = document.getElementById("password");
+
+        eye.onclick = (icon) => {
+            if (password.type == "password") {
+                password.type = "text";
+                eye.className = 'bi-eye-fill';
+            } else {
+                password.type = "password";
+                eye.className = 'bi-eye-slash-fill';
+            }
+        }
+
+        const input = document.getElementById("name");
+        input.value = input.value.trim();
+    </script>
 
     <!-- Floating Facebook Button -->
     <!-- <a href="https://web.facebook.com/1277apartments/?_rdc=1&_rdr" target="_blank" class="floating-fb-btn">

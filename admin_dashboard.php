@@ -1,6 +1,6 @@
 <?php
-require_once './includes/login/login_view.php';
-include './middleware/admin_middleware.php';
+// require_once './includes/login/login_view.php';
+// include './middleware/admin_middleware.php';
 require_once './includes/dbh.inc.php';
 require_once './includes/tenant_management/tenant_management_view.php';
 require_once './includes/room_management/room_management_view.php';
@@ -52,22 +52,23 @@ require_once './includes/room_management/room_management_view.php';
                 <img src="Assets/box3icon.png" alt="Total Beds Icon" class="box-icon">
                 <div class="box-content">
                 <h3>Total Beds</h3>
-                <p>242</p>
+                <p><?php show_total_beds($dbconn); ?></p> 
                 </div> 
             </a>
 
             <a href="#" class="dashboard-box box4">
                 <img src="Assets/box4icon.png" alt="Unpaid Icon" class="box-icon">
                 <div class="box-content">  
-                <h3>Unpaid Invoices</h3>
+                <h3>Tenants</h3>
                 <p>0</p>
                 </div>
             </a>
 
+            
             <a href="#" class="dashboard-box box5">
                 <img src="Assets/box5icon.png" alt="Total Balances Icon" class="box-icon">
                 <div class="box-content">
-                <h3>Total Balance Amount</h3>
+                <h3>Vacant Rooms</h3>
                 <p>0</p>
                 </div>
             </a>
@@ -75,30 +76,14 @@ require_once './includes/room_management/room_management_view.php';
             <a href="#" class="dashboard-box box6">
                 <img src="Assets/box6icon.png" alt="Total Paid Icon" class="box-icon">
                 <div class="box-content">
-                <h3>Total Paid Amount</h3>
+                <h3>Occupied Rooms</h3>
                 <p>0</p>
                 </div>
             </a>
 
-            <!-- Dynamic month names -->
-            <a href="#" class="dashboard-box box7">
-                <img src="Assets/box7icon.png" alt="Income Icon" class="box-icon">
-                <div class="box-content">
-                <h3><?php echo date('F'); ?> Income</h3>
-                <p>0</p>
-                </div>
-            </a>
 
-            <a href="#" class="dashboard-box box8">
-                <img src="Assets/box8icon.png" alt="Expenses Icon" class="box-icon">
-                <div class="box-content">
-                <h3><?php echo date('F'); ?> Expense</h3>
-                <p>0</p>
-                </div>
-            </a>
 
-            <div class="charts">
-
+            <!-- <div class="charts">
                 <div class="charts-card">
                     <h2 class="chart-title">Sample Overview</h2>
                     <div id="bar-chart"></div>
@@ -108,8 +93,7 @@ require_once './includes/room_management/room_management_view.php';
                     <h2 class="chart-title">Reservation Statistics</h2>
                     <div id="area-chart"></div>
                 </div>
-
-            </div>         
+            </div> -->
         </div>
 
         <!-- ApexCharts -->

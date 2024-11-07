@@ -13,36 +13,47 @@ require_once './includes/room_management/room_management_model.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css//hjhjh.css">
+    <link rel="stylesheet" href="css/hjhjh.css">
 </head>
 <body>
 
-<table>
-            <thead>
-                <tr>
-                    <th>room_id</th>
-                    <th>room_type</th>
-                    <th>floor_number</th>
-                    <th>room_number</th>
-                    <th>tenants</th>
-                    <th>max_capacity</th>
-                </tr>
-            </thead>
-            <tbody id="tenant-list">
-                <?php $showAllRooms = showAllRooms($dbconn);
-                foreach($showAllRooms as $roomInfo){
-                    echo '<tr>';
-                    echo '<td>'.$roomInfo["room_id"].'</td>';
-                    echo '<td>'.$roomInfo["room_type"].'</td>';
-                    echo '<td>'.$roomInfo["floor_number"].'</td>';
-                    echo '<td>'.$roomInfo["room_number"].'</td>';
-                    echo '<td>'.$roomInfo["tenants"].'</td>';
-                    echo '<td>'.$roomInfo["max_capacity"].'</td>';
-                    echo '</tr>';
-                }
-               show_total_tenants($dbconn);
-                ?>
-            </tbody>
-        </table>
+
+<button id="myButton">Show/Hide Div</button>
+<div id="myDiv" style="display: none;">
+<button >sample button</button>
+    <div class="div1">
+    confirm delete
+  <form id="deleteForm" action="includes/sample.php" method="post" novalidate>
+  <input type="hidden" name="id" value="123">
+  <!-- <button type="submit">Delete</button> -->
+  <button type="submit" name="action" value="delete">delete</button>
+  <button type="submit" name="action" value="cancel">cancel</button>
+  </form>
+    </div> 
+</div>
+
+
+
+<script>
+function confirmDelete() {
+  if (confirm("Are you sure you want to delete?")) {
+    // Proceed with deletion (e.g., submit a form, send an AJAX request)
+    document.getElementById("deleteForm").submit();
+  }
+}
+
+const button = document.getElementById("myButton");
+  const div = document.getElementById("myDiv");
+
+  button.addEventListener("click",   
+ () => {
+    if (div.style.display === "none") {
+      div.style.display = "block";
+    } else {
+      div.style.display   
+ = "none";
+    }
+  });
+</script>
 </body>
 </html>
