@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
         session_start();
 
-        $output = check_if_user_is_tenant($dbconn, $_SESSION["user_id"]);  
+       
 
         if ($room_type_error || $floor_number_error || $room_number_error) {
             $_SESSION["room_type_error"] = $room_type_error;
@@ -40,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header('Location: ../../reservation.php');
             die();
         } else {
+            $output = check_if_user_is_tenant($dbconn, $_SESSION["user_id"]);  
             // if user is already a tenant
             if ($output) {
                 $_SESSION["reservation_error"] = "You are already a tenant";
@@ -52,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $does_user_have_reservation = does_user_have_reservation($dbconn, $_SESSION["user_id"]);
 
                 if ($does_user_have_reservation) {
-                    $_SESSION["user_already_reserved_error"] = "user has already reserved";
+                    $_SESSION["user_already_reserved_error"] = "You already have a reservation";
 
                     header('Location: ../../reservation.php');
                     die();

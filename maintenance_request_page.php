@@ -1,14 +1,21 @@
+<?php
+require_once './includes/login/login_view.php';
+include './middleware/user_middleware.php';
+require_once './includes/dbh.inc.php';
+require_once './includes/tenant_management/tenant_management_view.php';
+require_once './includes/maintenance_management/maintenance_management_view.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maintenance Request</title>
-    <link rel="stylesheet" href="css//maintenance_request.css">
+    <link rel="stylesheet" href="css/maintenance_request.css">
 </head>
 
 <body>
-
     <div class="maintenance_req_container1">
         <!-- header -->
         <?php include('./templates/logged_in_header.php'); ?>
@@ -25,53 +32,59 @@
             <p>Lavenders Place</p>
         </div>
         <div class="right-column">
-            <form action="#" method="post">
+            <form action="./includes/maintenance_management/maintenance_request.php" method="post" novalidate>
+            <?php is_user_tenant($dbconn, $_SESSION["user_id"]);?>
                 <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="name">Name<span style="color: red;"><?php display_message("name_error"); unset_session_variable("name_error");?></span></label>
+                    <input type="text" id="name" name="name" value="<?php display_message("name");?>" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email<span style="color: red;"><?php display_message("email_error"); unset_session_variable("email_error");?></span></label>
+                    <input type="email" id="email" name="email" value="<?php display_message("email");?>" readonly>
+                </div>
+                
+                
+                <div class="form-group">
+                    <label for="unit-number">Unit Number<span style="color: red;"><?php display_message("unit_number_error"); unset_session_variable("unit_number_error");?></span></label>
+                    <input type="text" id="room_number" name="room_number" value="<?php display_message("room_number");?>" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="unit-number">Unit Number *</label>
-                    <input type="text" id="unit-number" name="unit-number" required>
-                </div>
-                <div class="form-group">
-                    <label for="category">Issue Category</label>
-                    <select id="category" name="category" required>
+                    <label for="category">Issue Category<span style="color: red;"><?php display_message("category_error"); unset_session_variable("category_error");?></span></label>
+                    <select id="category" name="category">
+                    <option value="" selected disabled hidden>Choose Category</option>
                         <option value="electrical">Electrical</option>
                         <option value="plumbing">Plumbing</option>
                         <option value="hvac">HVAC</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Issue Urgency</label>
+                    <label>Issue Urgency<span style="color: red;"><?php display_message("urgency_error"); unset_session_variable("urgency_error");?></span></label>
                     <div class="urgency-options">
                         <div>
-                            <input type="radio" id="low" name="urgency" value="low" required>
+                            <input type="radio" id="low" name="urgency" value="low">
                             <label for="low">Low</label>
                         </div>
                         <div>
-                            <input type="radio" id="medium" name="urgency" value="medium" required>
+                            <input type="radio" id="medium" name="urgency" value="medium">
                             <label for="medium">Medium</label>
                         </div>
                         <div>
-                            <input type="radio" id="high" name="urgency" value="high" required>
+                            <input type="radio" id="high" name="urgency" value="high">
                             <label for="high">High</label>
                         </div>
                         <div>
-                            <input type="radio" id="emergency" name="urgency" value="emergency" required>
+                            <input type="radio" id="emergency" name="urgency" value="emergency">
                             <label for="emergency">Emergency</label>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="description">Describe The Issue *</label>
-                    <textarea id="description" name="description" rows="5" required></textarea>
+                    <label for="description">Describe The Issue<span style="color: red;"><?php display_message("description_error"); unset_session_variable("description_error");?></span></label>
+                    <textarea id="description" name="description" rows="5"></textarea>
                 </div>
                 <button type="submit" class="submit-button">Submit</button>
+                <p style="color:green"><?php display_message("maintenance_request_submitted"); unset_session_variable("maintenance_request_submitted");?></p>
+                <p style="color:red"><?php display_message("user_not_tenant");?></p>
             </form>
         </div>
     </div>

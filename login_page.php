@@ -1,6 +1,7 @@
 <?php
-require_once "./includes/login/login_view.php";
+require_once './includes/login/login_view.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,7 +63,7 @@ require_once "./includes/login/login_view.php";
 
                     <button type="submit">Log in</button>
 
-                    <a href="" class="signup_link">Sign up</a>
+                    <a href="signup_page.php" class="signup_link">Sign up</a>
                 </form>
             </div>
         </div>
@@ -83,12 +84,10 @@ require_once "./includes/login/login_view.php";
                 eye.className = 'bi-eye-slash-fill';
             }
         }
-    </script>
 
-    <!--<a href="https://www.instagram.com/lavanderplace_1277apartments?igsh=dzJwbnUxdDJwOGsx" target="_blank" class="floating-ig-btn">
-        <img src="Assets/igpc.png" alt="Instagram Icon">
-    </a>-->
-        <!-- Floating Facebook Button -->
+        const input = document.getElementById("name");
+        input.value = input.value.trim();
+    </script>
     <a href="https://web.facebook.com/1277apartments/?_rdc=1&_rdr" target="_blank" class="floating-fb-btn">
         <img src="Assets/fbpc.png" alt="Facebook Icon">
     </a>

@@ -4,7 +4,7 @@
 const barChartOptions = {
     series: [
       {
-        data: [10, 8, 6, 4, 2],
+        data: [10, 8],
         name: 'Products',
       },
     ],
@@ -16,7 +16,7 @@ const barChartOptions = {
         show: false,
       },
     },
-    colors: ['#2962ff', '#d50000', '#2e7d32', '#ff6d00', '#583cb3'],
+    colors: ['#2962ff', '#d50000'],
     plotOptions: {
       bar: {
         distributed: true,
@@ -62,7 +62,7 @@ const barChartOptions = {
       theme: 'dark',
     },
     xaxis: {
-      categories: ['Samp1', 'Samp2', 'Samp3', 'Samp4', 'Samp5'],
+      categories: ['Income', 'Expenses'],
       title: {
         style: {
           color: '#f5f7ff',

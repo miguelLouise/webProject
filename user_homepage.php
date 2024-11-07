@@ -1,6 +1,6 @@
 <?php
-require_once "./includes/login/login_view.php";
-include "./middleware/user_middleware.php";
+require_once './includes/login/login_view.php';
+include './middleware/user_middleware.php';
 ?>
 
 <!DOCTYPE html>
@@ -95,7 +95,7 @@ include "./middleware/user_middleware.php";
                     <h2>Studio Room 1</h2>
                     <p>STUDIO TYPE ROOM</p>
                     <p>9,500.00 monthly 1 month advance and 2 months deposit.</p>
-                    <p>( 1 ) one year contract.</p>
+                    <p>( 6 ) months minimum contract.</p>
                     <p>Maximum of 3 persons only.</p>
                     <p>Semi-furnished unit</p>
                     <p>Exclusive water and electric bill</p>
@@ -129,14 +129,14 @@ include "./middleware/user_middleware.php";
                     <h2>Studio Room 2</h2>
                     <p>STUDIO TYPE ROOM</p>
                     <p>10,500.00 monthly 1 month advance and 2 months deposit.</p>
-                    <p>( 1 ) one year contract.</p>
+                    <p>( 6 ) months minimum contract.</p>
                     <p>Maximum of 4 persons only.</p>
                     <p>Semi-furnished unit</p>
                     <p>Exclusive water and electric bill</p>
                     <p>With two ( 2 ) double deck, one cabinet, table, chair, ceiling fan & aircon</p>
                     <p>Free wifi internet in each room</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
-                    <button class="reserve-button">Reserve Now</button>
+                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> 
                 </div>
             </div>
 
@@ -164,7 +164,7 @@ include "./middleware/user_middleware.php";
                     <h2>Studio Room 3</h2>
                     <p>STUDIO TYPE ROOM</p>
                     <p>10,500.00 monthly 1 month advance and 2 months deposit.</p>
-                    <p>( 6 ) month's to ( 1 ) year minimum contract.</p>
+                    <p>( 6 ) months minimum contract.</p>
                     <p>Maximum of 4 persons only.</p>
                     <p>Semi-furnished unit</p>
                     <p>Exclusive water and electric bill</p>
@@ -193,7 +193,7 @@ include "./middleware/user_middleware.php";
                     <h2>Studio Room 4</h2>
                     <p>STUDIO TYPE ROOM</p>
                     <p>15,000.00 monthly 1 month advance and 2 months deposit.</p>
-                    <p>( 1 ) one year contract.</p>
+                    <p>( 6 ) months minimum contract.</p>
                     <p>Maximum of 6 persons only.</p>
                     <p>Semi-furnished unit</p>
                     <p>Exclusive water and electric bill</p>

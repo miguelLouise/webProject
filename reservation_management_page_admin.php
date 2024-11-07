@@ -1,4 +1,6 @@
 <?php
+// require_once './includes/login/login_view.php';
+// include './middleware/admin_middleware.php';
 require_once './includes/dbh.inc.php';
 require_once './includes/room_management/room_management_view.php';
 require_once './includes/tenant_management/tenant_management_view.php';
@@ -18,12 +20,7 @@ require_once './includes/tenant_management/tenant_management_view.php';
     <!-- header -->
 
     <div class="reservation_management_container1">
-      <div class="reservation_management_container2">
-        <p style="color:red"><?php display_message("room_full") ?></p>
-        <p style="color:green"><?php display_message("tenant_added") ?></p>
-        <p style="color:green"><?php display_message("delete_reservation") ?></p>
-        <p style="color:green"><?php display_message("room_is_full") ?></p>
-      </div>
+    <p style="color:green"><?php display_message("delete_reservation"); unset_session_variable("delete_reservation");?></p>
       <table>
         <thead>
           <tr>
