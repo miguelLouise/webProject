@@ -14,7 +14,7 @@
     </div>
 
     <main>
-        <h1>My Payment Schedule</h1>
+        <h1>My Payment</h1>
         <section class="payment-schedule">
             <table>
                 <thead>
