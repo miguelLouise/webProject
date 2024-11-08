@@ -1,6 +1,6 @@
 <?php
-require_once "./includes/login/login_view.php";
-//include "./middleware/admin_middleware.php";
+require_once './includes/login/login_view.php';
+include './middleware/admin_middleware.php';
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ require_once "./includes/login/login_view.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Analytics</title>
-    <link rel="stylesheet" href="css/data_analytics.css">
+    <link rel="stylesheet" href="css//data_analytics.css">
 </head>
 
 <body>

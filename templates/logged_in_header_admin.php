@@ -21,9 +21,6 @@ require_once 'includes/login/login_view.php';
             </svg>
             <a href="../admin_dashboard.php"><img src="../Assets/DDLOGO.png" class="logo" alt="DormLink Logo"></a>
         </div>
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16" id="notif_icon">
-          <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"/>
-        </svg>-->
     </div>
 
     <!-- side navigation bar -->
@@ -39,19 +36,16 @@ require_once 'includes/login/login_view.php';
             <div class="side_nav_con2">
                 <ul>
                 <li><a href="../admin_dashboard.php"><button class="nav_btn"><img src="../Assets/home.png" class="nav_icon">Home</button></a></li>
-                <li><a href="../billing_management_page.php"><button class="nav_btn"><img src="../Assets/wallet.png" class="nav_icon">Billing</button></a></li>
+                <li><a href="../payment_page_admin.php"><button class="nav_btn"><img src="../Assets/wallet.png" class="nav_icon">Billing</button></a></li>
                 <li><a href="../reservation_management_page_admin.php"><button class="nav_btn"><img src="../Assets/reservation.png" class="nav_icon">Reservations</button></a></li>
-                <li><a href="#maintenencemanagement"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Maintenance Management</button></a></li>
-                <li><a href="../inbox_page_admin.php"><button class="nav_btn"><img src="../Assets/inbox.png" class="nav_icon">Inbox</button></a></li>
+                <!-- <li><a href="../inbox_page_admin.php"><button class="nav_btn"><img src="../Assets/inbox.png" class="nav_icon">Inbox</button></a></li> -->
                 <li><a href="../room_management_page_admin.php"><button class="nav_btn"><img src="../Assets/door.png" class="nav_icon">Room Management</button></a></li>
-                <li><a href="#dataanalytics"><button class="nav_btn"><img src="../Assets/chart.png" class="nav_icon">Data Analytics</button></a></li>
-                <li><a href="#reservation"><button class="nav_btn"><img src="../Assets/reservation.png" class="nav_icon">Reservations</button></a></li>
+                <li><a href="../data_analytics_page.php"><button class="nav_btn"><img src="../Assets/chart.png" class="nav_icon">Data Analytics</button></a></li>
                 <li><a href="../maintenance_request_management.php"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Maintenance Management</button></a></li>
-                <!-- <li><a href="../inbox_page_admin.php"><button class="nav_btn"><img src="../Assets/inbox.png" class="nav_icon">Inbox</button></a></li>-->
                 <li><a href="../room_management_page_admin.php"><button class="nav_btn"><img src="../Assets/door.png" class="nav_icon">Room Management</button></a></li>
                 <li><a href="../data_analytics_page.php"><button class="nav_btn"><img src="../Assets/chart.png" class="nav_icon">Data Analytics</button></a></li>
                 <li><a href="../tenant_management_page_admin.php"><button class="nav_btn"><img src="../Assets/tenants.png" class="nav_icon">Manage Tenants</button></a></li>
-                <li><a href="#accountmanagement"><button class="nav_btn"><img src="../Assets/account.png" class="nav_icon">Account management</button></a></li>
+                <!-- <li><a href="#accountmanagement"><button class="nav_btn"><img src="../Assets/account.png" class="nav_icon">Account management</button></a></li> -->
 
                 <li>
                     <form action="../includes/logout/logout.php" method="post" id="login" novalidate>

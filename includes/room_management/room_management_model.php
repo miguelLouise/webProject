@@ -1,6 +1,6 @@
 <?php
 
-function getRoomMngmtTable(object $pdo){
+function getDormlinkRooms(object $pdo){
     $query = "SELECT * FROM rooms";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
@@ -22,16 +22,6 @@ function getFloors(object $pdo, $room_type){
     $query = "SELECT DISTINCT floor_number FROM rooms WHERE room_type = :room_type;";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":room_type", $room_type, PDO::PARAM_INT);
-    $stmt->execute();
-
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $result;
-}
-
-function query1(object $pdo, $room_type){
-    $query = "SELECT * FROM rooms WHERE room_type = :room_type AND floor_number = 5;";
-    $stmt = $pdo->prepare($query);
-    $stmt->bindParam(":room_type", $room_type);
     $stmt->execute();
 
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -72,7 +62,7 @@ function getRoomAvailability(object $pdo, $room_type, $floor_num, $room_num){
 }
 
 function isRoomAvailable(object $pdo, $room_num){
-    $query = "SELECT status FROM rooms WHERE room_number = :room_number;";
+    $query = "SELECT * FROM rooms WHERE room_number = :room_number;";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":room_number", $room_num, PDO::PARAM_INT);
     $stmt->execute();
@@ -106,6 +96,33 @@ function does_user_have_reservation(object $pdo, $user_id){
     $query = "SELECT * FROM dormlink_reservations WHERE user_id = :user_id;";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+function showAllRooms(object $pdo){
+    $query = "SELECT * FROM rooms";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+function get_total_Rooms(object $pdo){
+    $query = "SELECT COUNT(*) AS total_rooms FROM rooms";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+function get_total_Beds(object $pdo){
+    $query = "SELECT SUM(max_capacity) AS total_beds FROM rooms;";
+    $stmt = $pdo->prepare($query);
     $stmt->execute();
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);

@@ -1,6 +1,7 @@
 <?php
 require_once 'includes/login/login_view.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +23,9 @@ require_once 'includes/login/login_view.php';
         <!-- Header buttons -->
         <div class="header_buttons">
             <a href="../user_homepage.php" class="header_button" data-title="Home">Home</a>
+            <a href="../maintenance_request_page.php" class="header_button" data-title="Message/Inquire">Maintenance Request</a>
+            <a href="../messaging_page.php" class="header_button" data-title="Message/Inquire">Message/Inquire</a>
+            <a href="../reservation.php" class="header_button" data-title="Reservation">Reservation</a>
             <a href="../maintenance_request_page.php" class="header_button" data-title="Maintenance Request">Maintenance Request</a>
             <a href="../aboutus.php" class="header_button" data-title="About Us">About Us</a>
             <a href="#contactus" class="header_button" data-title="Contact Us">Contact Us</a>

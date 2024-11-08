@@ -1,0 +1,20 @@
+
+
+#myDiv{
+    background-color: rgb(255, 0, 0);
+    height: 200px;
+    width: 500px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.div1{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(105, 105, 105, 0.5);
+}

@@ -9,8 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username_error = "";
         $password_error = "";
 
-        $username = $_POST['username'];
-        $password = $_POST['user_password'];
+        $username = trim($_POST["username"]);
+        $password = $_POST["user_password"];
 
         $user_info = get_user_info($dbconn, $username);
 
@@ -45,28 +45,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["password_error"] = $password_error;
             header('Location: ../../login_page.php');
             die();
-        }
+        } else {
+            $_SESSION["user_logged_in"] = true;
+            $_SESSION["user_id"] = $user_info["user_id"];
+            $_SESSION["user_role"] = $user_info["role"];
+            $_SESSION["user_name"] = $user_info["name"];
+            $_SESSION["user_num"] = $user_info["contact_number"];
+            $_SESSION["user_email"] = $user_info["email"];
+            $_SESSION["user_bday"] = $user_info["birthday"];
 
-        $_SESSION["user_logged_in"] = true;
-        $_SESSION["user_id"] = htmlspecialchars($user_info["user_id"]);
-        $_SESSION["user_role"] = htmlspecialchars($user_info["role"]);
-        $_SESSION["user_name"] = htmlspecialchars($user_info["name"]);
-        $_SESSION["user_num"] = htmlspecialchars($user_info["contact_number"]);
-        $_SESSION["user_email"] = htmlspecialchars($user_info["email"]);
-        $_SESSION["user_bday"] = htmlspecialchars($user_info["birthday"]);
 
+            if ($_SESSION["user_role"] == 0) {
+                header("Location: ../../user_homepage.php?login=success");
+            }
+            else {
+                header("Location: ../../admin_dashboard.php?login=success");
+            }
 
-        if ($_SESSION["user_role"] == 0) {
-            header("Location: ../../user_homepage.php?login=success");
-        }
-        else {
-            header("Location: ../../admin_dashboard.php?login=success");
-        }
+            $pdo = null;
+            $statement = null;
 
-        $pdo = null;
-        $statement = null;
-
-        die();
+            die();
+        }     
     } catch (PDOException $e) {
         die("Query failed" . $e->getMessage());
     }
