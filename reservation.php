@@ -32,11 +32,11 @@ require_once './includes/room_management/room_management_view.php';
             <div class="input-group">
                 <label for="room_typ">ROOM TYPE <span style="color: red;"><?php display_reservation_error("room_type_error") ?></span></label>
                 <select name="room_typ" id="room_typ">
-                    <option value="" selected hidden>Room number</option>
+                    <option value="" selected hidden>Room Type</option>
                     <?php 
                     $roomTypes = showRoomTypes($dbconn);
                     foreach ($roomTypes as $room_types) {
-                        echo '<option value="'.$room_types['room_type'].'">'.$room_types['room_type'].'</option>';
+                        echo '<option value="'.$room_types["room_type"].'">'.$room_types["room_type"].'</option>';
                     }
                     ?>
                 </select>

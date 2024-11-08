@@ -32,7 +32,7 @@
         <div class="close_icon" onclick="toggleChat()">✖️</div>
     </div>
 
-    <script src="javascript/chatbot.js"></script>
+    <script src="javascript///chatbot.js"></script>
 
 </body>
 

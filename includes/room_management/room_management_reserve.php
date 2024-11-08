@@ -28,9 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $room_number_error = "Empty Field*";
         }
   
-        session_start();
-
-       
+        session_start(); 
 
         if ($room_type_error || $floor_number_error || $room_number_error) {
             $_SESSION["room_type_error"] = $room_type_error;
@@ -78,11 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     } catch (PDOException $e) {
-        if ($e->getCode() == '23000') {
-            echo "Duplicate entry detected. Please try again with unique values.";
-        }
-        else{
-            die("Query failed" . $e->getMessage());
-        }     
+        header('Location: ../../reservation.php');
+        die();
     }
 }

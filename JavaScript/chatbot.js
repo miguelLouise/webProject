@@ -22,6 +22,7 @@ const responses = {
     "reservation": ["To make a reservation, log in to the website and head to the Reservation section."],
     "maintenance": ["You can request maintenance services by logging into the website and using the Maintenance Request feature."],
     "contact": ["You can reach us via email at 1277apartments@gmail.com or call us at 0997 731 6010."],
+    // "default": ["You can reach us via email at 1277apartments@gmail.com or call us at 0997 731 6010."]
     "default": ["I'm sorry, I didn't understand that. Can you please rephrase your question?"]
 };
 
@@ -36,7 +37,7 @@ function toggleChat() {
 
 function sendMessage() {
     const userInput = document.getElementById('user-input').value.trim().toLowerCase();
-    
+
     if (userInput) {
         addMessage(userInput, 'user-message', 'Assets/userchat.png');
 

@@ -80,3 +80,9 @@ function show_total_beds(object $pdo){
     $result = get_total_Beds($pdo);
     echo $result["total_beds"];
 }
+
+function show_total_reservations(object $pdo){
+    require_once 'room_management_model.php';
+    $result = get_total_reservations($pdo);
+    echo $result["total_reservation"];
+}

@@ -119,8 +119,7 @@ require_once './includes/room_management/room_management_view.php';
                     echo '<td>'.$tenantInfo["room_number"].'</td>';
                     echo '<td>'.$tenantInfo["contact_number"].'</td>';
                     echo '<td>'.$tenantInfo["start_of_contract"].'</td>';
-                    echo '<td>
-                                    
+                    echo '<td>               
                           <button type="button" id="myButton">Delete</button>
                           </td>'; 
                     echo '</tr>';    
