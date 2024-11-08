@@ -102,7 +102,8 @@ include "./middleware/user_middleware.php";
                     <p>With one double deck, one bed, cabinet, table, chair, ceiling fan & aircon</p>
                     <p>Free wifi internet in each room</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
-                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a>       
+                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a>
+                    <a href="messaging_page.php"><button class="message-button">Message/Inquire</button></a>        
                 </div>
             </div>
 
@@ -136,7 +137,8 @@ include "./middleware/user_middleware.php";
                     <p>With two ( 2 ) double deck, one cabinet, table, chair, ceiling fan & aircon</p>
                     <p>Free wifi internet in each room</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
-                    <button class="reserve-button">Reserve Now</button>
+                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a>
+                    <a href="messaging_page.php"><button class="message-button">Message/Inquire</button></a>   
                 </div>
             </div>
 
@@ -171,7 +173,8 @@ include "./middleware/user_middleware.php";
                     <p>With two ( 2 ) double deck, one cabinet, table, chair, ceiling fan & aircon</p>
                     <p>Free wifi internet in each room</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
-                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> 
+                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a>
+                    <a href="messaging_page.php"><button class="message-button">Message/Inquire</button></a>    
                 </div>
             </div>
 
@@ -200,7 +203,8 @@ include "./middleware/user_middleware.php";
                     <p>With three ( 3 ) double deck, one cabinet, table, chair, ceiling fan & aircon</p>
                     <p>Free wifi internet in each room</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
-                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> 
+                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a>
+                    <a href="messaging_page.php"><button class="message-button">Message/Inquire</button></a>   
                 </div>
             </div>
         </div>
