@@ -23,9 +23,11 @@ require_once 'includes/login/login_view.php';
         <!-- Header buttons -->
         <div class="header_buttons">
             <a href="../user_homepage.php" class="header_button" data-title="Home">Home</a>
-            <a href="../maintenance_request_page.php" class="header_button" data-title="Message/Inquire">Maintenance Request</a>
-            <a href="../messaging_page.php" class="header_button" data-title="Message/Inquire">Message/Inquire</a>
-            <a href="../reservation.php" class="header_button" data-title="Reservation">Reservation</a>
+            <a href="../maintenance_request_page.php" class="header_button" data-title="Maintenance Request">Maintenance Request</a>
+            <a href="../aboutus.php" class="header_button" data-title="About Us">About Us</a>
+            <a href="#contactus" class="header_button" data-title="Contact Us">Contact Us</a>
+            <!-- <a href="../messaging_page.php" class="header_button" data-title="Message/Inquire">Message/Inquire</a>-->
+            <!--<a href="../reservation.php" class="header_button" data-title="Reservation">Reservation</a>-->
         </div>
         
         <div class="side_nav_icon">
@@ -49,7 +51,7 @@ require_once 'includes/login/login_view.php';
                     <!-- <li><a href="../maintenance_request_page.php"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Maintenance Request</button></a></li>-->
                     <!--<li><a href="../messaging_page.php"><button class="nav_btn"><img src="../Assets/mail.png" class="nav_icon">Message/Inquire</button></a></li>-->
                     <li><a href="../reservation.php"><button class="nav_btn"><img src="../Assets/reservation.png" class="nav_icon">Reservation</button></a></li>
-                    <li><a href="../payment_page.php"><button class="nav_btn"><img src="../Assets/wallet.png" class="nav_icon">Payment Schedule</button></a></li>
+                    <li><a href="../payment_page.php"><button class="nav_btn"><img src="../Assets/wallet.png" class="nav_icon">Partial Payment</button></a></li>
                     <li><a href="#accountmanagement"><button class="nav_btn"><img src="../Assets/account.png" class="nav_icon">Account Management</button></a></li>
                         <form action="../includes/logout/logout.php" method="post" id="login" novalidate>
                             <button type="submit" class="nav_btn">
