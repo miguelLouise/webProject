@@ -219,8 +219,7 @@ session_start();
         }
     </script>
 
-    <script src="javascript/index.js">
-    </script>
+    <script src="javascript/index.js"></script>
 </body>
 
 </html>

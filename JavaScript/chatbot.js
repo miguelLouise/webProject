@@ -124,7 +124,7 @@ function addMessage(message, messageType, icon) {
     messageDiv.className = messageType;
     messageDiv.innerHTML = `<img src="${icon}" alt="User Icon" /> <p>${message}</p>`;
     messagesContainer.appendChild(messageDiv);
-    messagesContainer.scrollTop = messagesContainer.scrollHeight; // Auto-scroll to latest message
+    messagesContainer.scrollTop = messagesContainer.scrollHeight; // Auto-scroll 
 }
 
 function showLoader() {
