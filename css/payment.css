@@ -7,46 +7,143 @@
   font-family: "Roboto", sans-serif;
 }
 
-main {
+.payment_page_container1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  z-index: 10; 
+  background-color: white;
+}
+
+.down-payment-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f4f8;
+  margin-top: 30px;
+}
+
+.payment-card {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  max-width: 800px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.left-section {
+  flex: 1;
+  padding: 20px;
+  border-right: 1px solid #e0e0e0;
+}
+
+.left-section h2 {
+  font-size: 1.5rem;
+  color: #42326E;
+}
+
+.note {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.qr-code {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.right-section {
+  flex: 1;
   padding: 20px;
 }
 
-h1 {
-  margin-top: 100px;
-  font-size: 2rem;
-  font-weight: 500;
-  color: #42326E; 
-  line-height: 1.2; 
+.form-group {
+  margin-bottom: 15px;
 }
 
-.payment-schedule table {
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  border: 2px solid #ddd;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
-.payment-schedule th, .payment-schedule td {
-  padding: 15px;
-  border: 1px solid #ddd;
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007BFF;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Popup */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
   text-align: center;
-  font-size: 0.8rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.payment-schedule tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-.status.unpaid {
-  color: red;
-}
-
-.status.paid {
-  color: green;
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
-  .payment-schedule th:nth-child(3), .payment-schedule td:nth-child(3) {
-    display: none;
+  .payment-card {
+      flex-direction: column;
+  }
+
+  .left-section {
+      border-right: none;
+      border-bottom: 1px solid #e0e0e0;
   }
 }
