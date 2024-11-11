@@ -42,8 +42,8 @@ require_once './includes/maintenance_management/maintenance_management_view.php'
                     <label for="email">Email<span style="color: red;"><?php display_message("email_error"); unset_session_variable("email_error");?></span></label>
                     <input type="email" id="email" name="email" value="<?php display_message("email");?>" readonly>
                 </div>
-                
-                
+
+
                 <div class="form-group">
                     <label for="unit-number">Unit Number<span style="color: red;"><?php display_message("unit_number_error"); unset_session_variable("unit_number_error");?></span></label>
                     <input type="text" id="room_number" name="room_number" value="<?php display_message("room_number");?>" readonly>
@@ -52,9 +52,9 @@ require_once './includes/maintenance_management/maintenance_management_view.php'
                     <label for="category">Issue Category<span style="color: red;"><?php display_message("category_error"); unset_session_variable("category_error");?></span></label>
                     <select id="category" name="category">
                     <option value="" selected disabled hidden>Choose Category</option>
-                        <option value="electrical">Electrical</option>
-                        <option value="plumbing">Plumbing</option>
-                        <option value="hvac">HVAC</option>
+                        <option value="Electrical">Electrical</option>
+                        <option value="Plumbing">Plumbing</option>
+                        <option value="HVAC">HVAC</option>
                     </select>
                 </div>
                 <div class="form-group">

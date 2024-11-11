@@ -12,7 +12,7 @@ require_once './includes/tenant_management/tenant_management_view.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservation - Admin</title>
-    <link rel="stylesheet" href="css///reservation_management_admin.css">
+    <link rel="stylesheet" href="css/reservation_management_admin.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 </head>
 <body>

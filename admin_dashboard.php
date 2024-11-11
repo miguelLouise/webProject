@@ -37,34 +37,34 @@ require_once './includes/room_management/room_management_view.php';
                 <h3>Total Tenants</h3>
                 <!-- php -->
                 <p><?php show_total_tenants($dbconn); ?></p>
-                </div>  
+                </div>
             </a>
 
             <a href="room_management_page_admin.php" class="dashboard-box box2">
                 <img src="Assets/box2icon.png" alt="Total Rooms Icon" class="box-icon">
                 <div class="box-content">
                 <h3>Total Rooms</h3>
-                <p><?php show_total_rooms($dbconn); ?></p> 
-                </div>  
+                <p><?php show_total_rooms($dbconn); ?></p>
+                </div>
             </a>
 
             <a href="room_management_page_admin.php" class="dashboard-box box3">
                 <img src="Assets/box3icon.png" alt="Total Beds Icon" class="box-icon">
                 <div class="box-content">
                 <h3>Total Beds</h3>
-                <p><?php show_total_beds($dbconn); ?></p> 
-                </div> 
+                <p><?php show_total_beds($dbconn); ?></p>
+                </div>
             </a>
 
             <a href="#" class="dashboard-box box4">
                 <img src="Assets/box4icon.png" alt="Unpaid Icon" class="box-icon">
-                <div class="box-content">  
+                <div class="box-content">
                 <h3>Vacant Rooms</h3>
                 <p>0</p>
                 </div>
             </a>
 
-            
+
             <a href="#" class="dashboard-box box5">
                 <img src="Assets/box5icon.png" alt="Total Balances Icon" class="box-icon">
                 <div class="box-content">
@@ -72,14 +72,14 @@ require_once './includes/room_management/room_management_view.php';
                 <p>0</p>
                 </div>
             </a>
-            
+
             <a href="reservation_management_page_admin.php" class="dashboard-box box6">
                 <img src="Assets/box6icon.png" alt="Total Paid Icon" class="box-icon">
                 <div class="box-content">
                 <h3>Reservations</h3>
                 <p><?php show_total_reservations($dbconn); ?></p>
                 </div>
-            </a>    
+            </a>
 
 
 

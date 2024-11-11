@@ -7,33 +7,178 @@
   font-family: "Roboto", sans-serif;
 }
 
-.reservation_management_container1{
+body {
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.reservation_management_container1 {
   position: absolute;
   height: 100vh;
   width: 100%;
   padding-top: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #f8f9fa;
+  overflow-y: auto;
 }
 
-.confirm_div{
-background-color: rgba(122, 122, 122, 0.441);
-position: absolute;
-height: 100%;
-width: 100%;
-top: 0;
-z-index: 9;
+h1, h2, h3, h4 {
+  font-weight: 500;
 }
 
-.confirm_div1{
- position: absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
- background-color: rgb(255, 255, 255);
- box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
- height: 225px;
- width: 450px;
- border-radius: 5px;
- display: flex;
- align-items: center;
-justify-content: center;
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; /* Adding border-radius to table */
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+th {
+  background-color: #007BFF;
+  color: white;
+  font-weight: 600;
+}
+
+td {
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+select.reservation_status {
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 150px;
+}
+
+select.reservation_status option {
+  padding: 10px;
+}
+
+#reservation_action button, #reservation_action h4 {
+  display: inline-block;
+  margin: 5px 10px;
+}
+
+.add_tenant_btn, .delete_btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete_btn {
+  background-color: #dc3545;
+}
+
+.add_tenant_btn:hover, .delete_btn:hover {
+  opacity: 0.8;
+}
+
+.no_action {
+  display: inline-block;
+  color: #6c757d;
+}
+
+.confirm_div {
+  background-color: rgba(122, 122, 122, 0.6);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm_div1 {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  border-radius: 8px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.confirm_div2 button {
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #28a745;
+  cursor: pointer;
+}
+
+.confirm_div2 button:hover {
+  opacity: 0.8;
+  background-color: #218838;
+}
+
+.cancel_btn {
+  background-color: #dc3545;
+}
+
+.cancel_btn:hover {
+  opacity: 0.8;
+  background-color: #c82333;
+}
+
+.reservation_status {
+  border-radius: 4px;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Responsive*/
+@media (max-width: 768px) {
+  .reservation_management_container1 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  #delete_reservation {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 10px;
+  background-color: #d4edda;
+  padding: 10px;
+  border-radius: 5px;
+  color: #155724;
+  display: none;
+}
+
+  select.reservation_status {
+    width: 120px;
+  }
+
+  .confirm_div1 {
+    width: 90%;
+  }
 }

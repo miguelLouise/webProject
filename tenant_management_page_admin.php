@@ -13,7 +13,7 @@ require_once './includes/room_management/room_management_view.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tenant Management</title>
-    <link rel="stylesheet" href="css/tenant_management.css">
+    <link rel="stylesheet" href="css//tenant_management.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 
 </head>
@@ -126,7 +126,7 @@ require_once './includes/room_management/room_management_view.php';
                     echo '</tr>';
 
                     echo '<form class="deleteForm" action="includes/tenant_management/tenant_delete.php" method="post" novalidate>';
-                    echo '<div id="'.$tenantInfo["tenant_id"].'" class="delete_form" style="display: none; background-color:red;">';
+                    echo '<div id="'.$tenantInfo["tenant_id"].'" class="delete_form" style="display: none;">';
                     echo '<input type="hidden" name="tenant_id" value="'.$tenantInfo["tenant_id"].'">';
                     echo 'Remove '.$tenantInfo["name"].' as a tenant and delete existing data related to the user?';
                     echo '<div class="div1">';
@@ -150,6 +150,10 @@ require_once './includes/room_management/room_management_view.php';
                 const deleteConfirmationForm = document.getElementById(tenantId);
 
                 $(deleteConfirmationForm).toggle();
+
+                function getTenantId() {
+                    return tenantId;
+                }
             });
 
             $(document).on('click', '.cancel_btn', function() {
@@ -157,9 +161,12 @@ require_once './includes/room_management/room_management_view.php';
                 const deleteConfirmationForm = document.getElementById(tenantId);
 
                 $(deleteConfirmationForm).toggle();
+
+                function getTenantId() {
+                    return tenantId;
+                }
             });
 
-        // off limits
             $("#message").show().delay(3000).fadeOut(70);
 
             $(document).on("change", "#room_typ", function() {

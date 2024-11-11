@@ -7,60 +7,145 @@
   font-family: "Roboto", sans-serif;
 }
 
-.room_availability_page_container1{
+.room_availability_page_container1 {
   position: absolute;
-  height: 100vh;
   width: 100%;
   padding-top: 70px;
+  background-color: #f5f5f5;
 }
 
-
-.room_availability_page_container2{
+.room_availability_page_container2 {
   padding: 20px;
   height: calc(100vh - 70px);
-}
-
-.room_availability_page_container3{
-  height: calc(100vh - 110px);
-  padding-top: 10px;
-}
-.room_availability_page_container4{
-  background-color: blueviolet;
-  padding: 20px;
-}
-
-#head_title{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.room_availability_page_container3 {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.room_availability_page_container4 {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  height: 60px;
+  gap: 20px;
+  background-color: #B29CE4;
+  padding: 20px;
+  border-radius: 8px;
+  color: #ffffff;
 }
 
-table{
-  background-color: rgb(0, 0, 0);
-  width: 100%;
+.room_availability_page_container4 label {
+  font-weight: 500;
 }
 
-thead{
-  background-color: rgb(54, 66, 67);
-  color: rgb(255, 255, 255);
-  height: 40px;
-  width: auto;
-  font-size: 20px;
-} 
-
-tbody{
-  background-color: rgb(255, 255, 255);
-  text-align: center;
-}
-
-#tbl_room_data{
+.room_availability_page_container4 select {
   padding: 10px;
-  
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+  background-color: #ffffff;
+  color: #333;
+  font-size: 14px;
 }
-#edit_btn, #dlt_btn{
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background-color: #4a90e2;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+thead th {
+  padding: 12px;
+  text-align: left;
+}
+
+tbody {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+#tbl_room_data {
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+}
+
+#edit_btn,
+#dlt_btn {
   display: inline-flex;
   align-items: center;
-  width: 75px;
-  height: 40px;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#edit_btn {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+}
+
+#edit_btn:hover {
+  background-color: #2980b9;
+}
+
+#dlt_btn {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+}
+
+#dlt_btn:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .room_availability_page_container4 {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .room_availability_page_container4 select {
+    width: 100%;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  thead th {
+    font-size: 14px;
+  }
+
+  #tbl_room_data {
+    font-size: 12px;
+  }
 }
