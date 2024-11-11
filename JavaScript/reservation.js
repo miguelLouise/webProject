@@ -1,29 +1,10 @@
-$("#message").show().delay(5000).fadeOut(70);
-
-const delete_btn = document.getElementById("delete_btn");
-const cancel_btn = document.getElementById("cancel_btn");
-const delete_form = document.getElementById("delete_form");
-
-delete_btn.addEventListener("click",   () => {
-    if (delete_form.style.display === "none") {
-        delete_form.style.display = "block";
-    } else {
-        delete_form.style.display = "none";
-    }
-});
-
-cancel_btn.addEventListener("click",   () => {
-    if (delete_form.style.display === "none") {
-        delete_form.style.display = "block";
-    } else {
-        delete_form.style.display = "none";
-    }
-});
-
-
 // jquery
 $(document).ready(function(){
-    $("#message").show().delay(1000).fadeOut();
+    // $("#reservation_error").show().delay(5000).fadeOut(70);
+    $("#reservation_success").show().delay(5000).fadeOut(70);
+    // $("#room_availability_error").show().delay(5000).fadeOut(70);
+    // $("#user_already_reserved_error").show().delay(5000).fadeOut(70);
+
     $(document).on("change", "#room_typ", function() {
         var getRoomType = $(this).val();
         $.ajax({
@@ -75,8 +56,10 @@ $(document).ready(function(){
             url: 'getAvailabilityAjax.php',
             data: {room_type:getRoomType,flr_num:getFloor, room_num:getRoom},
             success: function(data){
-                $('#reservation_container5').html(data);
+                $('#reservation_confirmation').html(data);
             }
         });
     });
 });
+
+

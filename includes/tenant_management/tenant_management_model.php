@@ -9,7 +9,7 @@ function get_user(object $pdo, $user_id){
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
-// 
+//
 function getRoom(object $pdo, $room_type, $floor_num, $room_num){
     $query = "SELECT * FROM rooms WHERE room_type = :room_type AND floor_number = :floor_number AND room_number = :room_number;";
     $stmt = $pdo->prepare($query);
@@ -75,7 +75,7 @@ function update_room_tenant(object $pdo, $tenant_num, $room_num){
 }
 
 function check_if_user_is_tenant(object $pdo, $user_id){
-    $query = "SELECT dormlink_tenants.*, rooms.*  FROM dormlink_tenants JOIN rooms ON dormlink_tenants.room_id = rooms.room_id WHERE dormlink_tenants.user_id = :user_id;";   
+    $query = "SELECT dormlink_tenants.*, rooms.*  FROM dormlink_tenants JOIN rooms ON dormlink_tenants.room_id = rooms.room_id WHERE dormlink_tenants.user_id = :user_id;";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
     $stmt->execute();
@@ -96,14 +96,14 @@ function tenant_info(object $pdo){
 function delete_tenant(object $pdo, $tenant_id){
     $query = "DELETE FROM dormlink_tenants WHERE tenant_id = :tenant_id";
     $stmt = $pdo->prepare($query);
-    $stmt->bindParam(":tenant_id", $tenant_id);
+    $stmt->bindParam(":tenant_id", $tenant_id, PDO::PARAM_INT);
     $stmt->execute();
 }
 
 function get_tenant_info(object $pdo, $tenant_id){
     $query = "SELECT dormlink_tenants.*, rooms.*  FROM dormlink_tenants JOIN rooms ON dormlink_tenants.room_id = rooms.room_id WHERE tenant_id = :tenant_id";
     $stmt = $pdo->prepare($query);
-    $stmt->bindParam(":tenant_id", $tenant_id);
+    $stmt->bindParam(":tenant_id", $tenant_id, PDO::PARAM_INT);
     $stmt->execute();
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -113,7 +113,7 @@ function get_tenant_info(object $pdo, $tenant_id){
 function delete_maintenace_request(object $pdo, $tenant_id){
     $query = "DELETE FROM dormlink_maintenance_request WHERE tenant_id = :tenant_id";
     $stmt = $pdo->prepare($query);
-    $stmt->bindParam(":tenant_id", $tenant_id);
+    $stmt->bindParam(":tenant_id", $tenant_id, PDO::PARAM_INT);
     $stmt->execute();
 }
 
@@ -126,9 +126,28 @@ function get_total_tenants(object $pdo){
     return $result;
 }
 
-function soft_delete_maintenance_request(object $pdo, $tenant_id){
-    $query = "UPDATE dormlink_maintenance_request SET is_deleted = 1 WHERE tenant_id = :tenant_id;";
+function change_room_status(object $pdo, $room_status, $room_id){
+    $query = "UPDATE rooms SET room_status = :room_status WHERE room_id = :room_id;";
     $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":room_status", $room_status);
+    $stmt->bindParam(":room_id", $room_id);
+    $stmt->execute();
+}
+
+function archive_user_info(object $pdo, $tenant_id, $user_id, $name, $contact_number, $email, $birthday, $room_id, $contract, $start_of_contract, $archive_date){
+    $query = "INSERT INTO dormlink_tenant_archive (tenant_id, user_id, name, contact_number, email, birthday, room_id, contract, start_of_contract, archive_date) VALUES (:tenant_id, :user_id, :name, :contact_number, :email, :birthday, :room_id, :contract, :start_of_contract, :archive_date);";
+    $stmt = $pdo->prepare($query);
+
     $stmt->bindParam(":tenant_id", $tenant_id);
+    $stmt->bindParam(":user_id", $user_id);
+    $stmt->bindParam(":name", $name);
+    $stmt->bindParam(":contact_number", $contact_number);
+    $stmt->bindParam(":email", $email);
+    $stmt->bindParam(":birthday", $birthday);
+    $stmt->bindParam(":room_id", $room_id);
+    $stmt->bindParam(":contract", $contract);
+    $stmt->bindParam(":start_of_contract", $start_of_contract);
+    $stmt->bindParam(":archive_date", $archive_date);
+
     $stmt->execute();
 }

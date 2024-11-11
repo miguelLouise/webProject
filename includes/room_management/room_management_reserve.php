@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $room_type = $_POST["room_typ"];
         $floor_number = $_POST['flr_num'];
         $room_number = $_POST['room_num'];
-        
+
         if(empty($room_type)){
             $room_type_error = "Empty Field*";
         }
@@ -27,23 +27,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if(empty($room_number)){
             $room_number_error = "Empty Field*";
         }
-  
-        session_start(); 
+
+        session_start();
 
         if ($room_type_error || $floor_number_error || $room_number_error) {
             $_SESSION["room_type_error"] = $room_type_error;
             $_SESSION["floor_number_error"] = $floor_number_error;
             $_SESSION["room_number_error"] = $room_number_error;
 
-            header('Location: ../../reservation.php');
+            header("Location: " . $_SERVER['HTTP_REFERER']);
             die();
         } else {
-            $output = check_if_user_is_tenant($dbconn, $_SESSION["user_id"]);  
+            $check_if_user_is_tenant = check_if_user_is_tenant($dbconn, $_SESSION["user_id"]);
             // if user is already a tenant
-            if ($output) {
+            if ($check_if_user_is_tenant) {
                 $_SESSION["reservation_error"] = "You are already a tenant";
 
-                header('Location: ../../reservation.php');
+                header("Location: " . $_SERVER['HTTP_REFERER']);
                 die();
             }
             //if user is not a tenant
@@ -53,23 +53,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($does_user_have_reservation) {
                     $_SESSION["user_already_reserved_error"] = "You already have a reservation";
 
-                    header('Location: ../../reservation.php');
+                    header("Location: " . $_SERVER['HTTP_REFERER']);
                     die();
                 }else{
                     $isRoomAvailable = isRoomAvailable($dbconn, $room_number);
 
-                    if ($isRoomAvailable['status']) {
+                    print_r($isRoomAvailable);
+
+                    if ($isRoomAvailable['room_status'] == "Available") {
                         $date = date("Y-m-d");
                         reserveRoom($dbconn, $_SESSION["user_id"], $room_type, $floor_number, $room_number, $date);
 
                         $_SESSION["reservation_success"] = "Reservation Successful";
-                        header('Location: ../../reservation.php');
+
+                        header("Location: " . $_SERVER['HTTP_REFERER']);
                         die();
                     }
                     else{
                         $_SESSION["room_availability_error"] = "Room not available";
-                        
-                        header('Location: ../../reservation.php');
+
+                        header("Location: " . $_SERVER['HTTP_REFERER']);
                         die();
                     }
                 }

@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         require_once 'tenant_management_view.php';
         require_once 'tenant_management_controller.php';
         require_once '../signup_process_controller.php';
-       
+
         $name_error = "";
         $email_error = "";
         $birthday_error = "";
@@ -17,8 +17,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $room_num_error = "";
         $contact_num_error = "";
         $contract_date_error = "";
-        
-        
+
+
         $name = $_POST["name"];
         $email = $_POST["email"];
         $birthday = $_POST["birthday"];
@@ -71,11 +71,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $_SESSION["contact_num_error"] = $contact_num_error;
             $_SESSION["contract_date_error"] = $contract_date_error;
 
-            header('Location: ../../tenant_management_page_admin.php');
+            header("Location: " . $_SERVER['HTTP_REFERER']);
             die();
         }
         else {
             if (isset($_SESSION['reservation_user_id']) && !empty($_SESSION['reservation_user_id'])) {
+
                 $reservation_user_id = $_SESSION['reservation_user_id'];
                 unset_session_variable("reservation_user_id");
 
@@ -90,25 +91,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         $room_tenants++;
 
                         add_user_tenant($dbconn, $reservation_user_id, $name, $contact_number, $email, $birthday, $isRoomAvailable["room_id"], $contract_date);
-                        update_room_tenant($dbconn, $room_tenants, $room_number);  
+                        $update_room_status = update_room_status($room_tenants, $isRoomAvailable["max_capacity"]);
+                        change_room_status($dbconn, $update_room_status, $isRoomAvailable["room_id"]);
+                        update_room_tenant($dbconn, $room_tenants, $room_number);
                         deleteReservation($dbconn, $reservation_user_id);
-                        
+
+
                         $_SESSION["tenant_added"] = "new tenant added";
 
-                        header('Location: ../../tenant_management_page_admin.php'); 
+                        header("Location: " . $_SERVER['HTTP_REFERER']);
                         die();
                     } else {
                         $_SESSION["user_is_tenant"] = "user is already a tenant";
 
-                        header('Location: ../../tenant_management_page_admin.php'); 
+                        header("Location: " . $_SERVER['HTTP_REFERER']);
                         die();
                     }
                 } else {
                     $_SESSION["room_is_full"] = "room is full";
 
-                    header('Location: ../../tenant_management_page_admin.php'); 
+                    header("Location: " . $_SERVER['HTTP_REFERER']);
                     die();
-                }    
+                }
             } else {
                 $isRoomAvailable = isRoomAvailable($dbconn, $room_number);
 
@@ -117,21 +121,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $room_tenants++;
 
                     add_walkin_tenant($dbconn, $name, $contact_number, $email, $birthday, $isRoomAvailable["room_id"], $contract_date);
-                    update_room_tenant($dbconn, $room_tenants, $room_number);  
-                    // deleteReservation($dbconn, $reservation_user_id);
-                        
+                    $update_room_status = update_room_status($room_tenants, $isRoomAvailable["max_capacity"]);
+                    change_room_status($dbconn, $update_room_status, $isRoomAvailable["room_id"]);
+                    update_room_tenant($dbconn, $room_tenants, $room_number);
+
                     $_SESSION["tenant_added"] = "new tenant added";
 
-                    header('Location: ../../tenant_management_page_admin.php'); 
+                    header("Location: " . $_SERVER['HTTP_REFERER']);
                     die();
                 } else {
                     $_SESSION["room_is_full"] = "room is full";
 
-                    header('Location: ../../tenant_management_page_admin.php'); 
+                    header("Location: " . $_SERVER['HTTP_REFERER']);
                     die();
-                } 
+                }
             }
-        } 
+        }
     } catch (PDOException $e) {
         die("Query failed" . $e->getMessage());
     }

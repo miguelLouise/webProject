@@ -4,6 +4,7 @@ require_once '../includes/room_management/room_management_model.php';
 
 $room_type = $_POST['roomType'];
 $room_status = $_POST['roomStatus'];
+
 $filter_by_room_type_and_room_status = filter_by_room_type_and_room_status($dbconn, $room_type, $room_status);
 
 foreach($filter_by_room_type_and_room_status as $data){

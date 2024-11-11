@@ -26,23 +26,23 @@ require_once 'includes/login/login_view.php';
     <!-- side navigation bar -->
     <div class="side_nav_div">
         <div class="side_nav" id="menu_nav">
-            <div class="user_info">     
+            <div class="user_info">
                 <div class="side_nav_con1">
                     <img src="../Assets/profile.png" class="nav_icon">
                     <h1 class="head1">Admin Profile</h1>
-                </div>                                        
+                </div>
             </div>
-           
+
             <div class="side_nav_con2">
                 <ul>
                 <li><a href="../admin_dashboard.php"><button class="nav_btn"><img src="../Assets/home.png" class="nav_icon">Home</button></a></li>
-                <li><a href="../payment_page_admin.php"><button class="nav_btn"><img src="../Assets/wallet.png" class="nav_icon">Billing</button></a></li>
+                <!-- <li><a href="../payment_page_admin.php"><button class="nav_btn"><img src="../Assets/wallet.png" class="nav_icon">Billing</button></a></li> -->
                 <li><a href="../reservation_management_page_admin.php"><button class="nav_btn"><img src="../Assets/reservation.png" class="nav_icon">Reservations</button></a></li>
                 <!-- <li><a href="../inbox_page_admin.php"><button class="nav_btn"><img src="../Assets/inbox.png" class="nav_icon">Inbox</button></a></li> -->
                 <!-- <li><a href="../room_management_page_admin.php"><button class="nav_btn"><img src="../Assets/door.png" class="nav_icon">Room Management</button></a></li> -->
                 <li><a href="../data_analytics_page.php"><button class="nav_btn"><img src="../Assets/chart.png" class="nav_icon">Data Analytics</button></a></li>
                 <li><a href="../maintenance_request_management.php"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Maintenance Management</button></a></li>
-                <li><a href="../room_management_page_admin.php"><button class="nav_btn"><img src="../Assets/door.png" class="nav_icon">Room Management</button></a></li>
+                <li><a href="../room_management_page_admin.php"><button class="nav_btn"><img src="../Assets/door.png" class="nav_icon">Rooms</button></a></li>
                 <!-- <li><a href="../data_analytics_page.php"><button class="nav_btn"><img src="../Assets/chart.png" class="nav_icon">Data Analytics</button></a></li> -->
                 <li><a href="../tenant_management_page_admin.php"><button class="nav_btn"><img src="../Assets/tenants.png" class="nav_icon">Manage Tenants</button></a></li>
                 <!-- <li><a href="#accountmanagement"><button class="nav_btn"><img src="../Assets/account.png" class="nav_icon">Account management</button></a></li> -->
@@ -52,10 +52,10 @@ require_once 'includes/login/login_view.php';
                         <button type="submit" class="nav_btn">
                             <img src="../Assets/logout.png" class="nav_icon">Logout
                         </button>
-                    </form>       
+                    </form>
                 </li>
                 </ul>
-            </div>          
+            </div>
         </div>
     </div>
 

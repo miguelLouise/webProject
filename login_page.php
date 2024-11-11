@@ -69,25 +69,7 @@ require_once './includes/login/login_view.php';
         </div>
     </div>
     <!-- javascript -->
-    <script>
-        window.history.forward();
-        
-        const eye = document.getElementById("hide");
-        const password = document.getElementById("password");
-
-        eye.onclick = (icon) => {
-            if (password.type == "password") {
-                password.type = "text";
-                eye.className = 'bi-eye-fill';
-            } else {
-                password.type = "password";
-                eye.className = 'bi-eye-slash-fill';
-            }
-        }
-
-        const input = document.getElementById("name");
-        input.value = input.value.trim();
-    </script>
+    <script src="javascript/login_page.js"></script>
     <a href="https://web.facebook.com/1277apartments/?_rdc=1&_rdr" target="_blank" class="floating-fb-btn">
         <img src="Assets/fbpc.png" alt="Facebook Icon">
     </a>

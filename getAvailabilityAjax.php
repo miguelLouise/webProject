@@ -21,5 +21,5 @@ foreach ($output as $value) {
     echo '<br>';
     echo 'Max capacity: ',$value['max_capacity'];
     echo '<br>';
-    echo 'status: ',$value['status'];
+    echo 'status: ',$value['room_status'];
 }

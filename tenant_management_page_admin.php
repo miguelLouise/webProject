@@ -15,7 +15,7 @@ require_once './includes/room_management/room_management_view.php';
     <title>Tenant Management</title>
     <link rel="stylesheet" href="css/tenant_management.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-    <script src="javascript/tenant_management_page_admin.js"></script>
+
 </head>
 <body>
 <div class="tenant_management_container1">
@@ -28,9 +28,9 @@ require_once './includes/room_management/room_management_view.php';
         <h1>New Tenant Registration</h1>
         <form action="./includes/tenant_management/tenant_management_admin.php" method="post" novalidate>
         <div class="reservation_management_container2">
-            <p style="color:green"><?php display_message("room_is_full"); unset_session_variable("room_is_full"); ?></p>
-            <p style="color:green"><?php display_message("user_is_tenant"); unset_session_variable("user_is_tenant"); ?></p>
-            <p style="color:green"><?php display_message("tenant_added"); unset_session_variable("tenant_added"); ?></p>
+            <p style="color:red"><?php display_message("room_is_full"); unset_session_variable("room_is_full"); ?></p>
+            <p style="color:red"><?php display_message("user_is_tenant"); unset_session_variable("user_is_tenant"); ?></p>
+            <p id="" style="color:green"><?php display_message("tenant_added"); unset_session_variable("tenant_added"); ?></p>
         </div>
         <div class="form-row">
             <div class="form-group">
@@ -43,7 +43,7 @@ require_once './includes/room_management/room_management_view.php';
             </div>
         </div>
 
-            
+
 
         <div class="form-row">
             <div class="form-group">
@@ -55,24 +55,24 @@ require_once './includes/room_management/room_management_view.php';
         <div class="form-row">
             <div class="form-group">
                 <label for="room_typ">Room Type <span style="color: red;"><?php display_message("room_typ_error"); unset_session_variable("room_typ_error");?></span></label>
-                <select name="room_typ" id="room_typ"> 
+                <select name="room_typ" id="room_typ">
                     <option value="<?php display_message("room_type") ?>" selected hidden> <?php display_message("room_type"); unset_session_variable("room_type");?> </option>
-                    <?php    
+                    <?php
                     $roomTypes = showRoomTypes($dbconn);
                     foreach ($roomTypes as $room_types) {
                         echo '<option value="'.$room_types['room_type'].'">'.$room_types['room_type'].'</option>';
                     }
-                    ?>   
+                    ?>
                 </select>
 
                 <label for="flr_num">Floor Number <span style="color: red;"><?php display_message("flr_num_error"); unset_session_variable("flr_num_error");?></span></label>
                 <select name="flr_num" id="flr_num" >
-                    <option value="<?php display_message("floor_number") ?>" selected hidden> <?php display_message("floor_number"); unset_session_variable("floor_number");?> </option>     
+                    <option value="<?php display_message("floor_number") ?>" selected hidden> <?php display_message("floor_number"); unset_session_variable("floor_number");?> </option>
                 </select>
 
                 <label for="room_num">Room Number <span style="color: red;"><?php display_message("room_num_error"); unset_session_variable("room_num_error");?></span></label>
                 <select name="room_num" id="room_num">
-                    <option value="<?php display_message("room_number") ?>" selected hidden> <?php display_message("room_number"); unset_session_variable("room_number");?> </option>     
+                    <option value="<?php display_message("room_number") ?>" selected hidden> <?php display_message("room_number"); unset_session_variable("room_number");?> </option>
                 </select>
             </div>
         </div>
@@ -84,18 +84,19 @@ require_once './includes/room_management/room_management_view.php';
             </div>
         </div>
 
-       
+
         <div class="form-row">
             <div class="form-group">
                 <label for="start_of_contract">Contract Start<span style="color: red;"><?php display_message("contract_date_error"); unset_session_variable("contract_date_error");?></span></label>
-                <input type="date" id="start_of_contract" name="start_of_contract" value="<?php current_date(); display_message("current_date");?>">
+                <input type="date" id="start_of_contract" name="start_of_contract" value="<?php current_date(); display_message("current_date"); ?>">
+
             </div>
         </div>
-        
-            <button type="submit" class="submit-btn">add tenant</button>    
+
+            <button type="submit" class="submit-btn">add tenant</button>
         </form>
 
-        <p style="color:green"><?php display_message("tenant_record_deleted"); unset_session_variable("tenant_record_deleted"); ?></p>
+        <p id="message" style="color:green"><?php display_message("tenant_record_deleted"); unset_session_variable("tenant_record_deleted"); ?></p>
         <table>
             <thead>
                 <tr>
@@ -108,43 +109,59 @@ require_once './includes/room_management/room_management_view.php';
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody id="tenant-list">
+            <tbody id="tenant-list" >
             <?php $tenant_info = tenant_info($dbconn);
                 foreach($tenant_info as $tenantInfo){
-                    
-                    echo '<tr>';
+
+                    echo '<tr class="tenant_row">';
                     echo '<td>'.$tenantInfo["name"].'</td>';
                     echo '<td>'.$tenantInfo["email"].'</td>';
                     echo '<td>'.$tenantInfo["birthday"].'</td>';
                     echo '<td>'.$tenantInfo["room_number"].'</td>';
                     echo '<td>'.$tenantInfo["contact_number"].'</td>';
                     echo '<td>'.$tenantInfo["start_of_contract"].'</td>';
-                    echo '<td>               
-                          <button type="button" id="myButton">Delete</button>
-                          </td>'; 
-                    echo '</tr>';    
+                    echo '<td>
+                          <button type="button" id="delete_btn" class="delete_btn" value="'.$tenantInfo["tenant_id"].'">Delete</button>';
+                    echo '</td>';
+                    echo '</tr>';
 
-                    echo '<form id="deleteForm" action="includes/tenant_management/tenant_delete.php" method="post" novalidate>';
-                    echo '<div id="myDiv" style="display: none; background-color:red;">';
+                    echo '<form class="deleteForm" action="includes/tenant_management/tenant_delete.php" method="post" novalidate>';
+                    echo '<div id="'.$tenantInfo["tenant_id"].'" class="delete_form" style="display: none; background-color:red;">';
                     echo '<input type="hidden" name="tenant_id" value="'.$tenantInfo["tenant_id"].'">';
-                    echo 'Remove'.$tenantInfo["name"].' as a tenant and delete existing data related to the user?';
+                    echo 'Remove '.$tenantInfo["name"].' as a tenant and delete existing data related to the user?';
                     echo '<div class="div1">';
                     echo '<button type="submit" name="action" value="delete">Confirm</button>';
-                    echo '<button type="button" id="myButton1">cancel</button>';
+                    echo '<button type="button" id="cancel_btn" class="cancel_btn" value="'.$tenantInfo["tenant_id"].'">cancel</button>';
                     echo '</div>';
                     echo '</div>';
-                    echo '</form>';              
+                    echo '</form>';
+
                 }
                 ?>
             </tbody>
         </table>
     </div>
 
-
-
-
     <script type="text/javascript">
-        $(document).ready(function(){   
+        $(document).ready(function(){
+
+             $(document).on('click', '.delete_btn', function() {
+                const tenantId = $(this).val();
+                const deleteConfirmationForm = document.getElementById(tenantId);
+
+                $(deleteConfirmationForm).toggle();
+            });
+
+            $(document).on('click', '.cancel_btn', function() {
+                const tenantId = $(this).val();
+                const deleteConfirmationForm = document.getElementById(tenantId);
+
+                $(deleteConfirmationForm).toggle();
+            });
+
+        // off limits
+            $("#message").show().delay(3000).fadeOut(70);
+
             $(document).on("change", "#room_typ", function() {
                 var getRoomType = $(this).val();
                 $.ajax({
@@ -152,9 +169,9 @@ require_once './includes/room_management/room_management_view.php';
                     url: 'getFloorNumberAjax.php',
                     data: {roomTyp:getRoomType},
                     success: function(data){
-                        $('#flr_num').html(data);              
-                    }  
-                }); 
+                        $('#flr_num').html(data);
+                    }
+                });
             });
 
             $(document).on("change", "#room_typ", function() {
@@ -163,10 +180,10 @@ require_once './includes/room_management/room_management_view.php';
                     type: 'POST',
                     url: 'getRoomInfoAjax.php',
                     data: {roomTyp:getRoomType},
-                    success: function(data){ 
-                        $('#reservation_container3').html(data);                       
-                    }  
-                }); 
+                    success: function(data){
+                        $('#reservation_container3').html(data);
+                    }
+                });
             });
 
             $(document).on("change", "#flr_num", function() {
@@ -177,7 +194,7 @@ require_once './includes/room_management/room_management_view.php';
                     url: 'getRoomNumberAjax.php',
                     data: {room_type:getRoomType,flr_num:getFloor},
                     success: function(data){
-                        $('#room_num').html(data);       
+                        $('#room_num').html(data);
                     }
                 });
             });
@@ -196,32 +213,12 @@ require_once './includes/room_management/room_management_view.php';
                     url: 'getAvailabilityAjax.php',
                     data: {room_type:getRoomType,flr_num:getFloor, room_num:getRoom},
                     success: function(data){
-                        $('#reservation_container5').html(data); 
+                        $('#reservation_container5').html(data);
                     }
                 });
-            });       
-        });
-
-        const button = document.getElementById("myButton");
-        const button1 = document.getElementById("myButton1");
-        const div = document.getElementById("myDiv");
-
-        button.addEventListener("click",   () => {
-            if (div.style.display === "none") {
-            div.style.display = "block";
-            } else {
-            div.style.display = "none";
-            }
-        });
-
-        button1.addEventListener("click",   () => {
-            if (div.style.display === "none") {
-            div.style.display = "block";
-            } else {
-            div.style.display = "none";
-            }
+            });
         });
     </script>
-    
+
 </body>
 </html>

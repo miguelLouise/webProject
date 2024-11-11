@@ -76,7 +76,7 @@ require_once './includes/room_management/room_management_view.php';
                             <td>capacity</td>
                             <td>fee</td>
                         </tr>
-                        <?php showTable($dbconn); ?>
+                        <?php show_dormlink_rooms($dbconn); ?>
                     </table>
                 </div>
 

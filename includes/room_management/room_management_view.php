@@ -86,3 +86,14 @@ function show_total_reservations(object $pdo){
     $result = get_total_reservations($pdo);
     echo $result["total_reservation"];
 }
+
+function show_reservation_action($reservation_status){
+    if ($reservation_status === "Pending") {
+        echo "reservation is still pending";
+    } elseif ($reservation_status === "Paid/Reserved"){
+        echo "reservation is paid/reserved";
+    } elseif ($reservation_status === "Overdue"){
+        echo "reservation is overdue";
+    }
+
+}

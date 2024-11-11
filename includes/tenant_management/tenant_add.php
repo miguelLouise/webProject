@@ -18,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 
         session_start();
 
-        if (isset($_POST['add_tenant']))  {
+        if (isset($_POST['add_tenant_btn']))  {
           $_SESSION["reservation_user_id"] = $get_user["user_id"];
           $_SESSION["name"] = $get_user["name"];
           $_SESSION["email"] = $get_user["email"];
@@ -27,16 +27,16 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
           $_SESSION["room_type"] = $get_room["room_type"];
           $_SESSION["floor_number"] = $get_room["floor_number"];
           $_SESSION["room_number"] = $get_room["room_number"];
-  
-          header('Location: ../../tenant_management_page_admin.php'); 
+
+          header('Location: ../../tenant_management_page_admin.php');
           die();
         }
-        elseif (isset($_POST['confirm_delete'])) {
+        elseif (isset($_POST['confirm_delete_btn'])) {
           // deleteReservation($dbconn, $user_id);
 
           $_SESSION["delete_reservation"] = "reservation deleted";
 
-          header('Location: ../../reservation_management_page_admin.php#record_deleted'); 
+          header("Location: " . $_SERVER['HTTP_REFERER']);
           die();
         }
       } catch (PDOException $e) {
