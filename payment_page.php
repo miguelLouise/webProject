@@ -25,7 +25,7 @@
 
             <!-- Form  -->
             <div class="right-section">
-                <form id="paymentForm">
+                <form id="paymentForm" novalidate>
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Enter your name" required>

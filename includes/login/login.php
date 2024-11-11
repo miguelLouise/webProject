@@ -21,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $username_error = "Email is not found*";
             }
         }
-
         if (is_empty($password)) {
             $password_error = "Required*";
         } else {
@@ -34,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         //louisemiguel1999@gmail.com (Password@00)
         //capua@email.com (Capua@000)
+        //locymon@gmail.com (Password@11)
 
         //admin@gmail.com (adminPassword@01)
 
@@ -54,7 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["user_email"] = $user_info["email"];
             $_SESSION["user_bday"] = $user_info["birthday"];
 
-
             if ($_SESSION["user_role"] == 0) {
                 header("Location: ../../user_homepage.php?login=success");
             }
@@ -66,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $statement = null;
 
             die();
-        }     
+        }
     } catch (PDOException $e) {
         die("Query failed" . $e->getMessage());
     }

@@ -38,7 +38,7 @@ function toggleChat() {
 
 function sendMessage() {
     const userInput = document.getElementById('user-input').value.trim().toLowerCase();
-    
+
     if (userInput) {
         addMessage(userInput, 'user-message', 'Assets/userchat.png');
 

@@ -16,7 +16,7 @@
 .reservation_container2{
     /* position: relative; */
     /* height: calc(100vh - 130px); */
-    height: 600px;
+    height: 550px;
     margin: 30px 40px;
     border-radius: 10px;
     border: 1px solid;
@@ -25,13 +25,13 @@
 }
 
 .reservation_container3{
-    background-color: chartreuse;
+    background-color: rgb(255, 255, 255);
     width: 100%;
-    height: 300px;
+    height: 350px;
     margin-bottom: 20px;
     padding: 20px;
     word-wrap: break-word;
-    background-color: rgb(172, 140, 13);
+    border: 1px solid black;
 }
 
 .reservation_container4{
@@ -58,6 +58,6 @@
 
 span {
     font-size: 12px;
-    color: red; 
+    color: red;
     display: block;
 }
