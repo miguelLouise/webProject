@@ -36,8 +36,13 @@ require_once './includes/room_management/room_management_view.php';
                 <div class="box-content">
                 <h3>Total Tenants</h3>
                 <!-- php -->
+<<<<<<< HEAD
                 <p><?php show_total_tenants($dbconn); ?></p>
                 </div>
+=======
+                <<p><?php show_total_tenants($dbconn); ?></p>
+                </div>  
+>>>>>>> 8322a24923bff4a35ffa0ed0590f2dbc27dc0eb5
             </a>
 
             <a href="room_management_page_admin.php" class="dashboard-box box2">
@@ -53,7 +58,11 @@ require_once './includes/room_management/room_management_view.php';
                 <div class="box-content">
                 <h3>Total Beds</h3>
                 <p><?php show_total_beds($dbconn); ?></p>
+<<<<<<< HEAD
                 </div>
+=======
+                </div> 
+>>>>>>> 8322a24923bff4a35ffa0ed0590f2dbc27dc0eb5
             </a>
 
             <a href="#" class="dashboard-box box4">
@@ -100,7 +109,7 @@ require_once './includes/room_management/room_management_view.php';
         <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
         <!-- Custom JS -->
         <script src="javascript/admin_dashboard.js"></script>
->>>>>>> e3c9b483a97e5f8f8c6691a0e753b37879a9d109
+
 </body>
 
 </html>
