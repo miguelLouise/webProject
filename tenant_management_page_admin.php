@@ -47,7 +47,7 @@ require_once './includes/room_management/room_management_view.php';
 
         <div class="form-row">
             <div class="form-group">
-                <label for="dob">DOB<span style="color: red;"><?php display_message("birthday_error"); unset_session_variable("birthday_error");?></span></label>
+                <label for="dob">Date of Birth<span style="color: red;"><?php display_message("birthday_error"); unset_session_variable("birthday_error");?></span></label>
                 <input type="date" id="dob" name="birthday" value="<?php display_message("birthday"); unset_session_variable("birthday");?>">
             </div>
         </div>
@@ -93,7 +93,7 @@ require_once './includes/room_management/room_management_view.php';
             </div>
         </div>
 
-            <button type="submit" class="submit-btn">add tenant</button>
+            <button type="submit" class="submit-btn">Add tenant</button>
         </form>
 
         <p id="message" style="color:green"><?php display_message("tenant_record_deleted"); unset_session_variable("tenant_record_deleted"); ?></p>
@@ -126,12 +126,14 @@ require_once './includes/room_management/room_management_view.php';
                     echo '</tr>';
 
                     echo '<form class="deleteForm" action="includes/tenant_management/tenant_delete.php" method="post" novalidate>';
-                    echo '<div id="'.$tenantInfo["tenant_id"].'" class="delete_form" style="display: none; background-color:red;">';
+                    echo '<div id="'.$tenantInfo["tenant_id"].'" class="delete_form" style="display: none;">';
+                    echo '<div class="delete_form1">';
                     echo '<input type="hidden" name="tenant_id" value="'.$tenantInfo["tenant_id"].'">';
                     echo 'Remove '.$tenantInfo["name"].' as a tenant and delete existing data related to the user?';
                     echo '<div class="div1">';
                     echo '<button type="submit" name="action" value="delete">Confirm</button>';
                     echo '<button type="button" id="cancel_btn" class="cancel_btn" value="'.$tenantInfo["tenant_id"].'">cancel</button>';
+                    echo '</div>';
                     echo '</div>';
                     echo '</div>';
                     echo '</form>';
