@@ -38,12 +38,13 @@ body {
     font-size: 2em;
     color: #42326E;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-weight: bold;
 }
 
 .about-container p {
     font-size: 1em;
-    color: #555;
+    color: #000000;
     line-height: 1.6;
     margin-bottom: 15px;
 }
