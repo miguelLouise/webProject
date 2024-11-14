@@ -4,6 +4,7 @@ include './middleware/admin_middleware.php';
 require_once './includes/dbh.inc.php';
 require_once './includes/room_management/room_management_view.php';
 require_once './includes/room_management/room_management_model.php';
+require_once './includes/tenant_management/tenant_management_view.php';
 ?>
 
 <!DOCTYPE html>
@@ -46,13 +47,13 @@ require_once './includes/room_management/room_management_model.php';
                 </select>
 
                 <label for="room_status">Room Status</label>
-               <select name="room_status" id="room_status">
-               <option value="" selected disabled hidden>Status</option>
-                <?php  $get_room_status = get_room_status($dbconn);
-                foreach($get_room_status as $data){
+                <select name="room_status" id="room_status">
+                <option value="<?php display_message("selected_room_status"); ?>" selected hidden><?php display_message("selected_room_status");  unset_session_variable("selected_room_status");?></option>
+                 <?php  $get_room_status = get_room_status($dbconn);
+                 foreach($get_room_status as $data){
                   echo '<option value="'.$data['room_status'].'">'.$data['room_status'].'</option>';
-                }
-                ?>
+                  }
+                 ?>
                 </select>
                </div>
                 <table>
@@ -91,6 +92,6 @@ require_once './includes/room_management/room_management_model.php';
         </div>
     </div>
 
-    <script src="javascript/room_management_page_admin.js"></script>
+    <script src="javascript//room_management_page_admin.js"></script>
 </body>
 </html>

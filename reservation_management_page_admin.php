@@ -27,12 +27,14 @@ require_once './includes/tenant_management/tenant_management_view.php';
           <tr>
           <th>Reservation ID</th>
           <th>User ID</th>
+          <th>Name</th>
           <th>Room Type</th>
           <th>Floor Number</th>
           <th>Room Number</th>
           <th>Date of Reservation</th>
           <th>Reservation Status</th>
           <th>Action</th>
+          <th>Payment Details</th>
           </tr>
         </thead>
         <tbody>
@@ -44,13 +46,14 @@ require_once './includes/tenant_management/tenant_management_view.php';
             echo '<tr>';
             echo '<td>'.$data['reservation_id'].'</td>';
             echo '<td><input type="hidden" name="user_id" value="'.$data['user_id'].'">'.$data['user_id'].'</td>';
-            echo '<td><input type="hidden" name="room_type" value="'.$data['room_type'].'">'.$data['room_type'].'</td>';
-            echo '<td><input type="hidden" name="floor_number" value="'.$data['floor_number'].'">'.$data['floor_number'].'</td>';
+            echo '<td>'.$data['name'].'</td>';
+            echo '<td>'.$data['room_type'].'</td>';
+            echo '<td>'.$data['floor_number'].'</td>';
             echo '<td><input type="hidden" name="room_number" value="'.$data['room_number'].'">'.$data['room_number'].'</td>';
-            echo '<td><input type="hidden" name="reservation_date" value="'.$data['reservation_date'].'">'.$data['reservation_date'].'</td>';
+            echo '<td>'.$data['reservation_date'].'</td>';
             echo '<td>
                   <select name="reservation_status" id="reservation_status" class="reservation_status">
-                  <option value="'.$data['reservation_status'].'" selected hidden>'.$data['reservation_status'].'</option>
+                  <option value="'.$data['reservation_status'].','.$data['reservation_id'].'" selected hidden>'.$data['reservation_status'].'</option>
                   <option value="Pending,'.$data['reservation_id'].'">Pending</option>
                   <option value="Paid/Reserved,'.$data['reservation_id'].'">Paid/Reserved</option>
                   <option value="Overdue,'.$data['reservation_id'].'">Overdue</option>   
@@ -60,18 +63,30 @@ require_once './includes/tenant_management/tenant_management_view.php';
             echo '<td id="reservation_action">';
 
             echo '<h4 class="no_action" id="'.$data['reservation_id'].'=no_action" style="display: none;">No Action</h4>';
-            echo '<button type="submit" name="add_tenant_btn" class="add_tenant_btn" id="'.$data['reservation_id'].'=add_tenant_btn" style="display: none;" value="">add_tenant_btn</button>';
-            echo '<button type="button" class="delete_btn" id="'.$data['reservation_id'].'=delete_btn" style="display: none;" value="'.$data['reservation_id'].'">delete_btn</button>';
+            echo '<button type="submit" name="add_tenant_btn" class="add_tenant_btn" id="'.$data['reservation_id'].'=add_tenant_btn" style="display: none;" value="">Add Tenant</button>';
+            echo '<button type="button" class="delete_btn" id="'.$data['reservation_id'].'=delete_btn" style="display: none;" value="'.$data['reservation_id'].'">Delete</button>';
                   // reservation action based on reservation status style="display: none;"
             echo '</td>';
+            echo '<td class="dp_detail"><button type="button" class="dp_detail_btn" id="open_dp_details" value="'.$data['reservation_id'].'"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/></svg></button></td>';
+            // echo '<div>payment details</div>';
             echo '</tr>';
+
+            // dwownpayment container
+            echo '<div id="'.$data['reservation_id'].'=payment_details" class="dp_details" style="display: none;">';
+            echo '<div class="dp_details1">';
+            echo '<h2>Payment details of '.$data['name'].'</h2>
+                  <br>
+                  Reservation # '.$data['reservation_id'].'.
+                  <button type="button" class="close_btn" id="close_btn" value="'.$data['reservation_id'].'">X</button>';
+            echo '</div>';
+            echo '</div>';
 
 
             //  Confirmation Box
             echo '<div id="'.$data['reservation_id'].'=confirmation" class="confirm_div" style="display: none;">';
             echo '<div class="confirm_div1">';
             echo '<input type="hidden" name="tenant_id" value="'.$data["reservation_id"].'">';
-            echo 'delete reservation? of '.$data['reservation_id'].'';
+            echo 'Delete reservation? of '.$data['reservation_id'].'';
             echo '<div class="confirm_div2">';
             echo '<button type="submit" name="confirm_delete_btn">Confirm</button>';
             echo '<button type="button" name="cancel" class="cancel_btn" id="cancel_btn" value="'.$data['reservation_id'].'">Cancel</button>';
@@ -83,21 +98,60 @@ require_once './includes/tenant_management/tenant_management_view.php';
           ?>
         </tbody>
       </table>
-      <!-- <div class="confirm_div2"></div> -->
-       <h4></h4>
 
       <!-- <script src="javascript/reservation_management_page_admin.js"></script> -->
 
       <script>
-
         $(document).ready(function(){
+
+
+          $(".reservation_status").each(function() {
+            const getReservationDetails = $(this).val().split(",");
+            const getReservationStatus = getReservationDetails[0];
+            const getReservationId = getReservationDetails[1];
+
+            const no_action = document.getElementById(getReservationId + "=no_action");
+            const add_tenant_btn = document.getElementById(getReservationId + "=add_tenant_btn");
+            const delete_btn = document.getElementById(getReservationId + "=delete_btn");
+
+            if (getReservationStatus == "Pending") {
+              $(no_action).css("display", "block");
+              $(add_tenant_btn).css("display", "none");
+              $(delete_btn).css("display", "none");
+            } else if (getReservationStatus == "Paid/Reserved") {
+              $(no_action).css("display", "none");
+              $(add_tenant_btn).css("display", "block");
+              $(delete_btn).css("display", "none");
+            } else if (getReservationStatus == "Overdue") {
+              $(no_action).css("display", "none");
+              $(add_tenant_btn).css("display", "none");
+              $(delete_btn).css("display", "block");
+            }
+          });
+
           $("#delete_reservation").show().delay(5000).fadeOut(70);
           var ReservationStatus = $(".reservation_status").val();
 
+          // downpayment details
+          $(document).on("click", ".dp_detail_btn", function() {
+            const getReservationDetails = $(this).val();
+            const dp_details = document.getElementById(getReservationDetails + "=payment_details");
+
+            $(dp_details).toggle();
+          });
+
+          $(document).on("click", ".close_btn", function() {
+            const getReservationDetails = $(this).val();
+            const dp_details = document.getElementById(getReservationDetails + "=payment_details");
+
+            $(dp_details).toggle();
+            console.log(getReservationDetails);
+          });
+
+          // confirmation
           $(document).on("click", ".delete_btn", function() {
             const getReservationDetails = $(this).val();
             const delete_confirmation = document.getElementById(getReservationDetails + "=confirmation");
-            // const cancel_confirmation = document.getElementById("cancel_btn");
 
             $(delete_confirmation).toggle();
           });
@@ -105,7 +159,6 @@ require_once './includes/tenant_management/tenant_management_view.php';
           $(document).on("click", ".cancel_btn", function() {
             const getReservationDetails = $(this).val();
             const delete_confirmation = document.getElementById(getReservationDetails + "=confirmation");
-            // const cancel_confirmation = document.getElementById("cancel_btn");
 
             $(delete_confirmation).toggle();
 
@@ -121,9 +174,6 @@ require_once './includes/tenant_management/tenant_management_view.php';
               const add_tenant_btn = document.getElementById(getReservationId + "=add_tenant_btn");
               const delete_btn = document.getElementById(getReservationId + "=delete_btn");
 
-              // console.log(getReservationStatus);
-              // console.log(getReservationId);
-
               if (getReservationStatus == "Pending") {
                 $(no_action).css("display", "block");
                 $(add_tenant_btn).css("display", "none");
@@ -137,8 +187,6 @@ require_once './includes/tenant_management/tenant_management_view.php';
                 $(add_tenant_btn).css("display", "none");
                 $(delete_btn).css("display", "block");
               }
-
-
 
             $.ajax({
                 type: 'POST',

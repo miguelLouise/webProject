@@ -12,7 +12,7 @@ require_once './includes/maintenance_management/maintenance_management_view.php'
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maintenance Request</title>
-    <link rel="stylesheet" href="css/maintenance_request.css">
+    <link rel="stylesheet" href="css//maintenance_request.css">
 </head>
 
 <body>
@@ -62,19 +62,19 @@ require_once './includes/maintenance_management/maintenance_management_view.php'
                     <div class="urgency-options">
                         <div>
                             <input type="radio" id="low" name="urgency" value="low">
-                            <label for="low">Low</label>
+                            <label for="Low">Low</label>
                         </div>
                         <div>
                             <input type="radio" id="medium" name="urgency" value="medium">
-                            <label for="medium">Medium</label>
+                            <label for="Medium">Medium</label>
                         </div>
                         <div>
                             <input type="radio" id="high" name="urgency" value="high">
-                            <label for="high">High</label>
+                            <label for="High">High</label>
                         </div>
                         <div>
                             <input type="radio" id="emergency" name="urgency" value="emergency">
-                            <label for="emergency">Emergency</label>
+                            <label for="Emergency">Emergency</label>
                         </div>
                     </div>
                 </div>
@@ -84,7 +84,10 @@ require_once './includes/maintenance_management/maintenance_management_view.php'
                 </div>
                 <button type="submit" class="submit-button">Submit</button>
                 <p style="color:green"><?php display_message("maintenance_request_submitted"); unset_session_variable("maintenance_request_submitted");?></p>
-                <p style="color:red"><?php display_message("user_not_tenant");?></p>
+                <div class="display_msg_container">
+                    <p><?php display_message("user_not_tenant");?></p>
+                </div>
+
             </form>
         </div>
     </div>

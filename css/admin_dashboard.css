@@ -27,11 +27,12 @@
 
 .dashboard-box {
   flex: 1 1 20%;
-  max-width: 20%; 
+  max-width: 20%;
   min-height: 140px;
   padding: 12px;
   border-radius: 10px;
   background-color: #ffffff;
+  color: #4e3f8a;
   border: 1px solid;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -61,7 +62,7 @@
 }
 
 .box-icon {
-  width: 40px; 
+  width: 40px;
   height: auto;
   margin-right: 10px;
 }
@@ -135,7 +136,7 @@
   -webkit-column-break-inside: avoid;
   border-radius: 5px;
   box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
-  width: 45%; 
+  width: 45%;
   min-width: 500px;
   max-width: 700px;
   margin-bottom: 20px;
@@ -151,7 +152,7 @@
 @media (max-width: 768px) {
 
   .admin_dashboard_container2 {
-    flex-direction: column; 
+    flex-direction: column;
   }
 
   .dashboard-box {
@@ -160,7 +161,7 @@
   }
 
   .charts {
-    flex-direction: column; 
+    flex-direction: column;
     margin-top: 0;
   }
 
@@ -175,10 +176,10 @@
 
 
   .dashboard-box {
-    flex: 1 0 48%; 
+    flex: 1 0 48%;
   }
 
   .charts-card {
-    width: 48%; 
+    width: 48%;
   }
 }

@@ -95,5 +95,22 @@ function show_reservation_action($reservation_status){
     } elseif ($reservation_status === "Overdue"){
         echo "reservation is overdue";
     }
+}
 
+function show_available_rooms(object $pdo){
+    require_once 'room_management_model.php';
+    $result = get_room_available($pdo);
+    echo $result["total"];
+}
+
+function show_occupied_rooms(object $pdo){
+    require_once 'room_management_model.php';
+    $result = get_room_occupied($pdo);
+    echo $result["total"];
+}
+
+function show_not_available_rooms(object $pdo){
+    require_once 'room_management_model.php';
+    $result = get_room_not_available($pdo);
+    echo $result["total"];
 }

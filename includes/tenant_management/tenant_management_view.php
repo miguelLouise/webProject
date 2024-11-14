@@ -4,9 +4,8 @@ function display_message(string $var_name)
 {
     if (isset($_SESSION[$var_name])) {
         $var = $_SESSION[$var_name];
-        echo $var;
 
-        // echo '<script>$("#message").show().delay(3000).fadeOut();</script>';
+        echo $var;
     }
 }
 

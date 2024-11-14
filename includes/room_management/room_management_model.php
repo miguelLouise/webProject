@@ -84,7 +84,7 @@ function reserveRoom(object $pdo, $user_id, $room_type, $floor_num, $room_num, $
 }
 
 function getReservationTable(object $pdo){
-    $query = "SELECT * FROM dormlink_reservations";
+    $query = "SELECT users.name, dormlink_reservations.*  FROM users JOIN dormlink_reservations ON users.user_id = dormlink_reservations.user_id;";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 
@@ -249,29 +249,29 @@ function filter_by_room_type_floor_number_and_room_status(object $pdo, $room_typ
 }
 
 function get_room_available(object $pdo){
-    $query = "SELECT * FROM room_status WHERE room_status = 'Available';";
+    $query = "SELECT COUNT(*) AS total FROM rooms WHERE room_status  = 'Available';";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
 
 function get_room_not_available(object $pdo){
-    $query = "SELECT * FROM room_status WHERE room_status = 'Not Available';";
+    $query = "SELECT COUNT(*) AS total FROM rooms WHERE room_status  = 'Not Available';";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
 
 function get_room_occupied(object $pdo){
-    $query = "SELECT room_status FROM room_status WHERE room_status = 'Occupied';";
+    $query = "SELECT COUNT(*) AS total FROM rooms WHERE room_status = 'Occupied';";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
 

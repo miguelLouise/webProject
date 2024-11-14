@@ -6,10 +6,10 @@ $rmType = $_POST['roomTyp'];
 
 $roomDesc = showRoomDesc($dbconn, $rmType);
 foreach ($roomDesc as $value) {
-    echo '<ul>';
-    echo '<li>'.$value['room_type'].'<li>';
-    echo '<li>'.$value['max_capacity'].'<li>';
-    echo '<li>'.$value['price'].'<li>';
+    echo '<ul style="list-style-type: none;">';
+    // echo '<li>'.$value['room_type'].'<li>';
+    // echo '<li>'.$value['max_capacity'].'<li>';
+    // echo '<li>'.$value['price'].'<li>';
     echo '<li>'.$value['room_description'].'<li>';
     echo '<ul>';
 }

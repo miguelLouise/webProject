@@ -19,17 +19,17 @@ require_once 'includes/login/login_view.php';
         <div class="logged_in_header_container2">
             <a href="../user_homepage.php"><img src="../Assets/DDLOGO.png" class="logo" alt="DormLink Logo"></a>
         </div>
-        
+
         <!-- Header buttons -->
         <div class="header_buttons">
             <a href="../user_homepage.php" class="header_button" data-title="Home">Home</a>
             <a href="../maintenance_request_page.php" class="header_button" data-title="Maintenance Request">Maintenance Request</a>
             <a href="../aboutus.php" class="header_button" data-title="About Us">About Us</a>
-            <a href="#contactus" class="header_button" data-title="Contact Us">Contact Us</a>
+            <a href="../contactus.php" class="header_button" data-title="Contact Us">Contact Us</a>
             <!-- <a href="../messaging_page.php" class="header_button" data-title="Message/Inquire">Message/Inquire</a>-->
             <!--<a href="../reservation.php" class="header_button" data-title="Reservation">Reservation</a>-->
         </div>
-        
+
         <div class="side_nav_icon">
             <img src="../Assets/profl.png" id="menu_btn" class="profile_icon">
         </div>
@@ -73,7 +73,7 @@ require_once 'includes/login/login_view.php';
             menuBtn.addEventListener("click", function() {
                 const rightPos = window.getComputedStyle(menuNav).getPropertyValue("right");
 
-                if (rightPos === "-300px") { 
+                if (rightPos === "-300px") {
                     menuNav.style.right = "0";
                 } else {
                     menuNav.style.right = "-300px";

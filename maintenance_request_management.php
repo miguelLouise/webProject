@@ -12,7 +12,7 @@ require_once 'includes/maintenance_management/maintenance_management_view.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maintenanace Request Management</title>
-    <link rel="stylesheet" href="css/maintenanace_request_management.css">
+    <link rel="stylesheet" href="css//maintenanace_request_management.css">
 </head>
 <body>
     <div class="maintenance_management_container1">
@@ -54,17 +54,19 @@ require_once 'includes/maintenance_management/maintenance_management_view.php';
                     echo '<td>'.$maintenance_req["category"].'</td>';
                     echo '<td>'.$maintenance_req["maintenance_urgency"].'</td>';
                     echo '<td>'.$maintenance_req["description"].'</td>';
-                    echo '<td>'.format_date($maintenance_req["date"]).'</td>';    
-                    echo '<td>'.format_time($maintenance_req["date"]).'</td>';    
+                    echo '<td>'.format_date($maintenance_req["date"]).'</td>';
+                    echo '<td>'.format_time($maintenance_req["date"]).'</td>';
+                    echo '<td>Status Column</td>';
                      echo '</tr>';
                      echo '</form>';
                 }
                 ?>
+                <!-- maintenance request status: Submitted, Scheduled, In Progress, Completed -->
             </tbody>
         </table>
     </div>
 
     <!-- <script src="javascript/maintenance_request_management.js"></script> -->
-    
+
 </body>
 </html>

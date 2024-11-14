@@ -6,7 +6,11 @@ $rmType = $_POST['roomTyp'];
 
 $output = showFloors($dbconn, $rmType);
 
-foreach ($output as $value) {
+if ($output) {
+    foreach ($output as $value) {
+        echo '<option value="" selected disabled hidden>Floor Number</option>';
+        echo '<option value="'.$value['floor_number'].'">'.$value['floor_number'].'</option>';
+    }
+} else {
     echo '<option value="" selected disabled hidden>Floor Number</option>';
-    echo '<option value="'.$value['floor_number'].'">'.$value['floor_number'].'</option>';    
 }

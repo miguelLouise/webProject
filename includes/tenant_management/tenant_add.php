@@ -32,9 +32,9 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
           die();
         }
         elseif (isset($_POST['confirm_delete_btn'])) {
-          // deleteReservation($dbconn, $user_id);
+          deleteReservation($dbconn, $user_id);
 
-          $_SESSION["delete_reservation"] = "reservation deleted";
+          $_SESSION["delete_reservation"] = "Reservation Deleted Successfully";
 
           header("Location: " . $_SERVER['HTTP_REFERER']);
           die();
@@ -43,6 +43,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         die("Query failed" . $e->getMessage());
       }
 } else {
-    header("Location: ../../reservation_management_page_admin.php#error");
+    header("Location: " . $_SERVER['HTTP_REFERER']);
     die();
 }

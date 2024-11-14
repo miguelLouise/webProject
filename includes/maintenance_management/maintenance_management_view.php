@@ -2,9 +2,7 @@
 
 function is_user_tenant(object $pdo, $user_id){
     require_once 'maintenance_management_model.php';
-    $result =  check_if_user_is_tenant($pdo, $user_id);
-
-    // session_start();
+    $result =  check_if_user_is_tenant1($pdo, $user_id);
 
     if($result){
         $_SESSION["name"] = $result["name"];

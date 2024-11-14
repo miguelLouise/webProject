@@ -4,7 +4,8 @@ require_once './includes/tenant_management/tenant_management_model.php';
 require_once './includes/tenant_management/tenant_management_view.php';
 require_once './includes/dbh.inc.php';
 require_once './includes/room_management/room_management_model.php';
-// include "./middleware/user_middleware.php";
+require_once 'includes/dp_management/downpayment_management_view.php';
+include "./middleware/user_middleware.php";
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +30,8 @@ if ($var === $get_room_status[0]) {
 } else {
     echo "not match";
 }
+
+does_user_have_a_reservation($dbconn, $_SESSION["user_id"]);
 ?>
 </body>
 </html>

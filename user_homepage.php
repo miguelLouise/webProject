@@ -28,7 +28,7 @@ include './middleware/user_middleware.php';
             <img src="Assets/lavenders4.png">
             <img src="Assets/lavenders5.png">
         </div>
-        
+
         <div class="info-section">
             <div class="info-container">
                 <!-- Left Section -->
@@ -60,8 +60,9 @@ include './middleware/user_middleware.php';
                         <span class="amenity-icon">🧺</span> <span class="clickable-amenity" onclick="showPopup('Assets/laundromatpc.jpg')">Laundromat</span><br>
                         <span class="amenity-icon">🛗</span> <span class="clickable-amenity" onclick="showPopup('Assets/elevatorpc.jpg')">Elevator</span><br>
                     </p>
-
-                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a>
+        <form action="includes/room_management/select_room_type.php" method="get" novalidate>
+                    <!-- <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> -->
+                    <button class="reserve-button" name="action" value="no_room">Reserve Now</button>
                 </div>
             </div>
         </div>
@@ -102,8 +103,9 @@ include './middleware/user_middleware.php';
                     <p>With one double deck, one bed, cabinet, table, chair, ceiling fan & aircon</p>
                     <p>Free wifi internet in each room</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
-                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a>
-                    <a href="messaging_page.php"><button class="message-button">Message/Inquire</button></a>        
+                    <!-- <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> -->
+                    <button class="reserve-button" name="action" value="room_one">Reserve Now</button>
+                    <a href="messaging_page.php"><button class="message-button">Message/Inquire</button></a>
                 </div>
             </div>
 
@@ -137,8 +139,9 @@ include './middleware/user_middleware.php';
                     <p>With two ( 2 ) double deck, one cabinet, table, chair, ceiling fan & aircon</p>
                     <p>Free wifi internet in each room</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
-                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a>
-                    <!--<a href="messaging_page.php"><button class="message-button">Message/Inquire</button></a>-->  
+                    <!-- <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> -->
+                    <button class="reserve-button" name="action" value="room_two">Reserve Now</button>
+                    <a href="messaging_page.php"><button class="message-button">Message/Inquire</button></a>
                 </div>
             </div>
 
@@ -158,10 +161,10 @@ include './middleware/user_middleware.php';
                         <img src="Assets/room3pic7.png" onclick="changeImage('room3-large', 'Assets/room3pic7.png')" alt="Room 3 Image 7">
                         <img src="Assets/room3pic8.png" onclick="changeImage('room3-large', 'Assets/room3pic8.png')" alt="Room 3 Image 8">
                         <img src="Assets/room3pic9.png" onclick="changeImage('room3-large', 'Assets/room3pic9.png')" alt="Room 3 Image 9">
-                        
+
                     </div>
                 </div>
- 
+
                 <div class="room-info">
                     <h2>Studio Room 3</h2>
                     <p>STUDIO TYPE ROOM</p>
@@ -173,8 +176,9 @@ include './middleware/user_middleware.php';
                     <p>With two ( 2 ) double deck, one cabinet, table, chair, ceiling fan & aircon</p>
                     <p>Free wifi internet in each room</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
-                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a>
-                    <a href="messaging_page.php"><button class="message-button">Message/Inquire</button></a>    
+                    <!-- <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> -->
+                    <button class="reserve-button" name="action" value="room_three">Reserve Now</button>
+                    <a href="messaging_page.php"><button class="message-button">Message/Inquire</button></a>
                 </div>
             </div>
 
@@ -203,11 +207,13 @@ include './middleware/user_middleware.php';
                     <p>With three ( 3 ) double deck, one cabinet, table, chair, ceiling fan & aircon</p>
                     <p>Free wifi internet in each room</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
-                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a>
-                    <a href="messaging_page.php"><button class="message-button">Message/Inquire</button></a>   
+                    <!-- <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> -->
+                    <button class="reserve-button" name="action" value="room_four">Reserve Now</button>
+                    <a href="messaging_page.php"><button class="message-button">Message/Inquire</button></a>
                 </div>
             </div>
         </div>
+        </form>
         <!-- Chatbot -->
         <?php include('./templates/chatbot.php'); ?>
         <!-- Chatbot -->

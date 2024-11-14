@@ -13,7 +13,7 @@ require_once './includes/room_management/room_management_view.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tenant Management</title>
-    <link rel="stylesheet" href="css//tenant_management.css">
+    <link rel="stylesheet" href="css///tenant_management.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 
 </head>
@@ -127,15 +127,11 @@ require_once './includes/room_management/room_management_view.php';
 
                     echo '<form class="deleteForm" action="includes/tenant_management/tenant_delete.php" method="post" novalidate>';
                     echo '<div id="'.$tenantInfo["tenant_id"].'" class="delete_form" style="display: none;">';
-<<<<<<< HEAD
-=======
-                    echo '<div class="delete_form1">';
->>>>>>> 8322a24923bff4a35ffa0ed0590f2dbc27dc0eb5
                     echo '<input type="hidden" name="tenant_id" value="'.$tenantInfo["tenant_id"].'">';
                     echo 'Remove '.$tenantInfo["name"].' as a tenant and delete existing data related to the user?';
                     echo '<div class="div1">';
-                    echo '<button type="submit" name="action" value="delete">Confirm</button>';
-                    echo '<button type="button" id="cancel_btn" class="cancel_btn" value="'.$tenantInfo["tenant_id"].'">cancel</button>';
+                    echo '<button type="submit" class="confirm_btn" name="action" value="delete">Confirm</button>';
+                    echo '<button type="button" id="cancel_btn" class="cancel_btn" value="'.$tenantInfo["tenant_id"].'">Cancel</button>';
                     echo '</div>';
                     echo '</div>';
                     echo '</div>';
