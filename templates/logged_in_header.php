@@ -49,7 +49,7 @@ require_once 'includes/login/login_view.php';
                 <ul>
                     <li><a href="../user_homepage.php"><button class="nav_btn"><img src="../Assets/home.png" class="nav_icon">Home</button></a></li>
                     <!-- <li><a href="../maintenance_request_page.php"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Maintenance Request</button></a></li>-->
-                    <!--<li><a href="../messaging_page.php"><button class="nav_btn"><img src="../Assets/mail.png" class="nav_icon">Message/Inquire</button></a></li>-->
+                    <li><a href="../messaging_page.php"><button class="nav_btn"><img src="../Assets/mail.png" class="nav_icon">Send us Email</button></a></li>
                     <li><a href="../reservation.php"><button class="nav_btn"><img src="../Assets/reservation.png" class="nav_icon">Reservation</button></a></li>
                     <li><a href="../payment_page.php"><button class="nav_btn"><img src="../Assets/wallet.png" class="nav_icon">Partial Payment</button></a></li>
                     <li><a href="#accountmanagement"><button class="nav_btn"><img src="../Assets/account.png" class="nav_icon">Account Management</button></a></li>

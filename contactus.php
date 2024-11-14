@@ -14,7 +14,7 @@ include "./middleware/user_middleware.php";
 <body style="background-image: url('Assets/lavanderBLDG.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
     <div class="contactus_container1">
         <!-- header -->
-        <?php include('./templates/logged_in_header.php'); ?>
+        <?php include ('./templates/logged_in_header.php'); ?>
         <!-- header -->
     </div>
 
@@ -28,6 +28,7 @@ include "./middleware/user_middleware.php";
                 <h2>Call or Text</h2>
                 <p>Call:</p>
                 <p>+639977316010</p>
+                <p>This is our only mobile phone contact number.</p>
 
             </div>
             <div class="contact-item">
