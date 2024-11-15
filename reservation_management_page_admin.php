@@ -74,10 +74,11 @@ require_once './includes/tenant_management/tenant_management_view.php';
             // dwownpayment container
             echo '<div id="'.$data['reservation_id'].'=payment_details" class="dp_details" style="display: none;">';
             echo '<div class="dp_details1">';
-            echo '<h2>Payment details of '.$data['name'].'</h2>
+            echo '<h2>Payment Details</h2>
                   <br>
                   Reservation # '.$data['reservation_id'].'.
                   <button type="button" class="close_btn" id="close_btn" value="'.$data['reservation_id'].'">X</button>';
+            echo '<div class="dp_details2"></div>';
             echo '</div>';
             echo '</div>';
 
@@ -138,6 +139,15 @@ require_once './includes/tenant_management/tenant_management_view.php';
             const dp_details = document.getElementById(getReservationDetails + "=payment_details");
 
             $(dp_details).toggle();
+
+            $.ajax({
+                type: 'POST',
+                url: 'ajax/getReservationPaymentInformation.php',
+                data: {reservation_Id:getReservationDetails},
+                success: function(data){
+                  $(".dp_details2").html(data);
+                }
+            });
           });
 
           $(document).on("click", ".close_btn", function() {
@@ -145,7 +155,6 @@ require_once './includes/tenant_management/tenant_management_view.php';
             const dp_details = document.getElementById(getReservationDetails + "=payment_details");
 
             $(dp_details).toggle();
-            console.log(getReservationDetails);
           });
 
           // confirmation
@@ -193,7 +202,6 @@ require_once './includes/tenant_management/tenant_management_view.php';
                 url: 'updateReservationStatusAjax.php',
                 data: {reservation_id:getReservationId, reservation_status:getReservationStatus},
                 success: function(data){
-
 
                 }
             });

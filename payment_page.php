@@ -11,7 +11,8 @@ require_once 'includes/tenant_management/tenant_management_view.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment</title>
-    <link rel="stylesheet" href="css/payment.css">
+    <link rel="stylesheet" href="css//payment.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 </head>
 <body>
     <div class="payment_page_container1">
@@ -30,6 +31,8 @@ require_once 'includes/tenant_management/tenant_management_view.php';
                 <img src="./Assets/sampqr.png" alt="QR Code" class="qr-code">
             </div>
 
+
+            <?php disappearing_message("payment_submitted_successfully"); ?>
             <!-- Form  -->
             <div class="right-section">
                 <form action="includes/dp_management/downpayment_management.php" method="post" enctype="multipart/form-data" novalidate>
@@ -45,25 +48,23 @@ require_once 'includes/tenant_management/tenant_management_view.php';
                     </div>
 
                     <div class="form-group">
-                        <label for="reference">Payment Reference Number</label>
+                        <label for="reference">Payment Reference Number<span style="color: red;"><?php display_session_variable("reference_number_error") ?></span></label>
                         <textarea id="reference" name="reference" placeholder="Enter payment reference number"></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="screenshot">Upload Gcash Payment Screenshot</label>
+                        <label for="screenshot">Upload Gcash Payment Screenshot<span style="color: red;"><?php display_session_variable("file_name_error") ?></span></label>
                         <!-- <input type="file" id="screenshot" name="screenshot" accept="image/*" required> -->
                         <!-- accept=".jpg, .jpeg, .png" -->
                         <input type="file" id="screenshot" name="screenshot">
                     </div>
-
+                    <input type="hidden" name="reservation_Id" value="<?php display_message("reservation_id") ?>">
                     <button type="submit">Submit Payment</button>
-                    <div class="display_msg_container">
-                    <p><?php display_message("user_does_not_have_a_reservation");?></p>
-                    </div>
                 </form>
             </div>
         </div>
     </div>
+
 
     <!-- Popup Modal -->
     <div id="popupModal" class="modal">
@@ -73,5 +74,6 @@ require_once 'includes/tenant_management/tenant_management_view.php';
         </div>
     </div>
     <script src="javascript/payment_page.js"></script>
+
 </body>
 </html>

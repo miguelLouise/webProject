@@ -49,8 +49,7 @@ function showRoomAvailability(object $pdo, $room_type, $floor_num, $room_num){
     return $result;
 }
 
-function reservation_success_message(string $var_name)
-{
+function reservation_success_message(string $var_name){
     if (isset($_SESSION[$var_name])) {
         $reservation_success = $_SESSION[$var_name];
 
@@ -62,8 +61,7 @@ function reservation_success_message(string $var_name)
     }
 }
 
-function show_reservation_table(object $pdo)
-{
+function show_reservation_table(object $pdo){
     require_once './includes/room_management/room_management_model.php';
     $result = getReservationTable($pdo);
     return $result;
@@ -113,4 +111,22 @@ function show_not_available_rooms(object $pdo){
     require_once 'room_management_model.php';
     $result = get_room_not_available($pdo);
     echo $result["total"];
+}
+
+function disappearing_error_message(string $var_name){
+    if (isset($_SESSION[$var_name])) {
+        $reservation_success = $_SESSION[$var_name];
+
+        echo '<div id="message_container" style="background-color: rgba(205, 0, 0, 0.567); position: absolute; height: 100px; width: 500px; top: 40%; left: 50%; transform: translate(-50%, -50%); border-radius: 10px; display: flex; align-items: center; justify-content: center; border: 1px solid rgb(205, 0, 0); font-size: 18_px">
+             ' . $reservation_success .
+             '</div>';
+
+        unset($_SESSION[$var_name]);
+
+        echo '<script>
+        $(document).ready(function(){
+            $("#message_container").show().delay(5000).fadeOut(50);
+        });
+        </script>';
+    }
 }

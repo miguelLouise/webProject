@@ -12,7 +12,7 @@ require_once './includes/maintenance_management/maintenance_management_view.php'
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maintenance Request</title>
-    <link rel="stylesheet" href="css//maintenance_request.css">
+    <link rel="stylesheet" href="css/maintenance_request.css">
 </head>
 
 <body>
@@ -24,6 +24,7 @@ require_once './includes/maintenance_management/maintenance_management_view.php'
 
     <!-- page content -->
     <div class="container1">
+    <?php is_user_tenant($dbconn, $_SESSION["user_id"]);?>
         <div class="left-column">
             <h2>Submit</h2>
             <h1>Maintenance Requests</h1>
@@ -33,7 +34,7 @@ require_once './includes/maintenance_management/maintenance_management_view.php'
         </div>
         <div class="right-column">
             <form action="./includes/maintenance_management/maintenance_request.php" method="post" novalidate>
-            <?php is_user_tenant($dbconn, $_SESSION["user_id"]);?>
+
                 <div class="form-group">
                     <label for="name">Name<span style="color: red;"><?php display_message("name_error"); unset_session_variable("name_error");?></span></label>
                     <input type="text" id="name" name="name" value="<?php display_message("name");?>" readonly>
@@ -84,12 +85,9 @@ require_once './includes/maintenance_management/maintenance_management_view.php'
                 </div>
                 <button type="submit" class="submit-button">Submit</button>
                 <p style="color:green"><?php display_message("maintenance_request_submitted"); unset_session_variable("maintenance_request_submitted");?></p>
-                <div class="display_msg_container">
-                    <p><?php display_message("user_not_tenant");?></p>
-                </div>
-
             </form>
         </div>
+
     </div>
 
     <!--  radio buttons function -->

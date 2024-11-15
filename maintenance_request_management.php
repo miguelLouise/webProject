@@ -1,6 +1,6 @@
 <?php
-// require_once './includes/login/login_view.php';
-// include './middleware/admin_middleware.php';
+require_once './includes/login/login_view.php';
+include './middleware/admin_middleware.php';
 require_once './includes/dbh.inc.php';
 require_once 'includes/maintenance_management/maintenance_management_model.php';
 require_once 'includes/maintenance_management/maintenance_management_view.php';
