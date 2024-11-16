@@ -62,19 +62,19 @@ require_once './includes/maintenance_management/maintenance_management_view.php'
                     <label>Issue Urgency<span style="color: red;"><?php display_message("urgency_error"); unset_session_variable("urgency_error");?></span></label>
                     <div class="urgency-options">
                         <div>
-                            <input type="radio" id="low" name="urgency" value="low">
+                            <input type="radio" id="low" name="urgency" value="Low">
                             <label for="Low">Low</label>
                         </div>
                         <div>
-                            <input type="radio" id="medium" name="urgency" value="medium">
+                            <input type="radio" id="medium" name="urgency" value="Medium">
                             <label for="Medium">Medium</label>
                         </div>
                         <div>
-                            <input type="radio" id="high" name="urgency" value="high">
+                            <input type="radio" id="high" name="urgency" value="High">
                             <label for="High">High</label>
                         </div>
                         <div>
-                            <input type="radio" id="emergency" name="urgency" value="emergency">
+                            <input type="radio" id="emergency" name="urgency" value="Emergency">
                             <label for="Emergency">Emergency</label>
                         </div>
                     </div>

@@ -24,58 +24,35 @@ body {
 
 .container {
   /* max-width: 1500px; */
+  position: relative;
+  width: auto;
   margin: 50px 20px;
   margin-top: 100px;
   padding: 20px;
-  background: #ffffff;
+  background: #dddddd;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-}
-
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px 0;
-}
-
-.header-content h1 {
-  margin: 0;
-  font-size: 24px;
-  text-transform: uppercase;
-}
-
-.date-time {
-  font-size: 16px;
-  font-weight: bold;
-  background-color: #e9ecef;
-  padding: 10px;
-  border-radius: 5px;
-  color: #333;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.date-time span {
-  color: #004085;
-}
-
-h1 {
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #42326E;
 }
 
-table {
+table{
+  position: relative;
   width: 100%;
+  font-size: 14px;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-top: 20px
+}
+
+.request-table{
+  position: relative;
+  width: 100%;
 }
 
 th, td {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+  text-align: center;
 }
 
 th {
@@ -94,23 +71,10 @@ tr:nth-child(even) {
   cursor: pointer;
 }
 
-select {
-  padding: 6px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.delete-btn {
-  background-color: #e74c3c;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.delete-btn:hover {
-  background-color: #c0392b;
+@media screen and (max-width: 1060px) {s
+  .userId, .userName, .userEmail {
+    display: none;
+  }
 }
 
 
@@ -118,6 +82,10 @@ select {
   table, thead, tbody, th, td, tr {
       display: block;
       width: 100%;
+  }
+
+  .userId, .userName, .userEmail {
+    display: block;
   }
 
   tr {

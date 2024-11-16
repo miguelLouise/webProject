@@ -49,7 +49,7 @@ require_once './includes/tenant_management/tenant_management_view.php';
 
                 <label for="room_status">Room Status</label>
                 <select name="room_status" id="room_status">
-                <option value="<?php display_message("selected_room_status"); ?>" selected hidden><?php display_message("selected_room_status"); unset_session_variable("selected_room_status"); ?></option>
+                <option  value="<?php display_message("selected_room_status"); ?>" selected hidden><?php display_message("selected_room_status"); unset_session_variable("selected_room_status"); ?></option>
                  <?php  $get_room_status = get_room_status($dbconn);
                  foreach($get_room_status as $data){
                   echo '<option value="'.$data['room_status'].'">'.$data['room_status'].'</option>';
@@ -92,24 +92,25 @@ require_once './includes/tenant_management/tenant_management_view.php';
     <!-- <script src="javascript/room_management_page_admin.js"></script> -->
      <script type="text/javascript">
       $(document).ready(function(){
-  // var getRoomStatus = $("#room_status").val();
+        let getRoomStatus = $("#room_status").val();
 
-  // $.ajax({
-  //   type: 'POST',
-  //   url: 'ajax/filterByRoomStatus.php',
-  //   data: {roomStatus:getRoomStatus},
-  //     success: function(data){
-  //     $('#table_body').html(data);
-  //   }
-  // });
-
+        if (getRoomStatus !== "") {
+          $.ajax({
+          type: 'POST',
+          url: 'ajax/filterByRoomStatus.php',
+          data: {roomStatus:getRoomStatus},
+            success: function(data){
+            $('#table_body').html(data);
+          }
+        });
+        }
   // room type
   $(document).on("change", "#room_type", function() {
     var room_type = $(this).val();
     var floor_number = $("#floor_number").val();
     var room_status = $("#room_status").val();
 
-    if (floor_number === null && room_status === null) {
+    if (floor_number === null && room_status === "") {
       $.ajax({
           type: 'POST',
           url: 'ajax/filterByRoomType.php',
@@ -119,7 +120,7 @@ require_once './includes/tenant_management/tenant_management_view.php';
           }
       });
     }
-    else if (floor_number !== null && room_status === null) {
+    else if (floor_number !== null &&  room_status === "") {
       $.ajax({
         type: 'POST',
           url: 'ajax/filterByRoomTypeAndFloorNumber.php',
@@ -128,7 +129,7 @@ require_once './includes/tenant_management/tenant_management_view.php';
             $('#table_body').html(data);
           }
       });
-    } else if (floor_number === null && room_status !== null){
+    } else if (floor_number === null && room_status !== ""){
       $.ajax({
           type: 'POST',
           url: 'ajax/filterByRoomTypeAndRoomStatus.php',
@@ -137,7 +138,7 @@ require_once './includes/tenant_management/tenant_management_view.php';
             $('#table_body').html(data);
           }
       });
-    } else if (floor_number !== null && room_status !== null){
+    } else if (floor_number !== null && room_status !== ""){
       $.ajax({
           type: 'POST',
           url: 'ajax/filterByRoomTypeFloorNumberAndRoomStatus.php',
@@ -155,7 +156,7 @@ require_once './includes/tenant_management/tenant_management_view.php';
     var floor_number = $(this).val();
     var room_status = $("#room_status").val();
 
-    if (room_type === null && room_status === null) {
+    if (room_type === null && room_status === "") {
       $.ajax({
         type: 'POST',
         url: 'ajax/filterByFloorNumber.php',
@@ -164,7 +165,7 @@ require_once './includes/tenant_management/tenant_management_view.php';
           $('#table_body').html(data);
         }
       });
-    } else if(room_type !== null && room_status === null){
+    } else if(room_type !== null && room_status === ""){
       $.ajax({
           type: 'POST',
           url: 'ajax/filterByRoomTypeAndFloorNumber.php',
@@ -174,7 +175,7 @@ require_once './includes/tenant_management/tenant_management_view.php';
           }
       });
     }
-    else if(room_type === null && room_status !== null){
+    else if(room_type === null && room_status !== ""){
       $.ajax({
           type: 'POST',
           url: 'ajax/filterByFloorNumberAndRoomStatus.php',
@@ -183,7 +184,7 @@ require_once './includes/tenant_management/tenant_management_view.php';
             $('#table_body').html(data);
           }
       });
-    } else if (room_type !== null && room_status !== null){
+    } else if (room_type !== null && room_status !== ""){
       $.ajax({
           type: 'POST',
           url: 'ajax/filterByRoomTypeFloorNumberAndRoomStatus.php',

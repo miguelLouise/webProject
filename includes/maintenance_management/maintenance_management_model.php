@@ -70,3 +70,11 @@ function check_if_user_is_tenant1(object $pdo, $user_id){
     return $result;
 }
 
+function update_maintenance_status(object $pdo, $maintenance_status, $maintenance_request_id){
+    $query = "UPDATE dormlink_maintenance_request SET maintenance_status = :maintenance_status WHERE maintenance_request_id = :maintenance_request_id;";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":maintenance_status", $maintenance_status);
+    $stmt->bindParam(":maintenance_request_id", $maintenance_request_id, PDO::PARAM_INT);
+    $stmt->execute();
+
+}
