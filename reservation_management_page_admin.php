@@ -21,7 +21,7 @@ require_once './includes/tenant_management/tenant_management_view.php';
     <!-- header -->
 
     <div class="reservation_management_container1">
-    <p id="delete_reservation" style="color:green"><?php display_message("delete_reservation"); unset_session_variable("delete_reservation");?></p>
+      <?php disappearing_success_message("delete_reservation"); ?>
       <table>
         <thead>
           <tr>
@@ -80,7 +80,6 @@ require_once './includes/tenant_management/tenant_management_view.php';
             echo '<div class="dp_details2"></div>';
             echo '</div>';
             echo '</div>';
-
 
             //  Confirmation Box
             echo '<div id="'.$data['reservation_id'].'=confirmation" class="confirm_div" style="display: none;">';

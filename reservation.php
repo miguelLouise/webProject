@@ -12,7 +12,7 @@ require_once './includes/tenant_management/tenant_management_view.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservation</title>
-    <link rel="stylesheet" href="css//reservation.css">
+    <link rel="stylesheet" href="css/reservation.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="javascript/reservation.js"></script>
@@ -29,7 +29,7 @@ require_once './includes/tenant_management/tenant_management_view.php';
         <form action="./includes/room_management/room_management_reserve.php" method="post" id="reservation" novalidate>
 
         <div class="reservation_container3" id="reservation_container3"><!-- room type description -->
-        <div class="image_container"></div>
+
         </div>
 
         <div class="reservation_container4">
@@ -69,7 +69,9 @@ require_once './includes/tenant_management/tenant_management_view.php';
         <!-- <div class="reservation_confirmation" id="reservation_confirmation" style="background-color:blue;"> -->
             <!-- room details -->
         <!-- </div> -->
-        <div id="room_availability_error" style="color: red;"><?php display_reservation_error("room_availability_error"); ?></div>
+        <?php disappearing_success_message("reservation_success"); ?>
+        <?php disappearing_error_message("reservation_error"); ?>
+        <?php disappearing_error_message("room_availability_error"); ?>
         <?php disappearing_error_message("user_already_reserved_error"); ?>
 
         </form>
