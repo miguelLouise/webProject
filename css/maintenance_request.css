@@ -20,23 +20,20 @@ body {
   left: 0;
   right: 0;
   height: 70px;
-  z-index: 10; 
-  background-color: white;
+  z-index: 10;
 }
 
 .container1 {
   max-width: 1200px;
-  margin: 80px auto 50px; 
+  margin: 80px auto 50px;
   display: flex;
   justify-content: space-between;
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 40px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  position: relative;
-  z-index: 1; 
+  z-index: 1;
 }
-
 
 header {
   position: relative;
@@ -131,13 +128,27 @@ header {
   background-color: #007bb5;
 }
 
+.display_msg_container{
+  /* background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: red; */
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .container1 {
     flex-direction: column;
     padding: 20px;
   }
-  
+
   .left-column,
   .right-column {
     width: 100%;

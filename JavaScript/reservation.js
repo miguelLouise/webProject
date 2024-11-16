@@ -1,5 +1,26 @@
 // jquery
 $(document).ready(function(){
+    var getRoomType = $("#room_typ").val();
+    console.log(getRoomType);
+
+        $.ajax({
+            type: 'POST',
+            url: 'getFloorNumberAjax.php',
+            data: {roomTyp:getRoomType},
+            success: function(data){
+                $('#flr_num').html(data);
+            }
+        });
+
+        $.ajax({
+            type: 'POST',
+            url: 'getRoomInfoAjax.php',
+            data: {roomTyp:getRoomType},
+            success: function(data){
+                $('#reservation_container3').html(data);
+            }
+        });
+
     // $("#reservation_error").show().delay(5000).fadeOut(70);
     $("#reservation_success").show().delay(5000).fadeOut(70);
     // $("#room_availability_error").show().delay(5000).fadeOut(70);

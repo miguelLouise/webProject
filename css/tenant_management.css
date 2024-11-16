@@ -9,7 +9,7 @@
 
 body {
   background-color: #f8f9fa;
-  padding: 40px 20px; 
+  padding: 40px 20px;
 }
 
 .tenant_management_container1 {
@@ -17,19 +17,22 @@ body {
   top: 0;
   left: 0;
   right: 0;
+  height: 70px;
   height: 80px;
   z-index: 10;
   background-color: white;
 }
 
 .container {
-  max-width: 1000px; 
+  max-width: 1000px;
   margin: 0 auto;
   margin-top: 80px;
+  background-color: #ffffff;
+  padding: 20px;
   background-color: #fff;
-  padding: 40px; 
+  padding: 40px;
   border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -43,12 +46,12 @@ h1 {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  gap: 20px; 
+  gap: 20px;
 }
 
 .form-group {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   flex: 1;
 }
 
@@ -58,12 +61,20 @@ h1 {
   color: #333;
 }
 
+.form-group input, select {
+  flex: 2;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #000000;
+}
+
 .form-group input, .form-group select {
   padding: 10px;
-  font-size: 16px; 
+  font-size: 16px;
   border-radius: 6px;
   border: 1px solid #ccc;
   margin-top: 5px;
+
 }
 
 .form-group select {
@@ -82,7 +93,7 @@ h1 {
 }
 
 .submit-btn:hover {
-    background-color: #357ae8; 
+    background-color: #357ae8;
 }
 
 table {
@@ -112,6 +123,15 @@ td {
 .delete_btn, .cancel_btn {
   padding: 8px 15px;
   background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirm_btn{
+  padding: 8px 15px;
+  background-color: #218838;
   color: white;
   border: none;
   border-radius: 4px;
@@ -161,9 +181,9 @@ td {
 }
 
 
-/* Modal styles 
+/* Modal styles
 .delete_modal {
-  display: none; 
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -203,7 +223,7 @@ td {
 }
 
 .modal_buttons button.cancel_btn {
-  background-color: #f44336; /* Red color for Cancel 
+  background-color: #f44336; /* Red color for Cancel
 }
 
 .modal_buttons button:hover {

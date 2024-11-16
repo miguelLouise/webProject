@@ -34,7 +34,11 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+<<<<<<< HEAD
+  background-color: #B29CE4;
+=======
   background: radial-gradient(circle at 12.3% 19.3%, rgb(85, 88, 218) 0%, rgb(95, 209, 249) 100.2%);;
+>>>>>>> 8322a24923bff4a35ffa0ed0590f2dbc27dc0eb5
   padding: 20px;
   border-radius: 8px;
   color: #ffffff;
@@ -148,4 +152,8 @@ tbody tr:hover {
   #tbl_room_data {
     font-size: 12px;
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8322a24923bff4a35ffa0ed0590f2dbc27dc0eb5

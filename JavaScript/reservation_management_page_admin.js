@@ -1,48 +1,102 @@
 $(document).ready(function(){
+    $(".reservation_status").each(function() {
+      const getReservationDetails = $(this).val().split(",");
+      const getReservationStatus = getReservationDetails[0];
+      const getReservationId = getReservationDetails[1];
+
+      const no_action = document.getElementById(getReservationId + "=no_action");
+      const add_tenant_btn = document.getElementById(getReservationId + "=add_tenant_btn");
+      const delete_btn = document.getElementById(getReservationId + "=delete_btn");
+
+      if (getReservationStatus == "Pending") {
+        $(no_action).css("display", "block");
+        $(add_tenant_btn).css("display", "none");
+        $(delete_btn).css("display", "none");
+      } else if (getReservationStatus == "Paid/Reserved") {
+        $(no_action).css("display", "none");
+        $(add_tenant_btn).css("display", "block");
+        $(delete_btn).css("display", "none");
+      } else if (getReservationStatus == "Overdue") {
+        $(no_action).css("display", "none");
+        $(add_tenant_btn).css("display", "none");
+        $(delete_btn).css("display", "block");
+      }
+    });
+
     $("#delete_reservation").show().delay(5000).fadeOut(70);
+    var ReservationStatus = $(".reservation_status").val();
 
-    var getReservationStatus = $("#reservation_status").val();
+    // downpayment details
+    $(document).on("click", ".dp_detail_btn", function() {
+      const getReservationDetails = $(this).val();
+      const dp_details = document.getElementById(getReservationDetails + "=payment_details");
 
-    if (getReservationStatus === "Pending") {
-        $(".no_action").show();
-        $(".add_tenant_btn").hide();
-        $(".delete_btn").hide();
-    } else if (getReservationStatus === "Paid/Reserved") {
-        $(".no_action").hide();
-        $(".add_tenant_btn").show();
-        $(".delete_btn").hide();
-    } else if (getReservationStatus === "Overdue") {
-        $(".no_action").hide();
-        $(".delete_btn").show();
-        $(".add_tenant_btn").hide();
-    }
+      $(dp_details).toggle();
 
-    $(document).on("change", "#reservation_status", function() {
-        var getReservationId = $("#reservation_id").val();
-        var getReservationStatus = $(this).val();
+      $.ajax({
+          type: 'POST',
+          url: 'ajax/getReservationPaymentInformation.php',
+          data: {reservation_Id:getReservationDetails},
+          success: function(data){
+            $(".dp_details2").html(data);
+          }
+      });
+    });
 
-        if (getReservationStatus === "Pending") {
-            $(".no_action").show();
-            $(".add_tenant_btn").hide();
-            $(".delete_btn").hide();
-        } else if (getReservationStatus === "Paid/Reserved") {
-            $(".no_action").hide();
-            $(".add_tenant_btn").show();
-            $(".delete_btn").hide();
-        } else if (getReservationStatus === "Overdue") {
-            $(".no_action").hide();
-            $(".delete_btn").show();
-            $(".add_tenant_btn").hide();
+    $(document).on("click", ".close_btn", function() {
+      const getReservationDetails = $(this).val();
+      const dp_details = document.getElementById(getReservationDetails + "=payment_details");
+
+      $(dp_details).toggle();
+    });
+
+    // confirmation
+    $(document).on("click", ".delete_btn", function() {
+      const getReservationDetails = $(this).val();
+      const delete_confirmation = document.getElementById(getReservationDetails + "=confirmation");
+
+      $(delete_confirmation).toggle();
+    });
+
+    $(document).on("click", ".cancel_btn", function() {
+      const getReservationDetails = $(this).val();
+      const delete_confirmation = document.getElementById(getReservationDetails + "=confirmation");
+
+      $(delete_confirmation).toggle();
+
+      console.log(getReservationDetails);
+    });
+
+    $(document).on("change", ".reservation_status", function() {
+        const getReservationDetails = $(this).val().split(",");
+        const getReservationStatus = getReservationDetails[0];
+        const getReservationId = getReservationDetails[1];
+
+        const no_action = document.getElementById(getReservationId + "=no_action");
+        const add_tenant_btn = document.getElementById(getReservationId + "=add_tenant_btn");
+        const delete_btn = document.getElementById(getReservationId + "=delete_btn");
+
+        if (getReservationStatus == "Pending") {
+          $(no_action).css("display", "block");
+          $(add_tenant_btn).css("display", "none");
+          $(delete_btn).css("display", "none");
+        } else if (getReservationStatus == "Paid/Reserved") {
+          $(no_action).css("display", "none");
+          $(add_tenant_btn).css("display", "block");
+          $(delete_btn).css("display", "none");
+        } else if (getReservationStatus == "Overdue") {
+          $(no_action).css("display", "none");
+          $(add_tenant_btn).css("display", "none");
+          $(delete_btn).css("display", "block");
         }
 
-          $.ajax({
-              type: 'POST',
-              url: 'updateReservationStatusAjax.php',
-              data: {reservation_id:getReservationId, reservation_status:getReservationStatus},
-              success: function(data){
+      $.ajax({
+          type: 'POST',
+          url: 'updateReservationStatusAjax.php',
+          data: {reservation_id:getReservationId, reservation_status:getReservationStatus},
+          success: function(data){
 
-              }
-          });
+          }
       });
   });
 
@@ -56,7 +110,7 @@ $(document).ready(function(){
       } else {
       div.style.display = "none";
       }
-  });
+    });
 
   cancel_btn.addEventListener("click",   () => {
       if (confirm_div.style.display === "none") {
@@ -64,5 +118,6 @@ $(document).ready(function(){
       } else {
         confirm_div.style.display = "none";
       }
-  });
+    });
+});
 

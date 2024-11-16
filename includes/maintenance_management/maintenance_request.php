@@ -4,6 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         require_once '../dbh.inc.php';
         require_once 'maintenance_management_model.php';
+        require_once '../tenant_management/tenant_management_model.php';
         require_once 'maintenance_management_view.php';
 
         session_start();
@@ -42,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if(empty($description)){
             $description_error = "Empty Field*";
         }
-        
+
         $check_if_user_is_tenant = check_if_user_is_tenant($dbconn, $_SESSION["user_id"]);
 
         if ($check_if_user_is_tenant) {
@@ -53,15 +54,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION["category_error"] = $category_error;
                 $_SESSION["urgency_error"] = $urgency_error;
                 $_SESSION["description_error"] = $description_error;
-    
+
                 header('Location: ../../maintenance_request_page.php');
                 die();
             } else {
                 date_default_timezone_set('Asia/Manila');
-                
+
                 // $currentDate = date("F d, Y h:i A");
                 $date_and_time = date("Y-m-d H:i");
-                
+
                 // $date_time_obj = new DateTime($date_and_time);
 
                 submit_maintenance_request($dbconn, $check_if_user_is_tenant["tenant_id"], $user_id, $name, $email, $check_if_user_is_tenant["room_id"], $category, $urgency, $description, $date_and_time);
@@ -72,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 die();
             }
         } else {
-            header("Location: ../../maintenance_request_page.php#mali");
+            header("Location: ../../maintenance_request_page.php");
             die();
         }
 

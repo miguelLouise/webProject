@@ -33,13 +33,13 @@ table {
   border-collapse: collapse;
   background-color: white;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px; 
+  border-radius: 8px; /* Adding border-radius to table */
   overflow: hidden;
 }
 
 th, td {
   padding: 12px 15px;
-  text-align: left;
+  text-align: center;
 }
 
 th {
@@ -52,8 +52,9 @@ td {
   border-bottom: 1px solid #ddd;
 }
 
-tr:hover {
-  background-color: #f1f1f1;
+.dp_detail_btn:hover {
+  background-color: #9f9f9f;
+
 }
 
 select.reservation_status {
@@ -97,12 +98,12 @@ select.reservation_status option {
 }
 
 .confirm_div {
-  background-color: rgba(122, 122, 122, 0.6);
+  background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   height: 100%;
   width: 100%;
   top: 0;
-  z-index: 9;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,11 +112,11 @@ select.reservation_status option {
 .confirm_div1 {
   background-color: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  width: 400px;
+  width: 35%;
+  height: 25%;
   padding: 20px;
   border-radius: 5px;
   display: flex;
-  border-radius: 8px;
   flex-direction: column;
   align-items: center;
 }
@@ -152,6 +153,58 @@ select.reservation_status option {
   border: 1px solid #ccc;
 }
 
+tbody tr{
+  margin: 10px;
+}
+
+.dp_container{
+  background-color: #218838;
+  padding: 20px;
+}
+/*  */
+.dp_details {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dp_details1 {
+  position: relative;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  height: 80%;
+  width: 75%;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dp_detail_btn{
+  all: unset;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.close_btn{
+  all: unset;
+  background-color: #dc6300;
+  height: 50px;
+  width: 50px;
+  right: 0;
+  border-radius: 50px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* Responsive*/
 @media (max-width: 768px) {
   .reservation_management_container1 {
@@ -162,7 +215,7 @@ select.reservation_status option {
   table {
     font-size: 14px;
   }
-  
+
   #delete_reservation {
   text-align: center;
   font-size: 16px;
@@ -182,4 +235,3 @@ select.reservation_status option {
     width: 90%;
   }
 }
-

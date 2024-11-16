@@ -26,12 +26,12 @@ require_once 'includes/login/login_view.php';
     <!-- side navigation bar -->
     <div class="side_nav_div">
         <div class="side_nav" id="menu_nav">
-            <div class="user_info">
+            <!-- <div class="user_info">
                 <div class="side_nav_con1">
                     <img src="../Assets/profile.png" class="nav_icon">
                     <h1 class="head1">Admin Profile</h1>
                 </div>
-            </div>
+            </div> -->
 
             <div class="side_nav_con2">
                 <ul>

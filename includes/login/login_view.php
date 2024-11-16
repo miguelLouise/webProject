@@ -26,16 +26,8 @@ function displayInfo(string $var_name)
 function display_user_info()
 {
     if (isset($_SESSION["user_logged_in"])) {
-        echo $_SESSION["user_id"];
-        echo "<br>";
-        echo $_SESSION["user_role"];
-        echo "<br>";
         echo $_SESSION["user_name"];
         echo "<br>";
-        echo $_SESSION["user_num"];
-        echo "<br>";
         echo $_SESSION["user_email"];
-        echo "<br>";
-        echo $_SESSION["user_bday"];
     }
 }

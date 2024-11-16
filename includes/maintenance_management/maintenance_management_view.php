@@ -2,16 +2,18 @@
 
 function is_user_tenant(object $pdo, $user_id){
     require_once 'maintenance_management_model.php';
-    $result =  check_if_user_is_tenant($pdo, $user_id);
-
-    // session_start();
+    $result =  check_if_user_is_tenant1($pdo, $user_id);
 
     if($result){
         $_SESSION["name"] = $result["name"];
         $_SESSION["email"] = $result["email"];
         $_SESSION["room_number"] = $result["room_number"];
     } else {
-        $_SESSION["user_not_tenant"] = "tenants can only submit maintenance request.";
+        echo '<div class="display_msg_container" style=" background-color: #4b4b4b6e; height: 100%; width: 100%; position: absolute; top: 70px; left: 0;">
+                <div id="message_container" style="background-color: white; position: absolute; height: 100px;  width: 500px; top: 40%; left: 50%; transform: translate(-50%, -50%); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                '. $_SESSION["user_not_tenant"] = "tenants can only submit maintenance request".'
+                </div>
+              </div>';
     }
     return $result;
 }

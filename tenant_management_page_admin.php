@@ -1,9 +1,9 @@
 <?php
-// require_once './includes/login/login_view.php';
-// include './middleware/admin_middleware.php';
+require_once './includes/login/login_view.php';
+include './middleware/admin_middleware.php';
+require_once './includes/dbh.inc.php';
 require_once './includes/tenant_management/tenant_management_model.php';
 require_once './includes/tenant_management/tenant_management_view.php';
-require_once './includes/dbh.inc.php';
 require_once './includes/room_management/room_management_view.php';
 ?>
 
@@ -13,7 +13,7 @@ require_once './includes/room_management/room_management_view.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tenant Management</title>
-    <link rel="stylesheet" href="css/tenant_management.css">
+    <link rel="stylesheet" href="css///tenant_management.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 
 </head>
@@ -127,12 +127,11 @@ require_once './includes/room_management/room_management_view.php';
 
                     echo '<form class="deleteForm" action="includes/tenant_management/tenant_delete.php" method="post" novalidate>';
                     echo '<div id="'.$tenantInfo["tenant_id"].'" class="delete_form" style="display: none;">';
-                    echo '<div class="delete_form1">';
                     echo '<input type="hidden" name="tenant_id" value="'.$tenantInfo["tenant_id"].'">';
                     echo 'Remove '.$tenantInfo["name"].' as a tenant and delete existing data related to the user?';
                     echo '<div class="div1">';
-                    echo '<button type="submit" name="action" value="delete">Confirm</button>';
-                    echo '<button type="button" id="cancel_btn" class="cancel_btn" value="'.$tenantInfo["tenant_id"].'">cancel</button>';
+                    echo '<button type="submit" class="confirm_btn" name="action" value="delete">Confirm</button>';
+                    echo '<button type="button" id="cancel_btn" class="cancel_btn" value="'.$tenantInfo["tenant_id"].'">Cancel</button>';
                     echo '</div>';
                     echo '</div>';
                     echo '</div>';
@@ -152,6 +151,10 @@ require_once './includes/room_management/room_management_view.php';
                 const deleteConfirmationForm = document.getElementById(tenantId);
 
                 $(deleteConfirmationForm).toggle();
+
+                function getTenantId() {
+                    return tenantId;
+                }
             });
 
             $(document).on('click', '.cancel_btn', function() {
@@ -159,9 +162,12 @@ require_once './includes/room_management/room_management_view.php';
                 const deleteConfirmationForm = document.getElementById(tenantId);
 
                 $(deleteConfirmationForm).toggle();
+
+                function getTenantId() {
+                    return tenantId;
+                }
             });
 
-        // off limits
             $("#message").show().delay(3000).fadeOut(70);
 
             $(document).on("change", "#room_typ", function() {
