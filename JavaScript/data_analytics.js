@@ -6,15 +6,15 @@ const lineChartCanvas = document.getElementById('line-chart').getContext('2d');
 
 // Sample data for demonstration
 const sampleData = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
     datasets: [
         {
-            label: 'Online',
-            data: [12, 19, 3, 5, 2, 3, 11]
+            label: 'Reservation',
+            data: [12, 19, 3, 5, 2, 3, 11, 9, 10, 6, 13, 8]
         },
         {
-            label: 'Walk-in',
-            data: [6, 12, 8, 1, 3, 5, 2]
+            label: 'Tenants',
+            data: [6, 12, 8, 1, 3, 5, 2, 6, 8, 10, 5, 4]
         }
     ]
 };

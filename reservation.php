@@ -24,7 +24,7 @@ require_once './includes/tenant_management/tenant_management_view.php';
     <!-- header -->
 
     <!-- page content -->
-    <div class="reservation_container1">
+    <div class="reservation_container1">  
        <div class="reservation_container2">
         <form action="./includes/room_management/room_management_reserve.php" method="post" id="reservation" novalidate>
 
