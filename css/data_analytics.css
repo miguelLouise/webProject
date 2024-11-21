@@ -7,14 +7,14 @@
   font-family: "Roboto", sans-serif;
 }
 
-.data_analytics_container1{
+.data_analytics_container1 {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: 80px;
-  z-index: 10; 
-}*/
+  z-index: 10;
+}
 
 body {
   font-family: Arial, sans-serif;
@@ -54,7 +54,6 @@ body {
 button {
   color: white;
   background-color: #007bff;
-  /* color: #fff; */
   border: none;
   padding: 10px 20px;
   border-radius: 3px;
@@ -65,4 +64,70 @@ button:hover {
   background-color: #3399ff;
   transform: translateY(-3px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .chart-container {
+    max-width: 90%;
+    margin-top: 80px;
+    padding: 15px;
+  }
+
+  .chart-card {
+    padding: 15px;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    max-width: 95%;
+    margin-top: 70px;
+    padding: 10px;
+  }
+
+  .chart-title {
+    font-size: 1.2em;
+  }
+
+  .chart-input {
+    padding: 8px;
+    font-size: 0.9em;
+  }
+
+  button {
+    padding: 8px 14px;
+    font-size: 0.85em;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-container {
+    max-width: 100%;
+    margin-top: 60px;
+    padding: 8px;
+  }
+
+  .chart-card {
+    padding: 10px;
+  }
+
+  .chart-title {
+    font-size: 1em;
+  }
+
+  .chart-input {
+    padding: 6px;
+    font-size: 0.8em;
+  }
+
+  button {
+    padding: 6px 12px;
+    font-size: 0.8em;
+  }
 }

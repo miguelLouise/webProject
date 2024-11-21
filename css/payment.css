@@ -23,7 +23,6 @@
   align-items: center;
   height: 100vh;
   background-color: #f0f4f8;
-  /* margin-top: 30px; */
 }
 
 .payment-card {
@@ -96,7 +95,6 @@ button {
   width: 100%;
   padding: 12px;
   background-color: #007BFF;
-  /* color: #fff; */
   font-size: 1rem;
   border: none;
   border-radius: 5px;
@@ -137,13 +135,60 @@ button:hover {
   cursor: pointer;
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
   .payment-card {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .left-section {
-      border-right: none;
-      border-bottom: 1px solid #e0e0e0;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .left-section h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .payment-card {
+    width: 95%;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .note {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .left-section h2 {
+    font-size: 1rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+
+  button {
+    font-size: 0.8rem;
+    padding: 8px;
   }
 }
