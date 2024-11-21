@@ -14,7 +14,7 @@ require_once './includes/maintenance_management/maintenance_management_view.php'
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dormlink - Admin Dashboard</title>
-    <link rel="stylesheet" href="css/admin_dashboard.css">
+    <link rel="stylesheet" href="css//admin_dashboard.css">
 </head>
 
 <body>
@@ -27,10 +27,6 @@ require_once './includes/maintenance_management/maintenance_management_view.php'
     <!-- page content -->
     <!-- HEAD -->
     <main class="main-container">
-        <div class="main-title">
-          <h2>DASHBOARD</h2>
-        </div>
-
         <form action="includes/room_management/select_room_status.php" method="get" novalidate>
         <div class="admin_dashboard_container2">
             <a href="tenant_management_page_admin.php" class="dashboard-box box1">

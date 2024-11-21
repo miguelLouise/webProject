@@ -138,7 +138,7 @@ function update_reservation_status(object $pdo, $reservation_status, $reservatio
 }
 
 function get_total_reservations(object $pdo){
-    $query = "SELECT COUNT(*) AS total_reservation FROM dormlink_reservations";
+    $query = "SELECT COUNT(*) AS total_reservation FROM dormlink_reservations WHERE is_deleted = 0;";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 

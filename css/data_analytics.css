@@ -12,9 +12,9 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 80px;
-  z-index: 10; 
-}*/
+  height: 70px;
+  z-index: 10;
+}
 
 body {
   font-family: Arial, sans-serif;
@@ -26,14 +26,14 @@ body {
   margin: 0 auto;
   margin-top: 100px;
   padding: 20px;
-  background-color: #fff; 
+  background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .chart-input {
   margin-bottom: 20px;
-  background-color: #f0f0f0; 
+  background-color: #f0f0f0;
   border: 1px solid #ccc;
   border-radius: 3px;
   padding: 10px;
@@ -48,7 +48,7 @@ body {
 
 .chart-title {
   text-align: center;
-  color: #333; 
+  color: #333;
 }
 
 button {
@@ -61,5 +61,5 @@ button {
 }
 
 button:hover {
-  background-color: #0069d9; 
+  background-color: #0069d9;
 }

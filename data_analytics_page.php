@@ -48,7 +48,7 @@ include './middleware/admin_middleware.php';
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="javascript/data_analytics.js"></script>
+    <script src="javascript//data_analytics.js"></script>
 
 </body>
 </html>

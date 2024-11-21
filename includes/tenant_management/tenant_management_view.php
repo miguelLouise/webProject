@@ -25,3 +25,9 @@ function show_total_tenants(object $pdo){
     echo $result["total_tenants"];
 }
 
+function getUserTenantId(object $pdo, $user_id){
+    require_once "tenant_management_model.php";
+    $result = get_user_tenant_id($pdo, $user_id);
+    echo $result["tenant_id"];
+}
+

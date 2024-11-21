@@ -10,6 +10,7 @@
 <body>
     <h1>404 error</h1>
 
+    <h2><?php session_start(); echo  $_SESSION["auth_error"];  ?></h2>
     <h2>go back to previous page</h2>
 </body>
 

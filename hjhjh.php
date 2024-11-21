@@ -19,15 +19,22 @@ require_once 'includes/account_management/account_management_model.php';
 </head>
 <body>
 <?php
-date_default_timezone_set('Asia/Manila');
+// date_default_timezone_set('Asia/Manila');
 
-// $currentDate = date("F d, Y h:i A");
-echo $datetime = date("Y-m-d");
-echo $time = date("H:i");
-echo '<br>';
-$get_user_info = get_user_info($dbconn, 3);
+// // $currentDate = date("F d, Y h:i A");
+// echo $datetime = date("Y-m-d");
+// echo $time = date("H:i");
+// echo '<br>';
+// $get_user_info = get_user_info($dbconn, 3);
 
-print_r($get_user_info);
+// print_r($get_user_info);
+
+if (isset($_SERVER['HTTP_REFERER'])) {
+    $referer = $_SERVER['HTTP_REFERER'];
+    echo "Referer: " . $referer;
+} else {
+    echo "No Referer";
+}
 ?>
 <script>
 

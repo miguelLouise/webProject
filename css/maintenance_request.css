@@ -142,6 +142,30 @@ header {
   color: red; */
 }
 
+.maintenance_table{
+  /* width: 100%; */
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+/* table */
+table {
+  border-collapse: collapse;
+  width: 90%;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #42326E;
+  color: white;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .container1 {

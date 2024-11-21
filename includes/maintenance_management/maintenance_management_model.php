@@ -25,6 +25,7 @@ function get_maintenance_request(object $pdo){
     return $result;
 }
 
+// show to user side
 function get_user_maintenance_request(object $pdo, $tenant_id){
     $query = "SELECT * FROM dormlink_maintenance_request WHERE tenant_id = :tenant_id;";
     $stmt = $pdo->prepare($query);
