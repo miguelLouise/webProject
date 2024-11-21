@@ -27,8 +27,6 @@ body {
   margin: 0 auto;
   margin-top: 70px;
   background-color: #ffffff;
-  padding: 20px;
-  background-color: #fff;
   padding: 40px;
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -60,20 +58,13 @@ h1 {
   color: #333;
 }
 
-.form-group input, select {
-  flex: 2;
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #000000;
-}
-
-.form-group input, .form-group select {
+.form-group input,
+select {
   padding: 10px;
   font-size: 16px;
   border-radius: 6px;
   border: 1px solid #ccc;
   margin-top: 5px;
-
 }
 
 .form-group select {
@@ -81,18 +72,18 @@ h1 {
 }
 
 .submit-btn {
-    align-self: flex-end;
-    padding: 10px 20px;
-    background-color: #4D90FE;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+  align-self: flex-end;
+  padding: 10px 20px;
+  background-color: #4D90FE;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .submit-btn:hover {
-    background-color: #357ae8;
+  background-color: #357ae8;
 }
 
 table {
@@ -101,11 +92,14 @@ table {
   margin-top: 40px;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid #ddd;
 }
 
-th, td {
+th,
+td {
   padding: 15px;
   text-align: left;
 }
@@ -119,7 +113,8 @@ td {
   background-color: #fafafa;
 }
 
-.delete_btn, .cancel_btn {
+.delete_btn,
+.cancel_btn {
   padding: 8px 15px;
   background-color: #dc3545;
   color: white;
@@ -129,7 +124,7 @@ td {
   margin: 5px;
 }
 
-.confirm_btn{
+.confirm_btn {
   padding: 8px 15px;
   background-color: #218838;
   color: white;
@@ -139,7 +134,8 @@ td {
   margin: 5px;
 }
 
-.delete_btn:hover, .cancel_btn:hover {
+.delete_btn:hover,
+.cancel_btn:hover {
   background-color: #c82333;
 }
 
@@ -148,9 +144,8 @@ td {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   width: 400px;
   padding: 20px;
-  border-radius: 5px;
-  display: flex;
   border-radius: 8px;
+  display: flex;
   flex-direction: column;
   align-items: center;
   position: absolute;
@@ -166,9 +161,7 @@ td {
   cursor: pointer;
   margin: 5px;
   padding: 10px 20px;
-  border-radius: 5px;
   background-color: #28a745;
-  cursor: pointer;
 }
 
 .div button:hover {
@@ -185,53 +178,73 @@ td {
   background-color: #c82333;
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 90%;
+    padding: 30px;
+  }
 
-/* Modal styles
-.delete_modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
+  h1 {
+    font-size: 28px;
+  }
+
+  .form-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 14px;
+  }
 }
 
-.delete_modal_content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  width: 400px;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+@media (max-width: 768px) {
+  .container {
+    max-width: 95%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  table th,
+  table td {
+    font-size: 14px;
+    padding: 10px;
+  }
 }
 
-.delete_modal_content h3 {
-  margin-bottom: 20px;
-}
+@media (max-width: 480px) {
+  body {
+    padding: 20px 10px;
+  }
 
-.modal_buttons {
-  display: flex;
-  justify-content: space-around;
-}
+  .container {
+    padding: 15px;
+  }
 
-.modal_buttons button {
-  padding: 10px 20px;
-  border: none;
-  background-color: #4D90FE;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
+  h1 {
+    font-size: 20px;
+  }
 
-.modal_buttons button.cancel_btn {
-  background-color: #f44336; /* Red color for Cancel
-}
+  table th,
+  table td {
+    font-size: 12px;
+    padding: 8px;
+  }
 
-.modal_buttons button:hover {
-  opacity: 0.8;
+  .submit-btn,
+  .delete_btn,
+  .cancel_btn,
+  .confirm_btn {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
 }
-*/
