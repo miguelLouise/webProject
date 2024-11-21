@@ -98,6 +98,6 @@ require_once './includes/tenant_management/tenant_management_view.php';
         </tbody>
       </table>
 
-      <script src="javascript//reservation_management_page_admin.js"></script>
+      <script src="javascript/reservation_management_page_admin.js"></script>
 </body>
 </html>

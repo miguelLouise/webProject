@@ -97,6 +97,7 @@ require_once './includes/room_management/room_management_view.php';
         <table>
             <thead>
                 <tr>
+                    <th>User ID</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Birthdate</th>
@@ -111,6 +112,7 @@ require_once './includes/room_management/room_management_view.php';
                 foreach($tenant_info as $tenantInfo){
 
                     echo '<tr class="tenant_row">';
+                    echo '<td>'.$tenantInfo["user_id"].'</td>';
                     echo '<td>'.$tenantInfo["name"].'</td>';
                     echo '<td>'.$tenantInfo["email"].'</td>';
                     echo '<td>'.$tenantInfo["birthday"].'</td>';

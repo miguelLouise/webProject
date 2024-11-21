@@ -13,7 +13,8 @@ require_once 'includes/room_management/room_management_view.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maintenance Request</title>
-    <link rel="stylesheet" href="css/maintenance_request.css">
+    <link rel="stylesheet" href="css//maintenance_request.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 </head>
 
 <body>
@@ -88,11 +89,29 @@ require_once 'includes/room_management/room_management_view.php';
             </form>
             <?php disappearing_success_message("maintenance_request_submitted"); ?>
         </div>
-
     </div>
 
+    <div id="maintenance_table" class="maintenance_table">
+            request table
+        </div>
+        <!-- tenant ID -->
+        <input type="hidden" name="hidden_field_name" id="tenantID" value="<?php echo getUserTenantId($dbconn, $_SESSION["user_id"]); ?>">
     <!--  radio buttons function -->
     <script>
+        $(document).ready(function(){
+            const tenantID = $("#tenantID").val();
+            console.log(tenantID);
+
+            $.ajax({
+                type: 'POST',
+                url: 'ajax/getUserMaintenanceRequest.php',
+                data: {tenant_ID:tenantID},
+                success: function(data){
+                $('#maintenance_table').html(data);
+                }
+            });
+        })
+
         document.querySelectorAll('input[type="radio"]').forEach((radio) => {
             radio.addEventListener('click', () => {
                 console.log(`${radio.id} selected`);

@@ -12,7 +12,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 80px;
+  height: 70px;
   z-index: 10;
 }
 
@@ -26,14 +26,14 @@ body {
   margin: 0 auto;
   margin-top: 100px;
   padding: 20px;
-  background-color: #fff; 
+  background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .chart-input {
   margin-bottom: 20px;
-  background-color: #f0f0f0; 
+  background-color: #f0f0f0;
   border: 1px solid #ccc;
   border-radius: 3px;
   padding: 10px;
@@ -48,7 +48,7 @@ body {
 
 .chart-title {
   text-align: center;
-  color: #333; 
+  color: #333;
 }
 
 button {
@@ -61,73 +61,5 @@ button {
 }
 
 button:hover {
-  background-color: #3399ff;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 1024px) {
-  .chart-container {
-    max-width: 90%;
-    margin-top: 80px;
-    padding: 15px;
-  }
-
-  .chart-card {
-    padding: 15px;
-  }
-
-  button {
-    padding: 8px 16px;
-    font-size: 0.9em;
-  }
-}
-
-@media (max-width: 768px) {
-  .chart-container {
-    max-width: 95%;
-    margin-top: 70px;
-    padding: 10px;
-  }
-
-  .chart-title {
-    font-size: 1.2em;
-  }
-
-  .chart-input {
-    padding: 8px;
-    font-size: 0.9em;
-  }
-
-  button {
-    padding: 8px 14px;
-    font-size: 0.85em;
-  }
-}
-
-@media (max-width: 480px) {
-  .chart-container {
-    max-width: 100%;
-    margin-top: 60px;
-    padding: 8px;
-  }
-
-  .chart-card {
-    padding: 10px;
-  }
-
-  .chart-title {
-    font-size: 1em;
-  }
-
-  .chart-input {
-    padding: 6px;
-    font-size: 0.8em;
-  }
-
-  button {
-    padding: 6px 12px;
-    font-size: 0.8em;
-  }
+  background-color: #0069d9;
 }

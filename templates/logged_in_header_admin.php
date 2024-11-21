@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/login/login_view.php';
+// require_once '../includes/login/login_view.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@ require_once 'includes/login/login_view.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <title>Document</title> -->
-    <link rel="stylesheet" href="css//logged_in_header_admin.css">
+    <link rel="stylesheet" href="..//css//logged_in_header_admin.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 </head>
@@ -34,6 +34,8 @@ require_once 'includes/login/login_view.php';
                 <li><a href="../maintenance_request_management.php"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Maintenance Management</button></a></li>
                 <li><a href="../room_management_page_admin.php"><button class="nav_btn"><img src="../Assets/door.png" class="nav_icon">Rooms</button></a></li>
                 <li><a href="../tenant_management_page_admin.php"><button class="nav_btn"><img src="../Assets/tenants.png" class="nav_icon">Manage Tenants</button></a></li>
+                <li><a href="../tenant_management_page_admin.php"><button class="nav_btn"><img src="../Assets/tenants.png" class="nav_icon">Archive</button></a></li>
+
                 <li>
                     <form action="../includes/logout/logout.php" method="post" id="login" novalidate>
                         <button type="submit" class="nav_btn">

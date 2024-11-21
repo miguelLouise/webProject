@@ -1,3 +1,4 @@
+
 function changeImage(imageId, imageUrl) {
     document.getElementById(imageId).src = imageUrl;
 }

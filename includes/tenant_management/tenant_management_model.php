@@ -115,7 +115,7 @@ function get_tenant_info(object $pdo, $tenant_id){
 }
 
 function get_total_tenants(object $pdo){
-    $query = "SELECT COUNT(*) AS total_tenants FROM dormlink_tenants";
+    $query = "SELECT COUNT(*) AS total_tenants FROM dormlink_tenants WHERE is_deleted = 0";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 
@@ -147,5 +147,15 @@ function archive_user_info(object $pdo, $tenant_id, $user_id, $name, $contact_nu
     $stmt->bindParam(":archive_date", $archive_date);
 
     $stmt->execute();
+}
+
+function get_user_tenant_id(object $pdo, $user_id){
+    $query = "SELECT tenant_id FROM dormlink_tenants WHERE user_id = :user_id;";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
 }
 

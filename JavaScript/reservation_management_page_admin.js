@@ -100,24 +100,24 @@ $(document).ready(function(){
       });
   });
 
-  const delete_btn = document.getElementsByClassName("delete_btn");
-  const cancel_btn = document.getElementsByClassName("cancel_btn");
-  const confirm_div = document.getElementsByClassName("confirm_div");
+  // const delete_btn = document.getElementsByClassName("delete_btn");
+  // const cancel_btn = document.getElementsByClassName("cancel_btn");
+  // const confirm_div = document.getElementsByClassName("confirm_div");
 
-  delete_btn.addEventListener("click",   () => {
-      if (confirm_div.style.display === "none") {
-        confirm_div.style.display = "block";
-      } else {
-      div.style.display = "none";
-      }
-    });
+  // delete_btn.addEventListener("click",   () => {
+  //     if (confirm_div.style.display === "none") {
+  //       confirm_div.style.display = "block";
+  //     } else {
+  //     div.style.display = "none";
+  //     }
+  //   });
 
-  cancel_btn.addEventListener("click",   () => {
-      if (confirm_div.style.display === "none") {
-        confirm_div.style.display = "block";
-      } else {
-        confirm_div.style.display = "none";
-      }
-    });
+  // cancel_btn.addEventListener("click",   () => {
+  //     if (confirm_div.style.display === "none") {
+  //       confirm_div.style.display = "block";
+  //     } else {
+  //       confirm_div.style.display = "none";
+  //     }
+  //   });
 });
 
