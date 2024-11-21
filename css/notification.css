@@ -1,0 +1,28 @@
+.notif_con{
+    height: 450px;
+    width: 350px;
+    border-radius: 10px;
+    position: absolute;
+    right: 10%;
+}
+
+#notif_icon{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#notif_icon:hover{
+    background-color: chartreuse;
+}
+
+.notif_con1{
+    background-color: burlywood;
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    /* padding: 10px 0; */
+}

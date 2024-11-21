@@ -1,4 +1,8 @@
-window.history.forward();
+// window.addEventListener('popstate', function() {
+//     console.log('Back button clicked!');
+//     // Add your desired actions here
+//   });
+
 
         const eye = document.getElementById("hide");
         const password = document.getElementById("password");

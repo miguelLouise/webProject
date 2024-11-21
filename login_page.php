@@ -12,6 +12,7 @@ require_once './includes/login/login_view.php';
     <title>Dormlink - Login</title>
     <link rel="stylesheet" href="css/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
@@ -69,7 +70,7 @@ require_once './includes/login/login_view.php';
         </div>
     </div>
     <!-- javascript -->
-    <script src="javascript/login_page.js"></script>
+    <script src="javascript///login_page.js"></script>
     <a href="https://web.facebook.com/1277apartments/?_rdc=1&_rdr" target="_blank" class="floating-fb-btn">
         <img src="Assets/fbpc.png" alt="Facebook Icon">
     </a>

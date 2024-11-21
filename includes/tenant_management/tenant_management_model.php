@@ -32,16 +32,17 @@ function get_room(object $pdo, $room_num){
     return $result;
 }
 
-function deleteReservation(object $pdo, $user_id){
-    $query = "DELETE FROM dormlink_reservations WHERE user_id = :user_id";
+function deleteReservation(object $pdo, $user_id, $date_deleted){
+    $query = "UPDATE dormlink_reservations SET is_deleted = 1, date_deleted = :date_deleted WHERE user_id = :user_id";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":user_id", $user_id);
+    $stmt->bindParam(":date_deleted", $date_deleted);
     $stmt->execute();
 }
 
-function add_user_tenant(object $pdo, $user_id, $name, $contact_number, $email, $birthday, $room_id, $start_of_contract)
+function add_user_tenant(object $pdo, $user_id, $name, $contact_number, $email, $birthday, $room_id, $start_of_contract, $date_added)
 {
-    $query = "INSERT INTO dormlink_tenants (user_id, name, contact_number, email, birthday, room_id, start_of_contract) VALUES (:user_id, :name, :contact_number, :email, :birthday, :room_id, :start_of_contract);";
+    $query = "INSERT INTO dormlink_tenants (user_id, name, contact_number, email, birthday, room_id, start_of_contract, date_added_as_tenant) VALUES (:user_id, :name, :contact_number, :email, :birthday, :room_id, :start_of_contract, :date_added_as_tenant);";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":user_id", $user_id);
     $stmt->bindParam(":name", $name);
@@ -50,12 +51,13 @@ function add_user_tenant(object $pdo, $user_id, $name, $contact_number, $email, 
     $stmt->bindParam(":birthday", $birthday);
     $stmt->bindParam(":room_id", $room_id);
     $stmt->bindParam(":start_of_contract", $start_of_contract);
+    $stmt->bindParam(":date_added_as_tenant", $date_added);
     $stmt->execute();
 }
 
-function add_walkin_tenant(object $pdo, $name, $contact_number, $email, $birthday, $room_id, $start_of_contract)
+function add_walkin_tenant(object $pdo, $name, $contact_number, $email, $birthday, $room_id, $start_of_contract, $date_added)
 {
-    $query = "INSERT INTO dormlink_tenants (name, contact_number, email, birthday, room_id, start_of_contract) VALUES (:name, :contact_number, :email, :birthday, :room_id, :start_of_contract);";
+    $query = "INSERT INTO dormlink_tenants (name, contact_number, email, birthday, room_id, start_of_contract, date_added_as_tenant) VALUES (:name, :contact_number, :email, :birthday, :room_id, :start_of_contract, :date_added_as_tenant);";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":name", $name);
     $stmt->bindParam(":contact_number", $contact_number);
@@ -63,6 +65,7 @@ function add_walkin_tenant(object $pdo, $name, $contact_number, $email, $birthda
     $stmt->bindParam(":birthday", $birthday);
     $stmt->bindParam(":room_id", $room_id);
     $stmt->bindParam(":start_of_contract", $start_of_contract);
+    $stmt->bindParam(":date_added_as_tenant", $date_added);
     $stmt->execute();
 }
 
@@ -85,7 +88,7 @@ function check_if_user_is_tenant(object $pdo, $user_id){
 }
 
 function tenant_info(object $pdo){
-    $query = "SELECT dormlink_tenants.*, rooms.*  FROM dormlink_tenants JOIN rooms ON dormlink_tenants.room_id = rooms.room_id;";
+    $query = "SELECT dormlink_tenants.*, rooms.*  FROM dormlink_tenants JOIN rooms ON dormlink_tenants.room_id = rooms.room_id WHERE is_deleted = 0;";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 
@@ -93,10 +96,11 @@ function tenant_info(object $pdo){
     return $result;
 }
 
-function delete_tenant(object $pdo, $tenant_id){
-    $query = "DELETE FROM dormlink_tenants WHERE tenant_id = :tenant_id";
+function delete_tenant(object $pdo, $tenant_id,  $date_deleted){
+    $query = "UPDATE dormlink_tenants SET is_deleted = 1, date_deleted = :date_deleted WHERE tenant_id = :tenant_id";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":tenant_id", $tenant_id, PDO::PARAM_INT);
+    $stmt->bindParam(":date_deleted", $date_deleted);
     $stmt->execute();
 }
 

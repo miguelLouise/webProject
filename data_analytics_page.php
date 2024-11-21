@@ -9,7 +9,8 @@ include './middleware/admin_middleware.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Analytics</title>
-    <link rel="stylesheet" href="css/data_analytics.css">
+    <link rel="stylesheet" href="css//data_analytics.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 </head>
 
 <body>
@@ -21,27 +22,34 @@ include './middleware/admin_middleware.php';
     </div>
 
     <div class="chart-container">
+        <!-- <form action="includes/data_analytics/data_analytics.php" method="post" novalidate> -->
         <div class="chart-input">
             <label for="startDate">Start Date:</label>
-            <input type="date" id="startDate">
+            <input type="month" id="startDate" name="startDate">
             <label for="endDate">End Date:</label>
-            <input type="date" id="endDate">
+            <input type="month" id="endDate" name="endDate">
             <button id="generateCharts">Generate Charts</button>
         </div>
         <div class="chart-area">
             <div class="chart-card">
-                <h2 class="chart-title">Bar Chart Overview</h2>
-                <canvas id="bar-chart"></canvas>
+                <h2 class="chart-title">Monthly Reservations</h2>
+                <canvas id="monthly_reservations_chart"></canvas>
             </div>
             <div class="chart-card">
-                <h2 class="chart-title">Reservation and Tenants Statistics</h2>
-                <canvas id="line-chart"></canvas>
+                <h2 class="chart-title">Dormlink Tenants</h2>
+                <canvas id="dormlink_tenants_chart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h2 class="chart-title">Maintenance Request</h2>
+                <canvas id="maintenance_request_chart"></canvas>
             </div>
         </div>
+        <!-- </form> -->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="javascript/data_analytics.js"></script>
+    <script src="javascript//data_analytics.js"></script>
 
 </body>
 </html>
+cdn.jsdelivr.net

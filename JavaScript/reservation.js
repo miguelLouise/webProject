@@ -22,7 +22,7 @@ $(document).ready(function(){
         });
 
     // $("#reservation_error").show().delay(5000).fadeOut(70);
-    $("#reservation_success").show().delay(5000).fadeOut(70);
+    // $("#reservation_success").show().delay(5000).fadeOut(70);
     // $("#room_availability_error").show().delay(5000).fadeOut(70);
     // $("#user_already_reserved_error").show().delay(5000).fadeOut(70);
 

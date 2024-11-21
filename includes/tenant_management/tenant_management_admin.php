@@ -89,12 +89,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     if (!$check_if_user_is_tenant) {
                         $room_tenants = $isRoomAvailable['tenants'];
                         $room_tenants++;
+                        $date_today = date("Y-m-d");
 
-                        add_user_tenant($dbconn, $reservation_user_id, $name, $contact_number, $email, $birthday, $isRoomAvailable["room_id"], $contract_date);
+                        add_user_tenant($dbconn, $reservation_user_id, $name, $contact_number, $email, $birthday, $isRoomAvailable["room_id"], $contract_date,  $date_today);
                         $update_room_status = update_room_status($room_tenants, $isRoomAvailable["max_capacity"]);
                         change_room_status($dbconn, $update_room_status, $isRoomAvailable["room_id"]);
                         update_room_tenant($dbconn, $room_tenants, $room_number);
-                        deleteReservation($dbconn, $reservation_user_id);
+                        deleteReservation($dbconn, $reservation_user_id, $date_today);
 
 
                         $_SESSION["tenant_added"] = "new tenant added";
@@ -119,8 +120,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if ($isRoomAvailable["tenants"] < $isRoomAvailable["max_capacity"]) {
                     $room_tenants = $isRoomAvailable['tenants'];
                     $room_tenants++;
+                    $date_today = date("Y-m-d");
 
-                    add_walkin_tenant($dbconn, $name, $contact_number, $email, $birthday, $isRoomAvailable["room_id"], $contract_date);
+                    add_walkin_tenant($dbconn, $name, $contact_number, $email, $birthday, $isRoomAvailable["room_id"], $contract_date, $date_today);
                     $update_room_status = update_room_status($room_tenants, $isRoomAvailable["max_capacity"]);
                     change_room_status($dbconn, $update_room_status, $isRoomAvailable["room_id"]);
                     update_room_tenant($dbconn, $room_tenants, $room_number);

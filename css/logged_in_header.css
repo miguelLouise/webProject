@@ -103,10 +103,11 @@
 
 .side_nav {
     position: fixed;
-    width: 250px;
+    width: 260px;
     height: 100%;
     background-color: #f5f5f5;
-    box-shadow: -5px 0px 4px 0px rgba(0, 0, 0, 0.75);
+    /* box-shadow: -5px 0px 4px 0px rgba(0, 0, 0, 0.75); */
+    box-shadow: -2px 0px 2px 0px rgba(0,0,0,0.75);
     right: -270px;
     /* Start off-screen to the right */
     overflow-y: auto;
@@ -151,6 +152,10 @@
     right: 0;
 }
 
+ul li{
+    list-style-type: none;
+}
+
 ul li a{
     text-decoration: none;
 }
@@ -178,6 +183,39 @@ ul li a{
 
 #menu_btn:hover {
     background-color: #B29CE4;
+}
+
+.notif_icon_con{
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    position: absolute;
+    background-color: #2dcf00;
+    right: 80px;
+}
+
+.notification_icon{
+    /* background-color: rgb(204, 81, 43); */
+    padding: 5px;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.notif_con1{
+    display: none;
+    background-color: burlywood;
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    /* height: auto; */
+    margin-top: 15px;
+    padding: 25px;
+    left: -360px;
+}
+
+.notification_icon:hover{
+    background-color: #5300cf;
 }
 
 @media (max-width: 900px) {

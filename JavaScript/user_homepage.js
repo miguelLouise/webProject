@@ -10,4 +10,15 @@ function showPopup(imageUrl) {
 function closePopup() {
     document.getElementById("popup").style.display = "none";
 }
+// prevent back button
+// window.onload = function() {
+//     window.history.pushState(null, null, window.location.href);
+// };
+
+// window.addEventListener('popstate', function() {
+//     window.history.pushState(null, null, window.location.href);  
+
+// });
+
+
 

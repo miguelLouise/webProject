@@ -84,7 +84,7 @@ function reserveRoom(object $pdo, $user_id, $room_type, $floor_num, $room_num, $
 }
 
 function getReservationTable(object $pdo){
-    $query = "SELECT users.name, dormlink_reservations.*  FROM users JOIN dormlink_reservations ON users.user_id = dormlink_reservations.user_id;";
+    $query = "SELECT users.name, dormlink_reservations.*  FROM users JOIN dormlink_reservations ON users.user_id = dormlink_reservations.user_id WHERE is_deleted = 0;";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 
@@ -237,7 +237,7 @@ function filter_by_floor_number_and_room_status(object $pdo, $floor_number, $roo
 }
 
 function filter_by_room_type_floor_number_and_room_status(object $pdo, $room_type, $floor_number, $room_status){
-    $query = "SELECT * FROM rooms WHERE room_type = :room_type AND floor_number  = :floor_number AND room_status  = :room_status;";
+    $query = "SELECT * FROM rooms WHERE room_type = :room_type AND floor_number = :floor_number AND room_status  = :room_status;";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":room_type", $room_type, PDO::PARAM_INT);
     $stmt->bindParam(":floor_number", $floor_number, PDO::PARAM_INT);

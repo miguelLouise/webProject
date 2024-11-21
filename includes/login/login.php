@@ -31,9 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
 
-        //louisemiguel1999@gmail.com (Password@00)
-        //capua@email.com (Capua@000)
-        //locymon@gmail.com (Password@11)
+        //louisemiguel1999@gmail.com (Estacio@1999)
+        //cymonlo@gmail.com (cymonLo@2002)
+        //capua_kyle@gmail.com (CapuaKyle@2002)
+        // vinceleomo@gmail.com (LeomoVince@0)
 
         //admin@gmail.com (adminPassword@01)
 
@@ -55,10 +56,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["user_bday"] = $user_info["birthday"];
 
             if ($_SESSION["user_role"] == 0) {
-                header("Location: ../../user_homepage.php?login=success");
+                // header("Location: ../../user_homepage.php?login=success");
+                header("Location: ../../user_homepage.php");
             }
             else {
-                header("Location: ../../admin_dashboard.php?login=success");
+                // header("Location: ../../admin_dashboard.php?login=success");
+                header("Location: ../../admin_dashboard.php");
             }
 
             $pdo = null;

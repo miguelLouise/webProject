@@ -13,7 +13,7 @@ require_once './includes/room_management/room_management_view.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tenant Management</title>
-    <link rel="stylesheet" href="css///tenant_management.css">
+    <link rel="stylesheet" href="css//tenant_management.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 
 </head>
@@ -28,9 +28,10 @@ require_once './includes/room_management/room_management_view.php';
         <h1>New Tenant Registration</h1>
         <form action="./includes/tenant_management/tenant_management_admin.php" method="post" novalidate>
         <div class="reservation_management_container2">
-            <p style="color:red"><?php display_message("room_is_full"); unset_session_variable("room_is_full"); ?></p>
-            <p style="color:red"><?php display_message("user_is_tenant"); unset_session_variable("user_is_tenant"); ?></p>
-            <p id="" style="color:green"><?php display_message("tenant_added"); unset_session_variable("tenant_added"); ?></p>
+            <?php disappearing_success_message("tenant_record_deleted"); ?>
+            <?php disappearing_error_message("room_is_full"); ?>
+            <?php disappearing_error_message("user_is_tenant"); ?>
+            <?php disappearing_success_message("tenant_added"); ?>
         </div>
         <div class="form-row">
             <div class="form-group">
@@ -42,8 +43,6 @@ require_once './includes/room_management/room_management_view.php';
                 <input type="email" id="email" name="email" placeholder="Email" value="<?php display_message("email"); unset_session_variable("email");?>">
             </div>
         </div>
-
-
 
         <div class="form-row">
             <div class="form-group">
@@ -95,8 +94,6 @@ require_once './includes/room_management/room_management_view.php';
 
             <button type="submit" class="submit-btn">Add tenant</button>
         </form>
-
-        <p id="message" style="color:green"><?php display_message("tenant_record_deleted"); unset_session_variable("tenant_record_deleted"); ?></p>
         <table>
             <thead>
                 <tr>
@@ -121,7 +118,7 @@ require_once './includes/room_management/room_management_view.php';
                     echo '<td>'.$tenantInfo["contact_number"].'</td>';
                     echo '<td>'.$tenantInfo["start_of_contract"].'</td>';
                     echo '<td>
-                          <button type="button" id="delete_btn" class="delete_btn" value="'.$tenantInfo["tenant_id"].'">Delete</button>';
+                          <button type="button" id="delete_btn" class="delete_btn" value="'.$tenantInfo["tenant_id"].'">Remove</button>';
                     echo '</td>';
                     echo '</tr>';
 
@@ -129,7 +126,7 @@ require_once './includes/room_management/room_management_view.php';
                     echo '<div id="'.$tenantInfo["tenant_id"].'" class="delete_form" style="display: none;">';
                     echo '<input type="hidden" name="tenant_id" value="'.$tenantInfo["tenant_id"].'">';
                     echo 'Remove '.$tenantInfo["name"].' as a tenant and delete existing data related to the user?';
-                    echo '<div class="div1">';
+                    echo '<div class="button_container">';
                     echo '<button type="submit" class="confirm_btn" name="action" value="delete">Confirm</button>';
                     echo '<button type="button" id="cancel_btn" class="cancel_btn" value="'.$tenantInfo["tenant_id"].'">Cancel</button>';
                     echo '</div>';

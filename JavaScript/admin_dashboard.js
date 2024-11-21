@@ -1,3 +1,12 @@
+ // prevent back button
+ window.onload = function() {
+  window.history.forward();
+  window.addEventListener("popstate", function() {
+      window.history.forward();
+  });
+};
+
+
 // ---------- CHARTS ----------
 
 // BAR CHART
@@ -104,13 +113,13 @@ const barChartOptions = {
       },
     },
   };
-  
+
   const barChart = new ApexCharts(
     document.querySelector('#bar-chart'),
     barChartOptions
   );
   barChart.render();
-  
+
   // AREA CHART
   const areaChartOptions = {
     series: [
@@ -226,7 +235,7 @@ const barChartOptions = {
       theme: 'dark',
     },
   };
-  
+
   const areaChart = new ApexCharts(
     document.querySelector('#area-chart'),
     areaChartOptions

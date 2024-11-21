@@ -4,6 +4,7 @@ include './middleware/admin_middleware.php';
 require_once './includes/dbh.inc.php';
 require_once 'includes/maintenance_management/maintenance_management_model.php';
 require_once 'includes/maintenance_management/maintenance_management_view.php';
+require_once 'includes/tenant_management/tenant_management_view.php';
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +15,7 @@ require_once 'includes/maintenance_management/maintenance_management_view.php';
     <title>Maintenance Request Management</title>
     <link rel="stylesheet" href="css//maintenanace_request_management.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="javascript//maintenance_request_management.js"></script>
 </head>
 <body>
     <div class="maintenance_management_container1">
@@ -24,7 +26,61 @@ require_once 'includes/maintenance_management/maintenance_management_view.php';
 
     <div class="container">
         <h1>Manage Maintenance Request</h1>
-        <div class="date-time" id="dateTime"></div>
+        <div class="filter_container" id="filter_container" style="display: flex;">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="maintenance_category">Category</label>
+                    <select name="maintenance_category" id="maintenance_category" class="maintenance_category">
+                            <option value="" selected disabled hidden>Category</option>
+                            <option value="Electrical">Electrical</option>
+                            <option value="Plumbing">Plumbing</option>
+                            <option value="HVAC">HVAC</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="maintenance_urgency">Urgency</label>
+                    <select name="maintenance_urgency" id="maintenance_urgency">
+                        <option value="" selected disabled hidden>Urgency</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                        <option value="Emergency">Emergency</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="date_from">From</label>
+                    <input type="date" id="date_from" name="date_from" value="">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="date_to">To</label>
+                    <input type="date" id="date_to" name="date_to" value="">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="maintenance_status">Status</label>
+                    <select name="maintenance_status" id="maintenance_status">
+                        <option value="" selected disabled hidden>Status</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Scheduled">Scheduled</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Closed">Closed</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
         <table class="request-table">
             <thead>
                 <tr>
@@ -33,6 +89,7 @@ require_once 'includes/maintenance_management/maintenance_management_view.php';
                     <th class="userName">Name</th>
                     <th class="userEmail">Email</th>
                     <th>Room ID</th>
+                    <th>Room Number</th>
                     <th>Category</th>
                     <th>Urgency</th>
                     <th>Description</th>
@@ -52,54 +109,27 @@ require_once 'includes/maintenance_management/maintenance_management_view.php';
                     echo '<td class="userName">'.$maintenance_req["name"].'</td>';
                     echo '<td class="userEmail">'.$maintenance_req["email"].'</td>';
                     echo '<td>'.$maintenance_req["room_id"].'</td>';
+                    echo '<td>'.$maintenance_req["room_number"].'</td>';
                     echo '<td>'.$maintenance_req["category"].'</td>';
                     echo '<td>'.$maintenance_req["maintenance_urgency"].'</td>';
                     echo '<td>'.$maintenance_req["description"].'</td>';
                     echo '<td>'.format_date($maintenance_req["date"]).'</td>';
-                    echo '<td>'.format_time($maintenance_req["date"]).'</td>';
+                    echo '<td>'.format_time($maintenance_req["time"]).'</td>';
                     echo '<td>
                           <select name="maintenance_request_status" id="maintenance_request_status" class="maintenance_request_status">
-                          <option value="" selected hidden>'.$maintenance_req["maintenance_status"].'</option>
+                          <option value="'.$maintenance_req["maintenance_status"].','.$maintenance_req["maintenance_request_id"].'" selected hidden>'.$maintenance_req["maintenance_status"].'</option>
                           <option value="Pending,'.$maintenance_req["maintenance_request_id"].'">Pending</option>
                           <option value="Scheduled,'.$maintenance_req["maintenance_request_id"].'">Scheduled</option>
                           <option value="In Progress,'.$maintenance_req["maintenance_request_id"].'">In Progress</option>
                           <option value="Completed,'.$maintenance_req["maintenance_request_id"].'">Completed</option>
-                          <option value="Closed,'.$maintenance_req["maintenance_request_id"].'">Closed</option>
                           </select>
                           </td>';
                      echo '</tr>';
                      echo '</form>';
                 }
                 ?>
-                <!-- maintenance request status: Submitted, Scheduled, In Progress, Completed -->
             </tbody>
         </table>
     </div>
-
-    <!-- <script src="javascript/maintenance_request_management.js"></script> -->
-     <script type="text/javascript">
-          $(document).ready(function(){
-            $(document).on("change", "#maintenance_request_status", function() {
-                const getMaintenanceStatus = $(this).val().split(",");
-                const getStatus = getMaintenanceStatus[0];
-                const getMaintenanceId = getMaintenanceStatus[1];
-
-                console.log(getMaintenanceStatus);
-                console.log(getStatus);
-                console.log(getMaintenanceId);
-
-                $.ajax({
-                    type: 'POST',
-                    url: 'ajax/updateMaintenanceStatus.php',
-                    data: {maintenance_status:getStatus, maintenance_id:getMaintenanceId},
-                    success: function(data){
-
-                   }
-                });
-
-            });
-          });
-     </script>
-
 </body>
 </html>

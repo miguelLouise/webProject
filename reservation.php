@@ -66,9 +66,6 @@ require_once './includes/tenant_management/tenant_management_view.php';
 
         <button type="submit" id="confirm_reservation_btn">Reserve</button>
 
-        <!-- <div class="reservation_confirmation" id="reservation_confirmation" style="background-color:blue;"> -->
-            <!-- room details -->
-        <!-- </div> -->
         <?php disappearing_success_message("reservation_success"); ?>
         <?php disappearing_error_message("reservation_error"); ?>
         <?php disappearing_error_message("room_availability_error"); ?>

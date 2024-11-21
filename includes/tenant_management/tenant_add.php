@@ -32,7 +32,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
           die();
         }
         elseif (isset($_POST['confirm_delete_btn'])) {
-          // deleteReservation($dbconn, $user_id);
+          $date = date("Y-m-d");
+          deleteReservation($dbconn, $user_id, $date);
 
           $_SESSION["delete_reservation"] = "Reservation Deleted Successfully";
 

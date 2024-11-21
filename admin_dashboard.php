@@ -4,6 +4,7 @@ include './middleware/admin_middleware.php';
 require_once './includes/dbh.inc.php';
 require_once './includes/tenant_management/tenant_management_view.php';
 require_once './includes/room_management/room_management_view.php';
+require_once './includes/maintenance_management/maintenance_management_view.php';
 ?>
 
 <!DOCTYPE html>
@@ -95,24 +96,22 @@ require_once './includes/room_management/room_management_view.php';
             <!-- </a> -->
             </button>
 
-
-
-            <div class="charts">
-                <div class="charts-card">
-                    <h2 class="chart-title">Sample Overview</h2>
-                    <div id="bar-chart"></div>
+            <a href="maintenance_request_management.php" class="dashboard-box box7">
+                <img src="Assets/box6icon.png" alt="Total Paid Icon" class="box-icon">
+                <div class="box-content">
+                <h3>Maintenance Request</h3>
+                <p><?php show_active_reservation($dbconn); ?></p>
                 </div>
+            </a>
 
-                <div class="charts-card">
-                    <h2 class="chart-title">Reservation Statistics</h2>
-                    <div id="area-chart"></div>
-                </div>
-            </div>
+
         </div>
         </form>
 
+
+
         <!-- ApexCharts -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script> -->
         <!-- Custom JS -->
         <script src="javascript/admin_dashboard.js"></script>
 
