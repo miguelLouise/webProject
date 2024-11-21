@@ -52,6 +52,7 @@ body {
 }
 
 button {
+  color: white;
   background-color: #007bff;
   /* color: #fff; */
   border: none;
@@ -61,5 +62,7 @@ button {
 }
 
 button:hover {
-  background-color: #0069d9; 
+  background-color: #3399ff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
