@@ -7,7 +7,7 @@
   font-family: "Roboto", sans-serif;
 }
 
-.data_analytics_container1{
+.data_analytics_container1 {
   position: fixed;
   top: 0;
   left: 0;
@@ -52,8 +52,8 @@ body {
 }
 
 button {
+  color: white;
   background-color: #007bff;
-  /* color: #fff; */
   border: none;
   padding: 10px 20px;
   border-radius: 3px;

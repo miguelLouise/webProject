@@ -3,7 +3,11 @@ $(document).ready(function(){
         const startDate = $('#startDate').val();
         const endDate = $('#endDate').val();
 
+<<<<<<< HEAD
         if(startDate !== "" && endDate === ""){ //START DATE ONLY
+=======
+        if(startDate !== "" && endDate === ""){
+>>>>>>> bcbe9be94dd5a6158043bfa0689d9e5bb14cae05
         const split_start_date = $('#startDate').val().split("-");
         const start_date_year = split_start_date[0];
         const start_date_month = split_start_date[1];
@@ -11,6 +15,7 @@ $(document).ready(function(){
 
         console.log("date  greater than ", concatinated_start_date)
 
+<<<<<<< HEAD
          // RESERVATIONS
          $.ajax({
             type: 'POST',
@@ -136,6 +141,9 @@ $(document).ready(function(){
         });
 
         } else if(startDate === "" && endDate !== ""){//END DATE ONLY
+=======
+        } else if(startDate === "" && endDate !== ""){
+>>>>>>> bcbe9be94dd5a6158043bfa0689d9e5bb14cae05
         const split_end_date = $('#endDate').val().split("-");
         const end_date_year = split_end_date[0];
         const end_date_month = split_end_date[1];
@@ -145,6 +153,7 @@ $(document).ready(function(){
         const concatinated_end_date = end_date_year + "-" + end_date_month + "-" + last_day_of_end_date;
 
         console.log("date  less than ", concatinated_end_date)
+<<<<<<< HEAD
 
                 // RESERVATIONS
                 $.ajax({
@@ -269,6 +278,8 @@ $(document).ready(function(){
                         });
                     }
                 });
+=======
+>>>>>>> bcbe9be94dd5a6158043bfa0689d9e5bb14cae05
         } else if(startDate !== "" && endDate !== ""){ //GET MONTHLY DATA BETWEEN 2 DATES
             if(startDate <= endDate){
                 const split_start_date = $('#startDate').val().split("-");
@@ -291,6 +302,8 @@ $(document).ready(function(){
                     url: 'ajax/data_analytics_ajax/getMonthlyReservations.php',
                     data: {date_start:concatinated_start_date, date_end:concatinated_end_date},
                     success: function(data){
+
+
                         const output_array = JSON.parse(data);
 
                         const chart_label = []
@@ -327,6 +340,7 @@ $(document).ready(function(){
                     data: {date_start:concatinated_start_date, date_end:concatinated_end_date},
                     success: function(data){
                         const output_array = JSON.parse(data);
+                        console.log(output_array);
 
                         const chart_label = []
                         const online_chart_data = []
@@ -369,6 +383,10 @@ $(document).ready(function(){
                     url: 'ajax/data_analytics_ajax/getMaintenanceRequest.php',
                     data: {date_start:concatinated_start_date, date_end:concatinated_end_date},
                     success: function(data){
+<<<<<<< HEAD
+=======
+                        // console.log(JSON.parse(data));
+>>>>>>> bcbe9be94dd5a6158043bfa0689d9e5bb14cae05
                         const output_array = JSON.parse(data);
 
                         const chart_label = []
@@ -422,5 +440,5 @@ $(document).ready(function(){
 
 const month_names = [
     "","January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"  
+    "July", "August", "September", "October", "November", "December"  
 ];

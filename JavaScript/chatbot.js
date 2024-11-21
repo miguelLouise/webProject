@@ -17,7 +17,7 @@ const responses = {
     "parking": ["Yes, We do have spacious parking area for your vehicles. Car Parking and Motorcicle Parking space."],
     "laundry": ["We provided laundromat for all of our tenants, you will never worry to wash your clothes."],
     "wifi": ["Yes, we have a WIFI internet connection for every room. We also have provided wifi at our lobby and study area."],
-    "room availability": ["Register and log in to the website to check available rooms and make reservations."],
+    "room availability": ["We have available 4 room types for sharing and solo with different rates. To know more you can Register and log in to the website to check available rooms and make reservations."],
     "room rates": ["Our room rates range from 9,500 pesos to 15,000 pesos per month, depending on the room type."],
     "reservation": ["To make a more secure and accurate reservation, log in to our website and head to the Reservation section. Check Room types, after submition proceed to Partial Payment to process your reservation request"],
     "maintenance": ["You can request maintenance services by logging into the website and using the Maintenance Request form tosubmit yor request. We will look for your request and provide fixes for your electricity, plumbing, or HVAC what ever is the maintenance needed for your unit"],
