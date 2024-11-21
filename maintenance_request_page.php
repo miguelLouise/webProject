@@ -4,6 +4,7 @@ include './middleware/user_middleware.php';
 require_once './includes/dbh.inc.php';
 require_once './includes/tenant_management/tenant_management_view.php';
 require_once './includes/maintenance_management/maintenance_management_view.php';
+require_once 'includes/room_management/room_management_view.php';
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +25,7 @@ require_once './includes/maintenance_management/maintenance_management_view.php'
 
     <!-- page content -->
     <div class="container1">
-    <?php is_user_tenant($dbconn, $_SESSION["user_id"]);?>
+        <?php is_user_tenant($dbconn, $_SESSION["user_id"]);?>
         <div class="left-column">
             <h2>Submit</h2>
             <h1>Maintenance Requests</h1>
@@ -84,8 +85,8 @@ require_once './includes/maintenance_management/maintenance_management_view.php'
                     <textarea id="description" name="description" rows="5"></textarea>
                 </div>
                 <button type="submit" class="submit-button">Submit</button>
-                <p style="color:green"><?php display_message("maintenance_request_submitted"); unset_session_variable("maintenance_request_submitted");?></p>
             </form>
+            <?php disappearing_success_message("maintenance_request_submitted"); ?>
         </div>
 
     </div>

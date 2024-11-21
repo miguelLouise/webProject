@@ -27,3 +27,9 @@ function format_time($time){
     $formatted_time = date('g:i A', strtotime($time));
     return $formatted_time;
 }
+
+function show_active_reservation(object $pdo){
+    require_once 'maintenance_management_model.php';
+    $result = get_active_reservation($pdo);
+    echo $result["total"];
+}

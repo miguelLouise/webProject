@@ -12,13 +12,14 @@ session_start();
     <title>Dormlink</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 </head>
 
 <body>
     <div class="container">
         <!-- Header -->
         <?php include('./templates/header.php'); ?>
-        
+
         <!-- Page Content -->
         <div class="container2">
             <div class="text-overlay">
@@ -219,7 +220,7 @@ session_start();
         }
     </script>
 
-    <script src="javascript/index.js"></script>
+    <script src="javascript//index.js"></script>
 </body>
 
 </html>

@@ -27,7 +27,7 @@ if ($rmType == 1) {
             <ul>
             </div>
             <div style="right: 0; padding: 5px; border: 1px solid; width: 35%; display: flex; justify-content: center;">
-            <img height="100%" width="auto" src="Assets/room1pic1.png" onclick="changeImage("room1-large", "Assets/room1pic1.png")" alt="Room 1 Image 1">
+            <img src="Assets/room2pic1.png" onclick="changeImage("room2-large", "Assets/room2pic1.png")" alt="Room 2 Image 1">
             </div>';
     }
 } elseif ($rmType == 3) {
@@ -39,7 +39,7 @@ if ($rmType == 1) {
             <ul>
             </div>
             <div style="right: 0; padding: 5px; border: 1px solid; width: 35%; display: flex; justify-content: center;">
-            <img height="100%" width="auto" src="Assets/room1pic1.png" onclick="changeImage("room1-large", "Assets/room1pic1.png")" alt="Room 1 Image 1">
+            <img src="Assets/room3pic1.png" onclick="changeImage("room3-large", "Assets/room3pic1.png")" alt="Room 3 Image 1">
             </div>';
     }
 } elseif ($rmType == 4) {
@@ -51,7 +51,7 @@ if ($rmType == 1) {
             <ul>
             </div>
             <div style="right: 0; padding: 5px; border: 1px solid; width: 35%; display: flex; justify-content: center;">
-            <img height="100%" width="auto" src="Assets/room1pic1.png" onclick="changeImage("room1-large", "Assets/room1pic1.png")" alt="Room 1 Image 1">
+            <img src="Assets/room4pic1.png" onclick="changeImage("room4-large", "Assets/room4pic1.png")" alt="Room 4 Image 1">
             </div>';
     }
 }

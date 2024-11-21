@@ -11,7 +11,9 @@ include './middleware/user_middleware.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dormlink - User Homepage</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css///user_homepage.css">
+    <link rel="stylesheet" href="css/user_homepage.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -218,9 +220,7 @@ include './middleware/user_middleware.php';
         <?php include('./templates/chatbot.php'); ?>
         <!-- Chatbot -->
     </div>
-
-    <script src="javascript/user_homepage.js"></script>
-
+    <script src="javascript//user_homepage.js"></script>
 </body>
 
 </html>

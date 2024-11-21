@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $date = date("Y-m-d");
                         reserveRoom($dbconn, $_SESSION["user_id"], $room_type, $floor_number, $room_number, $date);
 
-                        $_SESSION["reservation_success"] = "Reservation Successful";
+                        $_SESSION["reservation_success"] = "Reservation Successful. Proceed to Partial Payment page to secure your reservation.";
 
                         header("Location: " . $_SERVER['HTTP_REFERER']);
                         die();

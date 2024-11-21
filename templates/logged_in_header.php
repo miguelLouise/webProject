@@ -7,7 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-    <link rel="stylesheet" href="../css//logged_in_header.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/logged_in_header.css">
 </head>
 
 <body>
@@ -23,6 +24,14 @@
             <a href="../aboutus.php" class="header_button" data-title="About Us">About Us</a>
             <a href="../contactus.php" class="header_button" data-title="Contact Us">Contact Us</a>
         </div>
+
+        <!-- <div class="notif_icon_con">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000" id="notification_icon" class="notification_icon"><path d="M160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z"/></svg>
+           <div class="notif_con1" id="notif_con1">
+                notification box
+                contents
+            </div>
+        </div> -->
 
         <div class="side_nav_icon">
             <img src="../Assets/profl.png" id="menu_btn" class="profile_icon">
@@ -46,7 +55,7 @@
                     <li><a href="../messaging_page.php"><button class="nav_btn"><img src="../Assets/mail.png" class="nav_icon">Send us an email</button></a></li>
                     <li><a href="../reservation.php"><button class="nav_btn"><img src="../Assets/reservation.png" class="nav_icon">Reservation</button></a></li>
                     <li><a href="../payment_page.php"><button class="nav_btn"><img src="../Assets/wallet.png" class="nav_icon">Partial Payment</button></a></li>
-                    <li><a href="#accountmanagement"><button class="nav_btn"><img src="../Assets/account.png" class="nav_icon">Account Management</button></a></li>
+                    <li><a href="../user_account_management.php"><button class="nav_btn"><img src="../Assets/account.png" class="nav_icon">Account Management</button></a></li>
                         <form action="../includes/logout/logout.php" method="post" id="login" novalidate>
                             <button type="submit" class="nav_btn">
                                 <img src="../Assets/logout.png" class="nav_icon">Logout
@@ -60,17 +69,38 @@
 
     <!-- Javascript -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuBtn = document.getElementById('menu_btn');
-            const menuNav = document.getElementById("menu_nav");
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     const menuBtn = document.getElementById('menu_btn');
+        //     const menuNav = document.getElementById("menu_nav");
 
-            menuBtn.addEventListener("click", function() {
-                const rightPos = window.getComputedStyle(menuNav).getPropertyValue("right");
+        //     menuBtn.addEventListener("click", function() {
+        //         const rightPos = window.getComputedStyle(menuNav).getPropertyValue("right");
 
-                if (rightPos === "-300px") {
-                    menuNav.style.right = "0";
+        //         if (rightPos === "-300px") {
+        //             menuNav.style.right = "0";
+        //         } else {
+        //             menuNav.style.right = "-300px";
+        //         }
+        //     });
+        // });
+
+        // notif
+        $(document).ready(function(){
+            $(document).on("click", "#notification_icon", function() {
+                const notif_box = document.getElementById("notif_con1");
+
+                $(notif_box).toggle();
+            });
+
+            // side nav
+            $(document).on("click", "#menu_btn", function() {
+                right_position = $("#menu_nav").css("right");
+                width = $("#menu_nav").css("width");
+
+                if (right_position == "-270px"){
+                    $("#menu_nav").css("right", "0px");
                 } else {
-                    menuNav.style.right = "-300px";
+                    $("#menu_nav").css("right", "-270px");
                 }
             });
         });

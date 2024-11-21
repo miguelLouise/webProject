@@ -61,11 +61,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 date_default_timezone_set('Asia/Manila');
 
                 // $currentDate = date("F d, Y h:i A");
-                $date_and_time = date("Y-m-d H:i");
-
+                $date = date("Y-m-d");
+                $time = date("H:i");
                 // $date_time_obj = new DateTime($date_and_time);
 
-                submit_maintenance_request($dbconn, $check_if_user_is_tenant["tenant_id"], $user_id, $name, $email, $check_if_user_is_tenant["room_id"], $category, $urgency, $description, $date_and_time);
+                submit_maintenance_request($dbconn, $check_if_user_is_tenant["tenant_id"], $user_id, $name, $email, $check_if_user_is_tenant["room_id"], $category, $urgency, $description, $date, $time);
 
                 $_SESSION["maintenance_request_submitted"] = "Maintenance Request Submitted Successfully.";
 

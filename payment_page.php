@@ -27,7 +27,7 @@ require_once 'includes/tenant_management/tenant_management_view.php';
             <div class="left-section">
                 <h2>Reservation Down Payment</h2>
                 <p class="note">*Note strictly no cancellation</p>
-                <p class="note">*Your Downpayment will be valid for 5 to 7 days</p>
+                <p class="note">*Your Downpayment will be valid for 5 to 7 working days</p>
                 <img src="./Assets/sampqr.png" alt="QR Code" class="qr-code">
             </div>
 
