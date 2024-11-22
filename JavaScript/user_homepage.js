@@ -5,7 +5,7 @@ function changeImage(imageId, imageUrl) {
 
 function showPopup(imageUrl) {
     document.getElementById("popupImage").src = imageUrl;
-    document.getElementById("popup").style.display = "block";
+    document.getElementById("popup").style.display = "flex";
 }
 
 function closePopup() {
