@@ -19,8 +19,8 @@ if ($rmType == 1) {
                 <img src="Assets/room1pic4.png" alt="room1_pic4">
                 <img src="Assets/room1pic5.png" alt="room1_pic5">
             </div>
-            <button class="previous" onclick="previous_slide()">&#10094</button>
-            <button class="next" onclick="next_slide()">&#10095</button>
+            <button type="button" class="previous" onclick="previous_slide()">&#10094</button>
+            <button type="button" class="next" onclick="next_slide()">&#10095</button>
         </div>
         <div class="text_container"><?php echo $value['room_description']; ?></div>
     <?php
