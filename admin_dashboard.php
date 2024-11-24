@@ -74,7 +74,7 @@ require_once './includes/maintenance_management/maintenance_management_view.php'
 
             <button class="dashboard-box box6" name="action" value="occupied_rooms">
             <!-- <a href="room_management_page_admin.php" class="dashboard-box box6"> -->
-                <img src="Assets/box6icon.png" alt="Total Paid Icon" class="box-icon">
+                <img src="Assets/box5icon.png" alt="Total Paid Icon" class="box-icon">
                 <div class="box-content">
                 <h3>Occupied Rooms</h3>
                 <p><?php show_occupied_rooms($dbconn); ?></p>
@@ -84,7 +84,7 @@ require_once './includes/maintenance_management/maintenance_management_view.php'
 
             <button class="dashboard-box box7" name="action" value="not_available_rooms">
             <!-- <a href="room_management_page_admin.php" class="dashboard-box box7"> -->
-                <img src="Assets/box7icon.png" alt="Total Paid Icon" class="box-icon">
+                <img src="Assets/box5icon.png" alt="Total Paid Icon" class="box-icon">
                 <div class="box-content">
                 <h3>Not Available Rooms</h3>
                 <p><?php show_not_available_rooms($dbconn); ?></p>
@@ -96,7 +96,7 @@ require_once './includes/maintenance_management/maintenance_management_view.php'
                 <img src="Assets/box8icon.png" alt="Total Paid Icon" class="box-icon">
                 <div class="box-content">
                 <h3>Maintenance Request</h3>
-                <p><?php show_active_reservation($dbconn); ?></p>
+                <p><?php show_active_maintenance_request($dbconn); ?></p>
                 </div>
             </a>
 

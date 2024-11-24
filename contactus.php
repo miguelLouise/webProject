@@ -43,7 +43,7 @@ include "./middleware/user_middleware.php";
                 <img src="Assets/residential.png" alt="Home Icon">
                 <h2>Visit</h2>
                 <p>Come and check out Lavanders Place.</p>
-                <p>We're open to show you around from Monday to Saturday, 8am to 5pm.</p>
+                <p>We're open to show you around from Monday to Friday, 8am to 5pm.</p>
                 <p>If you use Waze or Google Maps, just type in "Lavenders Place" and it will show you the way. See you!</p>
             </div>
         </section>

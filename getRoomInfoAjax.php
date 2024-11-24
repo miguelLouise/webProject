@@ -9,49 +9,65 @@ $rmType = $_POST['roomTyp'];
 if ($rmType == 1) {
     $roomDesc = showRoomDesc($dbconn, $rmType);
     foreach ($roomDesc as $value) {
-        echo '<div style="display: flex; align-items: center; width: 65%">
-            <ul style="list-style-type: none;">
-            <li>'.$value['room_description'].'<li>
-            <ul>
+    ?>
+        <!-- image -->
+        <div class="slider">
+            <div class="slides">
+                <img src="Assets/room1pic1.png" alt="room1_pic1">
+                <img src="Assets/room1pic2.png" alt="room1_pic2">
+                <img src="Assets/room1pic3.png" alt="room1_pic3">
+                <img src="Assets/room1pic4.png" alt="room1_pic4">
+                <img src="Assets/room1pic5.png" alt="room1_pic5">
             </div>
-            <div style="right: 0; padding: 5px; border: 1px solid; width: 35%; display: flex; justify-content: center;">
-            <img height="100%" width="auto" src="Assets/room1pic1.png" onclick="changeImage("room1-large", "Assets/room1pic1.png")" alt="Room 1 Image 1">
-            </div>';
+            <button class="previous" onclick="previous_slide()">&#10094</button>
+            <button class="next" onclick="next_slide()">&#10095</button>
+        </div>
+        <div class="text_container"><?php echo $value['room_description']; ?></div>
+    <?php
     }
 } elseif ($rmType == 2) {
     $roomDesc = showRoomDesc($dbconn, $rmType);
     foreach ($roomDesc as $value) {
-        echo '<div style="display: flex; align-items: center; width: 65%">
-            <ul style="list-style-type: none;">
-            <li>'.$value['room_description'].'<li>
-            <ul>
-            </div>
-            <div style="right: 0; padding: 5px; border: 1px solid; width: 35%; display: flex; justify-content: center;">
-            <img src="Assets/room2pic1.png" onclick="changeImage("room2-large", "Assets/room2pic1.png")" alt="Room 2 Image 1">
-            </div>';
+    ?>
+     <!-- image -->
+    <?php
     }
 } elseif ($rmType == 3) {
     $roomDesc = showRoomDesc($dbconn, $rmType);
     foreach ($roomDesc as $value) {
-        echo '<div style="display: flex; align-items: center; width: 65%">
-            <ul style="list-style-type: none;">
-            <li>'.$value['room_description'].'<li>
-            <ul>
-            </div>
-            <div style="right: 0; padding: 5px; border: 1px solid; width: 35%; display: flex; justify-content: center;">
-            <img src="Assets/room3pic1.png" onclick="changeImage("room3-large", "Assets/room3pic1.png")" alt="Room 3 Image 1">
-            </div>';
+    ?>
+
+    <?php
     }
 } elseif ($rmType == 4) {
     $roomDesc = showRoomDesc($dbconn, $rmType);
     foreach ($roomDesc as $value) {
-        echo '<div style="display: flex; align-items: center; width: 65%">
-            <ul style="list-style-type: none;">
-            <li>'.$value['room_description'].'<li>
-            <ul>
-            </div>
-            <div style="right: 0; padding: 5px; border: 1px solid; width: 35%; display: flex; justify-content: center;">
-            <img src="Assets/room4pic1.png" onclick="changeImage("room4-large", "Assets/room4pic1.png")" alt="Room 4 Image 1">
-            </div>';
+    ?>
+
+    <?php
     }
 }
+?>
+
+<style>
+    .text_container{
+        word-wrap: break-word;
+        background-color: red;
+    }
+    .slider{
+        position: relative;
+        background-color: chartreuse;
+        width: 500px;
+        overflow: hidden;
+    }
+
+    .slider img{
+        width: 100%;
+    }
+</style>
+
+<script>
+    const slides = document.querySelectorAll(".slides img");
+    let slide_index = 0;
+    let interval_id = null;
+</script>

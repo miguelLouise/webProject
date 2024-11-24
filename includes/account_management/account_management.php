@@ -84,6 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         update_user_password($dbconn, $user_id, $new_user_password);
 
                         $_SESSION["account_updated"] = "Account Updated";
+
                         header("Location: " . $_SERVER['HTTP_REFERER'] . "#account_updated");
                         die();
                     }

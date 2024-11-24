@@ -10,6 +10,36 @@ function account_management_message(string $var_name){
     }
 }
 
+function show_user_information_name(object $pdo, string $user_id){
+    require_once 'account_management_model.php';
+    $get_user_info = get_user_info($pdo, $user_id);
+    echo $get_user_info['name'];
+}
+
+function show_user_information_email(object $pdo, string $user_id){
+    require_once 'account_management_model.php';
+    $get_user_info = get_user_info($pdo, $user_id);
+    echo $get_user_info['email'];
+}
+
+function show_user_information_contact_number(object $pdo, string $user_id){
+    require_once 'account_management_model.php';
+    $get_user_info = get_user_info($pdo, $user_id);
+    echo $get_user_info['contact_number'];
+}
+
+function show_user_information_name_upper(object $pdo, string $user_id){
+    require_once 'account_management_model.php';
+    $get_user_info = get_user_info($pdo, $user_id);
+    echo strtoupper($get_user_info['name']);
+}
+
+function show_user_information_email_upper(object $pdo, string $user_id){
+    require_once 'account_management_model.php';
+    $get_user_info = get_user_info($pdo, $user_id);
+    echo strtoupper($get_user_info['email']);
+}
+
 // function disappearing_error_message(string $var_name){
 //     if (isset($_SESSION[$var_name])) {
 //         $reservation_success = $_SESSION[$var_name];

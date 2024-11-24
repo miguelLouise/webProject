@@ -75,7 +75,6 @@ require_once 'includes/tenant_management/tenant_management_view.php';
                             <option value="Scheduled">Scheduled</option>
                             <option value="In Progress">In Progress</option>
                             <option value="Completed">Completed</option>
-                            <option value="Closed">Closed</option>
                     </select>
                 </div>
             </div>

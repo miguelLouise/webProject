@@ -12,7 +12,7 @@
     left: 0;
     right: 0;
     height: 80px;
-    z-index: 10; 
+    z-index: 10;
 }
 
 body {
@@ -21,13 +21,13 @@ body {
     align-items: center;
     height: 100vh;
     font-family: "Roboto", sans-serif;
-    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    background-color: #f1f1f1;
 }
 
 .about-container {
     width: 70%;
     max-width: 1000px;
-    background: rgba(255, 255, 255, 0.8);
+    background:  #f1f1f1;
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

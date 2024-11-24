@@ -1,8 +1,10 @@
 <?php
 require_once './includes/login/login_view.php';
 include './middleware/user_middleware.php';
-require_once './includes/account_management/account_management_view.php';
-require_once 'includes/room_management/room_management_view.php';
+require_once './includes/dbh.inc.php';
+require_once 'includes/account_management/account_management_view.php';
+require_once './includes/account_management/account_management_model.php';
+require_once './includes/room_management/room_management_view.php';
 ?>
 
 <!DOCTYPE html>
@@ -14,28 +16,30 @@ require_once 'includes/room_management/room_management_view.php';
     <link rel="stylesheet" href="css/user_account_management.css">
 </head>
 <body>
-    <!-- header -->
-    <?php include('templates/logged_in_header.php'); ?>
-    <!-- header -->
+     <!-- header -->
+     <?php include('templates/logged_in_header.php'); ?>
+     <!-- header -->
+
 
     <div class="user_account_div">
-
-        <div class="user_account_div1">Edit Profile
+    <?php disappearing_success_message("account_updated"); ?>
+        <div class="user_account_div1">
+            <h2>Edit Account</h2>
         <form action="includes/account_management/account_management.php" method="post" novalidate>
             <input type="hidden" name="user_id" value="<?php echo $_SESSION["user_id"]; ?>">
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" value="<?php echo $_SESSION["user_name"]; ?>" readonly>
+                <input type="text" id="name" name="name" value="<?php show_user_information_name($dbconn, $_SESSION["user_id"]); ?>" readonly>
             </div>
 
             <div class="form-group">
                 <label for="email">Email <span style="color: red;"><?php account_management_message("email_error"); ?></span></label>
-                <input type="email" id="email" name="email" value="<?php echo $_SESSION["user_email"]; ?>">
+                <input type="email" id="email" name="email" value="<?php show_user_information_email($dbconn, $_SESSION["user_id"]); ?>">
             </div>
 
             <div class="form-group">
                 <label for="contact_number">Contact Number<span style="color: red;"><?php account_management_message("contact_number_error"); ?></span></label>
-                <input type="text" id="contact_number" name="contact_number" value="<?php echo $_SESSION["user_num"]; ?>">
+                <input type="text" id="contact_number" name="contact_number" value="<?php show_user_information_contact_number($dbconn, $_SESSION["user_id"]); ?>">
             </div>
 
             <div class="form-group">
@@ -49,8 +53,8 @@ require_once 'includes/room_management/room_management_view.php';
                 <input type="password" id="new_password" name="new_user_password" placeholder="Password">
                 <i class="bi bi-eye-slash-fill" id="new_hide"></i>
             </div>
-            <button type="submit">Apply Changes</button>
-            <?php disappearing_success_message("account_updated"); ?>
+            <button id="update_btn" type="submit">Apply Changes</button>
+
             </form>
         </div>
     </div>

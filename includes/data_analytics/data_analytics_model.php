@@ -37,7 +37,8 @@ function get_maintenance_request(object $pdo,  $start_date, $end_date){
               MONTH(date) AS month_name,
               COUNT(*) AS total_maintenance,
               COUNT(CASE WHEN is_archived = 0 THEN 1 ELSE NULL END) AS active_maintenance,
-              COUNT(CASE WHEN is_archived = 1 THEN 1 ELSE NULL END) AS solved_maintenance
+              COUNT(CASE WHEN is_archived = 1 THEN 1 ELSE NULL END) AS solved_maintenance,
+              COUNT(CASE WHEN is_archived = 1 AND maintenance_status != 'completed' THEN 1 ELSE NULL END) AS archived_maintenance
               FROM dormlink_maintenance_request WHERE date BETWEEN :start_date AND :end_date
               GROUP BY MONTH(date) ORDER BY MONTH(date) ASC;";
     $stmt = $pdo->prepare($query);
@@ -86,8 +87,9 @@ function get_maintenance_request_end_date(object $pdo, $end_date){
               MONTH(date) AS month_name,
               COUNT(*) AS total_maintenance,
               COUNT(CASE WHEN is_archived = 0 THEN 1 ELSE NULL END) AS active_maintenance,
-              COUNT(CASE WHEN is_archived = 1 THEN 1 ELSE NULL END) AS solved_maintenance
-              FROM dormlink_maintenance_request WHERE date <= :end_date
+              COUNT(CASE WHEN is_archived = 1 AND maintenance_status = 'completed' THEN 1 ELSE NULL END) AS solved_maintenance,
+              COUNT(CASE WHEN is_archived = 1 AND maintenance_status != 'completed' THEN 1 ELSE NULL END) AS archived_maintenance
+              FROM dormlink_maintenance_request WHERE DATE <= :end_date
               GROUP BY MONTH(date) ORDER BY MONTH(date) ASC;";
     $stmt = $pdo->prepare($query);
 
@@ -134,7 +136,8 @@ function get_maintenance_request_start_date(object $pdo, $start_date){
               MONTH(date) AS month_name,
               COUNT(*) AS total_maintenance,
               COUNT(CASE WHEN is_archived = 0 THEN 1 ELSE NULL END) AS active_maintenance,
-              COUNT(CASE WHEN is_archived = 1 THEN 1 ELSE NULL END) AS solved_maintenance
+              COUNT(CASE WHEN is_archived = 1 THEN 1 ELSE NULL END) AS solved_maintenance,
+              COUNT(CASE WHEN is_archived = 1 AND maintenance_status != 'completed' THEN 1 ELSE NULL END) AS archived_maintenance
               FROM dormlink_maintenance_request WHERE date >= :start_date
               GROUP BY MONTH(date) ORDER BY MONTH(date) ASC;";
     $stmt = $pdo->prepare($query);

@@ -42,7 +42,8 @@ function disappearing_message(string $var_name){
     if (isset($_SESSION[$var_name])) {
         $session_message = $_SESSION[$var_name];
 
-        echo '<div id="message_container" style="  background-color: cadetblue;
+        echo '<div id="message_container" style="
+                background-color: rgb(173, 173, 173);
                 position: absolute;
                 height: 75px;
                 width: 500px;
@@ -50,6 +51,7 @@ function disappearing_message(string $var_name){
                 left: 50%;
                 transform: translate(-50%, -50%);
                 border-radius: 10px;
+                border: 1px solid black;
                 display: flex;
                 align-items: center;
                 justify-content: center;">'. $session_message.'</div>';

@@ -10,18 +10,16 @@ include './middleware/user_middleware.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dormlink - User Homepage</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/user_homepage.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="css//user_homepage.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-
 </head>
 
 <body>
+    <!-- header -->
+    <?php include('./templates/logged_in_header.php'); ?>
+    <!-- header -->
     <div class="user_homepage_container1">
-        <!-- header -->
-        <?php include('./templates/logged_in_header.php'); ?>
-        <!-- header -->
-
         <!-- page content -->
         <div class="container2">
             <img src="Assets/lavenders1.png">
@@ -31,6 +29,7 @@ include './middleware/user_middleware.php';
             <img src="Assets/lavenders5.png">
         </div>
 
+        <form action="includes/room_management/select_room_type.php" method="get" novalidate>
         <div class="info-section">
             <div class="info-container">
                 <!-- Left Section -->
@@ -62,7 +61,7 @@ include './middleware/user_middleware.php';
                         <span class="amenity-icon">🧺</span> <span class="clickable-amenity" onclick="showPopup('Assets/laundromatpc.jpg')">Laundromat</span><br>
                         <span class="amenity-icon">🛗</span> <span class="clickable-amenity" onclick="showPopup('Assets/elevatorpc.jpg')">Elevator</span><br>
                     </p>
-        <form action="includes/room_management/select_room_type.php" method="get" novalidate>
+            <form action="includes/room_management/select_room_type.php" method="get" novalidate>
                     <!-- <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> -->
                     <button class="reserve-button" name="action" value="no_room">Reserve Now</button>
                 </div>
@@ -107,7 +106,7 @@ include './middleware/user_middleware.php';
                     <p>Good for student, reviewee, working couple with no baby.</p>
                     <!-- <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> -->
                     <button class="reserve-button" name="action" value="room_one">Reserve Now</button>
-                    <a href="messaging_page.php"><button class="message-button">Message/Inquire</button></a>
+                    <button class="message-button"><a href="messaging_page.php" class="message_btn">Message/Inquire</a></button>
                 </div>
             </div>
 
@@ -143,7 +142,7 @@ include './middleware/user_middleware.php';
                     <p>Good for student, reviewee, working couple with no baby.</p>
                     <!-- <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> -->
                     <button class="reserve-button" name="action" value="room_two">Reserve Now</button>
-                    <a href="messaging_page.php"><button class="message-button">Message/Inquire</button></a>
+                    <button class="message-button"><a href="messaging_page.php" class="message_btn">Message/Inquire</a></button>
                 </div>
             </div>
 
@@ -214,13 +213,11 @@ include './middleware/user_middleware.php';
                     <a href="messaging_page.php"><button class="message-button">Message/Inquire</button></a>
                 </div>
             </div>
+
         </div>
         </form>
-        <!-- Chatbot -->
-        <?php include('./templates/chatbot.php'); ?>
-        <!-- Chatbot -->
     </div>
-    <script src="javascript//user_homepage.js"></script>
-</body>
 
+    <script src="javascript/user_homepage.js"></script>
+</body>
 </html>

@@ -9,7 +9,7 @@ include './middleware/admin_middleware.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Analytics</title>
-    <link rel="stylesheet" href="css//data_analytics.css">
+    <link rel="stylesheet" href="css/data_analytics.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 </head>
 
@@ -48,7 +48,7 @@ include './middleware/admin_middleware.php';
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="javascript//data_analytics.js"></script>
+    <script src="javascript/data_analytics.js"></script>
 
 </body>
 </html>
