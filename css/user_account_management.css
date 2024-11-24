@@ -12,10 +12,10 @@ body {
 }
 
 .user_account_div {
-    margin-top: 80px;
+    padding-top: 100px;
     display: flex;
     justify-content: center;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .user_account_div1 {
@@ -60,7 +60,7 @@ form .form-group input:focus {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
 }
 
-form button[type="submit"] {
+form #update_btn[type="submit"] {
     width: 100%;
     padding: 12px;
     background: #007bff;
@@ -72,7 +72,7 @@ form button[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
-form button[type="submit"]:hover {
+form #update_btn [type="submit"]:hover {
     background: #0056b3;
 }
 

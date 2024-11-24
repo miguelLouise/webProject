@@ -7,8 +7,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
         session_start();
 
-
-
         if ($room_status_selected === "vacant_rooms") {
             $_SESSION["selected_room_status"] = "Available";
 

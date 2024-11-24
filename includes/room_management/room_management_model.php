@@ -71,6 +71,18 @@ function isRoomAvailable(object $pdo, $room_num){
     return $result;
 }
 
+function get_room_information(object $pdo, $room_id){
+    $query = "SELECT * FROM rooms WHERE room_id = :room_id;";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":room_id", $room_id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+
+
 function reserveRoom(object $pdo, $user_id, $room_type, $floor_num, $room_num, $date){
     $query = "INSERT INTO dormlink_reservations (user_id, room_type, floor_number, room_number, reservation_date) VALUES (:user_id, :room_type, :floor_number,  :room_number, :reservation_date);";
     $stmt = $pdo->prepare($query);
@@ -93,7 +105,7 @@ function getReservationTable(object $pdo){
 }
 
 function does_user_have_reservation(object $pdo, $user_id){
-    $query = "SELECT * FROM dormlink_reservations WHERE user_id = :user_id;";
+    $query = "SELECT * FROM dormlink_reservations WHERE user_id = :user_id AND is_deleted = 0;";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
     $stmt->execute();

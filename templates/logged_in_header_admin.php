@@ -34,7 +34,7 @@
                 <li><a href="../maintenance_request_management.php"><button class="nav_btn"><img src="../Assets/maintenancereq.png" class="nav_icon">Maintenance Management</button></a></li>
                 <li><a href="../room_management_page_admin.php"><button class="nav_btn"><img src="../Assets/door.png" class="nav_icon">Rooms</button></a></li>
                 <li><a href="../tenant_management_page_admin.php"><button class="nav_btn"><img src="../Assets/tenants.png" class="nav_icon">Manage Tenants</button></a></li>
-                <li><a href="../tenant_management_page_admin.php"><button class="nav_btn"><img src="../Assets/tenants.png" class="nav_icon">Archive</button></a></li>
+                <!-- <li><a href="../maintenance_history.php"><button class="nav_btn"><img src="../Assets/tenants.png" class="nav_icon">Archive</button></a></li> -->
 
                 <li>
                     <form action="../includes/logout/logout.php" method="post" id="login" novalidate>

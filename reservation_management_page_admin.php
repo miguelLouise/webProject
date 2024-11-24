@@ -12,8 +12,9 @@ require_once './includes/tenant_management/tenant_management_view.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservation - Admin</title>
-    <link rel="stylesheet" href="css/reservation_management_admin.css">
+    <link rel="stylesheet" href="css//reservation_management_admin.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
 </head>
 <body>
     <!-- header -->
@@ -73,9 +74,9 @@ require_once './includes/tenant_management/tenant_management_view.php';
             // downpayment container
             echo '<div id="'.$data['reservation_id'].'=payment_details" class="dp_details" style="display: none;">';
             echo '<div class="dp_details1">';
-            echo '<h2>Payment Details</h2>
+            echo '<h1>Payment Details</h1>
                   <br>
-                  Reservation # '.$data['reservation_id'].'.
+                  <h3>Reservation ID No.'.$data['reservation_id'].'</h3>.
                   <button type="button" class="close_btn" id="close_btn" value="'.$data['reservation_id'].'">X</button>';
             echo '<div class="dp_details2"></div>';
             echo '</div>';
@@ -85,7 +86,7 @@ require_once './includes/tenant_management/tenant_management_view.php';
             echo '<div id="'.$data['reservation_id'].'=confirmation" class="confirm_div" style="display: none;">';
             echo '<div class="confirm_div1">';
             echo '<input type="hidden" name="tenant_id" value="'.$data["reservation_id"].'">';
-            echo 'Delete reservation? of '.$data['reservation_id'].'';
+            echo 'Delete reservation No. '.$data['reservation_id'].'?';
             echo '<div class="confirm_div2">';
             echo '<button type="submit" name="confirm_delete_btn">Confirm</button>';
             echo '<button type="button" name="cancel" class="cancel_btn" id="cancel_btn" value="'.$data['reservation_id'].'">Cancel</button>';
@@ -98,6 +99,110 @@ require_once './includes/tenant_management/tenant_management_view.php';
         </tbody>
       </table>
 
-      <script src="javascript/reservation_management_page_admin.js"></script>
+      <script>
+        $(document).ready(function(){
+        $(".reservation_status").each(function() {
+          const getReservationDetails = $(this).val().split(",");
+          const getReservationStatus = getReservationDetails[0];
+          const getReservationId = getReservationDetails[1];
+
+          const no_action = document.getElementById(getReservationId + "=no_action");
+          const add_tenant_btn = document.getElementById(getReservationId + "=add_tenant_btn");
+          const delete_btn = document.getElementById(getReservationId + "=delete_btn");
+
+          if (getReservationStatus == "Pending") {
+            $(no_action).css("display", "block");
+            $(add_tenant_btn).css("display", "none");
+            $(delete_btn).css("display", "none");
+          } else if (getReservationStatus == "Paid/Reserved") {
+            $(no_action).css("display", "none");
+            $(add_tenant_btn).css("display", "block");
+            $(delete_btn).css("display", "none");
+          } else if (getReservationStatus == "Overdue") {
+            $(no_action).css("display", "none");
+            $(add_tenant_btn).css("display", "none");
+            $(delete_btn).css("display", "block");
+          }
+        });
+
+        $("#delete_reservation").show().delay(5000).fadeOut(70);
+        var ReservationStatus = $(".reservation_status").val();
+
+        // downpayment details
+        $(document).on("click", ".dp_detail_btn", function() {
+          const getReservationDetails = $(this).val();
+          const dp_details = document.getElementById(getReservationDetails + "=payment_details");
+
+          $(dp_details).toggle();
+
+          $.ajax({
+              type: 'POST',
+              url: 'ajax/getReservationPaymentInformation.php',
+              data: {reservation_Id:getReservationDetails},
+              success: function(data){
+                $(".dp_details2").html(data);
+              }
+          });
+        });
+
+        $(document).on("click", ".close_btn", function() {
+          const getReservationDetails = $(this).val();
+          const dp_details = document.getElementById(getReservationDetails + "=payment_details");
+
+          $(dp_details).toggle();
+        });
+
+        // confirmation
+        $(document).on("click", ".delete_btn", function() {
+          const getReservationDetails = $(this).val();
+          const delete_confirmation = document.getElementById(getReservationDetails + "=confirmation");
+
+          $(delete_confirmation).toggle();
+        });
+
+        $(document).on("click", ".cancel_btn", function() {
+          const getReservationDetails = $(this).val();
+          const delete_confirmation = document.getElementById(getReservationDetails + "=confirmation");
+
+          $(delete_confirmation).toggle();
+
+          console.log(getReservationDetails);
+        });
+
+        $(document).on("change", ".reservation_status", function() {
+            const getReservationDetails = $(this).val().split(",");
+            const getReservationStatus = getReservationDetails[0];
+            const getReservationId = getReservationDetails[1];
+
+            const no_action = document.getElementById(getReservationId + "=no_action");
+            const add_tenant_btn = document.getElementById(getReservationId + "=add_tenant_btn");
+            const delete_btn = document.getElementById(getReservationId + "=delete_btn");
+
+            if (getReservationStatus == "Pending") {
+              $(no_action).css("display", "block");
+              $(add_tenant_btn).css("display", "none");
+              $(delete_btn).css("display", "none");
+            } else if (getReservationStatus == "Paid/Reserved") {
+              $(no_action).css("display", "none");
+              $(add_tenant_btn).css("display", "block");
+              $(delete_btn).css("display", "none");
+            } else if (getReservationStatus == "Overdue") {
+              $(no_action).css("display", "none");
+              $(add_tenant_btn).css("display", "none");
+              $(delete_btn).css("display", "block");
+            }
+
+          $.ajax({
+              type: 'POST',
+              url: 'updateReservationStatusAjax.php',
+              data: {reservation_id:getReservationId, reservation_status:getReservationStatus},
+              success: function(data){
+
+              }
+          });
+      });
+    });
+      </script>
+
 </body>
 </html>

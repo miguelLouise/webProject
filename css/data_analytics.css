@@ -51,8 +51,8 @@ body {
   color: #333;
 }
 
-button {
-  color: white;
+#generateCharts {
+  color: #fff;
   background-color: #007bff;
   border: none;
   padding: 10px 20px;

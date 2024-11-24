@@ -17,7 +17,16 @@ function submit_maintenance_request(object $pdo, $tenant_id, $user_id, $name, $e
 }
 
 function get_maintenance_request(object $pdo){
-    $query = "SELECT dormlink_maintenance_request.*, rooms.room_number FROM dormlink_maintenance_request JOIN rooms ON dormlink_maintenance_request.room_id = rooms.room_id WHERE is_archived = 0;";
+    $query = "SELECT dormlink_maintenance_request.*, rooms.room_number FROM dormlink_maintenance_request JOIN rooms ON dormlink_maintenance_request.room_id = rooms.room_id WHERE is_archived = 0 ORDER BY date DESC;";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+function get_completed_maintenance_request(object $pdo){
+    $query = "SELECT dormlink_maintenance_request.*, rooms.room_number FROM dormlink_maintenance_request JOIN rooms ON dormlink_maintenance_request.room_id = rooms.room_id WHERE is_archived = 1 ORDER BY date DESC;";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 
@@ -38,34 +47,58 @@ function get_user_maintenance_request(object $pdo, $tenant_id){
 
 function delete_maintenance_request(object $pdo, $tenant_id){
     $query = "UPDATE dormlink_maintenance_request SET is_deleted = 1, date_deleted = :date_deleted WHERE tenant_id = :tenant_id";
-
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":tenant_id", $tenant_id, PDO::PARAM_INT);
+
     $stmt->execute();
 }
 
 // archive
-function archive_maintenance_request(object $pdo, $maintenance_request_id, $tenant_id, $user_id, $name, $email, $room_id, $category, $maintenance_urgency, $description, $date, $archive_date){
-    $query = "INSERT INTO dormlink_maintenance_request_archive (maintenance_request_id, tenant_id, user_id, name, email, room_id, category, maintenance_urgency, description, date, archive_date) VALUES (:maintenance_request_id, :tenant_id, :user_id, :name, :email, :room_id, :category, :maintenance_urgency, :description, :date, :archive_date);";
+function archive_maintenance_request(object $pdo, $maintenance_request_id, $user_id, $tenant_id, $room_id, $room_type, $floor_number, $room_number, $category, $maintenance_urgency, $description, $date_submitted, $time_submitted, $maintenance_status, $date_completed, $archive_date){
+    $query = "INSERT INTO dormlink_maintenance_request_archive (maintenance_request_id, user_id, tenant_id, room_id, room_type, floor_number, room_number, category, maintenance_urgency, description, date_submitted, time_submitted, maintenance_status, date_completed, archive_date) VALUES (:maintenance_request_id, :user_id, :tenant_id, :room_id, :room_type, :floor_number, :room_number, :category, :maintenance_urgency, :description, :date_submitted, :time_submitted, :maintenance_status, :date_completed, :archive_date);";
     $stmt = $pdo->prepare($query);
-
     $stmt->bindParam(":maintenance_request_id", $maintenance_request_id, PDO::PARAM_INT);
-    $stmt->bindParam(":tenant_id", $tenant_id, PDO::PARAM_INT);
     $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
-    $stmt->bindParam(":name", $name);
-    $stmt->bindParam(":email", $email);
+    $stmt->bindParam(":tenant_id", $tenant_id, PDO::PARAM_INT);
     $stmt->bindParam(":room_id", $room_id, PDO::PARAM_INT);
+    $stmt->bindParam(":room_type", $room_type, PDO::PARAM_INT);
+    $stmt->bindParam(":floor_number", $floor_number, PDO::PARAM_INT);
+    $stmt->bindParam(":room_number", $room_number, PDO::PARAM_INT);
     $stmt->bindParam(":category", $category);
     $stmt->bindParam(":maintenance_urgency", $maintenance_urgency);
     $stmt->bindParam(":description", $description);
-    $stmt->bindParam(":date", $date);
+    $stmt->bindParam(":date_submitted", $date_submitted);
+    $stmt->bindParam(":time_submitted", $time_submitted);
+    $stmt->bindParam(":maintenance_status", $maintenance_status);
+    $stmt->bindParam(":date_completed", $date_completed);
+    $stmt->bindParam(":archive_date", $archive_date);
+
+    $stmt->execute();
+}
+
+function archive_active_maintenance_request(object $pdo, $maintenance_request_id, $user_id, $tenant_id, $room_id, $room_type, $floor_number, $room_number, $category, $maintenance_urgency, $description, $date_submitted, $time_submitted, $maintenance_status, $archive_date){
+    $query = "INSERT INTO dormlink_maintenance_request_archive (maintenance_request_id, user_id, tenant_id, room_id, room_type, floor_number, room_number, category, maintenance_urgency, description, date_submitted, time_submitted, maintenance_status, archive_date) VALUES (:maintenance_request_id, :user_id, :tenant_id, :room_id,  :room_type, :floor_number, :room_number, :category, :maintenance_urgency, :description, :date_submitted, :time_submitted, :maintenance_status, :archive_date);";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":maintenance_request_id", $maintenance_request_id, PDO::PARAM_INT);
+    $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
+    $stmt->bindParam(":tenant_id", $tenant_id, PDO::PARAM_INT);
+    $stmt->bindParam(":room_id", $room_id, PDO::PARAM_INT);
+    $stmt->bindParam(":room_type", $room_type, PDO::PARAM_INT);
+    $stmt->bindParam(":floor_number", $floor_number, PDO::PARAM_INT);
+    $stmt->bindParam(":room_number", $room_number, PDO::PARAM_INT);
+    $stmt->bindParam(":category", $category);
+    $stmt->bindParam(":maintenance_urgency", $maintenance_urgency);
+    $stmt->bindParam(":description", $description);
+    $stmt->bindParam(":date_submitted", $date_submitted);
+    $stmt->bindParam(":time_submitted", $time_submitted);
+    $stmt->bindParam(":maintenance_status", $maintenance_status);
     $stmt->bindParam(":archive_date", $archive_date);
 
     $stmt->execute();
 }
 
 function check_if_user_is_tenant1(object $pdo, $user_id){
-    $query = "SELECT dormlink_tenants.*, rooms.*  FROM dormlink_tenants JOIN rooms ON dormlink_tenants.room_id = rooms.room_id WHERE dormlink_tenants.user_id = :user_id;";
+    $query = "SELECT dormlink_tenants.*, rooms.*  FROM dormlink_tenants JOIN rooms ON dormlink_tenants.room_id = rooms.room_id WHERE dormlink_tenants.user_id = :user_id AND is_deleted = 0;";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
     $stmt->execute();
@@ -90,7 +123,14 @@ function is_delete_maintenance_request(object $pdo, $maintenance_request_id, $da
     $stmt->execute();
 }
 
-function get_active_reservation(object $pdo){
+function set_maintenance_request_is_archive(object $pdo, $maintenance_request_id){
+    $query = "UPDATE dormlink_maintenance_request SET is_archived = 1 WHERE maintenance_request_id = :maintenance_request_id;";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":maintenance_request_id", $maintenance_request_id, PDO::PARAM_INT);
+    $stmt->execute();
+}
+
+function get_active_maintenance_request(object $pdo){
     $query = "SELECT COUNT(*) AS total FROM dormlink_maintenance_request WHERE is_archived  = 0;";
     $stmt = $pdo->prepare($query);
     $stmt->execute();

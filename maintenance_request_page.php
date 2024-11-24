@@ -92,7 +92,7 @@ require_once 'includes/room_management/room_management_view.php';
     </div>
 
     <div id="maintenance_table" class="maintenance_table">
-            request table
+
         </div>
         <!-- tenant ID -->
         <input type="hidden" name="hidden_field_name" id="tenantID" value="<?php echo getUserTenantId($dbconn, $_SESSION["user_id"]); ?>">

@@ -40,9 +40,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if (in_array($img_ext, $allowed_img_ext)) {
                 if (move_uploaded_file($temporary_img_name, $folder_path)) {
-                    upload_payment_image($dbconn, $reservation_Id, $_SESSION["user_id"], $reference_number, $file_name, $date_and_time);
+                    // upload_payment_image($dbconn, $reservation_Id, $_SESSION["user_id"], $reference_number, $file_name, $date_and_time);
 
-                    $_SESSION["payment_submitted_successfully"] = "payment submitted successfully";
+                    $_SESSION["payment_submitted_successfully"] = "Payment Submitted Successfully";
 
                     header("Location: " . $_SERVER['HTTP_REFERER']);
                     die();
@@ -54,18 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: " . $_SERVER['HTTP_REFERER']."#file_extension_invalid");
                 die();
             }
-
-            // echo "payment reference number: ",$reference_number;
-            // echo "<br>";
-            // echo "image file name: ",$file_name;
-            // echo "<br>";
-            // echo "reservation id: ",$reservation_Id;
-            // echo "<br>";
-            // echo  "user id: ",$_SESSION["user_id"];
-            // echo "<br>";
-            // echo "date and time: ", $date_and_time;
-            // echo "<br>";
-            // echo "date and time: ", $currentDate;
         }
     } catch (PDOException $e) {
         die("Query failed" . $e->getMessage());

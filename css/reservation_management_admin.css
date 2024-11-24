@@ -195,7 +195,7 @@ tbody tr{
 
 .close_btn{
   all: unset;
-  background-color: #dc6300;
+  background-color: #ffffff;
   height: 50px;
   width: 50px;
   right: 0;
@@ -204,6 +204,7 @@ tbody tr{
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 /* Responsive*/
 @media (max-width: 768px) {

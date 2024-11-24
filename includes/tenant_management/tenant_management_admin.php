@@ -27,6 +27,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $room_number = $_POST["room_num"];
         $contact_number = $_POST["contact_num"];
         $contract_date = $_POST["start_of_contract"];
+        $num_of_months = 6;
+
+        // end of contract
+        $end_of_contract = new DateTime($contract_date);
+        $end_of_contract->modify("+{$num_of_months} month");
+        $end_of_contract = $end_of_contract->format('Y-m-d');
 
         if(empty($name)){
             $name_error = "Empty Field*";
@@ -83,6 +89,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $get_user = get_user($dbconn, $reservation_user_id);
                 $isRoomAvailable = isRoomAvailable($dbconn, $room_number);
 
+                //DORMLINK TENANT
                 if ($isRoomAvailable["tenants"] < $isRoomAvailable["max_capacity"]) {
                     $check_if_user_is_tenant = check_if_user_is_tenant($dbconn, $reservation_user_id);
 
@@ -91,30 +98,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         $room_tenants++;
                         $date_today = date("Y-m-d");
 
-                        add_user_tenant($dbconn, $reservation_user_id, $name, $contact_number, $email, $birthday, $isRoomAvailable["room_id"], $contract_date,  $date_today);
+                        add_user_tenant($dbconn, $reservation_user_id, $name, $contact_number, $email, $birthday, $isRoomAvailable["room_id"], $contract_date, $end_of_contract, $date_today);
                         $update_room_status = update_room_status($room_tenants, $isRoomAvailable["max_capacity"]);
                         change_room_status($dbconn, $update_room_status, $isRoomAvailable["room_id"]);
                         update_room_tenant($dbconn, $room_tenants, $room_number);
                         deleteReservation($dbconn, $reservation_user_id, $date_today);
 
 
-                        $_SESSION["tenant_added"] = "new tenant added";
+                        $_SESSION["tenant_added"] = "New Tenant Added";
 
                         header("Location: " . $_SERVER['HTTP_REFERER']);
                         die();
                     } else {
-                        $_SESSION["user_is_tenant"] = "user is already a tenant";
+                        $_SESSION["user_is_tenant"] = "User is already a Tenant";
 
                         header("Location: " . $_SERVER['HTTP_REFERER']);
                         die();
                     }
                 } else {
-                    $_SESSION["room_is_full"] = "room is full";
+                    $_SESSION["room_is_full"] = "Room is full";
 
                     header("Location: " . $_SERVER['HTTP_REFERER']);
                     die();
                 }
-            } else {
+            }
+            //WALK-IN TENANT
+            else {
                 $isRoomAvailable = isRoomAvailable($dbconn, $room_number);
 
                 if ($isRoomAvailable["tenants"] < $isRoomAvailable["max_capacity"]) {
@@ -122,17 +131,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $room_tenants++;
                     $date_today = date("Y-m-d");
 
-                    add_walkin_tenant($dbconn, $name, $contact_number, $email, $birthday, $isRoomAvailable["room_id"], $contract_date, $date_today);
+                    add_walkin_tenant($dbconn, $name, $contact_number, $email, $birthday, $isRoomAvailable["room_id"], $contract_date, $end_of_contract, $date_today);
                     $update_room_status = update_room_status($room_tenants, $isRoomAvailable["max_capacity"]);
                     change_room_status($dbconn, $update_room_status, $isRoomAvailable["room_id"]);
                     update_room_tenant($dbconn, $room_tenants, $room_number);
 
-                    $_SESSION["tenant_added"] = "new tenant added";
+                    $_SESSION["tenant_added"] = "New Tenant Added";
 
                     header("Location: " . $_SERVER['HTTP_REFERER']);
                     die();
                 } else {
-                    $_SESSION["room_is_full"] = "room is full";
+                    $_SESSION["room_is_full"] = "Room is full";
 
                     header("Location: " . $_SERVER['HTTP_REFERER']);
                     die();

@@ -40,9 +40,9 @@ function deleteReservation(object $pdo, $user_id, $date_deleted){
     $stmt->execute();
 }
 
-function add_user_tenant(object $pdo, $user_id, $name, $contact_number, $email, $birthday, $room_id, $start_of_contract, $date_added)
+function add_user_tenant(object $pdo, $user_id, $name, $contact_number, $email, $birthday, $room_id, $start_of_contract, $end_of_contract, $date_added)
 {
-    $query = "INSERT INTO dormlink_tenants (user_id, name, contact_number, email, birthday, room_id, start_of_contract, date_added_as_tenant) VALUES (:user_id, :name, :contact_number, :email, :birthday, :room_id, :start_of_contract, :date_added_as_tenant);";
+    $query = "INSERT INTO dormlink_tenants (user_id, name, contact_number, email, birthday, room_id, start_of_contract, end_of_contract, date_added_as_tenant) VALUES (:user_id, :name, :contact_number, :email, :birthday, :room_id, :start_of_contract, :end_of_contract, :date_added_as_tenant);";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":user_id", $user_id);
     $stmt->bindParam(":name", $name);
@@ -51,13 +51,14 @@ function add_user_tenant(object $pdo, $user_id, $name, $contact_number, $email, 
     $stmt->bindParam(":birthday", $birthday);
     $stmt->bindParam(":room_id", $room_id);
     $stmt->bindParam(":start_of_contract", $start_of_contract);
+    $stmt->bindParam(":end_of_contract", $end_of_contract);
     $stmt->bindParam(":date_added_as_tenant", $date_added);
     $stmt->execute();
 }
 
-function add_walkin_tenant(object $pdo, $name, $contact_number, $email, $birthday, $room_id, $start_of_contract, $date_added)
+function add_walkin_tenant(object $pdo, $name, $contact_number, $email, $birthday, $room_id, $start_of_contract, $end_of_contract, $date_added)
 {
-    $query = "INSERT INTO dormlink_tenants (name, contact_number, email, birthday, room_id, start_of_contract, date_added_as_tenant) VALUES (:name, :contact_number, :email, :birthday, :room_id, :start_of_contract, :date_added_as_tenant);";
+    $query = "INSERT INTO dormlink_tenants (name, contact_number, email, birthday, room_id, start_of_contract, end_of_contract, date_added_as_tenant) VALUES (:name, :contact_number, :email, :birthday, :room_id, :start_of_contract, :end_of_contract, :date_added_as_tenant);";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":name", $name);
     $stmt->bindParam(":contact_number", $contact_number);
@@ -65,6 +66,7 @@ function add_walkin_tenant(object $pdo, $name, $contact_number, $email, $birthda
     $stmt->bindParam(":birthday", $birthday);
     $stmt->bindParam(":room_id", $room_id);
     $stmt->bindParam(":start_of_contract", $start_of_contract);
+    $stmt->bindParam(":end_of_contract", $end_of_contract);
     $stmt->bindParam(":date_added_as_tenant", $date_added);
     $stmt->execute();
 }
@@ -78,7 +80,7 @@ function update_room_tenant(object $pdo, $tenant_num, $room_num){
 }
 
 function check_if_user_is_tenant(object $pdo, $user_id){
-    $query = "SELECT dormlink_tenants.*, rooms.*  FROM dormlink_tenants JOIN rooms ON dormlink_tenants.room_id = rooms.room_id WHERE dormlink_tenants.user_id = :user_id;";
+    $query = "SELECT dormlink_tenants.*, rooms.*  FROM dormlink_tenants JOIN rooms ON dormlink_tenants.room_id = rooms.room_id WHERE dormlink_tenants.user_id = :user_id AND is_deleted = 0;";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
     $stmt->execute();
@@ -88,7 +90,7 @@ function check_if_user_is_tenant(object $pdo, $user_id){
 }
 
 function tenant_info(object $pdo){
-    $query = "SELECT dormlink_tenants.*, rooms.*  FROM dormlink_tenants JOIN rooms ON dormlink_tenants.room_id = rooms.room_id WHERE is_deleted = 0;";
+    $query = "SELECT dormlink_tenants.*, rooms.*  FROM dormlink_tenants JOIN rooms ON dormlink_tenants.room_id = rooms.room_id WHERE is_deleted = 0 ORDER BY dormlink_tenants.date_added_as_tenant DESC;";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 
@@ -131,8 +133,8 @@ function change_room_status(object $pdo, $room_status, $room_id){
     $stmt->execute();
 }
 
-function archive_user_info(object $pdo, $tenant_id, $user_id, $name, $contact_number, $email, $birthday, $room_id, $contract, $start_of_contract, $archive_date){
-    $query = "INSERT INTO dormlink_tenant_archive (tenant_id, user_id, name, contact_number, email, birthday, room_id, contract, start_of_contract, archive_date) VALUES (:tenant_id, :user_id, :name, :contact_number, :email, :birthday, :room_id, :contract, :start_of_contract, :archive_date);";
+function archive_dormlink_tenant_info(object $pdo, $tenant_id, $user_id, $name, $contact_number, $email, $birthday, $room_id, $contract, $start_of_contract, $end_of_contract, $archive_date){
+    $query = "INSERT INTO dormlink_tenant_archive (tenant_id, user_id, name, contact_number, email, birthday, room_id, contract, start_of_contract, end_of_contract, archive_date) VALUES (:tenant_id, :user_id, :name, :contact_number, :email, :birthday, :room_id, :contract, :start_of_contract, :end_of_contract, :archive_date);";
     $stmt = $pdo->prepare($query);
 
     $stmt->bindParam(":tenant_id", $tenant_id, PDO::PARAM_INT);
@@ -144,6 +146,25 @@ function archive_user_info(object $pdo, $tenant_id, $user_id, $name, $contact_nu
     $stmt->bindParam(":room_id", $room_id, PDO::PARAM_INT);
     $stmt->bindParam(":contract", $contract, PDO::PARAM_INT);
     $stmt->bindParam(":start_of_contract", $start_of_contract);
+    $stmt->bindParam(":end_of_contract", $end_of_contract);
+    $stmt->bindParam(":archive_date", $archive_date);
+
+    $stmt->execute();
+}
+
+function archive_walkin_tenant_info(object $pdo, $tenant_id, $name, $contact_number, $email, $birthday, $room_id, $contract, $start_of_contract, $end_of_contract, $archive_date){
+    $query = "INSERT INTO dormlink_tenant_archive (tenant_id, name, contact_number, email, birthday, room_id, contract, start_of_contract, end_of_contract, archive_date) VALUES (:tenant_id, :name, :contact_number, :email, :birthday, :room_id, :contract, :start_of_contract, :end_of_contract, :archive_date);";
+    $stmt = $pdo->prepare($query);
+
+    $stmt->bindParam(":tenant_id", $tenant_id, PDO::PARAM_INT);
+    $stmt->bindParam(":name", $name);
+    $stmt->bindParam(":contact_number", $contact_number);
+    $stmt->bindParam(":email", $email);
+    $stmt->bindParam(":birthday", $birthday);
+    $stmt->bindParam(":room_id", $room_id, PDO::PARAM_INT);
+    $stmt->bindParam(":contract", $contract, PDO::PARAM_INT);
+    $stmt->bindParam(":start_of_contract", $start_of_contract);
+    $stmt->bindParam(":end_of_contract", $end_of_contract);
     $stmt->bindParam(":archive_date", $archive_date);
 
     $stmt->execute();
