@@ -57,7 +57,7 @@ include './middleware/user_middleware.php';
                         <span class="amenity-icon">📚</span> <span class="clickable-amenity" onclick="showPopup('Assets/studyarea.jpg')"style="width: 100%; height: 100%;">Study Area</span><br>
                         <span class="amenity-icon">🛋️</span> <span class="clickable-amenity" onclick="showPopup('Assets/lobby.jpg')">Lobby</span><br>
                         <span class="amenity-icon">🅿️</span> <span class="clickable-amenity" onclick="showPopup('Assets/parkingpc.jpg')">Parking</span><br>
-                        <span class="amenity-icon">📶</span> <span class="clickable-amenity" onclick="showPopup('Assets/wifipc.jpg')">Wifi</span><br>
+                        <span class="amenity-icon">📶</span> <span class="clickable-amenity" onclick="showPopup('Assets/wifipic.png')">Wifi</span><br>
                         <span class="amenity-icon">🧺</span> <span class="clickable-amenity" onclick="showPopup('Assets/laundromatpc.jpg')">Laundromat</span><br>
                         <span class="amenity-icon">🛗</span> <span class="clickable-amenity" onclick="showPopup('Assets/elevatorpc.jpg')">Elevator</span><br>
                     </p>

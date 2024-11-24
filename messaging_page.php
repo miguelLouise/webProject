@@ -22,7 +22,7 @@ include './middleware/user_middleware.php';
     </div>
 
     <div class="contact-container">
-        <form action="https://formsubmit.co/cf8d6e6b37cda8528ec70b131d2373b6" method="POST" class="contact-left">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
             <div class="contact-left-title">
                 <h2>Get in touch</h2>
                 <p>Reach out with your questions about our dorm apartments or inquiries, and let us help you find your perfect space!</p>
