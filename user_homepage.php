@@ -61,7 +61,7 @@ include './middleware/user_middleware.php';
                         <span class="amenity-icon">🧺</span> <span class="clickable-amenity" onclick="showPopup('Assets/laundromatpc.jpg')">Laundromat</span><br>
                         <span class="amenity-icon">🛗</span> <span class="clickable-amenity" onclick="showPopup('Assets/elevatorpc.jpg')">Elevator</span><br>
                     </p>
-            <form action="includes/room_management/select_room_type.php" method="get" novalidate>
+        <form action="includes/room_management/select_room_type.php" method="get" novalidate>
                     <!-- <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> -->
                     <button class="reserve-button" name="action" value="no_room">Reserve Now</button>
                 </div>
