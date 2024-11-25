@@ -10,7 +10,7 @@ require_once './includes/login/login_view.php';
     <meta http-equiv="X-UA-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dormlink - Login</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css//login.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <!-- bootstrap -->
@@ -39,7 +39,7 @@ require_once './includes/login/login_view.php';
     </style>
 </head>
 
-<body style="background-image: url('Assets/lavanderBLDG.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+<body style="background-image: url('Assets/lvdbg.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
     <div class="container">
         <!-- header -->
         <?php include('./templates/header.php'); ?>
@@ -63,9 +63,9 @@ require_once './includes/login/login_view.php';
                     </div>
 
                     <button type="submit">Log in</button>
-
-                    <a href="signup_page.php" class="signup_link">Sign up</a>
                 </form>
+
+                <a href="signup_page.php" class="signup_link">Sign up</a>
             </div>
         </div>
     </div>
