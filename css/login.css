@@ -54,6 +54,7 @@ h2 {
     margin-bottom: 15px;
 }
 
+
 .input-group label {
     display: block;
     margin-bottom: 5px;
@@ -85,6 +86,12 @@ button {
 
 button:hover {
     background-color: #0056b3; 
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #004085;
+    transform: scale(0.98);
 }
 
 
@@ -111,6 +118,17 @@ button:hover {
 
 .input-group i:hover {
     color: #343a40; 
+}
+
+.input-group input:hover {
+    border-color: #007bff; /* Same blue as the focus color */
+    background-color: #f8f9fa; /* Slightly lighter background */
+}
+
+.input-group input:focus { 
+    border-color: #007bff; /* Bootstrap blue */
+    outline: none; /* Removes the default browser outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Adds a subtle glow effect */
 }
 
 
