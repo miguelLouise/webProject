@@ -15,3 +15,4 @@ window.history.forward();
 
         const input = document.getElementById("name");
         input.value = input.value.trim();
+

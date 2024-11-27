@@ -18,6 +18,63 @@
   justify-content: center; */
 }
 
+.custom-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 20px 0;
+  margin-top: 15px;
+  background-color: #fff;
+  /*border-radius: 15px;*/
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.custom-card-text {
+  flex: 1;
+  margin-left: 30px;
+  margin-right: 20px;
+  text-align: left;
+}
+
+.custom-card-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 80px;
+}
+
+.custom-card-image img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #42326E;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.custom-card-header {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: #42326E;
+  margin-bottom: 10px;
+}
+
 /* Image container */
 .container2 {
   margin: 25px 0 0 0;
@@ -48,7 +105,7 @@
 
 /* Info section */
 .info-container {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
   /* font-size: 18px; */
   font-weight: 300;
   display: flex;
@@ -170,10 +227,11 @@
 }
 
 h2 {
-  font-size: 24px;
   font-weight: bold;
   color: #333;
   padding: 20px 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
 }
 
 .description-text, .details-text, .amenities-text {
@@ -286,7 +344,7 @@ h2 {
   position: relative;
   flex: 1;
   padding-left: 20px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 20px;
   font-weight: 600;
   color: #333;
