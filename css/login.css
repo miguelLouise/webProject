@@ -14,6 +14,32 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+/* Toast notification styles */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #28a745; /* Success color */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0;
+    transition: opacity 0.3s, top 0.3s;
+}
+
+.toast.hidden {
+    display: none;
+}
+
+.toast.visible {
+    display: block;
+    opacity: 1;
+    top: 30px;
+}
 
 .container2 {
     height: calc(100vh - 75px);

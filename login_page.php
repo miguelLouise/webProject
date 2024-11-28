@@ -45,6 +45,9 @@ require_once './includes/login/login_view.php';
         <?php include('./templates/header.php'); ?>
         <!-- header -->
 
+        <!-- Toast notification -->
+        <div id="toast" class="toast hidden"></div> <!-- Added here -->
+
         <div class="container2">
             <div class="container3">
                 <h1>Login</h1>
