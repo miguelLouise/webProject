@@ -22,6 +22,9 @@ require_once 'includes/tenant_management/tenant_management_view.php';
     </div>
 
     <div class="down-payment-container">
+        <?php disappearing_downpayment_management_message("payment_submitted_successfully");
+         disappearing_downpayment_management_message("file_invalid");
+        ?>
         <div class="payment-card">
             <!-- QR Code Section -->
             <div class="left-section">
@@ -32,7 +35,6 @@ require_once 'includes/tenant_management/tenant_management_view.php';
             </div>
 
 
-            <?php disappearing_message("payment_submitted_successfully"); ?>
             <!-- Form  -->
             <div class="right-section">
                 <form action="includes/dp_management/downpayment_management.php" method="post" enctype="multipart/form-data" novalidate>
@@ -48,12 +50,12 @@ require_once 'includes/tenant_management/tenant_management_view.php';
                     </div>
 
                     <div class="form-group">
-                        <label for="reference">Payment Reference Number<span style="color: red;"><?php display_session_variable("reference_number_error") ?></span></label>
+                        <label for="reference">Payment Reference Number<span style="color: red; font-size: 12px;"><?php display_session_variable("reference_number_error") ?></span></label>
                         <textarea id="reference" name="reference" placeholder="Enter payment reference number"></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="screenshot">Upload Gcash Payment Screenshot<span style="color: red;"><?php display_session_variable("file_name_error") ?></span></label>
+                        <label for="screenshot">Upload Gcash Payment Screenshot<span style="color: red; font-size: 12px;"><?php display_session_variable("file_name_error") ?></span></label>
                         <!-- <input type="file" id="screenshot" name="screenshot" accept="image/*" required> -->
                         <!-- accept=".jpg, .jpeg, .png" -->
                         <input type="file" id="screenshot" name="screenshot">
@@ -73,7 +75,7 @@ require_once 'includes/tenant_management/tenant_management_view.php';
             <p>Payment Submitted Successfully!</p>
         </div>
     </div>
-    <script src="javascript/payment_page.js"></script>
+    <script src="javascript//payment_page.js"></script>
 
 </body>
 </html>

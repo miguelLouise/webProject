@@ -11,7 +11,7 @@ require_once './includes/account_management/account_management_view.php';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-    <link rel="stylesheet" href="../css//logged_in_header.css">
+    <link rel="stylesheet" href="../css/logged_in_header.css">
 </head>
 <body>
     <div class="logged_in_header_container1">
@@ -49,6 +49,7 @@ require_once './includes/account_management/account_management_view.php';
                 <img src="../Assets/profile.png" class="user_icon" id="user_icon">
                     <div class="side_nav_con1">
                         <?php show_user_information_name($dbconn, $_SESSION["user_id"]); ?>
+                        <br>
                         <?php show_user_information_email($dbconn, $_SESSION["user_id"]); ?>
                     </div>
             </div>

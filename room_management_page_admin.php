@@ -13,7 +13,7 @@ require_once './includes/tenant_management/tenant_management_view.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Room Management</title>
-    <link rel="stylesheet" href="css//room_management_admin.css">
+    <link rel="stylesheet" href="css///room_management_admin.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <!-- <script src="javascript/room_management_page_admin.js"></script> -->
 </head>
@@ -23,11 +23,9 @@ require_once './includes/tenant_management/tenant_management_view.php';
     <!-- header -->
 
     <!-- page content -->
-    <div class="room_availability_page_container1">
-        <div class="room_availability_page_container2">
-            <div class="room_availability_page_container3">
-               <div class="room_availability_page_container4">
-               <label for="room_type">Room Type</label>
+    <div class="room_management_container1">
+      <div class="room_management_search_container">
+      <label for="room_type">Room Type</label>
                <select name="room_type" id="room_type">
                <option value="" selected disabled hidden>Room Type</option>
                 <?php  $get_room_types = get_room_types($dbconn);
@@ -56,6 +54,12 @@ require_once './includes/tenant_management/tenant_management_view.php';
                   }
                  ?>
                 </select>
+      </div>
+
+      <div class="room_availability_page_container2">
+            <div class="room_availability_page_container3">
+               <div class="room_availability_page_container4">
+
                </div>
                 <table>
                   <thead>

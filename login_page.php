@@ -21,7 +21,7 @@ require_once './includes/login/login_view.php';
             bottom: 20px;
             left: 20px;
             z-index: 1000;
-            background-color: ##42326E;
+            background-color: #42326E;
             border-radius: 50%;
             width: 50px;
             height: 50px;
@@ -45,13 +45,16 @@ require_once './includes/login/login_view.php';
         <?php include('./templates/header.php'); ?>
         <!-- header -->
 
+
         <div class="container2">
+        <?php disappearing_login_success_message("account_activated"); ?>
+        <?php disappearing_login_success_message("account_activation_error"); ?>
             <div class="container3">
                 <h1>Login</h1>
                 <form action="./includes/login/login.php" method="post" id="login" novalidate>
 
                     <div class="input-group">
-                        <label for="name">Email <span style="color: red;"><?php display_login_error("username_error") ?></span></label>
+                        <label for="name">Email <span style="color: red;"><?php display_login_error("username_error");?></span></label>
                         <input type="text" id="name" name="username" placeholder="Email" value="<?php displayInfo("username") ?>">
                     </div>
 
@@ -70,7 +73,7 @@ require_once './includes/login/login_view.php';
         </div>
     </div>
     <!-- javascript -->
-    <script src="javascript///login_page.js"></script>
+    <script src="javascript/login_page.js"></script>
     <a href="https://web.facebook.com/1277apartments/?_rdc=1&_rdr" target="_blank" class="floating-fb-btn">
         <img src="Assets/fbpc.png" alt="Facebook Icon">
     </a>

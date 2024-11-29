@@ -3,6 +3,9 @@
 //     // Add your desired actions here
 //   });
 
+$(document).ready(function(){
+    $(".message_container").show().delay(4000).fadeOut(50);
+});
 
         const eye = document.getElementById("hide");
         const password = document.getElementById("password");

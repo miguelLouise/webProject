@@ -2,9 +2,9 @@
 require_once './includes/dbh.inc.php';
 require_once './includes/room_management/room_management_view.php';
 
-$rmType = $_POST['roomTyp'];
+$room_type = $_POST['roomTyp'];
 
-$output = showFloors($dbconn, $rmType);
+$output = showFloors($dbconn, $room_type);
 
 if ($output) {
     foreach ($output as $value) {

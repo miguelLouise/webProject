@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $username_error = "";
         $password_error = "";
+        $account_error = null;
 
         $username = trim($_POST["username"]);
         $password = $_POST["user_password"];
@@ -15,18 +16,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user_info = get_user_info($dbconn, $username);
 
         if (is_empty($username)) {
-            $username_error = "Required*";
-        } else {
-            if (username_exist($user_info)) {
-                $username_error = "Email is not found*";
-            }
+            echo $username_error = "Required*";
+
+            // if(!username_exist($user_info) && $user_info["account_activation_hash"] !== NULL){
+            //     echo $account_error = "Account has not been activated yet*";
+            // }
+        } elseif(username_exist($user_info)){
+            echo $username_error = "Email is not found*";
+        }  elseif(!username_exist($user_info) && $user_info["account_activation_hash"] !== NULL){
+            echo $account_error = "Account has not been activated yet*";
         }
+
         if (is_empty($password)) {
-            $password_error = "Required*";
+            echo $password_error = "Required*";
         } else {
             if (!is_empty($user_info)) {
                 if (check_password($password, $user_info["password"])) {
-                    $password_error = "incorrect password*";
+                    echo $password_error = "incorrect password*";
                 }
             }
         }
@@ -40,10 +46,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         session_start();
 
-        if ($username_error || $password_error) {
+        if ($username_error || $password_error || $account_error) {
             $_SESSION["username_error"] = $username_error;
             $_SESSION["username"] = $username;
             $_SESSION["password_error"] = $password_error;
+            $_SESSION["account_activation_error"] = $account_error;
+
             header('Location: ../../login_page.php');
             die();
         } else {

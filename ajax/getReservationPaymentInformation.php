@@ -19,5 +19,5 @@ if ($filter_by_room_status) {
     echo '<br>';
     echo 'Date Submitted: ', format_date($filter_by_room_status["date_uploaded"]) ,' ', format_time($filter_by_room_status["date_uploaded"]);
     echo '<br>';
-    echo '<img src="'.$img_path.'" alt="'.$filter_by_room_status["image_filename"].'" style="width: 300px; height: 400px;">';
+    echo '<img src="'.$img_path.'" alt="'.$filter_by_room_status["image_filename"].'" style="width: 250px; height: 325px;">';
 }

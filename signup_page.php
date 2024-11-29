@@ -11,15 +11,16 @@ require_once 'includes/signup_process_view.php';
     <meta http-equiv="X-UA-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dormlink - Signup</title>
-    <link rel="stylesheet" href="css///signup.css">
+    <link rel="stylesheet" href="css//signup.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <style>
         .floating-fb-btn {
             position: fixed;
             bottom: 20px;
             left: 20px;
             z-index: 1000;
-            background-color: ##42326E;
+            background-color: #42326E;
             border-radius: 50%;
             width: 50px;
             height: 50px;
@@ -45,7 +46,7 @@ require_once 'includes/signup_process_view.php';
 
         <!-- page content -->
         <div class="container2">
-            <div class="sub_con1"><?php signup_success_message("signup_success") ?></div>
+            <div class="sub_con1"><?php disappearing_signup_success_message("signup_success") ?></div>
             <div class="container3">
                 <h1>Signup</h1>
                 <form action="./includes/signup_process.php" method="post" id="signup" novalidate>
@@ -83,15 +84,18 @@ require_once 'includes/signup_process_view.php';
                     <button type="submit">Sign up</button>
                 </form>
                 <h3>Already have an account?</h3>
-                <a href="login_page.php" class="login_link">login</a>
+                <a href="login_page.php" class="login_link">Login</a>
 
             </div>
             <!-- page content -->
         </div>
     </div>
 
-    <script src="javascript/signup_page.js">
-
+    <script src="javascript//signup_page.js"></script>
+    <script>
+    $(document).ready(function(){
+        $(".message_container").show().delay(5000).fadeOut(50);
+    });
     </script>
 
     <!-- Floating Facebook Button -->

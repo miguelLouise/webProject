@@ -83,15 +83,17 @@ function get_room_information(object $pdo, $room_id){
 
 
 
-function reserveRoom(object $pdo, $user_id, $room_type, $floor_num, $room_num, $date){
-    $query = "INSERT INTO dormlink_reservations (user_id, room_type, floor_number, room_number, reservation_date) VALUES (:user_id, :room_type, :floor_number,  :room_number, :reservation_date);";
+function reserveRoom(object $pdo, $user_id, $room_type, $floor_num, $room_num, $number_of_tenants, $date, $time){
+    $query = "INSERT INTO dormlink_reservations (user_id, room_type, floor_number, room_number, number_of_occupants, reservation_date, reservation_time) VALUES (:user_id, :room_type, :floor_number,  :room_number, :number_of_occupants, :reservation_date, :reservation_time);";
     $stmt = $pdo->prepare($query);
 
     $stmt->bindParam(":user_id", $user_id);
     $stmt->bindParam(":room_type", $room_type);
     $stmt->bindParam(":floor_number", $floor_num);
     $stmt->bindParam(":room_number", $room_num);
+    $stmt->bindParam(":number_of_occupants", $number_of_tenants);
     $stmt->bindParam(":reservation_date", $date);
+    $stmt->bindParam(":reservation_time", $time);
     $stmt->execute();
 }
 

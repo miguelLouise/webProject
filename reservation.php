@@ -1,223 +1,215 @@
 <?php
 require_once './includes/login/login_view.php';
 include './middleware/user_middleware.php';
+require_once './includes/dbh.inc.php';
+require_once './includes/room_management/room_management_view.php';
+require_once './includes/tenant_management/tenant_management_view.php';
+require_once './includes/room_management/room_management_model.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dormlink - User Homepage</title>
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet"> -->
-    <link rel="stylesheet" href="css//user_homepage.css">
+    <title>Reservation</title>
+    <link rel="stylesheet" href="css/reservation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-</head>
+    <script src="javascript/reservation.js"></script>
 
+</head>
 <body>
     <!-- header -->
     <?php include('./templates/logged_in_header.php'); ?>
     <!-- header -->
-    <div class="user_homepage_container1">
-        <!-- page content -->
-        <div class="container2">
-            <img src="Assets/lavenders1.png">
-            <img src="Assets/lavenders2.png">
-            <img src="Assets/lavenders3.png">
-            <img src="Assets/lavenders4.png">
-            <img src="Assets/lavenders5.png">
-        </div>
 
-        <form action="includes/room_management/select_room_type.php" method="get" novalidate>
-        <div class="info-section">
-            <div class="info-container">
-                <!-- Left Section -->
-                <div class="info-left">
-                    <h2>Description</h2>
-                    <p class="description-text">
-                        Accessible Area, Located near Arellano University, National University, and LRT Legarda Station.
-                    </p>
-
-                    <h2>Other Details</h2>
-                    <p class="details-text">
-                        7 storey Dorm/Apartment building<br>
-                        69 Rooms with own bathroom and sink<br>
-                        Solo or Shared room unit type<br>
-                        24-hour security service<br>
-                        24-hour elevator service<br>
-                        CCTV surveillance camera on each floor
-                    </p>
-                </div>
-
-                <!-- Right Section -->
-                <div class="info-right">
-                    <h2>Amenities</h2>
-                    <p class="amenities-text">
-                        <span class="amenity-icon">📚</span> <span class="clickable-amenity" onclick="showPopup('Assets/studyarea.jpg')"style="width: 100%; height: 100%;">Study Area</span><br>
-                        <span class="amenity-icon">🛋️</span> <span class="clickable-amenity" onclick="showPopup('Assets/lobby.jpg')">Lobby</span><br>
-                        <span class="amenity-icon">🅿️</span> <span class="clickable-amenity" onclick="showPopup('Assets/parkingpc.jpg')">Parking</span><br>
-                        <span class="amenity-icon">📶</span> <span class="clickable-amenity" onclick="showPopup('Assets/wifipic.png')">Wifi</span><br>
-                        <span class="amenity-icon">🧺</span> <span class="clickable-amenity" onclick="showPopup('Assets/laundromatpc.jpg')">Laundromat</span><br>
-                        <span class="amenity-icon">🛗</span> <span class="clickable-amenity" onclick="showPopup('Assets/elevatorpc.jpg')">Elevator</span><br>
-                    </p>
-        <form action="includes/room_management/select_room_type.php" method="get" novalidate>
-                    <!-- <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> -->
-                    <button class="reserve-button" name="action" value="no_room">Reserve Now</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Popup Image Container -->
-        <div id="popup" class="popup-container">
-            <span id="closeBtn" class="popup-close" onclick="closePopup()">X</span>
-            <img id="popupImage" src="" alt="Amenity Image" class="popup-image">
-        </div>
-
-        <div class="rooms-section">
-            <!-- Room 1 -->
-            <div class="room">
-                <div class="room-images">
-                    <div class="large-image">
-                        <img id="room1-large" src="Assets/room1pic1.png" alt="Room 1 Large Image">
+    <!-- page content -->
+    <div class="reservation_container1">
+        <?php
+        disappearing_room_management_message("reservation_error");
+        disappearing_room_management_message("user_already_reserved_error");
+        disappearing_room_management_message("exceed_number_of_tenants");
+        disappearing_room_management_message("room_availability_error");
+        disappearing_room_management_message("reservation_success");
+        ?>
+        <form action="./includes/room_management/room_management_reserve.php" method="post" id="reservation" novalidate>
+            <?php $get_room_types = getRoomTypes($dbconn);
+            foreach ($get_room_types as $data) {
+                ?>
+                 <div class="reservation_container2">
+                    <div class="rooms_img_container">
+                        <?php
+                        if ($data['room_type'] === 1) {
+                            ?>
+                            <div class="slider-box">
+                                <div class="slider">
+                                    <button type="button" class="prev" onclick="moveSlide(1, 0)">&#10094;</button>
+                                    <div class="slides" id="slider1">
+                                        <img class="slide" src="Assets/room1pic1.png" alt="room1_pic1">
+                                        <img class="slide" src="Assets/room1pic2.png" alt="room1_pic2">
+                                        <img class="slide" src="Assets/room1pic3.png" alt="room1_pic3">
+                                        <img class="slide" src="Assets/room1pic4.png" alt="room1_pic4">
+                                        <img class="slide" src="Assets/room1pic5.png" alt="room1_pic5">
+                                    </div>
+                                    <button type="button" class="next" onclick="moveSlide(1, 0)">&#10095;</button>
+                                </div>
+                            </div>
+                            <?php
+                        } else if ($data['room_type'] === 2) {
+                            ?>
+                            <div class="slider-box">
+                                <div class="slider">
+                                    <button type="button" class="prev" onclick="moveSlide(1, 0)">&#10094;</button>
+                                    <div class="slides" id="slider1">
+                                        <img class="slide" src="Assets/room1pic1.png" alt="room1_pic1">
+                                        <img class="slide" src="Assets/room1pic2.png" alt="room1_pic2">
+                                        <img class="slide" src="Assets/room1pic3.png" alt="room1_pic3">
+                                        <img class="slide" src="Assets/room1pic4.png" alt="room1_pic4">
+                                        <img class="slide" src="Assets/room1pic5.png" alt="room1_pic5">
+                                    </div>
+                                    <button type="button" class="next" onclick="moveSlide(1, 0)">&#10095;</button>
+                                </div>
+                            </div>
+                            <?php
+                        } else if ($data['room_type'] === 3) {
+                            ?>
+                            <div class="slider-box">
+                                <div class="slider">
+                                    <button type="button" class="prev" onclick="moveSlide(1, 0)">&#10094;</button>
+                                    <div class="slides" id="slider1">
+                                        <img class="slide" src="Assets/room1pic1.png" alt="room1_pic1">
+                                        <img class="slide" src="Assets/room1pic2.png" alt="room1_pic2">
+                                        <img class="slide" src="Assets/room1pic3.png" alt="room1_pic3">
+                                        <img class="slide" src="Assets/room1pic4.png" alt="room1_pic4">
+                                        <img class="slide" src="Assets/room1pic5.png" alt="room1_pic5">
+                                    </div>
+                                    <button type="button" class="next" onclick="moveSlide(1, 0)">&#10095;</button>
+                                </div>
+                            </div>
+                            <?php
+                        } else if ($data['room_type'] === 4) {
+                            ?>
+                            <div class="slider-box">
+                                <div class="slider">
+                                    <button type="button" class="prev" onclick="moveSlide(1, 0)">&#10094;</button>
+                                    <div class="slides" id="slider1">
+                                        <img class="slide" src="Assets/room1pic1.png" alt="room1_pic1">
+                                        <img class="slide" src="Assets/room1pic2.png" alt="room1_pic2">
+                                        <img class="slide" src="Assets/room1pic3.png" alt="room1_pic3">
+                                        <img class="slide" src="Assets/room1pic4.png" alt="room1_pic4">
+                                        <img class="slide" src="Assets/room1pic5.png" alt="room1_pic5">
+                                    </div>
+                                    <button type="button" class="next" onclick="moveSlide(1, 0)">&#10095;</button>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                        ?>
                     </div>
-                    <div class="thumbnail-images">
-                        <img src="Assets/room1pic1.png" onclick="changeImage('room1-large', 'Assets/room1pic1.png')" alt="Room 1 Image 1">
-                        <img src="Assets/room1pic2.png" onclick="changeImage('room1-large', 'Assets/room1pic2.png')" alt="Room 1 Image 2">
-                        <img src="Assets/room1pic3.png" onclick="changeImage('room1-large', 'Assets/room1pic3.png')" alt="Room 1 Image 3">
-                        <img src="Assets/room1pic4.png" onclick="changeImage('room1-large', 'Assets/room1pic4.png')" alt="Room 1 Image 4">
-                        <img src="Assets/room1pic5.png" onclick="changeImage('room1-large', 'Assets/room1pic5.png')" alt="Room 1 Image 5">
-                        <img src="Assets/room1pic6.png" onclick="changeImage('room1-large', 'Assets/room1pic6.png')" alt="Room 1 Image 6">
-                        <img src="Assets/room1pic7.png" onclick="changeImage('room1-large', 'Assets/room1pic7.png')" alt="Room 1 Image 7">
-                        <img src="Assets/room1pic8.png" onclick="changeImage('room1-large', 'Assets/room1pic8.png')" alt="Room 1 Image 8">
+
+                    <div class="rooms_description">
+                        <?php echo $data['room_description']; ?>
                     </div>
-                </div>
+                    <hr>
+                    <div class="room_reservation">
+                    <input type="hidden" name="roomType" class="roomType" id="roomType" value="<?php echo $data['room_type']; ?>">
+                        <!-- floor number -->
+                        <div class="input-group">
+                        <!-- <input type="hidden" name="roomType" class="roomType" id="roomType" value="<?php echo $data['room_type']; ?>"> -->
+                            <label for="flr_num">Floor Number<span style="color: red;"><?php display_reservation_error("floor_number_error") ?></span></label>
+                            <select name="room_type_<?php echo $data['room_type']; ?>_flr_num" class="flr_num" id="room_type_<?php echo $data['room_type']; ?>_floors">
+                                <option value="" selected hidden></option>
+                            </select>
+                        </div>
 
-                <div class="room-info">
-                    <h2>Studio Room 1</h2>
-                    <p>STUDIO TYPE ROOM</p>
-                    <p>9,500.00 monthly 1 month advance and 2 months deposit.</p>
-                    <p>( 6 ) months minimum contract.</p>
-                    <p>Maximum of 3 persons only.</p>
-                    <p>Semi-furnished unit</p>
-                    <p>Exclusive water and electric bill</p>
-                    <p>With one double deck, one bed, cabinet, table, chair, ceiling fan & aircon</p>
-                    <p>Free wifi internet in each room</p>
-                    <p>Good for student, reviewee, working couple with no baby.</p>
-                    <!-- <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> -->
-                    <button class="reserve-button" name="action" value="room_one">Reserve Now</button>
-                    <button class="message-button"><a href="messaging_page.php" class="message_btn">Message/Inquire</a></button>
-                </div>
-            </div>
+                        <!-- room number -->
+                        <div class="input-group">
+                            <label for="room_num">Unit Number<span id="room_type_<?php echo $data['room_type']; ?>_error_message" style="color: red;"><?php display_reservation_error("room_number_error") ?></span></label>
+                            <select name="room_type_<?php echo $data['room_type']; ?>_room_num" class="room_num" id="room_type_<?php echo $data['room_type']; ?>_room_num">
+                                <option value="" selected hidden>Unit Number</option>
+                            </select>
+                        </div>
 
-            <!-- Room 2 -->
-            <div class="room">
-                <div class="room-images">
-                    <div class="large-image">
-                        <img id="room2-large" src="Assets/room2pic1.png" alt="Room 2 Large Image">
+                        <div class="input-group">
+                            <!-- <input type="hidden" name="roomType" class="roomType" id="roomType" value="<?php echo $data['room_type']; ?>"> -->
+                            <label for="room_num">Number of Tenants<span id="room_type_<?php echo $data['room_type']; ?>_error_message" style="color: red;"><?php display_reservation_error("room_number_error") ?></span></label>
+                            <button type="button" class="decrement" id="decrement">-</button>
+                                <input type="number" name="room_type_<?php echo $data['room_type']; ?>_tenants" class="number_of_tenants" id="room_type_<?php echo $data['room_type']; ?>_tenants" value="1" min="1" max="<?php echo $data['max_capacity']; ?>" readonly>
+                            <button type="button" class="increment" id="increment">+</button>
+                        </div>
+
+                        <!-- <button type="button" class="submit_btn" id="submit_btn">Submit Reservation</button> -->
+                        <button type="submit" name="action" value="<?php echo $data['room_type']; ?>">Confirm</button>
                     </div>
-                    <div class="thumbnail-images">
-                        <img src="Assets/room2pic1.png" onclick="changeImage('room2-large', 'Assets/room2pic1.png')" alt="Room 2 Image 1">
-                        <img src="Assets/room2pic2.png" onclick="changeImage('room2-large', 'Assets/room2pic2.png')" alt="Room 2 Image 2">
-                        <img src="Assets/room2pic3.png" onclick="changeImage('room2-large', 'Assets/room2pic3.png')" alt="Room 2 Image 3">
-                        <img src="Assets/room2pic4.png" onclick="changeImage('room2-large', 'Assets/room2pic4.png')" alt="Room 2 Image 4">
-                        <img src="Assets/room2pic5.png" onclick="changeImage('room2-large', 'Assets/room2pic5.png')" alt="Room 2 Image 5">
-                        <img src="Assets/room2pic6.png" onclick="changeImage('room2-large', 'Assets/room2pic6.png')" alt="Room 2 Image 6">
-                        <img src="Assets/room2pic7.png" onclick="changeImage('room2-large', 'Assets/room2pic7.png')" alt="Room 2 Image 7">
-                        <img src="Assets/room2pic8.png" onclick="changeImage('room2-large', 'Assets/room2pic8.png')" alt="Room 2 Image 8">
-                        <img src="Assets/room2pic9.png" onclick="changeImage('room2-large', 'Assets/room2pic9.png')" alt="Room 2 Image 9">
-                    </div>
-                </div>
-
-                <div class="room-info">
-                    <h2>Studio Room 2</h2>
-                    <p>STUDIO TYPE ROOM</p>
-                    <p>10,500.00 monthly 1 month advance and 2 months deposit.</p>
-                    <p>( 6 ) months minimum contract.</p>
-                    <p>Maximum of 4 persons only.</p>
-                    <p>Semi-furnished unit</p>
-                    <p>Exclusive water and electric bill</p>
-                    <p>With two ( 2 ) double deck, one cabinet, table, chair, ceiling fan & aircon</p>
-                    <p>Free wifi internet in each room</p>
-                    <p>Good for student, reviewee, working couple with no baby.</p>
-                    <!-- <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> -->
-                    <button class="reserve-button" name="action" value="room_two">Reserve Now</button>
-                    <button class="message-button"><a href="messaging_page.php" class="message_btn">Message/Inquire</a></button>
-                </div>
-            </div>
-
-            <!-- Room 3 -->
-            <div class="room">
-                <div class="room-images">
-                    <div class="large-image">
-                        <img id="room3-large" src="Assets/room3pic1.png" alt="Room 3 Large Image">
-                    </div>
-                    <div class="thumbnail-images">
-                        <img src="Assets/room3pic1.png" onclick="changeImage('room3-large', 'Assets/room3pic1.png')" alt="Room 3 Image 1">
-                        <img src="Assets/room3pic2.png" onclick="changeImage('room3-large', 'Assets/room3pic2.png')" alt="Room 3 Image 2">
-                        <img src="Assets/room3pic3.png" onclick="changeImage('room3-large', 'Assets/room3pic3.png')" alt="Room 3 Image 3">
-                        <img src="Assets/room3pic4.png" onclick="changeImage('room3-large', 'Assets/room3pic4.png')" alt="Room 3 Image 4">
-                        <img src="Assets/room3pic5.png" onclick="changeImage('room3-large', 'Assets/room3pic5.png')" alt="Room 3 Image 5">
-                        <img src="Assets/room3pic6.png" onclick="changeImage('room3-large', 'Assets/room3pic6.png')" alt="Room 3 Image 6">
-                        <img src="Assets/room3pic7.png" onclick="changeImage('room3-large', 'Assets/room3pic7.png')" alt="Room 3 Image 7">
-                        <img src="Assets/room3pic8.png" onclick="changeImage('room3-large', 'Assets/room3pic8.png')" alt="Room 3 Image 8">
-                        <img src="Assets/room3pic9.png" onclick="changeImage('room3-large', 'Assets/room3pic9.png')" alt="Room 3 Image 9">
-
-                    </div>
-                </div>
-
-                <div class="room-info">
-                    <h2>Studio Room 3</h2>
-                    <p>STUDIO TYPE ROOM</p>
-                    <p>10,500.00 monthly 1 month advance and 2 months deposit.</p>
-                    <p>( 6 ) months minimum contract.</p>
-                    <p>Maximum of 4 persons only.</p>
-                    <p>Semi-furnished unit</p>
-                    <p>Exclusive water and electric bill</p>
-                    <p>With two ( 2 ) double deck, one cabinet, table, chair, ceiling fan & aircon</p>
-                    <p>Free wifi internet in each room</p>
-                    <p>Good for student, reviewee, working couple with no baby.</p>
-                    <!-- <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> -->
-                    <button class="reserve-button" name="action" value="room_three">Reserve Now</button>
-                    <a href="messaging_page.php"><button class="message-button">Message/Inquire</button></a>
-                </div>
-            </div>
-
-            <!-- Room 4 -->
-            <div class="room">
-                <div class="room-images">
-                    <div class="large-image">
-                        <img id="room4-large" src="Assets/room4pic1.png" alt="Room 4 Large Image">
-                    </div>
-                    <div class="thumbnail-images">
-                        <img src="Assets/room4pic1.png" onclick="changeImage('room4-large', 'Assets/room4pic1.png')" alt="Room 4 Image 1">
-                        <img src="Assets/room4pic2.png" onclick="changeImage('room4-large', 'Assets/room4pic2.png')" alt="Room 4 Image 2">
-                        <img src="Assets/room4pic3.png" onclick="changeImage('room4-large', 'Assets/room4pic3.png')" alt="Room 4 Image 3">
-                        <img src="Assets/room4pic4.png" onclick="changeImage('room4-large', 'Assets/room4pic4.png')" alt="Room 4 Image 4">
-                    </div>
-                </div>
-
-                <div class="room-info">
-                    <h2>Studio Room 4</h2>
-                    <p>STUDIO TYPE ROOM</p>
-                    <p>15,000.00 monthly 1 month advance and 2 months deposit.</p>
-                    <p>( 6 ) months minimum contract.</p>
-                    <p>Maximum of 6 persons only.</p>
-                    <p>Semi-furnished unit</p>
-                    <p>Exclusive water and electric bill</p>
-                    <p>With three ( 3 ) double deck, one cabinet, table, chair, ceiling fan & aircon</p>
-                    <p>Free wifi internet in each room</p>
-                    <p>Good for student, reviewee, working couple with no baby.</p>
-                    <!-- <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> -->
-                    <button class="reserve-button" name="action" value="room_four">Reserve Now</button>
-                    <a href="messaging_page.php"><button class="message-button">Message/Inquire</button></a>
-                </div>
-            </div>
-
-        </div>
+                 </div>
+                <?php
+            }
+            ?>
         </form>
     </div>
 
-    <script src="javascript/user_homepage.js"></script>
+    <script>
+// jquery
+$(document).ready(function(){
+    $(".container").show().delay(5000).fadeOut(50);
+
+    $(".increment").click(function() {
+        var number_of_tenants = parseInt($(this).closest(".room_reservation").find(".number_of_tenants").val());
+        var get_room_type = $(this).closest(".room_reservation").find(".roomType").val();
+
+        var max_capacity = document.getElementById("room_type_" +  get_room_type + "_tenants");
+        //
+        console.log(max_capacity.max);
+        if (number_of_tenants < max_capacity.max) {
+            $("#room_type_" +  get_room_type + "_tenants").val(number_of_tenants + 1);
+        }
+    });
+
+    $(".decrement").click(function() {
+        var number_of_tenants = parseInt($(this).closest(".room_reservation").find(".number_of_tenants").val());
+        var get_room_type = $(this).closest(".room_reservation").find(".roomType").val();
+
+        var max_capacity = document.getElementById("room_type_" +  get_room_type + "_tenants");
+        //
+        console.log(max_capacity.min);
+        if (number_of_tenants > max_capacity.min) {
+            $("#room_type_" +  get_room_type + "_tenants").val(number_of_tenants - 1);
+        }
+    });
+
+
+    $(".roomType").each(function() {
+        var get_room_type = $(this).val();
+
+        $.ajax({
+            type: 'POST',
+            url: 'getFloorNumberAjax.php',
+            data: {roomTyp:get_room_type},
+            success: function(data){
+                $('.flr_num').html(data);
+            }
+        });
+    });
+
+    $(document).on("change", ".flr_num", function() {
+        var get_floor_number = $(this).val();
+        var get_room_type = $(this).closest(".room_reservation").find(".roomType").val();
+
+        console.log("room type: " + get_room_type);
+        console.log("floor number: " + get_floor_number)
+
+        $.ajax({
+            type: 'POST',
+            url: 'getRoomNumberAjax.php',
+            data: {room_type:get_room_type, floor_number:get_floor_number},
+            success: function(data){
+                $("#room_type_" + get_room_type + "_room_num").html(data);
+            }
+        });
+
+    });
+});
+    </script>
 </body>
 </html>

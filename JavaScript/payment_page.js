@@ -1,3 +1,5 @@
+$(".container").show().delay(5000).fadeOut(50);
+
 document.getElementById('paymentForm').addEventListener('submit', function (event) {
     event.preventDefault();
 

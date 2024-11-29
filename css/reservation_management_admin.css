@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 * {
   margin: 0;
@@ -14,13 +17,22 @@ body {
 
 .reservation_management_container1 {
   position: absolute;
-  height: 100vh;
+  height: calc(100% - 75px);
   width: 100%;
-  padding-top: 70px;
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-top: 75px;
+  padding: 25px;
+  /* padding-left: 20px; */
+  /* padding-right: 20px; */
   background-color: #f8f9fa;
   overflow-y: auto;
+  /* background-color: chartreuse; */
+}
+
+.reservation_search_bar{
+  /* background-color: #218838; */
+  height: 100px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 h1, h2, h3, h4 {
@@ -28,8 +40,9 @@ h1, h2, h3, h4 {
 }
 
 table {
+  font-family: 'Montserrat', sans-serif;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 25px;
   border-collapse: collapse;
   background-color: white;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -48,8 +61,19 @@ th {
   font-weight: 600;
 }
 
+tbody tr td{
+  /* padding: 15px; */
+  text-align: center;
+}
+
+tr{
+  font-size: 16px;
+  font-weight: 500;
+
+}
+
 td {
-  border-bottom: 1px solid #ddd;
+  /* border-bottom: 1px solid #ddd; */
 }
 
 .dp_detail_btn:hover {
@@ -153,10 +177,6 @@ select.reservation_status option {
   border: 1px solid #ccc;
 }
 
-tbody tr{
-  margin: 10px;
-}
-
 .dp_container{
   background-color: #218838;
   padding: 20px;
@@ -164,10 +184,11 @@ tbody tr{
 /*  */
 .dp_details {
   background-color: rgba(0, 0, 0, 0.3);
-  position: absolute;
-  height: 100%;
+  /* position: absolute; */
+  position: fixed;
+  height:  calc(100% - 75px);
   width: 100%;
-  top: 0;
+  top: 75px;
   left: 0;
   display: flex;
   justify-content: center;
@@ -178,10 +199,10 @@ tbody tr{
   position: relative;
   background-color: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  height: 80%;
-  width: 75%;
+  height: 90%;
+  width: 80%;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -195,16 +216,20 @@ tbody tr{
 
 .close_btn{
   all: unset;
-  background-color: #ffffff;
-  height: 50px;
-  width: 50px;
-  right: 0;
+  /* background-color: #ffffff; */
+  height: 30px;
+  width: 30px;
+  right: 25px;
+  top: 25px;
   border-radius: 50px;
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+.close_btn:hover{
+  background-color: #9f9f9f;
 }
 /* Responsive*/
 @media (max-width: 768px) {
