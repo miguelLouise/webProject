@@ -11,7 +11,11 @@ require_once './includes/account_management/account_management_view.php';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<<<<<<< HEAD
     <link rel="stylesheet" href="../css/logged_in_header.css">
+=======
+    <link rel="stylesheet" href="/css//logged_in_header.css">
+>>>>>>> 08aa88696f7510739278db19c899069ffdc27a13
 </head>
 <body>
     <div class="logged_in_header_container1">

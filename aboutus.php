@@ -11,7 +11,7 @@ include "./middleware/user_middleware.php";
     <title>About Us</title>
     <link rel="stylesheet" href="css/aboutus.css">
 </head>
-<body style="background-image: url('Assets/lavanderBLDG.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+<body style="background-image: url('Assets/newbg.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
     <div class="about_container1">
         <!-- header -->
         <?php include('./templates/logged_in_header.php'); ?>

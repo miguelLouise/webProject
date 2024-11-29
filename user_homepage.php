@@ -21,6 +21,26 @@ include './middleware/user_middleware.php';
     <!-- header -->
     <div class="user_homepage_container1">
         <!-- page content -->
+
+        <div class="custom-card">
+            <div class="custom-card-text">
+                <h2 class="card-title">Welcome to Lavenders Place</h2>
+                <p class="card-description">
+                    Rent an Dorm/Apatment Room. Reserve Now!
+                </p>
+                <form action="includes/room_management/select_room_type.php" method="get" novalidate>
+                <button class="reserve-button" name="action" value="room_one">Reserve Now</button>
+                <button class="message-button"><a href="messaging_page.php" class="message_btn">Contact Us</a></button>
+            </div>
+            <div class="custom-card-image">
+                <img src="Assets/lpview.jpg" alt="Lavender's Place View">
+            </div>
+        </div>
+
+        <div class="custom-card-header">
+                <h1>Our Lobby Area</h1>
+        </div>
+        
         <div class="container2">
             <img src="Assets/lavenders1.png">
             <img src="Assets/lavenders2.png">
@@ -62,7 +82,13 @@ include './middleware/user_middleware.php';
                         <span class="amenity-icon">🧺</span> <span class="clickable-amenity" onclick="showPopup('Assets/laundromatpc.jpg')">Laundromat</span><br>
                         <span class="amenity-icon">🛗</span> <span class="clickable-amenity" onclick="showPopup('Assets/elevatorpc.jpg')">Elevator</span><br>
                     </p>
+<<<<<<< HEAD
                     <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a>
+=======
+                    <form action="includes/room_management/select_room_type.php" method="get" novalidate>
+                    <!-- <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> -->
+                    <button class="reserve-button" name="action" value="no_room">Reserve Now</button>
+>>>>>>> 08aa88696f7510739278db19c899069ffdc27a13
                 </div>
             </div>
         </div>

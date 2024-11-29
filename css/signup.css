@@ -17,6 +17,7 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+
 .container2 {
     /* margin-top: 70px; */
     /* height: calc(100vh - 75px); */
@@ -32,6 +33,7 @@ body {
     border-radius: 10px;
     width: 50%;
     max-width: 400px;
+    backdrop-filter: blur(5px);
     height: auto;
     background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
@@ -53,7 +55,7 @@ h2 {
 h3 {
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 12px;
     text-align: center;
     color: #42326E;
     font-weight: bold;
@@ -63,6 +65,25 @@ h3 {
     margin-bottom: 15px;
     position: relative;
     /* background-color: #0069d9; */
+}
+
+.input-group i {
+    position: absolute;
+    margin-left: -30px;
+    margin-top: 10px;
+    cursor: pointer;
+    color: #6c757d; 
+}
+
+.input-group input:hover {
+    border-color: #007bff; 
+    background-color: #f8f9fa; 
+}
+
+.input-group input:focus { 
+    border-color: #007bff; 
+    outline: none; /* Removes the default browser outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 .input-group label {
@@ -79,6 +100,8 @@ h3 {
     border: 1px solid #ced4da;
     box-shadow: none;
     font-size: 14px;
+    transition: all 0.3s ease;
+    
 }
 
 
@@ -95,14 +118,29 @@ button {
 }
 
 button:hover {
+<<<<<<< HEAD
     background-color: #0056b3;
+=======
+    background-color: #0056b3; 
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #004085;
+    transform: scale(0.98);
+>>>>>>> 08aa88696f7510739278db19c899069ffdc27a13
 }
 
 .login_link {
     display: block;
     text-align: center;
     margin-top: 10px;
+<<<<<<< HEAD
     color: #0069d9;
+=======
+    font-size: 12px;
+    color: #0069d9; 
+>>>>>>> 08aa88696f7510739278db19c899069ffdc27a13
     text-decoration: none;
 }
 
