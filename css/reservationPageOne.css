@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.new_reservation_container1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  z-index: 10;
+  background-color: white;
+}
+
+.container{
+    margin-top: 90px;
+}
+
+.room-slider-header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.room-slider-header h2 {
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #42326E;
+}
+
+.sliders-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    max-width: 1500px; /* Set a maximum width for the container */
+}
+
+.slider-box {
+    width: 24%; /* Set the width of each slider box */
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 0 5px; /* Add some spacing between each slider */
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.slides {
+    display: flex;
+}
+
+.slide {
+    min-width: 100%;
+    height: 300px; /* Make each slide a square */
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    display: none; /* Hide all slides initially */
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    user-select: none;
+}
+
+.prev {
+    left: 5px;
+}
+
+.next {
+    right: 5px;
+}
+
+.slider-box h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.slider-box p {
+    font-size: 15px;
+    color: #666;
+}
+
+@media (max-width: 1024px) {
+    .slider-box {
+        width: 48%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+

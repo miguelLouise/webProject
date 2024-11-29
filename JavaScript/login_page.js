@@ -2,21 +2,9 @@
 const eye = document.getElementById("hide");
 const password = document.getElementById("password");
 
-<<<<<<< HEAD
 $(document).ready(function(){
     $(".message_container").show().delay(4000).fadeOut(50);
 });
-=======
-eye.onclick = () => {
-    if (password.type === "password") {
-        password.type = "text";
-        eye.className = 'bi-eye-fill';
-    } else {
-        password.type = "password";
-        eye.className = 'bi-eye-slash-fill';
-    }
-};
->>>>>>> 08aa88696f7510739278db19c899069ffdc27a13
 
 // Existing input trimming logic
 const input = document.getElementById("name");

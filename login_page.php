@@ -45,11 +45,6 @@ require_once './includes/login/login_view.php';
         <?php include('./templates/header.php'); ?>
         <!-- header -->
 
-<<<<<<< HEAD
-=======
-        <!-- Toast notification -->
-        <div id="toast" class="toast hidden"></div> <!-- Added here -->
->>>>>>> 08aa88696f7510739278db19c899069ffdc27a13
 
         <div class="container2">
         <?php disappearing_login_success_message("account_activated"); ?>

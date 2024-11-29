@@ -56,7 +56,7 @@
 
 .card-title {
   font-family: 'Playfair Display', serif;
-  font-size: 24px;
+  font-size: 45px;
   color: #42326E;
   margin-bottom: 10px;
 }
@@ -70,8 +70,9 @@
 
 .custom-card-header {
   font-family: 'Playfair Display', serif;
-  font-size: 20px;
+  font-size: 15px;
   color: #42326E;
+  margin-left: 20px;
   margin-bottom: 10px;
 }
 
@@ -346,13 +347,8 @@ h2 {
   position: relative;
   flex: 1;
   padding-left: 20px;
-<<<<<<< HEAD
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
-=======
-  font-family: 'Poppins', sans-serif;
-  font-size: 20px;
->>>>>>> 08aa88696f7510739278db19c899069ffdc27a13
   font-weight: 600;
   color: #333;
   /* background-color: chartreuse; */

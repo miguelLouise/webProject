@@ -10,10 +10,11 @@
 
 .reservation_container1{
   position: absolute;
+  margin-top: 100px;
   /* background-color: chartreuse; */
-  top: 50px;
+  /* top: 50px; */
   width: 100%;
-  padding: 25px;
+  /* padding: 25px; */
   /* height: calc(100% - 75px); */
   /* display: flex;
   justify-content: center; */
@@ -27,7 +28,7 @@
   position: relative;
   width: 100%;
   min-height: 300px;
-  margin-top: 25px;
+  /* margin-top: 25px; */
   padding: 0;
   display: flex;
   /* margin: 25px; */

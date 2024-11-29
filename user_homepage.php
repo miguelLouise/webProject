@@ -11,7 +11,7 @@ include './middleware/user_middleware.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dormlink - User Homepage</title>
     <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet"> -->
-    <link rel="stylesheet" href="css///user_homepage.css">
+    <link rel="stylesheet" href="css//user_homepage.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 </head>
 
@@ -38,9 +38,9 @@ include './middleware/user_middleware.php';
         </div>
 
         <div class="custom-card-header">
-                <h1>Our Lobby Area</h1>
+            <h1>Our Lobby Area</h1>
         </div>
-        
+
         <div class="container2">
             <img src="Assets/lavenders1.png">
             <img src="Assets/lavenders2.png">
@@ -82,13 +82,7 @@ include './middleware/user_middleware.php';
                         <span class="amenity-icon">🧺</span> <span class="clickable-amenity" onclick="showPopup('Assets/laundromatpc.jpg')">Laundromat</span><br>
                         <span class="amenity-icon">🛗</span> <span class="clickable-amenity" onclick="showPopup('Assets/elevatorpc.jpg')">Elevator</span><br>
                     </p>
-<<<<<<< HEAD
                     <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a>
-=======
-                    <form action="includes/room_management/select_room_type.php" method="get" novalidate>
-                    <!-- <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> -->
-                    <button class="reserve-button" name="action" value="no_room">Reserve Now</button>
->>>>>>> 08aa88696f7510739278db19c899069ffdc27a13
                 </div>
             </div>
         </div>

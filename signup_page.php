@@ -84,12 +84,8 @@ require_once 'includes/signup_process_view.php';
 
                     <button type="submit">Sign up</button>
                 </form>
-<<<<<<< HEAD
                 <h3>Already have an account?</h3>
                 <a href="login_page.php" class="login_link">Login</a>
-=======
-                <h3>Already have an account?</h3><a href="login_page.php" class="login_link">Login</a>
->>>>>>> 08aa88696f7510739278db19c899069ffdc27a13
 
             </div>
             <!-- page content -->
