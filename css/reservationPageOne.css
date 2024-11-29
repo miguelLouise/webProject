@@ -27,16 +27,18 @@
 }
 
 .room-slider-header h2 {
-    font-size: 24px;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-family: 'Playfair Display', serif;
     font-weight: bold;
     color: #42326E;
 }
 
 .sliders-container {
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
     width: 100%;
+    gap: 10px;
+     /* flex-direction: column; */
     flex-wrap: wrap;
     max-width: 1500px; /* Set a maximum width for the container */
 }
@@ -48,7 +50,27 @@
     padding: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    margin: 0 5px; /* Add some spacing between each slider */
+    /* margin: 0 5px; Add some spacing between each slider */
+}
+
+.info-box {
+    width: 40%; /* Set the width of each slider box */
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    /* margin: 0 5px; Add some spacing between each slider */
+}
+
+.input-box {
+    width: 24%; /* Set the width of each slider box */
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+     /* margin: 0 5px; Add some spacing between each slider */
 }
 
 .slider {
@@ -94,15 +116,22 @@
     right: 5px;
 }
 
-.slider-box h3 {
-    font-size: 20px;
+.info-box h3 {
+    font-size: 24px;
     color: #333;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
 }
 
-.slider-box p {
-    font-size: 15px;
-    color: #666;
+.info-box p {
+    position: relative;
+    flex: 1;
+    padding-left: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    text-align: left;
 }
 
 @media (max-width: 1024px) {

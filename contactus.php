@@ -1,6 +1,6 @@
 <?php
 require_once "./includes/login/login_view.php";
-include "./middleware/user_middleware.php";
+//include "./middleware/user_middleware.php";
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ include "./middleware/user_middleware.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    <link rel="stylesheet" href="css/contactus.css">
+    <link rel="stylesheet" href="css//contactus.css">
 </head>
 <body style="background-image: url('Assets/newbg.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
     <div class="contactus_container1">
@@ -46,6 +46,16 @@ include "./middleware/user_middleware.php";
                 <p>We're open to show you around from Monday to Friday, 8am to 5pm.</p>
                 <p>If you use Waze or Google Maps, just type in "Lavenders Place" and it will show you the way. See you!</p>
             </div>
+        </section>
+
+            <!-- Feedback Section -->
+        <section class="feedback-section">
+            <h2>Send Your Feedback</h2>
+            <p>Tell us about your experience</p>
+            <form action="submit_feedback.php" method="POST">
+                <textarea name="feedback" placeholder="Write your feedback here..." required></textarea>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
         </section>
     </main>
 
