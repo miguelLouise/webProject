@@ -61,19 +61,22 @@ form .form-group input:focus {
 }
 
 form #update_btn[type="submit"] {
-    width: 100%;
+    width: 30%;
     padding: 12px;
     background: #007bff;
     color: white;
     border: none;
     border-radius: 6px;
     font-size: 16px;
+    border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 form #update_btn [type="submit"]:hover {
     background: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 form i {

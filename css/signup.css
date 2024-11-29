@@ -1,17 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
   margin: 0;
   padding-top: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  /* font-family: "Roboto", sans-serif;
   font-weight: 500;
-  font-style: normal;
+  font-style: normal; */
 }
 
 body {
-    background-color: #f8f9fa; 
-    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -40,8 +43,8 @@ h1 {
     margin-bottom: 20px;
     font-size: 24px;
     text-align: center;
-    color: #42326E; 
-    font-weight: bold; 
+    color: #42326E;
+    font-weight: bold;
 }
 
 h2 {
@@ -54,13 +57,14 @@ h3 {
     margin-bottom: 10px;
     font-size: 12px;
     text-align: center;
-    color: #42326E; 
-    font-weight: bold; 
+    color: #42326E;
+    font-weight: bold;
 }
 
 .input-group {
     margin-bottom: 15px;
     position: relative;
+    /* background-color: #0069d9; */
 }
 
 .input-group i {
@@ -86,14 +90,14 @@ h3 {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #495057; 
+    color: #495057;
 }
 
 .input-group input {
     width: 100%;
     padding: 10px;
     border-radius: 20px;
-    border: 1px solid #ced4da; 
+    border: 1px solid #ced4da;
     box-shadow: none;
     font-size: 14px;
     transition: all 0.3s ease;
@@ -105,8 +109,8 @@ button {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    background-color: #0069d9; 
-    color: #ffffff; 
+    background-color: #0069d9;
+    color: #ffffff;
     border: none;
     border-radius: 20px;
     cursor: pointer;
@@ -114,6 +118,9 @@ button {
 }
 
 button:hover {
+<<<<<<< HEAD
+    background-color: #0056b3;
+=======
     background-color: #0056b3; 
     transform: scale(1.05);
 }
@@ -121,26 +128,54 @@ button:hover {
 button:active {
     background-color: #004085;
     transform: scale(0.98);
+>>>>>>> 08aa88696f7510739278db19c899069ffdc27a13
 }
 
 .login_link {
     display: block;
     text-align: center;
     margin-top: 10px;
+<<<<<<< HEAD
+    color: #0069d9;
+=======
     font-size: 12px;
     color: #0069d9; 
+>>>>>>> 08aa88696f7510739278db19c899069ffdc27a13
     text-decoration: none;
 }
 
 .signup_link:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
 }
 
 span {
     font-size: 12px;
-    color: red; 
+    color: red;
     display: block;
     margin-top: 5px;
+}
+.bi{
+    /* background-color: aqua; */
+    position: absolute;
+    /* z-index: 3; */
+    top: 35px;
+    right: 15px;
+}
+
+.bi-eye-slash-fill, .bi-eye-fill{
+
+}
+
+.input-group i {
+    position: absolute;
+    top: 35px;
+    right: 15px;
+    cursor: pointer;
+    color: #6c757d;
+}
+
+.input-group i:hover {
+    color: #343a40;
 }
 
 

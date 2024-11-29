@@ -10,68 +10,153 @@
 
 .reservation_container1{
   position: absolute;
+  margin-top: 100px;
   /* background-color: chartreuse; */
-  margin-top: 75px;
+  /* top: 50px; */
   width: 100%;
+  /* padding: 25px; */
   /* height: calc(100% - 75px); */
   /* display: flex;
   justify-content: center; */
   /* background-color: #ffffff; */
 }
 
-.reservation_container2 {
-  position: relative;
-  /* height: 100%; */
-  margin: 25px;
-  /* max-width: 1300px; */
-  /* width: 80%; */
+.reservation_container2{
+  background-color: #f4f4f4;
+  border: 1px solid #bababa;
   border-radius: 10px;
-  border: 1px solid #d7d7d7;
-  padding: 25px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.reservation_container3 {
-  background-color: #fafafa;
+  position: relative;
   width: 100%;
   min-height: 300px;
-  margin-bottom: 20px;
-  padding: 30px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  overflow-y: auto;;
+  /* margin-top: 25px; */
+  padding: 0;
   display: flex;
+  /* margin: 25px; */
 }
 
-.reservation_container4{
+.rooms_img_container{
+  position: relative;
+  width: 25%;
+  height: auto;
+  /* background-color: rgb(129, 170, 89); */
+  border-radius: 10px;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rooms_description{
+  width: 50%;
+  padding: 10px 20px;
+  border-radius: 10px;
+  /* background-color: cadetblue; */
   font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  background-color: chartreuse;
-  padding: 10px;
+  /* font-weight: 500; */
 }
 
-.input-group label {
-  color: #333;
-  margin: 10px 0;
+.rooms_description h2{
+  font-size: 24px;
+  padding: 20px;
+  /* text-align: center; */
+  /* background-color: burlywood; */
+}
+
+.rooms_description p{
+  font-size: 14px;
+  padding: 1px 20px;
+  font-weight: 500;
+  /* background-color: darkgrey; */
+}
+
+hr {
+  border: 1px solid #777777; /* Adjust border style and color */
+  /* margin: 10px 0; */
+}
+
+.room_reservation{
+  width: 30%;
+  border-radius: 10px;
+  padding: 10px 20px;
+  /* background-color: indianred; */
+}
+
+/* image slider */
+.slider-box{
+  /* position: relative; */
+  /* width: 200px; */
+  /* width: 100%; */
+  /* height: 200px; */
+  /* width: 150px; */
+  /* background-color: rgb(255, 0, 0); */
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.slider{
+  /* background-color: aqua; */
+  width: 100%;
+  /* height: 90%; */
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slider-box img{
+  position: relative;
+  /* height: 90%; */
+  /* width: 100%; */
+  width: 228px;
+  display: none;
+}
+
+img.display_slide{
   display: block;
-
 }
 
-.input-group select {
-  width: 200px;
-  height: 40px;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background-color: #f9f9f9;
-  appearance: none;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: border-color 0.2s;
+
+
+@media (max-width: 900px) {
+  .reservation_container2{
+    flex-direction: column;
+  }
+
+  .rooms_img_container{
+    width: 100%;
+    height: 500px;
+  }
+
+  .rooms_description{
+    width: 100%;
+  }
+
+  .room_reservation{
+    height: 250px;
+    width: 100%;
+  }
+
+  .slider-box img{
+    width: 450px;
+  }
 }
 
-.input-group select:hover,
-.input-group select:focus {
-  border-color: #007bff;
+@media (max-width: 800px) {
+  .reservation_container2{
+    flex-direction: column;
+  }
+
+  .rooms_img_container{
+    width: 100%;
+    height: 300px;
+  }
+
+  .rooms_description{
+    width: 100%;
+
+  }
 }

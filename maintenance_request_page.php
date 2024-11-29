@@ -75,10 +75,6 @@ require_once 'includes/room_management/room_management_view.php';
                             <input type="radio" id="high" name="urgency" value="High">
                             <label for="High">High</label>
                         </div>
-                        <div>
-                            <input type="radio" id="emergency" name="urgency" value="Emergency">
-                            <label for="Emergency">Emergency</label>
-                        </div>
                     </div>
                 </div>
                 <div class="form-group">

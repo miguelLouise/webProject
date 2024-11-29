@@ -10,35 +10,8 @@
 }
 
 body {
-    background-color: #f8f9fa; 
+    background-color: #f8f9fa;
     font-family: 'Montserrat', sans-serif;
-}
-
-/* Toast notification styles */
-.toast {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    background-color: #28a745; /* Success color */
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
-    opacity: 0;
-    transition: opacity 0.3s, top 0.3s;
-}
-
-.toast.hidden {
-    display: none;
-}
-
-.toast.visible {
-    display: block;
-    opacity: 1;
-    top: 30px;
 }
 
 .container2 {
@@ -61,13 +34,12 @@ body {
     /* margin: 0 auto; Center the container */
 }
 
-
 h1 {
     margin-bottom: 20px;
     font-size: 30px;
     text-align: center;
-    color: #42326E; 
-    font-weight: bold; 
+    color: #42326E;
+    font-weight: bold;
 }
 
 h2 {
@@ -85,25 +57,24 @@ h2 {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #495057; 
+    color: #495057;
 }
 
 .input-group input {
     width: 100%;
     padding: 10px;
     border-radius: 20px;
-    border: 1px solid #ced4da; 
+    border: 1px solid #ced4da;
     box-shadow: none;
     font-size: 14px;
 }
-
 
 button {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    background-color: #0069d9; 
-    color: #ffffff; 
+    background-color: #0069d9;
+    color: #ffffff;
     border: none;
     border-radius: 20px;
     cursor: pointer;
@@ -111,56 +82,36 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3; 
-    transform: scale(1.05);
+    background-color: #0056b3;
 }
-
-button:active {
-    background-color: #004085;
-    transform: scale(0.98);
-}
-
 
 .signup_link {
     display: block;
     text-align: center;
     margin-top: 10px;
-    color: #0069d9; 
+    color: #0069d9;
     text-decoration: none;
 }
 
 .signup_link:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
 }
-
 
 .input-group i {
     position: absolute;
     margin-left: -30px;
     margin-top: 10px;
     cursor: pointer;
-    color: #6c757d; 
+    color: #6c757d;
 }
 
 .input-group i:hover {
-    color: #343a40; 
+    color: #343a40;
 }
-
-.input-group input:hover {
-    border-color: #007bff; /* Same blue as the focus color */
-    background-color: #f8f9fa; /* Slightly lighter background */
-}
-
-.input-group input:focus { 
-    border-color: #007bff; /* Bootstrap blue */
-    outline: none; /* Removes the default browser outline */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Adds a subtle glow effect */
-}
-
 
 span {
     font-size: 12px;
-    color: red; 
+    color: red;
     display: block;
     margin-top: 5px;
 }
@@ -193,7 +144,7 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);   
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .floating-ig-btn img {
