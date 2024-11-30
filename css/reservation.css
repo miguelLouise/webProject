@@ -121,42 +121,85 @@ img.display_slide{
   display: block;
 }
 
-@media (max-width: 900px) {
-  .reservation_container2{
-    flex-direction: column;
+@media screen and (max-width: 768px) {
+  .reservation_container1 {
+      margin: 10px;
+      padding: 10px;
   }
 
-  .rooms_img_container{
-    width: 100%;
-    height: 500px;
+  .reservation_container2 {
+      flex-direction: column;
+      margin: 15px 0;
   }
 
-  .rooms_description{
-    width: 100%;
+  .rooms_img_container {
+      margin: 0 0 15px;
   }
 
-  .room_reservation{
-    height: 250px;
-    width: 100%;
+  .rooms_description {
+      font-size: 0.9rem;
+      margin-bottom: 15px;
   }
 
-  .slider-box img{
-    width: 450px;
+  .input-group {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  button {
+      font-size: 0.9rem;
   }
 }
 
-@media (max-width: 800px) {
-  .reservation_container2{
-    flex-direction: column;
+/* Responsive design for devices 480px and below */
+@media screen and (max-width: 480px) {
+  .reservation_container1 {
+      margin: 5px;
+      padding: 5px;
   }
 
-  .rooms_img_container{
-    width: 100%;
-    height: 300px;
+  .reservation_container2 {
+      padding: 10px;
+      border-radius: 5px;
   }
 
-  .rooms_description{
-    width: 100%;
+  .rooms_img_container {
+      margin: 0 auto;
+      width: 100%;
+  }
 
+  .rooms_description {
+      font-size: 0.8rem;
+  }
+
+  .input-group label {
+      font-size: 0.8rem;
+  }
+
+  button {
+      font-size: 0.8rem;
+      padding: 8px;
+  }
+}
+
+/* Adjust slider-box for smaller screens */
+@media screen and (max-width: 768px) {
+  .slider-box {
+      width: 100%;
+  }
+
+  .slides img {
+      width: 100%;
+      height: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .slider-box {
+      margin: 0 auto;
+  }
+
+  .slides img {
+      width: 100%;
   }
 }
