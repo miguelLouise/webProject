@@ -13,11 +13,11 @@ require_once './includes/room_management/room_management_model.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservation</title>
-    <link rel="stylesheet" href="css//reservation.css">
+    <link rel="stylesheet" href="css/reservation.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="javascript/reservation.js"></script>
+    <!-- <script src="javascript/reservation.js"></script> -->
 
 </head>
 <body>
@@ -40,20 +40,21 @@ require_once './includes/room_management/room_management_model.php';
                 ?>
                  <div class="reservation_container2">
                     <div class="rooms_img_container">
+                    <input type="hidden" name="roomType" class="roomType" id="roomType" value="<?php echo $data['room_type']; ?>">
                         <?php
                         if ($data['room_type'] === 1) {
                             ?>
                             <div class="slider-box">
                                 <div class="slider">
-                                    <button type="button" class="prev" onclick="moveSlide(1, 0)">&#10094;</button>
-                                    <div class="slides" id="slider1">
+                                    <button type="button" class="prev" id="room_type_<?php echo $data['room_type']; ?>_prev_image">&#10094;</button>
+                                    <div class="slides"id="slider<?php echo $data['room_type']; ?>">
                                         <img class="slide" src="Assets/room1pic1.png" alt="room1_pic1">
                                         <img class="slide" src="Assets/room1pic2.png" alt="room1_pic2">
                                         <img class="slide" src="Assets/room1pic3.png" alt="room1_pic3">
                                         <img class="slide" src="Assets/room1pic4.png" alt="room1_pic4">
                                         <img class="slide" src="Assets/room1pic5.png" alt="room1_pic5">
                                     </div>
-                                    <button type="button" class="next" onclick="moveSlide(1, 0)">&#10095;</button>
+                                    <button type="button" class="next" class="next" id="room_type_<?php echo $data['room_type']; ?>_next_image">&#10095;</button>
                                 </div>
                             </div>
                             <?php
@@ -61,15 +62,19 @@ require_once './includes/room_management/room_management_model.php';
                             ?>
                             <div class="slider-box">
                                 <div class="slider">
-                                    <button type="button" class="prev" onclick="moveSlide(1, 0)">&#10094;</button>
-                                    <div class="slides" id="slider1">
+                                    <button type="button" class="prev" id="room_type_<?php echo $data['room_type']; ?>_prev_image">&#10094;</button>
+                                    <div class="slides" id="slider<?php echo $data['room_type']; ?>">
                                         <img class="slide" src="Assets/room2pic1.png" alt="room2_pic1">
                                         <img class="slide" src="Assets/room2pic2.png" alt="room2_pic2">
                                         <img class="slide" src="Assets/room2pic3.png" alt="room2_pic3">
                                         <img class="slide" src="Assets/room2pic4.png" alt="room2_pic4">
                                         <img class="slide" src="Assets/room2pic5.png" alt="room2_pic5">
+                                        <img class="slide" src="Assets/room2pic6.png" alt="room2_pic6">
+                                        <img class="slide" src="Assets/room2pic7.png" alt="room2_pic7">
+                                        <img class="slide" src="Assets/room2pic8.png" alt="room2_pic8">
+                                        <img class="slide" src="Assets/room2pic9.png" alt="room2_pic9">
                                     </div>
-                                    <button type="button" class="next" onclick="moveSlide(1, 0)">&#10095;</button>
+                                    <button type="button" class="next" id="room_type_<?php echo $data['room_type']; ?>_next_image">&#10095;</button>
                                 </div>
                             </div>
                             <?php
@@ -77,15 +82,19 @@ require_once './includes/room_management/room_management_model.php';
                             ?>
                             <div class="slider-box">
                                 <div class="slider">
-                                    <button type="button" class="prev" onclick="moveSlide(1, 0)">&#10094;</button>
-                                    <div class="slides" id="slider1">
-                                        <img class="slide" src="Assets/room1pic1.png" alt="room1_pic1">
-                                        <img class="slide" src="Assets/room1pic2.png" alt="room1_pic2">
-                                        <img class="slide" src="Assets/room1pic3.png" alt="room1_pic3">
-                                        <img class="slide" src="Assets/room1pic4.png" alt="room1_pic4">
-                                        <img class="slide" src="Assets/room1pic5.png" alt="room1_pic5">
+                                    <button type="button" class="prev" id="room_type_<?php echo $data['room_type']; ?>_prev_image">&#10094;</button>
+                                    <div class="slides" id="slider<?php echo $data['room_type']; ?>">
+                                        <img class="slide" src="Assets/room3pic1.png" alt="room3_pic1">
+                                        <img class="slide" src="Assets/room3pic2.png" alt="room3_pic2">
+                                        <img class="slide" src="Assets/room3pic3.png" alt="room3_pic3">
+                                        <img class="slide" src="Assets/room3pic4.png" alt="room3_pic4">
+                                        <img class="slide" src="Assets/room3pic5.png" alt="room3_pic5">
+                                        <img class="slide" src="Assets/room3pic6.png" alt="room3_pic6">
+                                        <img class="slide" src="Assets/room3pic7.png" alt="room3_pic7">
+                                        <img class="slide" src="Assets/room3pic8.png" alt="room3_pic8">
+                                        <img class="slide" src="Assets/room3pic9.png" alt="room3_pic9">
                                     </div>
-                                    <button type="button" class="next" onclick="moveSlide(1, 0)">&#10095;</button>
+                                    <button type="button" class="next" id="room_type_<?php echo $data['room_type']; ?>_next_image">&#10095;</button>
                                 </div>
                             </div>
                             <?php
@@ -93,15 +102,14 @@ require_once './includes/room_management/room_management_model.php';
                             ?>
                             <div class="slider-box">
                                 <div class="slider">
-                                    <button type="button" class="prev" onclick="moveSlide(1, 0)">&#10094;</button>
-                                    <div class="slides" id="slider1">
-                                        <img class="slide" src="Assets/room1pic1.png" alt="room1_pic1">
-                                        <img class="slide" src="Assets/room1pic2.png" alt="room1_pic2">
-                                        <img class="slide" src="Assets/room1pic3.png" alt="room1_pic3">
-                                        <img class="slide" src="Assets/room1pic4.png" alt="room1_pic4">
-                                        <img class="slide" src="Assets/room1pic5.png" alt="room1_pic5">
+                                    <button type="button" class="prev" id="room_type_<?php echo $data['room_type']; ?>_prev_image">&#10094;</button>
+                                    <div class="slides" id="slider<?php echo $data['room_type']; ?>">
+                                        <img class="slide" src="Assets/room4pic1.png" alt="room4_pic1">
+                                        <img class="slide" src="Assets/room4pic2.png" alt="room4_pic2">
+                                        <img class="slide" src="Assets/room4pic3.png" alt="room4_pic3">
+                                        <img class="slide" src="Assets/room4pic4.png" alt="room4_pic4">
                                     </div>
-                                    <button type="button" class="next" onclick="moveSlide(1, 0)">&#10095;</button>
+                                    <button type="button" class="next" class="next" id="room_type_<?php echo $data['room_type']; ?>_next_image">&#10095;</button>
                                 </div>
                             </div>
                             <?php
@@ -153,8 +161,62 @@ require_once './includes/room_management/room_management_model.php';
     <script>
 // jquery
 $(document).ready(function(){
+
     $(".container").show().delay(5000).fadeOut(50);
 
+    let slide_index = 0;
+    let interval_id = null;
+
+    $(".slides").each(function() {
+        var get_room_type = $(this).closest(".rooms_img_container").find(".roomType").val();
+        var slides = document.querySelectorAll("#slider" + get_room_type +  " img")
+
+        slides[slide_index].classList.add("display_slide");
+
+        // console.log(get_room_type);
+        // console.log(slides);
+    });
+
+    $(".prev").click(function() {
+        var get_room_type = $(this).closest(".rooms_img_container").find(".roomType").val();
+        var slides = document.querySelectorAll("#slider" + get_room_type +  " img")
+
+        slide_index--;
+
+        if(slide_index >= slides.length){
+            slide_index = 0;
+        } else if (slide_index < 0) {
+            slide_index = slides.length - 1;
+        }
+
+        slides.forEach(slide => {
+            slide.classList.remove("display_slide");
+        });
+
+        slides[slide_index].classList.add("display_slide");
+    });
+
+
+    $(".next").click(function() {
+        var get_room_type = $(this).closest(".rooms_img_container").find(".roomType").val();
+        var slides = document.querySelectorAll("#slider" + get_room_type +  " img")
+        slide_index++;
+
+        if(slide_index >= slides.length){
+            slide_index = 0;
+        } else if (slide_index < 0) {
+            slide_index = slides.length - 1;
+        }
+
+        slides.forEach(slide => {
+            slide.classList.remove("display_slide");
+        });
+
+        slides[slide_index].classList.add("display_slide");
+    });
+
+
+    //increment button
     $(".increment").click(function() {
         var number_of_tenants = parseInt($(this).closest(".room_reservation").find(".number_of_tenants").val());
         var get_room_type = $(this).closest(".room_reservation").find(".roomType").val();
@@ -166,7 +228,7 @@ $(document).ready(function(){
             $("#room_type_" +  get_room_type + "_tenants").val(number_of_tenants + 1);
         }
     });
-
+    //decrement button
     $(".decrement").click(function() {
         var number_of_tenants = parseInt($(this).closest(".room_reservation").find(".number_of_tenants").val());
         var get_room_type = $(this).closest(".room_reservation").find(".roomType").val();

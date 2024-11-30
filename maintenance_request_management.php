@@ -15,7 +15,7 @@ require_once 'includes/tenant_management/tenant_management_view.php';
     <title>Maintenance Request Management</title>
     <link rel="stylesheet" href="css//maintenanace_request_management.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-    <script src="javascript//maintenance_request_management.js"></script>
+    <script src="javascript///maintenance_request_management.js"></script>
 </head>
 <body>
     <div class="maintenance_management_container1">
@@ -83,11 +83,11 @@ require_once 'includes/tenant_management/tenant_management_view.php';
         <table class="request-table">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th class="userId">User ID</th>
+                    <!-- <th>ID</th> -->
+                    <!-- <th class="userId">User ID</th> -->
                     <th class="userName">Name</th>
                     <th class="userEmail">Email</th>
-                    <th>Room ID</th>
+                    <!-- <th>Room ID</th> -->
                     <th>Room Number</th>
                     <th>Category</th>
                     <th>Urgency</th>
@@ -103,11 +103,11 @@ require_once 'includes/tenant_management/tenant_management_view.php';
                 foreach($get_maintenance_request as $maintenance_req){
                     echo '<form action="includes/tenant_management/tenant_edit.php" method="get">';
                     echo '<tr>';
-                    echo '<td>'.$maintenance_req["maintenance_request_id"].'</td>';
-                    echo '<td class="userId">'.$maintenance_req["user_id"].'</td>';
+                    // echo '<td>'.$maintenance_req["maintenance_request_id"].'</td>';
+                    // echo '<td class="userId">'.$maintenance_req["user_id"].'</td>';
                     echo '<td class="userName">'.$maintenance_req["name"].'</td>';
                     echo '<td class="userEmail">'.$maintenance_req["email"].'</td>';
-                    echo '<td>'.$maintenance_req["room_id"].'</td>';
+                    // echo '<td>'.$maintenance_req["room_id"].'</td>';
                     echo '<td>'.$maintenance_req["room_number"].'</td>';
                     echo '<td>'.$maintenance_req["category"].'</td>';
                     echo '<td>'.$maintenance_req["maintenance_urgency"].'</td>';

@@ -10,11 +10,11 @@
 
 .reservation_container1{
   position: absolute;
-  margin-top: 100px;
+  margin-top: 75px;
   /* background-color: chartreuse; */
   /* top: 50px; */
   width: 100%;
-  /* padding: 25px; */
+  padding: 25px 25px 0 25px;
   /* height: calc(100% - 75px); */
   /* display: flex;
   justify-content: center; */
@@ -29,9 +29,9 @@
   width: 100%;
   min-height: 300px;
   /* margin-top: 25px; */
-  padding: 0;
+  margin-bottom: 25px ;
   display: flex;
-  /* margin: 25px; */
+  /* margin: 25px 25px; */
 }
 
 .rooms_img_container{
@@ -83,7 +83,7 @@ hr {
 
 /* image slider */
 .slider-box{
-  /* position: relative; */
+
   /* width: 200px; */
   /* width: 100%; */
   /* height: 200px; */
@@ -97,10 +97,12 @@ hr {
 }
 
 .slider{
-  /* background-color: aqua; */
+  position: relative;
+  margin: auto;
+  background-color: aqua;
   width: 100%;
   /* height: 90%; */
-  height: auto;
+  /* height: auto; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,8 +120,6 @@ hr {
 img.display_slide{
   display: block;
 }
-
-
 
 @media (max-width: 900px) {
   .reservation_container2{

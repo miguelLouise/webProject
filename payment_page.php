@@ -22,15 +22,16 @@ require_once 'includes/tenant_management/tenant_management_view.php';
     </div>
 
     <div class="down-payment-container">
-        <?php disappearing_downpayment_management_message("payment_submitted_successfully");
-         disappearing_downpayment_management_message("file_invalid");
+        <?php
+        disappearing_downpayment_management_message("payment_submitted_successfully");
+        disappearing_downpayment_management_message("file_invalid");
         ?>
         <div class="payment-card">
             <!-- QR Code Section -->
             <div class="left-section">
                 <h2>Reservation Down Payment</h2>
-                <p class="note">*Note strictly no cancellation</p>
-                <p class="note">*Your Downpayment will be valid for 5 to 7 working days</p>
+                <p class="note">*Note strictly No Cancellation</p>
+                <!-- <p class="note">*Your Downpayment will be valid for 5 to 7 working days</p> -->
                 <img src="./Assets/sampqr.png" alt="QR Code" class="qr-code">
             </div>
 
@@ -55,7 +56,7 @@ require_once 'includes/tenant_management/tenant_management_view.php';
                     </div>
 
                     <div class="form-group">
-                        <label for="screenshot">Upload Gcash Payment Screenshot<span style="color: red; font-size: 12px;"><?php display_session_variable("file_name_error") ?></span></label>
+                        <label for="screenshot">Upload Payment Screenshot<span style="color: red; font-size: 12px;"><?php display_session_variable("file_name_error") ?></span></label>
                         <!-- <input type="file" id="screenshot" name="screenshot" accept="image/*" required> -->
                         <!-- accept=".jpg, .jpeg, .png" -->
                         <input type="file" id="screenshot" name="screenshot">

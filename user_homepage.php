@@ -82,7 +82,7 @@ include './middleware/user_middleware.php';
                         <span class="amenity-icon">🧺</span> <span class="clickable-amenity" onclick="showPopup('Assets/laundromatpc.jpg')">Laundromat</span><br>
                         <span class="amenity-icon">🛗</span> <span class="clickable-amenity" onclick="showPopup('Assets/elevatorpc.jpg')">Elevator</span><br>
                     </p>
-                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a>
+                    <a href="reservation.php"><button type="button" class="reserve-button">Reserve Now</button></a>
                 </div>
             </div>
         </div>
@@ -124,8 +124,8 @@ include './middleware/user_middleware.php';
                     <p>Free wifi internet in each room</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
                     <!-- <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> -->
-                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a>
-                    <button class="message-button"><a href="messaging_page.php" class="message_btn">Message/Inquire</a></button>
+                    <a href="reservation.php"><button type="button" class="reserve-button">Reserve Now</button></a>
+                    <button type="button" class="message-button"><a href="messaging_page.php" class="message_btn">Message/Inquire</a></button>
                 </div>
             </div>
 
@@ -160,8 +160,8 @@ include './middleware/user_middleware.php';
                     <p>Free wifi internet in each room</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
                     <!-- <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> -->
-                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a>
-                    <button class="message-button"><a href="messaging_page.php" class="message_btn">Message/Inquire</a></button>
+                    <a href="reservation.php"><button type="button" class="reserve-button">Reserve Now</button></a>
+                    <button type="button" class="message-button"><a href="messaging_page.php" class="message_btn">Message/Inquire</a></button>
                 </div>
             </div>
 
@@ -197,8 +197,8 @@ include './middleware/user_middleware.php';
                     <p>Free wifi internet in each room</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
                     <!-- <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> -->
-                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a>
-                    <a href="messaging_page.php"><button class="message-button">Message/Inquire</button></a>
+                    <a href="reservation.php"><button type="button" class="reserve-button">Reserve Now</button></a>
+                    <a href="messaging_page.php"><button type="button" class="message-button">Message/Inquire</button></a>
                 </div>
             </div>
 
@@ -228,8 +228,8 @@ include './middleware/user_middleware.php';
                     <p>Free wifi internet in each room</p>
                     <p>Good for student, reviewee, working couple with no baby.</p>
                     <!-- <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a> -->
-                    <a href="reservation.php"><button class="reserve-button">Reserve Now</button></a>
-                    <a href="messaging_page.php"><button class="message-button">Message/Inquire</button></a>
+                    <a href="reservation.php"><button type="button" class="reserve-button">Reserve Now</button></a>
+                    <a href="messaging_page.php"><button type="button" class="message-button">Message/Inquire</button></a>
                 </div>
             </div>
 
