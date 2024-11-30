@@ -52,7 +52,7 @@ body {
     margin-bottom: 15px;
 }
 
-/* Media Queries for Responsiveness */
+/* Responsiveness */
 @media (max-width: 768px) {
     .about-container {
         width: 90%;
@@ -60,11 +60,17 @@ body {
     }
 
     .about-container h1 {
-        font-size: 1.5em;
+        font-size: 1.8em;
     }
 
     .about-container p {
-        font-size: 0.9em;
+        font-size: 1em;
+    }
+
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 20px;
     }
 }
 
@@ -75,11 +81,11 @@ body {
     }
 
     .about-container h1 {
-        font-size: 1.2em;
+        font-size: 1.5em;
     }
 
     .about-container p {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 
     body {

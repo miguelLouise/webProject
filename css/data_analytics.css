@@ -63,3 +63,68 @@ body {
 button:hover {
   background-color: #0069d9;
 }
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .chart-container {
+    padding: 15px;
+  }
+
+  .chart-input {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .chart-card {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    margin-top: 70px;
+  }
+
+  .chart-input {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #generateCharts {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .chart-container {
+    margin: 0 10px;
+    margin-top: 60px;
+  }
+
+  .chart-input label,
+  .chart-input input,
+  .chart-input button {
+    min-width: 100%;
+  }
+
+  .chart-card {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .chart-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  #generateCharts {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .chart-card {
+    padding: 8px;
+  }
+}
