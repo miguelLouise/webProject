@@ -118,9 +118,6 @@ button {
 }
 
 button:hover {
-<<<<<<< HEAD
-    background-color: #0056b3;
-=======
     background-color: #0056b3; 
     transform: scale(1.05);
 }
@@ -128,19 +125,14 @@ button:hover {
 button:active {
     background-color: #004085;
     transform: scale(0.98);
->>>>>>> 08aa88696f7510739278db19c899069ffdc27a13
 }
 
 .login_link {
     display: block;
     text-align: center;
     margin-top: 10px;
-<<<<<<< HEAD
-    color: #0069d9;
-=======
     font-size: 12px;
     color: #0069d9; 
->>>>>>> 08aa88696f7510739278db19c899069ffdc27a13
     text-decoration: none;
 }
 

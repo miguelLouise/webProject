@@ -69,6 +69,17 @@ h2 {
     font-size: 14px;
 }
 
+.input-group input:hover {
+    border-color: #007bff; 
+    background-color: #f8f9fa; 
+}
+
+.input-group input:focus { 
+    border-color: #007bff; 
+    outline: none; /* Removes the default browser outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
 button {
     width: 100%;
     padding: 10px;

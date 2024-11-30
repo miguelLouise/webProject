@@ -21,7 +21,7 @@ require_once './includes/login/login_view.php';
 
     <div class="container">
     <div class="room-slider-header">
-            <h2>Available Rooms</h2>
+            <h2>Make your Reservation</h2>
         </div>
             <!-- Room Sliders -->
         <div class="sliders-container">
@@ -40,10 +40,23 @@ require_once './includes/login/login_view.php';
                     <button class="prev" onclick="moveSlide(-1, 0)">&#10094;</button>
                     <button class="next" onclick="moveSlide(1, 0)">&#10095;</button>
                 </div>
-                <h3>Studio Type Room 1</h3>
-                <p>P 9,500 Monthly Rent good for 3 Pax</p>
             </div>
 
+            <div class="info-box">
+                <h3>Studio Type Room 1</h3>
+                    <p>9,500.00 monthly 1 month advance and 2 months deposit.</p>
+                    <p>( 6 ) months minimum contract.</p>
+                    <p>Maximum of 3 persons only.</p>
+                    <p>Semi-furnished unit</p>
+                    <p>Exclusive water and electric bill</p>
+                    <p>With one double deck, one bed, cabinet, table, chair, ceiling fan & aircon</p>
+                    <p>Free wifi internet in each room</p>
+                    <p>Good for student, reviewee, working couple with no baby.</p>
+            </div>
+            <div class="input-box">
+                <h3>Input</h3>
+                <p>Section</p>
+            </div>
             <!-- Slider 2 -->
             <div class="slider-box">
                 <div class="slider">
@@ -61,8 +74,22 @@ require_once './includes/login/login_view.php';
                     <button class="prev" onclick="moveSlide(-1, 1)">&#10094;</button>
                     <button class="next" onclick="moveSlide(1, 1)">&#10095;</button>
                 </div>
+            </div>
+
+            <div class="info-box">
                 <h3>Studio Type Room 2</h3>
-                <p>P 10,500 Monthly Rent good for 4 Pax </p>
+                    <p>10,500.00 monthly 1 month advance and 2 months deposit.</p>
+                    <p>( 6 ) months minimum contract.</p>
+                    <p>Maximum of 4 persons only.</p>
+                    <p>Semi-furnished unit</p>
+                    <p>Exclusive water and electric bill</p>
+                    <p>With two ( 2 ) double deck, one cabinet, table, chair, ceiling fan & aircon</p>
+                    <p>Free wifi internet in each room</p>
+                    <p>Good for student, reviewee, working couple with no baby.</p>
+            </div>
+            <div class="input-box">
+                <h3>Input</h3>
+                <p>Section</p>
             </div>
 
             <!-- Slider 3 -->
@@ -82,8 +109,22 @@ require_once './includes/login/login_view.php';
                     <button class="prev" onclick="moveSlide(-1, 2)">&#10094;</button>
                     <button class="next" onclick="moveSlide(1, 2)">&#10095;</button>
                 </div>
+            </div>
+            
+            <div class="info-box">
                 <h3>Studio Type Room 3</h3>
-                <p>P 10,500 Monthly Rent good for 4 Pax</p>
+                    <p>10,500.00 monthly 1 month advance and 2 months deposit.</p>
+                    <p>( 6 ) months minimum contract.</p>
+                    <p>Maximum of 4 persons only.</p>
+                    <p>Semi-furnished unit</p>
+                    <p>Exclusive water and electric bill</p>
+                    <p>With two ( 2 ) double deck, one cabinet, table, chair, ceiling fan & aircon</p>
+                    <p>Free wifi internet in each room</p>
+                    <p>Good for student, reviewee, working couple with no baby.</p>
+            </div>
+            <div class="input-box">
+                <h3>Input</h3>
+                <p>Section</p>
             </div>
 
             <!-- Slider 4 -->
@@ -98,40 +139,29 @@ require_once './includes/login/login_view.php';
                     <button class="prev" onclick="moveSlide(-1, 3)">&#10094;</button>
                     <button class="next" onclick="moveSlide(1, 3)">&#10095;</button>
                 </div>
-                <h3>Studio Type Room 3</h3>
-                <p>P 15,000 Monthly Rent good for 6 Pax</p>
             </div>
+
+            <div class="info-box">
+                <h3>Studio Type Room 4</h3>
+                    <p>15,000.00 monthly 1 month advance and 2 months deposit.</p>
+                    <p>( 6 ) months minimum contract.</p>
+                    <p>Maximum of 6 persons only.</p>
+                    <p>Semi-furnished unit</p>
+                    <p>Exclusive water and electric bill</p>
+                    <p>With three ( 3 ) double deck, one cabinet, table, chair, ceiling fan & aircon</p>
+                    <p>Free wifi internet in each room</p>
+                    <p>Good for student, reviewee, working couple with no baby.</p>
+            </div>
+
+            <div class="input-box">
+                <h3>Input</h3>
+                <p>Section</p>
+            </div>
+
         </div>
     </div>
-    <script>
-                let slideIndex = [0, 0, 0, 0]; // Stores the current index for each slider
-        let slideIds = ['slider1', 'slider2', 'slider3', 'slider4']; // Corresponding slider IDs
 
-        function moveSlide(n, sliderNum) {
-            let slider = document.getElementById(slideIds[sliderNum]);
-            let slides = slider.getElementsByClassName("slide");
-            slideIndex[sliderNum] += n;
-
-            if (slideIndex[sliderNum] >= slides.length) {
-                slideIndex[sliderNum] = 0; // Wrap back to the first slide
-            }
-
-            if (slideIndex[sliderNum] < 0) {
-                slideIndex[sliderNum] = slides.length - 1; // Wrap to the last slide
-            }
-
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none"; // Hide all slides
-            }
-
-            slides[slideIndex[sliderNum]].style.display = "block"; // Show the current slide
-        }
-
-        // Initialize the sliders by showing the first slide of each
-        for (let i = 0; i < slideIds.length; i++) {
-            moveSlide(0, i); // Show the first slide of each slider
-        }
-    </script>
+    <script src="javascript/reservationPageOne.js"></script>
 
 
 
