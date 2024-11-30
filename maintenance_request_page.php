@@ -13,88 +13,100 @@ require_once 'includes/room_management/room_management_view.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maintenance Request</title>
-    <link rel="stylesheet" href="css//maintenance_request.css">
+    <link rel="stylesheet" href="css////maintenance_request.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 </head>
 
 <body>
-    <div class="maintenance_req_container1">
+    <!-- <div class="maintenance_req_container1"> -->
         <!-- header -->
         <?php include('./templates/logged_in_header.php'); ?>
         <!-- header -->
-    </div>
+    <!-- </div> -->
 
     <!-- page content -->
     <div class="container1">
-        <?php is_user_tenant($dbconn, $_SESSION["user_id"]);?>
+        <?php is_user_tenant($dbconn, $_SESSION["user_id"]);
+        disappearing_maintenance_management_message("maintenance_request_submitted");
+        ?>
+
+        <div class="container2">
         <div class="left-column">
-            <h2>Submit</h2>
-            <h1>Maintenance Requests</h1>
-            <p>Welcome to Lavenders Place Dorm! If you encounter any issues within your apartment, please submit a maintenance request using the form below. Our team is dedicated to ensuring your comfort and promptly addressing your concerns.</p>
-            <p><strong>1277 Apartments Admin:</strong> Please allow up to 48 hours for our team to respond to your request. We appreciate your patience as we work to ensure a comfortable living experience at Lavenders Place.</p>
-            <p>Lavenders Place</p>
-        </div>
-        <div class="right-column">
-            <form action="./includes/maintenance_management/maintenance_request.php" method="post" novalidate>
+                <h2>Submit</h2>
+                <h1>Maintenance Requests</h1>
+                <p>Welcome to Lavenders Place Dorm! If you encounter any issues within your apartment, please submit a maintenance request using the form below. Our team is dedicated to ensuring your comfort and promptly addressing your concerns.</p>
+                <p><strong>1277 Apartments Admin:</strong> Please allow up to 48 hours for our team to respond to your request. We appreciate your patience as we work to ensure a comfortable living experience at Lavenders Place.</p>
+                <p>Lavenders Place</p>
+            </div>
+            <div class="right-column">
+                <form action="./includes/maintenance_management/maintenance_request.php" method="post" enctype="multipart/form-data" novalidate>
+                    <div class="form-group">
+                        <label for="name">Name<span style="color: red;"><?php display_message("name_error"); unset_session_variable("name_error");?></span></label>
+                        <input type="text" id="name" name="name" value="<?php display_message("name");?>" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email<span style="color: red;"><?php display_message("email_error"); unset_session_variable("email_error");?></span></label>
+                        <input type="email" id="email" name="email" value="<?php display_message("email");?>" readonly>
+                    </div>
 
-                <div class="form-group">
-                    <label for="name">Name<span style="color: red;"><?php display_message("name_error"); unset_session_variable("name_error");?></span></label>
-                    <input type="text" id="name" name="name" value="<?php display_message("name");?>" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email<span style="color: red;"><?php display_message("email_error"); unset_session_variable("email_error");?></span></label>
-                    <input type="email" id="email" name="email" value="<?php display_message("email");?>" readonly>
-                </div>
+                    <div class="form-group">
+                        <label for="unit-number">Unit Number<span style="color: red;"><?php display_message("unit_number_error"); unset_session_variable("unit_number_error");?></span></label>
+                        <input type="text" id="room_number" name="room_number" value="<?php display_message("room_number");?>" readonly>
+                    </div>
 
+                    <div class="form-group">
+                        <label for="category">Issue Category<span style="color: red;"><?php display_message("category_error"); unset_session_variable("category_error");?></span></label>
+                        <select id="category" name="category">
+                        <option value="" selected disabled hidden>Choose Category</option>
+                            <option value="Electrical">Electrical</option>
+                            <option value="Plumbing">Plumbing</option>
+                            <option value="HVAC">HVAC</option>
+                        </select>
+                    </div>
 
-                <div class="form-group">
-                    <label for="unit-number">Unit Number<span style="color: red;"><?php display_message("unit_number_error"); unset_session_variable("unit_number_error");?></span></label>
-                    <input type="text" id="room_number" name="room_number" value="<?php display_message("room_number");?>" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="category">Issue Category<span style="color: red;"><?php display_message("category_error"); unset_session_variable("category_error");?></span></label>
-                    <select id="category" name="category">
-                    <option value="" selected disabled hidden>Choose Category</option>
-                        <option value="Electrical">Electrical</option>
-                        <option value="Plumbing">Plumbing</option>
-                        <option value="HVAC">HVAC</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Issue Urgency<span style="color: red;"><?php display_message("urgency_error"); unset_session_variable("urgency_error");?></span></label>
-                    <div class="urgency-options">
-                        <div>
-                            <input type="radio" id="low" name="urgency" value="Low">
-                            <label for="Low">Low</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="medium" name="urgency" value="Medium">
-                            <label for="Medium">Medium</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="high" name="urgency" value="High">
-                            <label for="High">High</label>
+                    <div class="form-group">
+                        <label>Issue Urgency<span style="color: red;"><?php display_message("urgency_error"); unset_session_variable("urgency_error");?></span></label>
+                        <div class="urgency-options">
+                            <div>
+                                <input type="radio" id="low" name="urgency" value="Low">
+                                <label for="Low">Low</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="medium" name="urgency" value="Medium">
+                                <label for="Medium">Medium</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="high" name="urgency" value="High">
+                                <label for="High">High</label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="description">Describe The Issue<span style="color: red;"><?php display_message("description_error"); unset_session_variable("description_error");?></span></label>
-                    <textarea id="description" name="description" rows="5"></textarea>
-                </div>
-                <button type="submit" class="submit-button">Submit</button>
-            </form>
-            <?php disappearing_success_message("maintenance_request_submitted"); ?>
+
+                    <div class="form-group">
+                        <label for="description">Describe The Issue<span style="color: red;"><?php display_message("description_error"); unset_session_variable("description_error");?></span></label>
+                        <textarea id="description" name="description" rows="5"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="screenshot">Upload image of the issue <span style="color: red;"><?php display_message("maintenance_issue_img_error"); unset_session_variable("maintenance_issue_img_error"); display_message("file_size_too_large"); unset_session_variable("file_size_too_large"); display_message("file_invalid"); unset_session_variable("file_invalid");?></span></label>
+                        <input type="file" id="maintenance_issue_img" name="maintenance_issue_img">
+                    </div>
+
+                    <button type="submit" class="submit-button">Submit</button>
+                </form>
+                <?php disappearing_success_message("maintenance_request_submitted"); ?>
+            </div>
         </div>
     </div>
 
-    <div id="maintenance_table" class="maintenance_table">
-
-        </div>
+    <!-- <div id="maintenance_table" class="maintenance_table"></div> -->
         <!-- tenant ID -->
         <input type="hidden" name="hidden_field_name" id="tenantID" value="<?php echo getUserTenantId($dbconn, $_SESSION["user_id"]); ?>">
     <!--  radio buttons function -->
     <script>
         $(document).ready(function(){
+            $(".container").show().delay(5000).fadeOut(50);
+
             const tenantID = $("#tenantID").val();
             console.log(tenantID);
 

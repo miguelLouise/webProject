@@ -1,7 +1,7 @@
 <?php
 
-function submit_maintenance_request(object $pdo, $tenant_id, $user_id, $name, $email, $room_id, $category, $maintenance_urgency, $description, $date, $time){
-    $query = "INSERT INTO dormlink_maintenance_request (tenant_id, user_id, name, email, room_id, category, maintenance_urgency, description, date, time) VALUES (:tenant_id, :user_id, :name, :email, :room_id, :category, :maintenance_urgency, :description, :date, :time);";
+function submit_maintenance_request(object $pdo, $tenant_id, $user_id, $name, $email, $room_id, $category, $maintenance_urgency, $description, $date, $time, $maintenance_issue_image){
+    $query = "INSERT INTO dormlink_maintenance_request (tenant_id, user_id, name, email, room_id, category, maintenance_urgency, description, date, time, maintenance_issue_image) VALUES (:tenant_id, :user_id, :name, :email, :room_id, :category, :maintenance_urgency, :description, :date, :time, :maintenance_issue_image);";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":tenant_id", $tenant_id);
     $stmt->bindParam(":user_id", $user_id);
@@ -13,6 +13,7 @@ function submit_maintenance_request(object $pdo, $tenant_id, $user_id, $name, $e
     $stmt->bindParam(":description", $description);
     $stmt->bindParam(":date", $date);
     $stmt->bindParam(":time", $time);
+    $stmt->bindParam(":maintenance_issue_image", $maintenance_issue_image);
     $stmt->execute();
 }
 
