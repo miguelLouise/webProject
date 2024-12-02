@@ -12,7 +12,7 @@ require_once './includes/tenant_management/tenant_management_view.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservation - Admin</title>
-    <link rel="stylesheet" href="css/reservation_management_admin.css">
+    <link rel="stylesheet" href="css//reservation_management_admin.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 
 </head>
@@ -67,7 +67,7 @@ require_once './includes/tenant_management/tenant_management_view.php';
             echo '<h4 class="no_action" id="'.$data['reservation_id'].'=no_action" style="display: none;">No Action</h4>';
             echo '<button type="submit" name="add_tenant_btn" class="add_tenant_btn" id="'.$data['reservation_id'].'=add_tenant_btn" style="display: none;" value="">Add Tenant</button>';
             echo '<button type="button" class="delete_btn" id="'.$data['reservation_id'].'=delete_btn" style="display: none;" value="'.$data['reservation_id'].'">Delete</button>';
-                  // reservation action based on reservation status style="display: none;"
+
             echo '</td>';
             echo '<td class="dp_detail"><button type="button" class="dp_detail_btn" id="open_dp_details" value="'.$data['reservation_id'].'"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/></svg></button></td>';
             echo '</tr>';

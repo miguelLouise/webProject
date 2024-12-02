@@ -35,6 +35,17 @@ function get_completed_maintenance_request(object $pdo){
     return $result;
 }
 
+function get_user_maintenance_request_by_maintenance_id(object $pdo, $maintenance_id){
+    $query = "SELECT dormlink_maintenance_request.*, rooms.room_number FROM dormlink_maintenance_request JOIN rooms ON dormlink_maintenance_request.room_id = rooms.room_id WHERE maintenance_request_id = :maintenance_request_id;";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":maintenance_request_id", $maintenance_id, PDO::PARAM_INT);
+
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}
+
 // show to user side
 function get_user_maintenance_request(object $pdo, $tenant_id){
     $query = "SELECT * FROM dormlink_maintenance_request WHERE tenant_id = :tenant_id;";

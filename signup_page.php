@@ -14,28 +14,7 @@ require_once 'includes/signup_process_view.php';
     <link rel="stylesheet" href="css//signup.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-    <style>
-        .floating-fb-btn {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            z-index: 1000;
-            background-color: #42326E;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
-        }
 
-        .floating-fb-btn img {
-            width: 70px;
-            height: 700px;
-            object-fit: contain;
-        }
-    </style>
 </head>
 
 <body style="background-image: url('Assets/lvdbg.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">

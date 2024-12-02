@@ -172,9 +172,6 @@ $(document).ready(function(){
         var slides = document.querySelectorAll("#slider" + get_room_type +  " img")
 
         slides[slide_index].classList.add("display_slide");
-
-        // console.log(get_room_type);
-        // console.log(slides);
     });
 
     $(".prev").click(function() {
@@ -228,13 +225,14 @@ $(document).ready(function(){
             $("#room_type_" +  get_room_type + "_tenants").val(number_of_tenants + 1);
         }
     });
+
     //decrement button
     $(".decrement").click(function() {
         var number_of_tenants = parseInt($(this).closest(".room_reservation").find(".number_of_tenants").val());
         var get_room_type = $(this).closest(".room_reservation").find(".roomType").val();
 
         var max_capacity = document.getElementById("room_type_" +  get_room_type + "_tenants");
-        //
+
         console.log(max_capacity.min);
         if (number_of_tenants > max_capacity.min) {
             $("#room_type_" +  get_room_type + "_tenants").val(number_of_tenants - 1);
@@ -258,9 +256,6 @@ $(document).ready(function(){
     $(document).on("change", ".flr_num", function() {
         var get_floor_number = $(this).val();
         var get_room_type = $(this).closest(".room_reservation").find(".roomType").val();
-
-        console.log("room type: " + get_room_type);
-        console.log("floor number: " + get_floor_number)
 
         $.ajax({
             type: 'POST',

@@ -5,13 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="..//css//header.css">
 </head>
 
 <body>
     <div class="header_container1">
         <div class="header_container2">
             <a href="../"><img src="../Assets/DDLOGO.png" class="logo" alt="DormLink Logo"></a>
+            <a href="https://www.instagram.com/lavanderplace_1277apartments?igsh=dzJwbnUxdDJwOGsx" id="ig_link"><img src="Assets/igpc.png" alt="Instagram Icon" id="ig_icon"></a>
+            <a href="https://web.facebook.com/1277apartments/?_rdc=1&_rdr" id="facebook_link"><img src="Assets/fbpc.png" alt="Facebook Icon" id="fb_icon"></a>
+
+            <!-- <a href="https://www.instagram.com/lavanderplace_1277apartments?igsh=dzJwbnUxdDJwOGsx" target="_blank" class="floating-ig-btn">
+            <img src="Assets/igpc.png" alt="Instagram Icon">
+            </a>
+
+            <a href="https://web.facebook.com/1277apartments/?_rdc=1&_rdr" target="_blank" class="floating-fb-btn">
+                <img src="Assets/fbpc.png" alt="Facebook Icon">
+            </a> -->
 
             <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="40px" fill="#42326e" id="menu_btn">
                 <path d="M105.87-219.09v-79.78H854.7v79.78H105.87Zm0-221.3v-79.22H854.7v79.22H105.87Zm0-220.74v-79.78H854.7v79.78H105.87Z" />

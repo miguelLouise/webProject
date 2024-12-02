@@ -13,10 +13,10 @@ $filter_by_category_and_date_from_and_date_to_and_status = filter_by_category_an
 foreach($filter_by_category_and_date_from_and_date_to_and_status as $data){
     echo '<tr>';
     echo '<td>' . $data['maintenance_request_id'] . '</td>';
-    echo '<td class="userId">' . $data['user_id'] . '</td>';
-    echo '<td class="userName">' . $data['name'] . '</td>';
-    echo '<td class="userEmail">' . $data['email'] . '</td>';
-    echo '<td>' . $data['room_id'] . '</td>';
+    // echo '<td class="userId">' . $data['user_id'] . '</td>';
+    // echo '<td class="userName">' . $data['name'] . '</td>';
+    // echo '<td class="userEmail">' . $data['email'] . '</td>';
+    // echo '<td>' . $data['room_id'] . '</td>';
     echo '<td>' . $data['room_number'] . '</td>';
     echo '<td>' . $data['category'] . '</td>';
     echo '<td>' . $data['maintenance_urgency'] . '</td>';
