@@ -2,6 +2,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -19,6 +50,7 @@
   /* display: flex;
   justify-content: center; */
   /* background-color: #ffffff; */
+  animation: fadeIn 1s ease-out; 
 }
 
 .reservation_container2{
@@ -32,6 +64,7 @@
   margin-bottom: 25px ;
   display: flex;
   /* margin: 25px 25px; */
+  animation: slideInFromLeft 1s ease-out;
 }
 
 .rooms_img_container{
@@ -44,6 +77,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: scaleUp 1s ease-out;
 }
 
 .rooms_description{
@@ -53,6 +87,7 @@
   /* background-color: cadetblue; */
   font-family: 'Montserrat', sans-serif;
   /* font-weight: 500; */
+  animation: fadeIn 1.5s ease-out;
 }
 
 .rooms_description h2{
@@ -79,6 +114,7 @@ hr {
   border-radius: 10px;
   padding: 10px 20px;
   /* background-color: indianred; */
+  animation: scaleUp 1s ease-out;
 }
 
 /* image slider */

@@ -26,7 +26,7 @@ include './middleware/user_middleware.php';
             <div class="custom-card-text">
                 <h2 class="card-title">Welcome to Lavenders Place</h2>
                 <p class="card-description">
-                    Rent an Dorm/Apatment Room. Reserve Now!
+                Discover comfort and convenience at Lavender's Place, your ideal dorm and apartment reservation destination in the heart of Manila’s University Belt (UBELT). Offering modern amenities, secure facilities, and a welcoming environment, we provide the perfect home for students and professionals alike. Reserve your space today and experience the best in city living, tailored to meet your needs.
                 </p>
                 <form action="includes/room_management/select_room_type.php" method="get" novalidate>
                 <button class="reserve-button" name="action" value="room_one">Reserve Now</button>
