@@ -15,28 +15,7 @@ require_once './includes/login/login_view.php';
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style>
-        .floating-fb-btn {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            z-index: 1000;
-            background-color: #42326E;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
-        }
 
-        .floating-fb-btn img {
-            width: 70px;
-            height: 700px;
-            object-fit: contain;
-        }
-    </style>
 </head>
 
 <body style="background-image: url('Assets/lvdbg.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
@@ -73,10 +52,10 @@ require_once './includes/login/login_view.php';
         </div>
     </div>
     <!-- javascript -->
-    <script src="javascript/login_page.js"></script>
-    <a href="https://web.facebook.com/1277apartments/?_rdc=1&_rdr" target="_blank" class="floating-fb-btn">
+    <script src="javascript//login_page.js"></script>
+    <!-- <a href="https://web.facebook.com/1277apartments/?_rdc=1&_rdr" target="_blank" class="floating-fb-btn">
         <img src="Assets/fbpc.png" alt="Facebook Icon">
-    </a>
+    </a> -->
 </body>
 
 </html>

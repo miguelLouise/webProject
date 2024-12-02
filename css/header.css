@@ -14,7 +14,7 @@
     background: linear-gradient(to right, #42326E, #E0D4FC);
     position: absolute;
     position: fixed;
-    height: 70px;
+    height: 75px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -77,6 +77,36 @@ a {
     display: none;
 }
 
+#ig_link{
+    /* background-color: red; */
+    margin-right: 0;
+}
+
+#ig_icon{
+    /* background-color: chocolate; */
+    position: relative;
+    width: 50px;
+    height: 50px;
+
+}
+
+#facebook_link{
+    /* background-color: cornflowerblue; */
+    margin-left: 5;
+    width: 48px;
+    height: 50px;
+
+}
+
+#fb_icon{
+    /* background-color: chocolate; */
+    position: relative;
+    width: 90px;
+    height: 56px;
+    /* left: -25px; */
+
+}
+
 @media(max-width: 600px){
     .header_container1{
         z-index: 10;
@@ -97,6 +127,8 @@ a {
         width: 100%;
         transition: 0.5s ease-in-out;
         z-index: 3;
+        display: flex;
+        justify-content: center;
     }
 
     #signup_btn, #login_btn{

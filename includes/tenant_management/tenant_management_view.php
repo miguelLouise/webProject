@@ -14,6 +14,7 @@ function unset_session_variable(string $var_name){
 }
 
 function current_date(){
+    date_default_timezone_set('Asia/Manila');
     $current_date = date("Y-m-d");
 
     $_SESSION["current_date"] = $current_date;

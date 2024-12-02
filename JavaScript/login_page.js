@@ -2,6 +2,16 @@
 const eye = document.getElementById("hide");
 const password = document.getElementById("password");
 
+        eye.onclick = (icon) => {
+            if (password.type == "password") {
+                password.type = "text";
+                eye.className = 'bi bi-eye-fill';
+            } else {
+                password.type = "password";
+                eye.className = 'bi bi-eye-slash-fill';
+            }
+        }
+
 $(document).ready(function(){
     $(".message_container").show().delay(4000).fadeOut(50);
 });
