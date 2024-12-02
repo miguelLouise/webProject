@@ -232,33 +232,108 @@ select.reservation_status option {
 .close_btn:hover{
   background-color: #9f9f9f;
 }
-/* Responsive*/
-@media (max-width: 768px) {
+
+/* General responsiveness */
+@media (max-width: 1200px) {
   .reservation_management_container1 {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .reservation_search_bar {
+    height: 80px;
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
   }
 
   table {
     font-size: 14px;
   }
 
-  #delete_reservation {
-  text-align: center;
-  font-size: 16px;
-  margin-top: 10px;
-  background-color: #d4edda;
-  padding: 10px;
-  border-radius: 5px;
-  color: #155724;
-  display: none;
+  th, td {
+    padding: 10px;
+  }
 }
 
-  select.reservation_status {
-    width: 120px;
+@media (max-width: 768px) {
+  .reservation_management_container1 {
+    padding: 15px;
   }
 
-  .confirm_div1 {
-    width: 90%;
+  table {
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  th {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Stack table rows on top of each other */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th, td {
+    display: block;
+    text-align: left;
+    padding: 10px;
+  }
+
+  th {
+    background-color: #007BFF;
+    color: white;
+  }
+
+  tbody tr {
+    display: block;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  tbody td:last-child {
+    border-bottom: none;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    flex: 0 0 50%;
+    font-weight: bold;
+  }
+}
+
+/* Extra-small devices (smaller than 400px) */
+@media (max-width: 400px) {
+  .reservation_search_bar {
+    font-size: 16px;
+  }
+
+  th, td {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  tbody td::before {
+    flex: 0 0 40%;
+    font-size: 12px;
   }
 }

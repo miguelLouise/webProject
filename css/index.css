@@ -152,26 +152,6 @@
 }
 
 
-@media (max-width: 768px) {
-    .custom-card {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .custom-card-image {
-        margin-top: 20px;
-    }
-    .custom-card2 {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .custom-card-image2 {
-        margin-top: 20px;
-    }
-
-}
-
 .room-slider-header {
     text-align: center;
     margin-bottom: 10px;
@@ -253,20 +233,6 @@
 .slider-box p {
     font-size: 15px;
     color: #666;
-}
-
-@media (max-width: 1024px) {
-    .slider-box {
-        width: 48%;
-        margin-bottom: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .slider-box {
-        width: 100%;
-        margin-bottom: 20px;
-    }
 }
 
 .container3 {
@@ -381,11 +347,6 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-@media(max-width: 600px) {
-    .container2 {
-        /* top: 140px; */
-    }
-}
 
 /* Instagram link */
 .floating-ig-btn {
@@ -412,4 +373,149 @@
 .floating-ig-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* General styles for smaller devices */
+@media screen and (max-width: 1200px) {
+    .container2 img {
+        width: 100%;
+        height: auto;
+    }
+
+    .custom-card,
+    .custom-card2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .custom-card-text,
+    .custom-card-text2 {
+        margin: 1rem;
+    }
+
+    .custom-card-image,
+    .custom-card-image2 {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .room-slider-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .slider-box {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .slides .slide {
+        width: 100%;
+        height: 200px;
+    }
+
+    .prev, .next {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container2 .text-overlay h1,
+    .container2 .text-overlay h2 {
+        font-size: 1.5rem;
+    }
+
+    .container2 .text-overlay p {
+        font-size: 1rem;
+    }
+
+    .custom-card-header h2,
+    .room-slider-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .custom-card-text,
+    .custom-card-text2 {
+        font-size: 0.9rem;
+    }
+
+    .custom-card-image img,
+    .custom-card-image2 img {
+        max-width: 80%;
+    }
+
+    .footer-content,
+    .footer-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links a {
+        margin: 0.5rem 0;
+    }
+
+    iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+    .floating-ig-btn,
+    .floating-fb-btn {
+        bottom: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+    }
+
+    .floating-ig-btn img,
+    .floating-fb-btn img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container2 .text-overlay h1 {
+        font-size: 1.25rem;
+    }
+
+    .container2 .text-overlay h2 {
+        font-size: 1rem;
+    }
+
+    .container2 .text-overlay p {
+        font-size: 0.8rem;
+    }
+
+    .custom-card-header h2,
+    .room-slider-header h2 {
+        font-size: 1rem;
+    }
+
+    .custom-card-text,
+    .custom-card-text2 {
+        font-size: 0.8rem;
+    }
+
+    .slides .slide {
+        height: 150px;
+    }
+
+    .prev, .next {
+        font-size: 1rem;
+    }
+
+    .footer-content h1 {
+        font-size: 1rem;
+    }
+
+    .address span,
+    .contact span {
+        font-size: 0.8rem;
+    }
+
+    iframe {
+        height: 250px;
+    }
 }

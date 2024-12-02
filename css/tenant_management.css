@@ -188,72 +188,146 @@ td {
 }
 
 /* Media Queries for Responsiveness */
-@media (max-width: 1024px) {
+
+/* Extra Small*/
+@media (max-width: 576px) {
   .container {
-    max-width: 90%;
-    padding: 30px;
-  }
-
-  h1 {
-    font-size: 28px;
-  }
-
-  .form-row {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .form-group input,
-  .form-group select {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    max-width: 95%;
     padding: 20px;
   }
 
   h1 {
     font-size: 24px;
+    margin-bottom: 20px;
   }
 
   .form-row {
     flex-direction: column;
   }
 
-  table th,
-  table td {
-    font-size: 14px;
-    padding: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    padding: 20px 10px;
+  .form-group {
+    margin-bottom: 15px;
   }
 
-  .container {
-    padding: 15px;
-  }
-
-  h1 {
-    font-size: 20px;
-  }
-
-  table th,
-  table td {
+  table {
     font-size: 12px;
+  }
+
+  th, td {
     padding: 8px;
   }
 
-  .submit-btn,
-  .delete_btn,
-  .cancel_btn,
-  .confirm_btn {
-    padding: 8px 10px;
+  .submit-btn {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+/* Small*/
+@media (min-width: 576px) and (max-width: 768px) {
+  .container {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+/* Medium */
+@media (min-width: 768px) and (max-width: 992px) {
+  .container {
+    padding: 40px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .form-row {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .form-group {
+    flex: 1 1 calc(50% - 15px);
+  }
+
+  table {
+    font-size: 16px;
+  }
+
+  th, td {
+    padding: 12px;
+  }
+
+  .submit-btn {
+    font-size: 16px;
+  }
+}
+
+/* Adjust Table for Smaller Screens */
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  table thead {
+    display: none;
+  }
+
+  table tbody tr {
+    display: block;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+  }
+
+  table tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  table tbody td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-transform: capitalize;
+    width: 40%;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 992px) {
+  .tenant_management_container1 {
+    height: 60px;
+  }
+
+  th, td {
     font-size: 14px;
   }
 }

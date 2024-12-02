@@ -459,33 +459,6 @@ h2 {
     position: relative;
     width: 100%;
   }
-  /* .container2 {
-    height: 250px;
-    margin: 25px auto;
-  }
-
-  .info-container {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .room {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .large-image {
-    padding-top: 75%;
-  }
-
-  .room-info {
-    padding-left: 0;
-  }
-
-  .reserve-button {
-    font-size: 14px;
-    padding: 6px 12px;
-  } */
 }
 
 @media (max-width: 607px) {

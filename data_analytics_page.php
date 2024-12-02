@@ -52,4 +52,3 @@ include './middleware/admin_middleware.php';
 
 </body>
 </html>
-cdn.jsdelivr.net
