@@ -86,6 +86,7 @@ tr:nth-child(even) {
 
 .form-group{
   margin: 0 20px;
+  margin-bottom: 15px;
 }
 
 .img_container{
@@ -160,6 +161,68 @@ tr:nth-child(even) {
   /* border: 1px solid rgba(255, 0, 0, 0.1); */
 }
 
+/*Schedule Container */
+
+.set_maintenance_schedule button[type="submit"], 
+.set_maintenance_schedule button.close_set_schedule {
+  background-color: #007BFF; 
+  color: #fff; 
+  border: none; 
+  padding: 8px 12px; 
+  border-radius: 5px; 
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  transition: background-color 0.3s, box-shadow 0.3s; 
+}
+
+.set_maintenance_schedule button[type="submit"]:hover, 
+.set_maintenance_schedule button.close_set_schedule:hover {
+  background-color: #0056b3; 
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); 
+}
+
+/* Inputs */
+.set_maintenance_schedule input[type="date"], 
+.set_maintenance_schedule input[type="time"], 
+.set_maintenance_schedule textarea {
+  width: 95%; 
+  padding: 10px;
+  margin-bottom: 15px; 
+  border: 1px solid #ddd; 
+  border-radius: 4px;
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+
+.set_maintenance_schedule label {
+  font-weight: 500;
+  margin-bottom: 5px; 
+  display: block;
+}
+
+.set_maintenance_schedule1 h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  /*color: #333; */
+}
+
+/* Container style */
+.set_maintenance_schedule1 {
+  padding: 20px;
+  background-color: #fff; 
+  border-radius: 10px; 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+
+.set_maintenance_schedule button.close_set_schedule {
+  background-color: #dc3545; 
+}
+
+.set_maintenance_schedule button.close_set_schedule:hover {
+  background-color: #a71d2a;
+}
+
 .container{
   position: absolute;
   height: 100vh;
@@ -190,80 +253,199 @@ tr:nth-child(even) {
   z-index: 10;
 }
 
-@media (max-width: 950px) {
-  .message_container{
-      width: 45%;
-  }
+/*.form-group {
+  margin-bottom: 15px;
+}*/
+
+label {
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+  color: #555;
 }
 
-@media (max-width: 690px) {
-  .message_container{
-      height: 40%;
-      width: 60%;
-  }
+select,
+input[type="date"],
+input[type="time"],
+button {
+  width: 100%;
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
-@media (max-width: 431px) {
-  .message_container{
-      height: 40%;
-      width: 80%;
-  }
+select:focus,
+input[type="date"]:focus,
+input[type="time"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.2);
+}
+
+/* Select*/
+select {
+  appearance: none;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray"><path d="M7 10l5 5 5-5H7z"/></svg>') no-repeat right 10px center;
+  background-size: 12px;
+  cursor: pointer;
+}
+
+input[type="date"],
+input[type="time"] {
+  color: #333;
+}
+
+/* Buttons */
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:active {
+  background-color: #004085;
+  transform: scale(0.98);
+}
+
+.maintenance_issue_img_btn {
+  background-color: #28a745; 
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.maintenance_issue_img_btn:hover {
+  background-color:  #218838; /* Darker */
+  transform: scale(1.05);
 }
 
 
-@media screen and (max-width: 1060px) {s
-  .userId, .userName, .userEmail {
-    display: none;
-  }
+.set_schedule_btn {
+  background-color: #ffc107; 
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 768px) {
+.set_schedule_btn:hover {
+  background-color: #e0a800;
+  transform: scale(1.05);
+}
+
+/* responsiveness */
+
+@media (max-width: 575.98px) {
+  .container_one {
+    padding: 15px;
+  }
   .filter_container {
     flex-direction: column;
-    align-items: center;
+    padding: 15px;
   }
-
   .form-group {
+    margin: 0 10px 10px;
+  }
+  .img_container1 {
+    padding: 15px;
+  }
+  table {
+    font-size: 12px;
+  }
+  .message_container {
     width: 90%;
-    text-align: center;
+    height: auto;
+    font-size: 16px;
   }
+}
 
-  table, thead, tbody, th, td, tr {
-    display: block;
-    width: 100%;
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .container_one {
+    padding: 20px;
   }
-
-  thead {
-    display: none; /* Hide table header on small screens */
+  .filter_container {
+    flex-direction: column;
+    padding: 20px;
   }
-
-  tr {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
+  .form-group {
+    margin: 0 15px 15px;
   }
-
-  td {
-    text-align: left;
-    padding: 10px 15px;
-    position: relative;
+  .message_container {
+    width: 80%;
+    height: auto;
+    font-size: 18px;
   }
+}
 
-  td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 15px;
-    top: 10px;
-    font-weight: bold;
-    color: #333;
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .container_one {
+    padding: 25px;
   }
-
-  th, td:nth-child(1),
-  td:nth-child(2) {
-    display: none;
+  .filter_container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
   }
+  .form-group {
+    margin: 0 15px 20px;
+  }
+  .message_container {
+    width: 60%;
+    font-size: 20px;
+  }
+}
 
-  .container {
-    padding: 10px;
-    margin: 20px 10px;
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .container_one {
+    padding: 30px;
+  }
+  .filter_container {
+    flex-direction: row;
+    padding: 25px;
+  }
+  .form-group {
+    margin: 0 20px 20px;
+  }
+  .message_container {
+    width: 50%;
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container_one {
+    padding: 35px;
+  }
+  .filter_container {
+    flex-direction: row;
+    padding: 30px;
+  }
+  .form-group {
+    margin: 0 25px 25px;
+  }
+  .message_container {
+    width: 40%;
+    font-size: 24px;
   }
 }
